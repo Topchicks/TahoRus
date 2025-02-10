@@ -1,0 +1,10 @@
+C:\Users\TGS_Navicon\source\repos\TaxoNavicon\TaxoNavicon\bin\Debug\TaxoNavicon.exe.config
+C:\Users\TGS_Navicon\source\repos\TaxoNavicon\TaxoNavicon\bin\Debug\TaxoNavicon.exe
+C:\Users\TGS_Navicon\source\repos\TaxoNavicon\TaxoNavicon\bin\Debug\TaxoNavicon.pdb
+C:\Users\TGS_Navicon\source\repos\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.csproj.AssemblyReference.cache
+C:\Users\TGS_Navicon\source\repos\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.Form1.resources
+C:\Users\TGS_Navicon\source\repos\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.Properties.Resources.resources
+C:\Users\TGS_Navicon\source\repos\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.csproj.GenerateResource.cache
+C:\Users\TGS_Navicon\source\repos\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.csproj.CoreCompileInputs.cache
+C:\Users\TGS_Navicon\source\repos\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.exe
+C:\Users\TGS_Navicon\source\repos\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.pdb
