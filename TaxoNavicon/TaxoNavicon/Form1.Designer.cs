@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.yfrktqrfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сертификатToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemSticker = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemCertificate = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.textBox11 = new System.Windows.Forms.TextBox();
@@ -98,8 +99,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -108,7 +109,6 @@
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -122,6 +122,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(969, 56);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox1.Location = new System.Drawing.Point(828, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(141, 32);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -137,25 +146,27 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.yfrktqrfToolStripMenuItem,
-            this.сертификатToolStripMenuItem});
+            this.ToolStripMenuItemSticker,
+            this.ToolStripMenuItemCertificate});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(969, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // yfrktqrfToolStripMenuItem
+            // ToolStripMenuItemSticker
             // 
-            this.yfrktqrfToolStripMenuItem.Name = "yfrktqrfToolStripMenuItem";
-            this.yfrktqrfToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
-            this.yfrktqrfToolStripMenuItem.Text = "Наклейка";
+            this.ToolStripMenuItemSticker.Name = "ToolStripMenuItemSticker";
+            this.ToolStripMenuItemSticker.Size = new System.Drawing.Size(72, 20);
+            this.ToolStripMenuItemSticker.Text = "Наклейка";
+            this.ToolStripMenuItemSticker.Click += new System.EventHandler(this.ToolStripMenuItemSticker_Click);
             // 
-            // сертификатToolStripMenuItem
+            // ToolStripMenuItemCertificate
             // 
-            this.сертификатToolStripMenuItem.Name = "сертификатToolStripMenuItem";
-            this.сертификатToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
-            this.сертификатToolStripMenuItem.Text = "Сертификат";
+            this.ToolStripMenuItemCertificate.Name = "ToolStripMenuItemCertificate";
+            this.ToolStripMenuItemCertificate.Size = new System.Drawing.Size(85, 20);
+            this.ToolStripMenuItemCertificate.Text = "Сертификат";
+            this.ToolStripMenuItemCertificate.Click += new System.EventHandler(this.ToolStripMenuItemCertificate_Click);
             // 
             // panel2
             // 
@@ -724,6 +735,9 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Я",
+            "Ты"});
             this.comboBox1.Location = new System.Drawing.Point(76, 55);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(198, 21);
@@ -783,15 +797,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Заказ";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Location = new System.Drawing.Point(828, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(141, 32);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -800,10 +805,12 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximumSize = new System.Drawing.Size(985, 686);
+            this.MinimumSize = new System.Drawing.Size(985, 686);
             this.Name = "Form1";
-            this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -819,7 +826,6 @@
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -894,8 +900,8 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem yfrktqrfToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem сертификатToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSticker;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemCertificate;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

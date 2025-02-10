@@ -16,5 +16,19 @@ namespace TaxoNavicon
         {
             InitializeComponent();
         }
+
+        private void ToolStripMenuItemCertificate_Click(object sender, EventArgs e)
+        {
+            Certificate Certificate = new Certificate();
+
+            Certificate.Show();
+        }
+
+        private void ToolStripMenuItemSticker_Click(object sender, EventArgs e)
+        {
+            Sticker sticker = new Sticker();
+
+            sticker.Show();
+        }
     }
 }
