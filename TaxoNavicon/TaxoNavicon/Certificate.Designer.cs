@@ -75,7 +75,6 @@
             this.GenerateCertificate.Name = "GenerateCertificate";
             this.GenerateCertificate.Size = new System.Drawing.Size(91, 22);
             this.GenerateCertificate.Text = "Сформировать";
-            this.GenerateCertificate.Click += new System.EventHandler(this.GenerateCertificate_Click);
             // 
             // Certificate
             // 

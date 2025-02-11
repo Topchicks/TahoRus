@@ -1,12 +1,33 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Net;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace TaxoNavicon
 {
-    public partial class Form1 : Form
+    public partial class EuropeanTypeForm : Form
     {
+
+        private static readonly HttpClient client = new HttpClient();
         PoleData poleData;
-        public Form1()
+
+        public class TranslateResponse
+        {
+            public Translation[] Translations { get; set; }
+        }
+
+        public class Translation
+        {
+            public string Text { get; set; }
+        }
+
+        public EuropeanTypeForm()
         {
             InitializeComponent();
             poleData = new PoleData();
@@ -35,11 +56,12 @@ namespace TaxoNavicon
 
             //Customer
             poleData.nameCustomer = textBoxNameCustomer.Text; // имя
-            poleData.nameCustomerEng = textBoxNameCustomerEng.Text; // имя на английском
+            poleData.nameCustomerEng = textBoxNameCustomerEng.Text; // имя
+            
             poleData.adresCustomer = textBoxAdresCustomer.Text;// адрес заказчика
 
             //Vehicle
-            poleData.markaVehicle = textBoxMarkaVehicle.Text; // марка машины
+            poleData.manufacturerVehicle = textBoxManufacturerTachograph.Text; // марка машины
             poleData.modelVehicle = textBoxModelVehicle.Text; // модель машины
             poleData.vinVehicle = textBoxVinNumberVehicle.Text; // вин номер машины
             poleData.registrationNumberVehicle = textBoxRegistrationNumberVehicle.Text; // рег. номер машины
@@ -56,7 +78,7 @@ namespace TaxoNavicon
             poleData.k = textBoxK.Text;
 
             poleData.noteOrder = textBoxNoteOrder.Text; // примечания
-            poleData.dataJob = dateTimePickerJob.ToString(); //  время выполнения работ
+            poleData.dataJob = dateTimePickerJob.Value.Date.ToString(); //  время выполнения работ
         }
     }
 }

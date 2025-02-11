@@ -12,7 +12,6 @@ E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\TaxoNavicon.e
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\TaxoNavicon.exe
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\TaxoNavicon.pdb
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.csproj.AssemblyReference.cache
-E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.Form1.resources
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.Properties.Resources.resources
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.Sticker.resources
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.csproj.GenerateResource.cache
@@ -32,3 +31,7 @@ C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoN
 C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.csproj.CoreCompileInputs.cache
 C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.exe
 C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.pdb
+E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.EuropeanTypeForm.resources
+E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\Newtonsoft.Json.dll
+E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\Newtonsoft.Json.xml
+E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.csproj.CopyComplete
