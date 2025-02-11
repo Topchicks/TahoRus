@@ -36,7 +36,7 @@
             this.ToolStripMenuItemCertificate = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBoxNoteOrder = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
@@ -47,58 +47,62 @@
             this.label33 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.textBoxL = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
-            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.textBoxK = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
-            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.textBoxW = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.textBoxModelTachograph = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.textBoxManufacturerTachograph = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBoxOdometerKmVehicle = new System.Windows.Forms.TextBox();
+            this.textBoxRegistrationNumberVehicle = new System.Windows.Forms.TextBox();
+            this.textBoxModelVehicle = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBoxVinNumberVehicle = new System.Windows.Forms.TextBox();
+            this.textBoxMarkaVehicle = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxSerialNumberTachograph = new System.Windows.Forms.TextBox();
             this.textBoxAdresCustomer = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxNameCustomer = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.numericUpDowntextBoxOrderNumber = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxMaster = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerJob = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDowntextBoxOrderNumber = new System.Windows.Forms.NumericUpDown();
+            this.textBoxNameCustomerEng = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.textBoxYearOfIssueVehiccle = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -185,7 +189,7 @@
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.textBox11);
+            this.panel8.Controls.Add(this.textBoxNoteOrder);
             this.panel8.Controls.Add(this.label26);
             this.panel8.Controls.Add(this.comboBox4);
             this.panel8.Controls.Add(this.label25);
@@ -194,18 +198,18 @@
             this.panel8.Controls.Add(this.textBox18);
             this.panel8.Controls.Add(this.label32);
             this.panel8.Controls.Add(this.label33);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(0, 476);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(0, 483);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(969, 115);
+            this.panel8.Size = new System.Drawing.Size(969, 108);
             this.panel8.TabIndex = 6;
             // 
-            // textBox11
+            // textBoxNoteOrder
             // 
-            this.textBox11.Location = new System.Drawing.Point(100, 84);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(761, 20);
-            this.textBox11.TabIndex = 14;
+            this.textBoxNoteOrder.Location = new System.Drawing.Point(100, 84);
+            this.textBoxNoteOrder.Name = "textBoxNoteOrder";
+            this.textBoxNoteOrder.Size = new System.Drawing.Size(761, 20);
+            this.textBoxNoteOrder.TabIndex = 14;
             // 
             // label26
             // 
@@ -283,16 +287,16 @@
             // panel7
             // 
             this.panel7.Controls.Add(this.dateTimePicker2);
-            this.panel7.Controls.Add(this.textBox22);
+            this.panel7.Controls.Add(this.textBoxL);
             this.panel7.Controls.Add(this.label31);
-            this.panel7.Controls.Add(this.textBox21);
+            this.panel7.Controls.Add(this.textBoxK);
             this.panel7.Controls.Add(this.label30);
-            this.panel7.Controls.Add(this.textBox20);
+            this.panel7.Controls.Add(this.textBoxW);
             this.panel7.Controls.Add(this.label27);
             this.panel7.Controls.Add(this.label28);
             this.panel7.Controls.Add(this.label29);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 410);
+            this.panel7.Location = new System.Drawing.Point(0, 417);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(969, 66);
             this.panel7.TabIndex = 5;
@@ -304,12 +308,12 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker2.TabIndex = 9;
             // 
-            // textBox22
+            // textBoxL
             // 
-            this.textBox22.Location = new System.Drawing.Point(368, 26);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(119, 20);
-            this.textBox22.TabIndex = 22;
+            this.textBoxL.Location = new System.Drawing.Point(368, 26);
+            this.textBoxL.Name = "textBoxL";
+            this.textBoxL.Size = new System.Drawing.Size(119, 20);
+            this.textBoxL.TabIndex = 22;
             // 
             // label31
             // 
@@ -321,12 +325,12 @@
             this.label31.TabIndex = 23;
             this.label31.Text = "L:";
             // 
-            // textBox21
+            // textBoxK
             // 
-            this.textBox21.Location = new System.Drawing.Point(199, 26);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(119, 20);
-            this.textBox21.TabIndex = 20;
+            this.textBoxK.Location = new System.Drawing.Point(199, 26);
+            this.textBoxK.Name = "textBoxK";
+            this.textBoxK.Size = new System.Drawing.Size(119, 20);
+            this.textBoxK.TabIndex = 20;
             // 
             // label30
             // 
@@ -338,12 +342,12 @@
             this.label30.TabIndex = 21;
             this.label30.Text = "K:";
             // 
-            // textBox20
+            // textBoxW
             // 
-            this.textBox20.Location = new System.Drawing.Point(31, 26);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(119, 20);
-            this.textBox20.TabIndex = 9;
+            this.textBoxW.Location = new System.Drawing.Point(31, 26);
+            this.textBoxW.Name = "textBoxW";
+            this.textBoxW.Size = new System.Drawing.Size(119, 20);
+            this.textBoxW.TabIndex = 9;
             // 
             // label27
             // 
@@ -378,18 +382,18 @@
             // panel6
             // 
             this.panel6.Controls.Add(this.textBox12);
-            this.panel6.Controls.Add(this.textBox13);
+            this.panel6.Controls.Add(this.textBoxModelTachograph);
             this.panel6.Controls.Add(this.label19);
             this.panel6.Controls.Add(this.label20);
             this.panel6.Controls.Add(this.textBox14);
             this.panel6.Controls.Add(this.textBox15);
-            this.panel6.Controls.Add(this.textBox16);
+            this.panel6.Controls.Add(this.textBoxManufacturerTachograph);
             this.panel6.Controls.Add(this.label21);
             this.panel6.Controls.Add(this.label22);
             this.panel6.Controls.Add(this.label23);
             this.panel6.Controls.Add(this.label24);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 306);
+            this.panel6.Location = new System.Drawing.Point(0, 313);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(969, 104);
             this.panel6.TabIndex = 4;
@@ -401,12 +405,12 @@
             this.textBox12.Size = new System.Drawing.Size(287, 20);
             this.textBox12.TabIndex = 19;
             // 
-            // textBox13
+            // textBoxModelTachograph
             // 
-            this.textBox13.Location = new System.Drawing.Point(611, 27);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(287, 20);
-            this.textBox13.TabIndex = 15;
+            this.textBoxModelTachograph.Location = new System.Drawing.Point(611, 27);
+            this.textBoxModelTachograph.Name = "textBoxModelTachograph";
+            this.textBoxModelTachograph.Size = new System.Drawing.Size(287, 20);
+            this.textBoxModelTachograph.TabIndex = 15;
             // 
             // label19
             // 
@@ -442,12 +446,12 @@
             this.textBox15.Size = new System.Drawing.Size(287, 20);
             this.textBox15.TabIndex = 13;
             // 
-            // textBox16
+            // textBoxManufacturerTachograph
             // 
-            this.textBox16.Location = new System.Drawing.Point(122, 26);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(287, 20);
-            this.textBox16.TabIndex = 9;
+            this.textBoxManufacturerTachograph.Location = new System.Drawing.Point(122, 26);
+            this.textBoxManufacturerTachograph.Name = "textBoxManufacturerTachograph";
+            this.textBoxManufacturerTachograph.Size = new System.Drawing.Size(287, 20);
+            this.textBoxManufacturerTachograph.TabIndex = 9;
             // 
             // label21
             // 
@@ -491,51 +495,53 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.textBox8);
-            this.panel5.Controls.Add(this.textBox9);
-            this.panel5.Controls.Add(this.textBox10);
+            this.panel5.Controls.Add(this.textBoxYearOfIssueVehiccle);
+            this.panel5.Controls.Add(this.label35);
+            this.panel5.Controls.Add(this.textBoxOdometerKmVehicle);
+            this.panel5.Controls.Add(this.textBoxRegistrationNumberVehicle);
+            this.panel5.Controls.Add(this.textBoxModelVehicle);
             this.panel5.Controls.Add(this.label15);
             this.panel5.Controls.Add(this.label16);
             this.panel5.Controls.Add(this.label17);
             this.panel5.Controls.Add(this.textBox5);
-            this.panel5.Controls.Add(this.textBox6);
-            this.panel5.Controls.Add(this.textBox7);
+            this.panel5.Controls.Add(this.textBoxVinNumberVehicle);
+            this.panel5.Controls.Add(this.textBoxMarkaVehicle);
             this.panel5.Controls.Add(this.label11);
             this.panel5.Controls.Add(this.label12);
             this.panel5.Controls.Add(this.label13);
             this.panel5.Controls.Add(this.label14);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 203);
+            this.panel5.Location = new System.Drawing.Point(0, 159);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(969, 103);
+            this.panel5.Size = new System.Drawing.Size(969, 154);
             this.panel5.TabIndex = 3;
             // 
-            // textBox8
+            // textBoxOdometerKmVehicle
             // 
-            this.textBox8.Location = new System.Drawing.Point(611, 79);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(287, 20);
-            this.textBox8.TabIndex = 20;
+            this.textBoxOdometerKmVehicle.Location = new System.Drawing.Point(556, 79);
+            this.textBoxOdometerKmVehicle.Name = "textBoxOdometerKmVehicle";
+            this.textBoxOdometerKmVehicle.Size = new System.Drawing.Size(287, 20);
+            this.textBoxOdometerKmVehicle.TabIndex = 20;
             // 
-            // textBox9
+            // textBoxRegistrationNumberVehicle
             // 
-            this.textBox9.Location = new System.Drawing.Point(611, 53);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(287, 20);
-            this.textBox9.TabIndex = 19;
+            this.textBoxRegistrationNumberVehicle.Location = new System.Drawing.Point(556, 53);
+            this.textBoxRegistrationNumberVehicle.Name = "textBoxRegistrationNumberVehicle";
+            this.textBoxRegistrationNumberVehicle.Size = new System.Drawing.Size(287, 20);
+            this.textBoxRegistrationNumberVehicle.TabIndex = 19;
             // 
-            // textBox10
+            // textBoxModelVehicle
             // 
-            this.textBox10.Location = new System.Drawing.Point(611, 27);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(287, 20);
-            this.textBox10.TabIndex = 15;
+            this.textBoxModelVehicle.Location = new System.Drawing.Point(556, 27);
+            this.textBoxModelVehicle.Name = "textBoxModelVehicle";
+            this.textBoxModelVehicle.Size = new System.Drawing.Size(287, 20);
+            this.textBoxModelVehicle.TabIndex = 15;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label15.Location = new System.Drawing.Point(493, 80);
+            this.label15.Location = new System.Drawing.Point(438, 80);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(84, 15);
             this.label15.TabIndex = 18;
@@ -545,7 +551,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label16.Location = new System.Drawing.Point(493, 54);
+            this.label16.Location = new System.Drawing.Point(438, 54);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(73, 15);
             this.label16.TabIndex = 17;
@@ -555,7 +561,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label17.Location = new System.Drawing.Point(493, 28);
+            this.label17.Location = new System.Drawing.Point(438, 28);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(56, 15);
             this.label17.TabIndex = 16;
@@ -568,19 +574,19 @@
             this.textBox5.Size = new System.Drawing.Size(287, 20);
             this.textBox5.TabIndex = 14;
             // 
-            // textBox6
+            // textBoxVinNumberVehicle
             // 
-            this.textBox6.Location = new System.Drawing.Point(122, 52);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(287, 20);
-            this.textBox6.TabIndex = 13;
+            this.textBoxVinNumberVehicle.Location = new System.Drawing.Point(122, 52);
+            this.textBoxVinNumberVehicle.Name = "textBoxVinNumberVehicle";
+            this.textBoxVinNumberVehicle.Size = new System.Drawing.Size(287, 20);
+            this.textBoxVinNumberVehicle.TabIndex = 13;
             // 
-            // textBox7
+            // textBoxMarkaVehicle
             // 
-            this.textBox7.Location = new System.Drawing.Point(122, 26);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(287, 20);
-            this.textBox7.TabIndex = 9;
+            this.textBoxMarkaVehicle.Location = new System.Drawing.Point(122, 26);
+            this.textBoxMarkaVehicle.Name = "textBoxMarkaVehicle";
+            this.textBoxMarkaVehicle.Size = new System.Drawing.Size(287, 20);
+            this.textBoxMarkaVehicle.TabIndex = 9;
             // 
             // label11
             // 
@@ -624,25 +630,27 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.textBox4);
+            this.panel4.Controls.Add(this.textBoxNameCustomerEng);
+            this.panel4.Controls.Add(this.label34);
+            this.panel4.Controls.Add(this.textBoxSerialNumberTachograph);
             this.panel4.Controls.Add(this.textBoxAdresCustomer);
-            this.panel4.Controls.Add(this.textBox2);
+            this.panel4.Controls.Add(this.textBoxNameCustomer);
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.label9);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 100);
+            this.panel4.Location = new System.Drawing.Point(0, 56);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(969, 103);
             this.panel4.TabIndex = 2;
             // 
-            // textBox4
+            // textBoxSerialNumberTachograph
             // 
-            this.textBox4.Location = new System.Drawing.Point(70, 78);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(422, 20);
-            this.textBox4.TabIndex = 14;
+            this.textBoxSerialNumberTachograph.Location = new System.Drawing.Point(70, 78);
+            this.textBoxSerialNumberTachograph.Name = "textBoxSerialNumberTachograph";
+            this.textBoxSerialNumberTachograph.Size = new System.Drawing.Size(422, 20);
+            this.textBoxSerialNumberTachograph.TabIndex = 14;
             // 
             // textBoxAdresCustomer
             // 
@@ -651,12 +659,12 @@
             this.textBoxAdresCustomer.Size = new System.Drawing.Size(422, 20);
             this.textBoxAdresCustomer.TabIndex = 13;
             // 
-            // textBox2
+            // textBoxNameCustomer
             // 
-            this.textBox2.Location = new System.Drawing.Point(70, 26);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(422, 20);
-            this.textBox2.TabIndex = 9;
+            this.textBoxNameCustomer.Location = new System.Drawing.Point(70, 26);
+            this.textBoxNameCustomer.Name = "textBoxNameCustomer";
+            this.textBoxNameCustomer.Size = new System.Drawing.Size(321, 20);
+            this.textBoxNameCustomer.TabIndex = 9;
             // 
             // label10
             // 
@@ -703,23 +711,30 @@
             this.panel3.Controls.Add(this.numericUpDowntextBoxOrderNumber);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.comboBox2);
-            this.panel3.Controls.Add(this.comboBox1);
+            this.panel3.Controls.Add(this.comboBoxMaster);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.dateTimePicker1);
+            this.panel3.Controls.Add(this.dateTimePickerJob);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(969, 100);
+            this.panel3.Size = new System.Drawing.Size(969, 56);
             this.panel3.TabIndex = 1;
+            // 
+            // numericUpDowntextBoxOrderNumber
+            // 
+            this.numericUpDowntextBoxOrderNumber.Location = new System.Drawing.Point(80, 19);
+            this.numericUpDowntextBoxOrderNumber.Name = "numericUpDowntextBoxOrderNumber";
+            this.numericUpDowntextBoxOrderNumber.Size = new System.Drawing.Size(107, 20);
+            this.numericUpDowntextBoxOrderNumber.TabIndex = 9;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(344, 62);
+            this.label6.Location = new System.Drawing.Point(656, 23);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(101, 15);
             this.label6.TabIndex = 8;
@@ -728,27 +743,27 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(451, 61);
+            this.comboBox2.Location = new System.Drawing.Point(763, 22);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(240, 21);
+            this.comboBox2.Size = new System.Drawing.Size(194, 21);
             this.comboBox2.TabIndex = 7;
             // 
-            // comboBox1
+            // comboBoxMaster
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxMaster.FormattingEnabled = true;
+            this.comboBoxMaster.Items.AddRange(new object[] {
             "Я",
             "Ты"});
-            this.comboBox1.Location = new System.Drawing.Point(76, 55);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(198, 21);
-            this.comboBox1.TabIndex = 6;
+            this.comboBoxMaster.Location = new System.Drawing.Point(451, 19);
+            this.comboBoxMaster.Name = "comboBoxMaster";
+            this.comboBoxMaster.Size = new System.Drawing.Size(198, 21);
+            this.comboBoxMaster.TabIndex = 6;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(12, 56);
+            this.label5.Location = new System.Drawing.Point(387, 20);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 15);
             this.label5.TabIndex = 5;
@@ -758,18 +773,18 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(292, 19);
+            this.label4.Location = new System.Drawing.Point(201, 20);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 15);
             this.label4.TabIndex = 4;
             this.label4.Text = "Дата";
             // 
-            // dateTimePicker1
+            // dateTimePickerJob
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(335, 18);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 3;
+            this.dateTimePickerJob.Location = new System.Drawing.Point(244, 19);
+            this.dateTimePickerJob.Name = "dateTimePickerJob";
+            this.dateTimePickerJob.Size = new System.Drawing.Size(124, 20);
+            this.dateTimePickerJob.TabIndex = 3;
             // 
             // label3
             // 
@@ -791,17 +806,45 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Заказ";
             // 
-            // numericUpDowntextBoxOrderNumber
+            // textBoxNameCustomerEng
             // 
-            this.numericUpDowntextBoxOrderNumber.Location = new System.Drawing.Point(80, 19);
-            this.numericUpDowntextBoxOrderNumber.Name = "numericUpDowntextBoxOrderNumber";
-            this.numericUpDowntextBoxOrderNumber.Size = new System.Drawing.Size(194, 20);
-            this.numericUpDowntextBoxOrderNumber.TabIndex = 9;
+            this.textBoxNameCustomerEng.Location = new System.Drawing.Point(496, 26);
+            this.textBoxNameCustomerEng.Name = "textBoxNameCustomerEng";
+            this.textBoxNameCustomerEng.Size = new System.Drawing.Size(321, 20);
+            this.textBoxNameCustomerEng.TabIndex = 15;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label34.Location = new System.Drawing.Point(430, 27);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(68, 15);
+            this.label34.TabIndex = 16;
+            this.label34.Text = "Имя (Eng):";
+            // 
+            // textBoxYearOfIssueVehiccle
+            // 
+            this.textBoxYearOfIssueVehiccle.Location = new System.Drawing.Point(122, 104);
+            this.textBoxYearOfIssueVehiccle.Name = "textBoxYearOfIssueVehiccle";
+            this.textBoxYearOfIssueVehiccle.Size = new System.Drawing.Size(287, 20);
+            this.textBoxYearOfIssueVehiccle.TabIndex = 21;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label35.Location = new System.Drawing.Point(4, 105);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(90, 15);
+            this.label35.TabIndex = 22;
+            this.label35.Text = "Дата выпуска:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(969, 647);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -809,6 +852,7 @@
             this.MaximumSize = new System.Drawing.Size(985, 686);
             this.MinimumSize = new System.Drawing.Size(985, 686);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -841,7 +885,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerJob;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label10;
@@ -850,32 +894,32 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxMaster;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBoxOdometerKmVehicle;
+        private System.Windows.Forms.TextBox textBoxRegistrationNumberVehicle;
+        private System.Windows.Forms.TextBox textBoxModelVehicle;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBoxVinNumberVehicle;
+        private System.Windows.Forms.TextBox textBoxMarkaVehicle;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxSerialNumberTachograph;
         private System.Windows.Forms.TextBox textBoxAdresCustomer;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxNameCustomer;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox textBoxModelTachograph;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox textBoxManufacturerTachograph;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
@@ -886,15 +930,15 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.TextBox textBoxL;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.TextBox textBox21;
+        private System.Windows.Forms.TextBox textBoxK;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox textBoxW;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox textBoxNoteOrder;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label25;
@@ -905,6 +949,10 @@
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemCertificate;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.NumericUpDown numericUpDowntextBoxOrderNumber;
+        private System.Windows.Forms.TextBox textBoxNameCustomerEng;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox textBoxYearOfIssueVehiccle;
+        private System.Windows.Forms.Label label35;
     }
 }
 

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TaxoNavicon
@@ -35,8 +28,35 @@ namespace TaxoNavicon
         
         private void SetData()
         {
-            poleData.orderNumber = (int)numericUpDowntextBoxOrderNumber.Value;
-            poleData.adresCustomer = textBoxAdresCustomer.Text;
+            //Order
+            poleData.orderNumber = (int)numericUpDowntextBoxOrderNumber.Value;// номер заказа
+            poleData.master = comboBoxMaster.Text; // мастер
+
+
+            //Customer
+            poleData.nameCustomer = textBoxNameCustomer.Text; // имя
+            poleData.nameCustomerEng = textBoxNameCustomerEng.Text; // имя на английском
+            poleData.adresCustomer = textBoxAdresCustomer.Text;// адрес заказчика
+
+            //Vehicle
+            poleData.markaVehicle = textBoxMarkaVehicle.Text; // марка машины
+            poleData.modelVehicle = textBoxModelVehicle.Text; // модель машины
+            poleData.vinVehicle = textBoxVinNumberVehicle.Text; // вин номер машины
+            poleData.registrationNumberVehicle = textBoxRegistrationNumberVehicle.Text; // рег. номер машины
+            poleData.odometerKmVehicle = textBoxOdometerKmVehicle.Text; // одометр км
+            poleData.yearOfIssueVehiccle = textBoxYearOfIssueVehiccle.Text; // год выпуска
+
+            //Tahograf
+            poleData.manufacturerTahograph = textBoxManufacturerTachograph.Text; // производитель
+            poleData.modelTachograph = textBoxModelTachograph.Text; // модель тахографа
+            poleData.serialNumberTachograph = textBoxSerialNumberTachograph.Text; // модель тахографа
+
+            poleData.l = textBoxL.Text;
+            poleData.w = textBoxW.Text;
+            poleData.k = textBoxK.Text;
+
+            poleData.noteOrder = textBoxNoteOrder.Text; // примечания
+            poleData.dataJob = dateTimePickerJob.ToString(); //  время выполнения работ
         }
     }
 }

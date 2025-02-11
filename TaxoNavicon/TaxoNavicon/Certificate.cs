@@ -9,6 +9,39 @@ using Word = Microsoft.Office.Interop.Word;
 
 namespace TaxoNavicon
 {
+    /*
+    --order
+    <orderNumber>
+    <master>
+    <responsible>
+    <dataJob> - дата выполнение работ
+
+     --customer
+    <nameCustomer>
+    <nameCustomerEng>
+    <adresCustomer>
+    <numberCustomer>
+
+    --vehicle
+    <markaVehicle>
+    <yearOfIssueVehiccle>
+    <vinVehicle>
+    <registrationNumberVehicle>
+    <tireMarkingsVehicle>
+    <odometrKmVehicle>
+
+    --Tachograph
+    <manufacturerTahograph>
+    <serialNumberTachograph>
+    <cIPFTachograph>
+    <modelTahograph>
+    <producedTahograph>
+
+    <L>
+    <W>
+    <k>
+    <noteOrder> - примечание 
+    */
     public partial class Certificate : Form
     {
         private PrintDocument printDocument;
@@ -28,8 +61,33 @@ namespace TaxoNavicon
             //Console.WriteLine("Номер заказа: " + poleData.orderNumber);
             //Console.WriteLine("Адрес заказчика: " + poleData.adresCustomer);
 
+            FindAndReplace(wordDoc, "<orderNumber>", poleData.orderNumber.ToString());
+            FindAndReplace(wordDoc, "<master>", poleData.master);
+            FindAndReplace(wordDoc, "<dataJob>", poleData.dataJob);
 
+            FindAndReplace(wordDoc, "<nameCustomer>", poleData.nameCustomer);
+            FindAndReplace(wordDoc, "<nameCustomerEng>", poleData.nameCustomerEng);
             FindAndReplace(wordDoc, "<adresCustomer>", poleData.adresCustomer);
+            FindAndReplace(wordDoc, "<numberCustomer>", poleData.numberCustomer);
+
+            FindAndReplace(wordDoc, "<markaVehicle>", poleData.markaVehicle);
+            FindAndReplace(wordDoc, "<modelVehicle>", poleData.modelVehicle);
+            FindAndReplace(wordDoc, "<yearOfIssueVehicle>", poleData.yearOfIssueVehiccle);
+            FindAndReplace(wordDoc, "<vinVehicle>", poleData.vinVehicle);
+            FindAndReplace(wordDoc, "<registrationNumberVehicle>", poleData.registrationNumberVehicle);
+            FindAndReplace(wordDoc, "<tireMarkingsVehicle>", poleData.tireMarkingsVehicle);
+            FindAndReplace(wordDoc, "<odometrKmVehicle>", poleData.odometerKmVehicle);
+
+            FindAndReplace(wordDoc, "<manufacturerTahograph>", poleData.manufacturerTahograph);
+            FindAndReplace(wordDoc, "<serialNumberTahograph>", poleData.serialNumberTachograph);
+            FindAndReplace(wordDoc, "<cIPFTachograph>", poleData.cIPFTachograph);
+            FindAndReplace(wordDoc, "<modelTachograph>", poleData.modelTachograph);
+            FindAndReplace(wordDoc, "<producedTachograph>", poleData.producedTachograph);
+
+            FindAndReplace(wordDoc, "<l>", poleData.l);
+            FindAndReplace(wordDoc, "<w>", poleData.w);
+            FindAndReplace(wordDoc, "<k>", poleData.k);
+            FindAndReplace(wordDoc, "<noteOrder>", poleData.noteOrder);
         }
 
         private void toolStripLabelPrint_Click(object sender, EventArgs e)
