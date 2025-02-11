@@ -17,47 +17,59 @@ namespace TaxoNavicon
         private Word.Document wordDoc;
         private string filePath;
 
-
-        public Certificate()
+        public Certificate(PoleData poleData)
         {
-            InitializeComponent();  
+            InitializeComponent();
 
-            string relativePath = @"test.docx"; // Относительный путь к файлу
+            string relativePath = @"test.doc"; // Относительный путь к файлу
             filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
             wordApp = new Word.Application();
             wordDoc = wordApp.Documents.Open(filePath);
+            //Console.WriteLine("Номер заказа: " + poleData.orderNumber);
+            //Console.WriteLine("Адрес заказчика: " + poleData.adresCustomer);
+
+
+            FindAndReplace(wordDoc, "<adresCustomer>", poleData.adresCustomer);
         }
 
         private void toolStripLabelPrint_Click(object sender, EventArgs e)
         {
-            // Выводим путь для отладки
-            //MessageBox.Show($"Путь к файлу: {filePath}");
             PrintDialog printDialog = new PrintDialog();
-            printDialog.Document = printDocument;
             if (printDialog.ShowDialog() == DialogResult.OK)
             {
-                printDocument.Print();
-                printDialog = null;
+                wordDoc.PrintOut();
             }
+        }
+        private void FindAndReplace(Word.Document doc, string findText, string replaceText)
+        {
+            Word.Find findObject = doc.Application.Selection.Find;
+            findObject.ClearFormatting();
+            findObject.Text = findText;
+            findObject.Replacement.ClearFormatting();
+            findObject.Replacement.Text = replaceText;
+
+            object missing = Type.Missing;
+            findObject.Execute(FindText: missing, ReplaceWith: missing,
+                               Replace: Word.WdReplace.wdReplaceAll);
         }
         private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
-            if (wordDoc != null)
+            /*if (wordDoc != null)
             {
                 // Извлечение текста из документа Word
                 string text = wordDoc.Content.Text;
                 e.Graphics.DrawString(text, new Font("Arial", 12), Brushes.Black, new RectangleF(100, 100, e.MarginBounds.Width, e.MarginBounds.Height));
-            }
+            }*/
         }
 
         private void GenerateCertificate_Click(object sender, EventArgs e)
         {
-            // Здесь можно вызвать предварительный просмотр
+            /*// Здесь можно вызвать предварительный просмотр
             printDocument = new PrintDocument();
             
             printPreviewControl.Document = printDocument; // Установите документ для предварительного просмотра
             printPreviewControl.Invalidate();
-            printDocument.PrintPage += new PrintPageEventHandler(PrintDocument_PrintPage);
+            printDocument.PrintPage += new PrintPageEventHandler(PrintDocument_PrintPage);*/
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)

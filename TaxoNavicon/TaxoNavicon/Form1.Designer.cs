@@ -83,7 +83,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxAdresCustomer = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -96,9 +96,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.numericUpDowntextBoxOrderNumber = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -109,6 +109,7 @@
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDowntextBoxOrderNumber)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -624,7 +625,7 @@
             // panel4
             // 
             this.panel4.Controls.Add(this.textBox4);
-            this.panel4.Controls.Add(this.textBox3);
+            this.panel4.Controls.Add(this.textBoxAdresCustomer);
             this.panel4.Controls.Add(this.textBox2);
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.label9);
@@ -643,12 +644,12 @@
             this.textBox4.Size = new System.Drawing.Size(422, 20);
             this.textBox4.TabIndex = 14;
             // 
-            // textBox3
+            // textBoxAdresCustomer
             // 
-            this.textBox3.Location = new System.Drawing.Point(70, 52);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(422, 20);
-            this.textBox3.TabIndex = 13;
+            this.textBoxAdresCustomer.Location = new System.Drawing.Point(70, 52);
+            this.textBoxAdresCustomer.Name = "textBoxAdresCustomer";
+            this.textBoxAdresCustomer.Size = new System.Drawing.Size(422, 20);
+            this.textBoxAdresCustomer.TabIndex = 13;
             // 
             // textBox2
             // 
@@ -699,13 +700,13 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.numericUpDowntextBoxOrderNumber);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.comboBox2);
             this.panel3.Controls.Add(this.comboBox1);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.dateTimePicker1);
-            this.panel3.Controls.Add(this.textBox1);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -770,13 +771,6 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 3;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(80, 18);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(117, 20);
-            this.textBox1.TabIndex = 2;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -796,6 +790,13 @@
             this.label2.Size = new System.Drawing.Size(41, 15);
             this.label2.TabIndex = 0;
             this.label2.Text = "Заказ";
+            // 
+            // numericUpDowntextBoxOrderNumber
+            // 
+            this.numericUpDowntextBoxOrderNumber.Location = new System.Drawing.Point(80, 19);
+            this.numericUpDowntextBoxOrderNumber.Name = "numericUpDowntextBoxOrderNumber";
+            this.numericUpDowntextBoxOrderNumber.Size = new System.Drawing.Size(194, 20);
+            this.numericUpDowntextBoxOrderNumber.TabIndex = 9;
             // 
             // Form1
             // 
@@ -826,6 +827,7 @@
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDowntextBoxOrderNumber)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -840,7 +842,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label10;
@@ -865,7 +866,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxAdresCustomer;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox textBox12;
@@ -903,6 +904,7 @@
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSticker;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemCertificate;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.NumericUpDown numericUpDowntextBoxOrderNumber;
     }
 }
 
