@@ -48,7 +48,7 @@ namespace TaxoNavicon
         private Word.Document wordDoc;
         private string filePath;
         
-        public Certificate(PoleData poleData)
+        public Certificate(PoleDataEuropean poleData)
         {
             InitializeComponent();
             string relativePath = @"test.doc"; // Относительный путь к файлу

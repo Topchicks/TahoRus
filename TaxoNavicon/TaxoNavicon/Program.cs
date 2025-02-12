@@ -16,7 +16,7 @@ namespace TaxoNavicon
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EuropeanTypeForm());
+            Application.Run(new StartApp());
         }
     }
 }
