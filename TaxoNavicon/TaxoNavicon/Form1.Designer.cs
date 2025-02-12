@@ -83,6 +83,7 @@
             this.label24 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.buttonTranslate = new System.Windows.Forms.Button();
             this.textBoxNameCustomerEng = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
             this.textBoxSerialNumberTachograph = new System.Windows.Forms.TextBox();
@@ -100,7 +101,6 @@
             this.dateTimePickerJob = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.buttonTranslate = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -682,6 +682,15 @@
             this.panel4.Size = new System.Drawing.Size(583, 150);
             this.panel4.TabIndex = 2;
             // 
+            // buttonTranslate
+            // 
+            this.buttonTranslate.Location = new System.Drawing.Point(398, 50);
+            this.buttonTranslate.Name = "buttonTranslate";
+            this.buttonTranslate.Size = new System.Drawing.Size(75, 23);
+            this.buttonTranslate.TabIndex = 17;
+            this.buttonTranslate.Text = "Перевести";
+            this.buttonTranslate.UseVisualStyleBackColor = true;
+            // 
             // textBoxNameCustomerEng
             // 
             this.textBoxNameCustomerEng.Location = new System.Drawing.Point(70, 52);
@@ -848,15 +857,6 @@
             this.label2.Size = new System.Drawing.Size(41, 15);
             this.label2.TabIndex = 0;
             this.label2.Text = "Заказ";
-            // 
-            // buttonTranslate
-            // 
-            this.buttonTranslate.Location = new System.Drawing.Point(398, 50);
-            this.buttonTranslate.Name = "buttonTranslate";
-            this.buttonTranslate.Size = new System.Drawing.Size(75, 23);
-            this.buttonTranslate.TabIndex = 17;
-            this.buttonTranslate.Text = "Перевести";
-            this.buttonTranslate.UseVisualStyleBackColor = true;
             // 
             // EuropeanTypeForm
             // 

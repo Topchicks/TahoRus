@@ -28,43 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sticker));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButtonPrint = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonCertificate = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabelStartPrint = new System.Windows.Forms.ToolStripLabel();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButtonPrint,
-            this.toolStripButtonCertificate});
+            this.toolStripLabelStartPrint});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(915, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButtonPrint
+            // toolStripLabelStartPrint
             // 
-            this.toolStripButtonPrint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonPrint.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonPrint.Image")));
-            this.toolStripButtonPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonPrint.Name = "toolStripButtonPrint";
-            this.toolStripButtonPrint.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonPrint.Text = "toolStripButton1";
-            this.toolStripButtonPrint.Click += new System.EventHandler(this.toolStripButtonPrint_Click);
+            this.toolStripLabelStartPrint.Name = "toolStripLabelStartPrint";
+            this.toolStripLabelStartPrint.Size = new System.Drawing.Size(46, 22);
+            this.toolStripLabelStartPrint.Text = "Печать";
+            this.toolStripLabelStartPrint.Click += new System.EventHandler(this.toolStripLabelStartPrint_Click);
             // 
-            // toolStripButtonCertificate
+            // printDocument1
             // 
-            this.toolStripButtonCertificate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonCertificate.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCertificate.Image")));
-            this.toolStripButtonCertificate.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonCertificate.Name = "toolStripButtonCertificate";
-            this.toolStripButtonCertificate.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonCertificate.Text = "toolStripButton1";
-            this.toolStripButtonCertificate.Click += new System.EventHandler(this.toolStripButtonCertificate_Click);
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
             // Sticker
             // 
@@ -85,7 +74,7 @@
 
         #endregion
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButtonPrint;
-        private System.Windows.Forms.ToolStripButton toolStripButtonCertificate;
+        private System.Windows.Forms.ToolStripLabel toolStripLabelStartPrint;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }
