@@ -176,5 +176,10 @@ namespace TaxoNavicon
                 }
             }
         }
+
+        private void Certificate_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

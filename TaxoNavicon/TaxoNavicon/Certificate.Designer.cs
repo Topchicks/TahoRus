@@ -30,9 +30,9 @@
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabelPrint = new System.Windows.Forms.ToolStripLabel();
+            this.GenerateCertificate = new System.Windows.Forms.ToolStripLabel();
             this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.printPreviewControl = new System.Windows.Forms.PrintPreviewControl();
-            this.GenerateCertificate = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +54,12 @@
             this.toolStripLabelPrint.Text = "Печать";
             this.toolStripLabelPrint.Click += new System.EventHandler(this.toolStripLabelPrint_Click);
             // 
+            // GenerateCertificate
+            // 
+            this.GenerateCertificate.Name = "GenerateCertificate";
+            this.GenerateCertificate.Size = new System.Drawing.Size(91, 22);
+            this.GenerateCertificate.Text = "Сформировать";
+            // 
             // webBrowser
             // 
             this.webBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -70,12 +76,6 @@
             this.printPreviewControl.Size = new System.Drawing.Size(602, 586);
             this.printPreviewControl.TabIndex = 2;
             // 
-            // GenerateCertificate
-            // 
-            this.GenerateCertificate.Name = "GenerateCertificate";
-            this.GenerateCertificate.Size = new System.Drawing.Size(91, 22);
-            this.GenerateCertificate.Text = "Сформировать";
-            // 
             // Certificate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -88,6 +88,7 @@
             this.MinimumSize = new System.Drawing.Size(1084, 710);
             this.Name = "Certificate";
             this.Text = "Certificate";
+            this.Load += new System.EventHandler(this.Certificate_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);

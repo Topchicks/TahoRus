@@ -760,10 +760,11 @@
             // dateTimePickerJob
             // 
             this.dateTimePickerJob.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePickerJob.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerJob.Location = new System.Drawing.Point(70, 82);
             this.dateTimePickerJob.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerJob.Name = "dateTimePickerJob";
-            this.dateTimePickerJob.Size = new System.Drawing.Size(259, 25);
+            this.dateTimePickerJob.Size = new System.Drawing.Size(114, 25);
             this.dateTimePickerJob.TabIndex = 3;
             this.dateTimePickerJob.Value = new System.DateTime(2025, 2, 10, 0, 0, 0, 0);
             // 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.WebRequestMethods;
 
 namespace TaxoNavicon
 {
@@ -15,6 +16,27 @@ namespace TaxoNavicon
         public StartApp()
         {
             InitializeComponent();
+
+            #region
+            // Создаем контекстное меню
+            ContextMenuStrip contextMenu = new ContextMenuStrip();
+
+            // Создаем элементы меню
+            ToolStripMenuItem openItem = new ToolStripMenuItem("Открыть");
+            openItem.Click += (s, e) => this.Show(); // Действие при нажатии
+            contextMenu.Items.Add(openItem);
+
+            ToolStripMenuItem exitItem = new ToolStripMenuItem("Выход");
+            exitItem.Click += (s, e) => Application.Exit(); // Закрытие приложения
+            contextMenu.Items.Add(exitItem);
+
+            // Привязываем контекстное меню к NotifyIcon
+            notifyIcon1.ContextMenuStrip = contextMenu;
+
+            // Обработчик события двойного щелчка
+            notifyIcon1.DoubleClick += (s, e) => this.Show();
+            #endregion
+
         }
         private void buttonOpenEuropeanTypeForm_Click(object sender, EventArgs e)
         {
@@ -31,6 +53,11 @@ namespace TaxoNavicon
             RussianTypeForm russianTypeForm = new RussianTypeForm();
 
             russianTypeForm.ShowDialog();
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DateTimePicker dateTimePickerJob;
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -91,7 +92,6 @@
             this.comboBoxMaster = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePickerJob = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
@@ -99,6 +99,7 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            dateTimePickerJob = new System.Windows.Forms.DateTimePicker();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -157,7 +158,7 @@
             // 
             // panel8
             // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(79)))), ((int)(((byte)(105)))));
             this.panel8.Controls.Add(this.textBoxNoteOrder);
             this.panel8.Controls.Add(this.label26);
             this.panel8.Controls.Add(this.comboBox4);
@@ -487,7 +488,7 @@
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(79)))), ((int)(((byte)(105)))));
             this.panel6.Controls.Add(this.textBox12);
             this.panel6.Controls.Add(this.textBoxModelTachograph);
             this.panel6.Controls.Add(this.label19);
@@ -599,7 +600,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(79)))), ((int)(((byte)(105)))));
             this.panel4.Controls.Add(this.textBoxNameCustomerEng);
             this.panel4.Controls.Add(this.label34);
             this.panel4.Controls.Add(this.textBoxSerialNumberTachograph);
@@ -700,7 +701,7 @@
             this.panel3.Controls.Add(this.comboBoxMaster);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.dateTimePickerJob);
+            this.panel3.Controls.Add(dateTimePickerJob);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -755,13 +756,14 @@
             // 
             // dateTimePickerJob
             // 
-            this.dateTimePickerJob.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePickerJob.Location = new System.Drawing.Point(70, 82);
-            this.dateTimePickerJob.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            this.dateTimePickerJob.Name = "dateTimePickerJob";
-            this.dateTimePickerJob.Size = new System.Drawing.Size(259, 25);
-            this.dateTimePickerJob.TabIndex = 3;
-            this.dateTimePickerJob.Value = new System.DateTime(2025, 2, 10, 0, 0, 0, 0);
+            dateTimePickerJob.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dateTimePickerJob.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            dateTimePickerJob.Location = new System.Drawing.Point(70, 82);
+            dateTimePickerJob.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            dateTimePickerJob.Name = "dateTimePickerJob";
+            dateTimePickerJob.Size = new System.Drawing.Size(114, 25);
+            dateTimePickerJob.TabIndex = 3;
+            dateTimePickerJob.Value = new System.DateTime(2025, 2, 10, 0, 0, 0, 0);
             // 
             // label3
             // 
@@ -918,7 +920,6 @@
         private System.Windows.Forms.ComboBox comboBoxMaster;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePickerJob;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.MenuStrip menuStrip2;
