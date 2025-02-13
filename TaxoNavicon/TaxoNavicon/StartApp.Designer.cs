@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartApp));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonOpenRussianPanel = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.buttonOpenEuropeanTypeForm = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -55,7 +58,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(64)))));
             this.panel3.Controls.Add(this.button4);
-            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.buttonOpenRussianPanel);
             this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.buttonOpenEuropeanTypeForm);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
@@ -80,21 +83,22 @@
             this.button4.Text = "Список документов";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonOpenRussianPanel
             // 
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial", 12F);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(0, 44);
-            this.button2.Name = "button2";
-            this.button2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button2.Size = new System.Drawing.Size(200, 44);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Российский документ";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonOpenRussianPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonOpenRussianPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonOpenRussianPanel.FlatAppearance.BorderSize = 0;
+            this.buttonOpenRussianPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonOpenRussianPanel.Font = new System.Drawing.Font("Arial", 12F);
+            this.buttonOpenRussianPanel.ForeColor = System.Drawing.Color.White;
+            this.buttonOpenRussianPanel.Location = new System.Drawing.Point(0, 44);
+            this.buttonOpenRussianPanel.Name = "buttonOpenRussianPanel";
+            this.buttonOpenRussianPanel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.buttonOpenRussianPanel.Size = new System.Drawing.Size(200, 44);
+            this.buttonOpenRussianPanel.TabIndex = 1;
+            this.buttonOpenRussianPanel.Text = "Российский документ";
+            this.buttonOpenRussianPanel.UseVisualStyleBackColor = true;
+            this.buttonOpenRussianPanel.Click += new System.EventHandler(this.buttonOpenRussianPanel_Click);
             // 
             // button3
             // 
@@ -152,6 +156,12 @@
             this.label1.Text = "Название приложения";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "Навикон";
+            this.notifyIcon1.Visible = true;
+            // 
             // StartApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -170,11 +180,12 @@
         #endregion
         private System.Windows.Forms.Button buttonOpenEuropeanTypeForm;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonOpenRussianPanel;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }

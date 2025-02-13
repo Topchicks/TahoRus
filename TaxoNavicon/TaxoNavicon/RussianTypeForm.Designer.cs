@@ -1,16 +1,16 @@
 ﻿namespace TaxoNavicon
 {
-    partial class EuropeanTypeForm
+    partial class RussianTypeForm
     {
         /// <summary>
-        /// Обязательная переменная конструктора.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Освободить все используемые ресурсы.
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,15 +20,14 @@
             base.Dispose(disposing);
         }
 
-        #region Код, автоматически созданный конструктором форм Windows
+        #region Windows Form Designer generated code
 
         /// <summary>
-        /// Требуемый метод для поддержки конструктора — не изменяйте 
-        /// содержимое этого метода с помощью редактора кода.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -95,14 +94,11 @@
             this.dateTimePickerJob = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.наклейкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сертификатToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -114,20 +110,20 @@
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDowntextBoxOrderNumber)).BeginInit();
-            this.menuStrip1.SuspendLayout();
+            this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(64)))));
             this.panel2.Controls.Add(this.panel9);
-            this.panel2.Controls.Add(this.menuStrip1);
+            this.panel2.Controls.Add(this.menuStrip2);
             this.panel2.Cursor = System.Windows.Forms.Cursors.Default;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(977, 590);
-            this.panel2.TabIndex = 1;
+            this.panel2.TabIndex = 11;
             // 
             // panel9
             // 
@@ -787,70 +783,51 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Заказ";
             // 
-            // menuStrip1
+            // menuStrip2
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.наклейкаToolStripMenuItem,
-            this.сертификатToolStripMenuItem,
-            this.сохранитьToolStripMenuItem,
-            this.загрузитьToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(977, 24);
-            this.menuStrip1.TabIndex = 9;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3,
+            this.toolStripMenuItem4});
+            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Size = new System.Drawing.Size(977, 24);
+            this.menuStrip2.TabIndex = 9;
+            this.menuStrip2.Text = "menuStrip2";
             // 
-            // наклейкаToolStripMenuItem
+            // toolStripMenuItem1
             // 
-            this.наклейкаToolStripMenuItem.Name = "наклейкаToolStripMenuItem";
-            this.наклейкаToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
-            this.наклейкаToolStripMenuItem.Text = "Наклейка";
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(72, 20);
+            this.toolStripMenuItem1.Text = "Наклейка";
             // 
-            // сертификатToolStripMenuItem
+            // toolStripMenuItem2
             // 
-            this.сертификатToolStripMenuItem.Name = "сертификатToolStripMenuItem";
-            this.сертификатToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
-            this.сертификатToolStripMenuItem.Text = "Сертификат";
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(85, 20);
+            this.toolStripMenuItem2.Text = "Сертификат";
             // 
-            // сохранитьToolStripMenuItem
+            // toolStripMenuItem3
             // 
-            this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
-            this.сохранитьToolStripMenuItem.Text = "Сохранить";
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(78, 20);
+            this.toolStripMenuItem3.Text = "Сохранить";
             // 
-            // загрузитьToolStripMenuItem
+            // toolStripMenuItem4
             // 
-            this.загрузитьToolStripMenuItem.Name = "загрузитьToolStripMenuItem";
-            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
-            this.загрузитьToolStripMenuItem.Text = "Загрузить";
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(73, 20);
+            this.toolStripMenuItem4.Text = "Загрузить";
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // contextMenuStrip2
-            // 
-            this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
-            // 
-            // contextMenuStrip3
-            // 
-            this.contextMenuStrip3.Name = "contextMenuStrip3";
-            this.contextMenuStrip3.Size = new System.Drawing.Size(61, 4);
-            // 
-            // EuropeanTypeForm
+            // RussianTypeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(977, 590);
             this.Controls.Add(this.panel2);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "EuropeanTypeForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Европейская форма ";
+            this.Name = "RussianTypeForm";
+            this.Text = "Российский документы";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel9.ResumeLayout(false);
@@ -870,26 +847,30 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDowntextBoxOrderNumber)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuStrip2.ResumeLayout(false);
+            this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBoxMaster;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.TextBox textBoxNoteOrder;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TextBox textBoxYearOfIssueVehiccle;
+        private System.Windows.Forms.Label label35;
         private System.Windows.Forms.TextBox textBoxOdometerKmVehicle;
         private System.Windows.Forms.TextBox textBoxRegistrationNumberVehicle;
         private System.Windows.Forms.TextBox textBoxModelVehicle;
@@ -903,9 +884,14 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBoxSerialNumberTachograph;
-        private System.Windows.Forms.TextBox textBoxAdresCustomer;
-        private System.Windows.Forms.TextBox textBoxNameCustomer;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.TextBox textBoxL;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox textBoxK;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox textBoxW;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.TextBox textBoxModelTachograph;
@@ -916,41 +902,29 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox textBoxL;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.TextBox textBoxK;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox textBoxW;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox textBoxNoteOrder;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.NumericUpDown numericUpDowntextBoxOrderNumber;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox textBoxNameCustomerEng;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.TextBox textBoxYearOfIssueVehiccle;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem наклейкаToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem сертификатToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem загрузитьToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip3;
+        private System.Windows.Forms.TextBox textBoxSerialNumberTachograph;
+        private System.Windows.Forms.TextBox textBoxAdresCustomer;
+        private System.Windows.Forms.TextBox textBoxNameCustomer;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.NumericUpDown numericUpDowntextBoxOrderNumber;
+        private System.Windows.Forms.ComboBox comboBoxMaster;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePickerJob;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
     }
 }
-

@@ -117,6 +117,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="RussianTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RussianTypeForm.Designer.cs">
+      <DependentUpon>RussianTypeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="StartApp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +145,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RussianTypeForm.resx">
+      <DependentUpon>RussianTypeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StartApp.resx">
       <DependentUpon>StartApp.cs</DependentUpon>

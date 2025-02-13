@@ -24,5 +24,13 @@ namespace TaxoNavicon
             europeanTypeForm.ShowDialog();
             
         }
+
+        private void buttonOpenRussianPanel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RussianTypeForm russianTypeForm = new RussianTypeForm();
+
+            russianTypeForm.ShowDialog();
+        }
     }
 }

@@ -3,28 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\TGS_Navicon\\Desktop\\Git\\TahoRus\\TaxoNavicon\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4FC76516-7EDC-4101-ACFD-47CB828AFC98}|TaxoNavicon\\TaxoNavicon.csproj|c:\\users\\tgs_navicon\\desktop\\git\\tahorus\\taxonavicon\\taxonavicon\\startapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4FC76516-7EDC-4101-ACFD-47CB828AFC98}|TaxoNavicon\\TaxoNavicon.csproj|solutionrelative:taxonavicon\\startapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FC76516-7EDC-4101-ACFD-47CB828AFC98}|TaxoNavicon\\TaxoNavicon.csproj|c:\\users\\tgs_navicon\\desktop\\git\\tahorus\\taxonavicon\\taxonavicon\\poledatarussian.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FC76516-7EDC-4101-ACFD-47CB828AFC98}|TaxoNavicon\\TaxoNavicon.csproj|solutionrelative:taxonavicon\\poledatarussian.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FC76516-7EDC-4101-ACFD-47CB828AFC98}|TaxoNavicon\\TaxoNavicon.csproj|c:\\users\\tgs_navicon\\desktop\\git\\tahorus\\taxonavicon\\taxonavicon\\startapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FC76516-7EDC-4101-ACFD-47CB828AFC98}|TaxoNavicon\\TaxoNavicon.csproj|solutionrelative:taxonavicon\\startapp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FC76516-7EDC-4101-ACFD-47CB828AFC98}|TaxoNavicon\\TaxoNavicon.csproj|c:\\users\\tgs_navicon\\desktop\\git\\tahorus\\taxonavicon\\taxonavicon\\russiantypeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4FC76516-7EDC-4101-ACFD-47CB828AFC98}|TaxoNavicon\\TaxoNavicon.csproj|solutionrelative:taxonavicon\\russiantypeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FC76516-7EDC-4101-ACFD-47CB828AFC98}|TaxoNavicon\\TaxoNavicon.csproj|c:\\users\\tgs_navicon\\desktop\\git\\tahorus\\taxonavicon\\taxonavicon\\europeantypeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4FC76516-7EDC-4101-ACFD-47CB828AFC98}|TaxoNavicon\\TaxoNavicon.csproj|solutionrelative:taxonavicon\\europeantypeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4FC76516-7EDC-4101-ACFD-47CB828AFC98}|TaxoNavicon\\TaxoNavicon.csproj|c:\\users\\tgs_navicon\\desktop\\git\\tahorus\\taxonavicon\\taxonavicon\\sticker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4FC76516-7EDC-4101-ACFD-47CB828AFC98}|TaxoNavicon\\TaxoNavicon.csproj|solutionrelative:taxonavicon\\sticker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4FC76516-7EDC-4101-ACFD-47CB828AFC98}|TaxoNavicon\\TaxoNavicon.csproj|C:\\Users\\TGS_Navicon\\Desktop\\Git\\TahoRus\\TaxoNavicon\\taxonavicon\\poledata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4FC76516-7EDC-4101-ACFD-47CB828AFC98}|TaxoNavicon\\TaxoNavicon.csproj|solutionrelative:taxonavicon\\poledata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4FC76516-7EDC-4101-ACFD-47CB828AFC98}|TaxoNavicon\\TaxoNavicon.csproj|c:\\users\\tgs_navicon\\desktop\\git\\tahorus\\taxonavicon\\taxonavicon\\sticker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4FC76516-7EDC-4101-ACFD-47CB828AFC98}|TaxoNavicon\\TaxoNavicon.csproj|solutionrelative:taxonavicon\\sticker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4FC76516-7EDC-4101-ACFD-47CB828AFC98}|TaxoNavicon\\TaxoNavicon.csproj|c:\\users\\tgs_navicon\\desktop\\git\\tahorus\\taxonavicon\\taxonavicon\\certificate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4FC76516-7EDC-4101-ACFD-47CB828AFC98}|TaxoNavicon\\TaxoNavicon.csproj|solutionrelative:taxonavicon\\certificate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4FC76516-7EDC-4101-ACFD-47CB828AFC98}|TaxoNavicon\\TaxoNavicon.csproj|C:\\Users\\TGS_Navicon\\Desktop\\Git\\TahoRus\\TaxoNavicon\\taxonavicon\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4FC76516-7EDC-4101-ACFD-47CB828AFC98}|TaxoNavicon\\TaxoNavicon.csproj|solutionrelative:taxonavicon\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4FC76516-7EDC-4101-ACFD-47CB828AFC98}|TaxoNavicon\\TaxoNavicon.csproj|C:\\Users\\TGS_Navicon\\Desktop\\Git\\TahoRus\\TaxoNavicon\\taxonavicon\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4FC76516-7EDC-4101-ACFD-47CB828AFC98}|TaxoNavicon\\TaxoNavicon.csproj|solutionrelative:taxonavicon\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\TGS_Navicon\\Desktop\\Git\\TahoRus\\TaxoNavicon\\TaxoNavicon\\Form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:TaxoNavicon\\Form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,74 +38,86 @@
       "DocumentGroups": [
         {
           "DockedWidth": 388,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PoleData.cs",
-              "DocumentMoniker": "C:\\Users\\TGS_Navicon\\Desktop\\Git\\TahoRus\\TaxoNavicon\\TaxoNavicon\\PoleData.cs",
-              "RelativeDocumentMoniker": "TaxoNavicon\\PoleData.cs",
-              "ToolTip": "C:\\Users\\TGS_Navicon\\Desktop\\Git\\TahoRus\\TaxoNavicon\\TaxoNavicon\\PoleData.cs",
-              "RelativeToolTip": "TaxoNavicon\\PoleData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "StartApp.cs",
+              "DocumentMoniker": "C:\\Users\\TGS_Navicon\\Desktop\\Git\\TahoRus\\TaxoNavicon\\TaxoNavicon\\StartApp.cs",
+              "RelativeDocumentMoniker": "TaxoNavicon\\StartApp.cs",
+              "ToolTip": "C:\\Users\\TGS_Navicon\\Desktop\\Git\\TahoRus\\TaxoNavicon\\TaxoNavicon\\StartApp.cs*",
+              "RelativeToolTip": "TaxoNavicon\\StartApp.cs*",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAewCAAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-11T06:56:57.399Z",
+              "WhenOpened": "2025-02-13T11:40:37.842Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EuropeanTypeForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\TGS_Navicon\\Desktop\\Git\\TahoRus\\TaxoNavicon\\TaxoNavicon\\EuropeanTypeForm.cs",
+              "RelativeDocumentMoniker": "TaxoNavicon\\EuropeanTypeForm.cs",
+              "ToolTip": "C:\\Users\\TGS_Navicon\\Desktop\\Git\\TahoRus\\TaxoNavicon\\TaxoNavicon\\EuropeanTypeForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "TaxoNavicon\\EuropeanTypeForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T11:37:29.228Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Certificate.cs",
-              "DocumentMoniker": "C:\\Users\\TGS_Navicon\\Desktop\\Git\\TahoRus\\TaxoNavicon\\TaxoNavicon\\Certificate.cs",
-              "RelativeDocumentMoniker": "TaxoNavicon\\Certificate.cs",
-              "ToolTip": "C:\\Users\\TGS_Navicon\\Desktop\\Git\\TahoRus\\TaxoNavicon\\TaxoNavicon\\Certificate.cs",
-              "RelativeToolTip": "TaxoNavicon\\Certificate.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB0AAAAYAAAAAAAAAA==",
+              "Title": "RussianTypeForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\TGS_Navicon\\Desktop\\Git\\TahoRus\\TaxoNavicon\\TaxoNavicon\\RussianTypeForm.cs",
+              "RelativeDocumentMoniker": "TaxoNavicon\\RussianTypeForm.cs",
+              "ToolTip": "C:\\Users\\TGS_Navicon\\Desktop\\Git\\TahoRus\\TaxoNavicon\\TaxoNavicon\\RussianTypeForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "TaxoNavicon\\RussianTypeForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-11T06:06:22.571Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-13T08:27:28.353Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "StartApp.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\TGS_Navicon\\Desktop\\Git\\TahoRus\\TaxoNavicon\\TaxoNavicon\\StartApp.cs",
+              "RelativeDocumentMoniker": "TaxoNavicon\\StartApp.cs",
+              "ToolTip": "C:\\Users\\TGS_Navicon\\Desktop\\Git\\TahoRus\\TaxoNavicon\\TaxoNavicon\\StartApp.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]*",
+              "RelativeToolTip": "TaxoNavicon\\StartApp.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T11:31:58.313Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PoleDataRussian.cs",
+              "DocumentMoniker": "C:\\Users\\TGS_Navicon\\Desktop\\Git\\TahoRus\\TaxoNavicon\\TaxoNavicon\\PoleDataRussian.cs",
+              "RelativeDocumentMoniker": "TaxoNavicon\\PoleDataRussian.cs",
+              "ToolTip": "C:\\Users\\TGS_Navicon\\Desktop\\Git\\TahoRus\\TaxoNavicon\\TaxoNavicon\\PoleDataRussian.cs",
+              "RelativeToolTip": "TaxoNavicon\\PoleDataRussian.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T08:27:40.749Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Sticker.cs",
               "DocumentMoniker": "C:\\Users\\TGS_Navicon\\Desktop\\Git\\TahoRus\\TaxoNavicon\\TaxoNavicon\\Sticker.cs",
               "RelativeDocumentMoniker": "TaxoNavicon\\Sticker.cs",
               "ToolTip": "C:\\Users\\TGS_Navicon\\Desktop\\Git\\TahoRus\\TaxoNavicon\\TaxoNavicon\\Sticker.cs",
               "RelativeToolTip": "TaxoNavicon\\Sticker.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAIwD0AAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAmwDkAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-12T06:12:46.786Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Sticker.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "C:\\Users\\TGS_Navicon\\Desktop\\Git\\TahoRus\\TaxoNavicon\\TaxoNavicon\\Sticker.cs",
-              "RelativeDocumentMoniker": "TaxoNavicon\\Sticker.cs",
-              "ToolTip": "C:\\Users\\TGS_Navicon\\Desktop\\Git\\TahoRus\\TaxoNavicon\\TaxoNavicon\\Sticker.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "TaxoNavicon\\Sticker.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T06:07:30.372Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "C:\\Users\\TGS_Navicon\\Desktop\\Git\\TahoRus\\TaxoNavicon\\TaxoNavicon\\Form1.cs",
-              "RelativeDocumentMoniker": "TaxoNavicon\\Form1.cs",
-              "ToolTip": "C:\\Users\\TGS_Navicon\\Desktop\\Git\\TahoRus\\TaxoNavicon\\TaxoNavicon\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "TaxoNavicon\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T13:02:29.305Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\TGS_Navicon\\Desktop\\Git\\TahoRus\\TaxoNavicon\\TaxoNavicon\\Form1.cs",
               "RelativeDocumentMoniker": "TaxoNavicon\\Form1.cs",
@@ -109,8 +125,7 @@
               "RelativeToolTip": "TaxoNavicon\\Form1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-11T07:40:16.166Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-11T07:40:16.166Z"
             }
           ]
         }
