@@ -96,12 +96,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Certificate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Certificate.Designer.cs">
-      <DependentUpon>Certificate.cs</DependentUpon>
-    </Compile>
     <Compile Include="EuropeanTypeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,9 +129,6 @@
     <Compile Include="Sticker.Designer.cs">
       <DependentUpon>Sticker.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Certificate.resx">
-      <DependentUpon>Certificate.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="EuropeanTypeForm.resx">
       <DependentUpon>EuropeanTypeForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -23,7 +23,6 @@ C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\TaxoN
 C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\TaxoNavicon.exe
 C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\TaxoNavicon.pdb
 C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.csproj.AssemblyReference.cache
-C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.Certificate.resources
 C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.Properties.Resources.resources
 C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.Sticker.resources
 C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.csproj.GenerateResource.cache

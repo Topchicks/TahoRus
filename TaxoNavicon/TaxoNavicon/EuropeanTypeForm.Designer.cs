@@ -35,12 +35,6 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.textBoxNoteOrder = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.textBoxYearOfIssueVehiccle = new System.Windows.Forms.TextBox();
@@ -67,9 +61,7 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBoxModelTachograph = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.textBoxManufacturerTachograph = new System.Windows.Forms.TextBox();
@@ -80,10 +72,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.textBoxNameCustomerEng = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
-            this.textBoxSerialNumberTachograph = new System.Windows.Forms.TextBox();
             this.textBoxAdresCustomer = new System.Windows.Forms.TextBox();
             this.textBoxNameCustomer = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -97,7 +87,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.наклейкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сертификатToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.печатьНаклейкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemCreate = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemPrintCertificate = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -164,12 +156,6 @@
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
             this.panel8.Controls.Add(this.textBoxNoteOrder);
             this.panel8.Controls.Add(this.label26);
-            this.panel8.Controls.Add(this.comboBox4);
-            this.panel8.Controls.Add(this.label25);
-            this.panel8.Controls.Add(this.comboBox3);
-            this.panel8.Controls.Add(this.label18);
-            this.panel8.Controls.Add(this.textBox18);
-            this.panel8.Controls.Add(this.label32);
             this.panel8.Controls.Add(this.label33);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(446, 141);
@@ -179,75 +165,21 @@
             // 
             // textBoxNoteOrder
             // 
-            this.textBoxNoteOrder.Location = new System.Drawing.Point(175, 168);
+            this.textBoxNoteOrder.Location = new System.Drawing.Point(105, 27);
             this.textBoxNoteOrder.Multiline = true;
             this.textBoxNoteOrder.Name = "textBoxNoteOrder";
-            this.textBoxNoteOrder.Size = new System.Drawing.Size(258, 66);
+            this.textBoxNoteOrder.Size = new System.Drawing.Size(298, 126);
             this.textBoxNoteOrder.TabIndex = 14;
             // 
             // label26
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label26.Location = new System.Drawing.Point(4, 171);
+            this.label26.Location = new System.Drawing.Point(3, 30);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(96, 17);
             this.label26.TabIndex = 15;
             this.label26.Text = "Примечания:";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(175, 142);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(258, 21);
-            this.comboBox4.TabIndex = 12;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label25.Location = new System.Drawing.Point(5, 146);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(87, 17);
-            this.label25.TabIndex = 13;
-            this.label25.Text = "Инспекция:";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(175, 115);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(258, 21);
-            this.comboBox3.TabIndex = 9;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label18.Location = new System.Drawing.Point(5, 119);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(103, 17);
-            this.label18.TabIndex = 11;
-            this.label18.Text = "Манипуляции:";
-            // 
-            // textBox18
-            // 
-            this.textBox18.Location = new System.Drawing.Point(174, 26);
-            this.textBox18.Multiline = true;
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(258, 68);
-            this.textBox18.TabIndex = 9;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label32.Location = new System.Drawing.Point(4, 27);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(168, 17);
-            this.label32.TabIndex = 10;
-            this.label32.Text = "Установочная таблица:";
             // 
             // label33
             // 
@@ -492,9 +424,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
-            this.panel6.Controls.Add(this.textBox12);
             this.panel6.Controls.Add(this.textBoxModelTachograph);
-            this.panel6.Controls.Add(this.label19);
             this.panel6.Controls.Add(this.label20);
             this.panel6.Controls.Add(this.textBox15);
             this.panel6.Controls.Add(this.textBoxManufacturerTachograph);
@@ -507,29 +437,12 @@
             this.panel6.Size = new System.Drawing.Size(437, 132);
             this.panel6.TabIndex = 4;
             // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(133, 104);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(276, 20);
-            this.textBox12.TabIndex = 19;
-            // 
             // textBoxModelTachograph
             // 
             this.textBoxModelTachograph.Location = new System.Drawing.Point(133, 78);
             this.textBoxModelTachograph.Name = "textBoxModelTachograph";
             this.textBoxModelTachograph.Size = new System.Drawing.Size(276, 20);
             this.textBoxModelTachograph.TabIndex = 15;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(4, 105);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(94, 17);
-            this.label19.TabIndex = 17;
-            this.label19.Text = "Произведен:";
             // 
             // label20
             // 
@@ -606,10 +519,8 @@
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
             this.panel4.Controls.Add(this.textBoxNameCustomerEng);
             this.panel4.Controls.Add(this.label34);
-            this.panel4.Controls.Add(this.textBoxSerialNumberTachograph);
             this.panel4.Controls.Add(this.textBoxAdresCustomer);
             this.panel4.Controls.Add(this.textBoxNameCustomer);
-            this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.label9);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label7);
@@ -636,16 +547,9 @@
             this.label34.TabIndex = 16;
             this.label34.Text = "Имя (Eng):";
             // 
-            // textBoxSerialNumberTachograph
-            // 
-            this.textBoxSerialNumberTachograph.Location = new System.Drawing.Point(70, 119);
-            this.textBoxSerialNumberTachograph.Name = "textBoxSerialNumberTachograph";
-            this.textBoxSerialNumberTachograph.Size = new System.Drawing.Size(422, 20);
-            this.textBoxSerialNumberTachograph.TabIndex = 14;
-            // 
             // textBoxAdresCustomer
             // 
-            this.textBoxAdresCustomer.Location = new System.Drawing.Point(70, 93);
+            this.textBoxAdresCustomer.Location = new System.Drawing.Point(70, 76);
             this.textBoxAdresCustomer.Name = "textBoxAdresCustomer";
             this.textBoxAdresCustomer.Size = new System.Drawing.Size(422, 20);
             this.textBoxAdresCustomer.TabIndex = 13;
@@ -657,21 +561,11 @@
             this.textBoxNameCustomer.Size = new System.Drawing.Size(321, 20);
             this.textBoxNameCustomer.TabIndex = 9;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(4, 120);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(66, 20);
-            this.label10.TabIndex = 12;
-            this.label10.Text = "Телефон:";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(4, 94);
+            this.label9.Location = new System.Drawing.Point(4, 77);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(47, 20);
             this.label9.TabIndex = 11;
@@ -719,11 +613,6 @@
             this.numericUpDowntextBoxOrderNumber.Name = "numericUpDowntextBoxOrderNumber";
             this.numericUpDowntextBoxOrderNumber.Size = new System.Drawing.Size(107, 20);
             this.numericUpDowntextBoxOrderNumber.TabIndex = 9;
-            this.numericUpDowntextBoxOrderNumber.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
             // 
             // comboBoxMaster
             // 
@@ -760,7 +649,8 @@
             // dateTimePickerJob
             // 
             this.dateTimePickerJob.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePickerJob.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerJob.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerJob.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.dateTimePickerJob.Location = new System.Drawing.Point(70, 82);
             this.dateTimePickerJob.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerJob.Name = "dateTimePickerJob";
@@ -792,7 +682,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.наклейкаToolStripMenuItem,
-            this.сертификатToolStripMenuItem,
+            this.ToolStripMenuItemCreate,
             this.сохранитьToolStripMenuItem,
             this.загрузитьToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -803,15 +693,32 @@
             // 
             // наклейкаToolStripMenuItem
             // 
+            this.наклейкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.печатьНаклейкиToolStripMenuItem});
             this.наклейкаToolStripMenuItem.Name = "наклейкаToolStripMenuItem";
             this.наклейкаToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.наклейкаToolStripMenuItem.Text = "Наклейка";
             // 
-            // сертификатToolStripMenuItem
+            // печатьНаклейкиToolStripMenuItem
             // 
-            this.сертификатToolStripMenuItem.Name = "сертификатToolStripMenuItem";
-            this.сертификатToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
-            this.сертификатToolStripMenuItem.Text = "Сертификат";
+            this.печатьНаклейкиToolStripMenuItem.Name = "печатьНаклейкиToolStripMenuItem";
+            this.печатьНаклейкиToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.печатьНаклейкиToolStripMenuItem.Text = "Печать наклейки";
+            // 
+            // ToolStripMenuItemCreate
+            // 
+            this.ToolStripMenuItemCreate.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItemPrintCertificate});
+            this.ToolStripMenuItemCreate.Name = "ToolStripMenuItemCreate";
+            this.ToolStripMenuItemCreate.Size = new System.Drawing.Size(85, 20);
+            this.ToolStripMenuItemCreate.Text = "Сертификат";
+            // 
+            // ToolStripMenuItemPrintCertificate
+            // 
+            this.ToolStripMenuItemPrintCertificate.Name = "ToolStripMenuItemPrintCertificate";
+            this.ToolStripMenuItemPrintCertificate.Size = new System.Drawing.Size(186, 22);
+            this.ToolStripMenuItemPrintCertificate.Text = "Печать сертификата";
+            this.ToolStripMenuItemPrintCertificate.Click += new System.EventHandler(this.ToolStripMenuItemPrintCertificate_Click);
             // 
             // сохранитьToolStripMenuItem
             // 
@@ -885,7 +792,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -904,13 +810,10 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBoxSerialNumberTachograph;
         private System.Windows.Forms.TextBox textBoxAdresCustomer;
         private System.Windows.Forms.TextBox textBoxNameCustomer;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.TextBox textBoxModelTachograph;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.TextBox textBoxManufacturerTachograph;
@@ -918,8 +821,6 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TextBox textBoxL;
@@ -931,10 +832,6 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox textBoxNoteOrder;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.NumericUpDown numericUpDowntextBoxOrderNumber;
         private System.Windows.Forms.TextBox textBoxNameCustomerEng;
         private System.Windows.Forms.Label label34;
@@ -945,13 +842,15 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem наклейкаToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem сертификатToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemCreate;
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem загрузитьToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip3;
         private System.Windows.Forms.DateTimePicker dateTimePickerJob;
+        private System.Windows.Forms.ToolStripMenuItem печатьНаклейкиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemPrintCertificate;
     }
 }
 
