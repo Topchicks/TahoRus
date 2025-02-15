@@ -18,7 +18,6 @@ E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.c
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.csproj.CoreCompileInputs.cache
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.exe
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.pdb
-E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.Certificate.resources
 C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\TaxoNavicon.exe.config
 C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\TaxoNavicon.exe
 C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\TaxoNavicon.pdb
@@ -101,3 +100,4 @@ C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\ja\In
 C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.StartApp.resources
 C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.RussianTypeForm.resources
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.RussianTypeForm.resources
+E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.LoadRussianDocument.resources

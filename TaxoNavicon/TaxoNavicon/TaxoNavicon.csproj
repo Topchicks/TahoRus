@@ -102,6 +102,12 @@
     <Compile Include="EuropeanTypeForm.Designer.cs">
       <DependentUpon>EuropeanTypeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoadRussianDocument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadRussianDocument.Designer.cs">
+      <DependentUpon>LoadRussianDocument.cs</DependentUpon>
+    </Compile>
     <Compile Include="PoleDataRussian.cs" />
     <Compile Include="PoleDataEuropean.cs" />
     <Compile Include="Program.cs" />
@@ -131,6 +137,9 @@
     </Compile>
     <EmbeddedResource Include="EuropeanTypeForm.resx">
       <DependentUpon>EuropeanTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadRussianDocument.resx">
+      <DependentUpon>LoadRussianDocument.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

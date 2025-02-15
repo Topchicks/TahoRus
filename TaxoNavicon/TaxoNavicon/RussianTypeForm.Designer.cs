@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DateTimePicker dateTimePickerJob;
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -78,12 +77,8 @@
             this.label24 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.textBoxNameCustomerEng = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.textBoxSerialNumberTachograph = new System.Windows.Forms.TextBox();
             this.textBoxAdresCustomer = new System.Windows.Forms.TextBox();
             this.textBoxNameCustomer = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -98,8 +93,8 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            dateTimePickerJob = new System.Windows.Forms.DateTimePicker();
+            this.toolStripMenuItemLoadRussianDocument = new System.Windows.Forms.ToolStripMenuItem();
+            this.dateTimePickerJob = new System.Windows.Forms.DateTimePicker();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -176,65 +171,78 @@
             // 
             // textBoxNoteOrder
             // 
-            this.textBoxNoteOrder.Location = new System.Drawing.Point(175, 168);
+            this.textBoxNoteOrder.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxNoteOrder.Location = new System.Drawing.Point(3, 208);
             this.textBoxNoteOrder.Multiline = true;
             this.textBoxNoteOrder.Name = "textBoxNoteOrder";
-            this.textBoxNoteOrder.Size = new System.Drawing.Size(258, 66);
+            this.textBoxNoteOrder.Size = new System.Drawing.Size(358, 38);
             this.textBoxNoteOrder.TabIndex = 14;
+            this.textBoxNoteOrder.Text = "Эксплуатация только на территории РФ.";
             // 
             // label26
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label26.Location = new System.Drawing.Point(4, 171);
+            this.label26.Location = new System.Drawing.Point(7, 188);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(96, 17);
+            this.label26.Size = new System.Drawing.Size(127, 17);
             this.label26.TabIndex = 15;
-            this.label26.Text = "Примечания:";
+            this.label26.Text = "Особые отметки:";
             // 
             // comboBox4
             // 
+            this.comboBox4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(175, 142);
+            this.comboBox4.Items.AddRange(new object[] {
+            "Отсутствуют"});
+            this.comboBox4.Location = new System.Drawing.Point(3, 156);
             this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(258, 21);
+            this.comboBox4.Size = new System.Drawing.Size(358, 24);
             this.comboBox4.TabIndex = 12;
+            this.comboBox4.Text = "Отсутствуют";
             // 
             // label25
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label25.Location = new System.Drawing.Point(5, 146);
+            this.label25.Location = new System.Drawing.Point(5, 136);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(87, 17);
+            this.label25.Size = new System.Drawing.Size(170, 17);
             this.label25.TabIndex = 13;
-            this.label25.Text = "Инспекция:";
+            this.label25.Text = "Признаки манипуляции:";
             // 
             // comboBox3
             // 
+            this.comboBox3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(175, 115);
+            this.comboBox3.Items.AddRange(new object[] {
+            "Положительный",
+            "Отрицательный"});
+            this.comboBox3.Location = new System.Drawing.Point(3, 107);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(258, 21);
+            this.comboBox3.Size = new System.Drawing.Size(358, 24);
             this.comboBox3.TabIndex = 9;
+            this.comboBox3.Text = "Положительный";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label18.Location = new System.Drawing.Point(5, 119);
+            this.label18.Location = new System.Drawing.Point(5, 87);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(103, 17);
+            this.label18.Size = new System.Drawing.Size(156, 17);
             this.label18.TabIndex = 11;
-            this.label18.Text = "Манипуляции:";
+            this.label18.Text = "Результат инспекции:";
             // 
             // textBox18
             // 
-            this.textBox18.Location = new System.Drawing.Point(174, 26);
+            this.textBox18.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox18.Location = new System.Drawing.Point(3, 48);
             this.textBox18.Multiline = true;
             this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(258, 68);
+            this.textBox18.Size = new System.Drawing.Size(358, 36);
             this.textBox18.TabIndex = 9;
+            this.textBox18.Text = "Стойка двери водителя";
             // 
             // label32
             // 
@@ -242,9 +250,9 @@
             this.label32.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label32.Location = new System.Drawing.Point(4, 27);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(168, 17);
+            this.label32.Size = new System.Drawing.Size(272, 17);
             this.label32.TabIndex = 10;
-            this.label32.Text = "Установочная таблица:";
+            this.label32.Text = "Расположение установочной таблицы:";
             // 
             // label33
             // 
@@ -313,7 +321,7 @@
             // 
             // textBoxModelVehicle
             // 
-            this.textBoxModelVehicle.Location = new System.Drawing.Point(122, 133);
+            this.textBoxModelVehicle.Location = new System.Drawing.Point(122, 55);
             this.textBoxModelVehicle.Name = "textBoxModelVehicle";
             this.textBoxModelVehicle.Size = new System.Drawing.Size(287, 20);
             this.textBoxModelVehicle.TabIndex = 15;
@@ -342,7 +350,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label17.Location = new System.Drawing.Point(4, 131);
+            this.label17.Location = new System.Drawing.Point(4, 53);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(57, 20);
             this.label17.TabIndex = 16;
@@ -357,7 +365,7 @@
             // 
             // textBoxVinNumberVehicle
             // 
-            this.textBoxVinNumberVehicle.Location = new System.Drawing.Point(122, 55);
+            this.textBoxVinNumberVehicle.Location = new System.Drawing.Point(122, 133);
             this.textBoxVinNumberVehicle.Name = "textBoxVinNumberVehicle";
             this.textBoxVinNumberVehicle.Size = new System.Drawing.Size(287, 20);
             this.textBoxVinNumberVehicle.TabIndex = 13;
@@ -383,7 +391,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(4, 53);
+            this.label12.Location = new System.Drawing.Point(4, 131);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(31, 20);
             this.label12.TabIndex = 11;
@@ -395,9 +403,9 @@
             this.label13.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label13.Location = new System.Drawing.Point(4, 27);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(101, 20);
+            this.label13.Size = new System.Drawing.Size(49, 20);
             this.label13.TabIndex = 10;
-            this.label13.Text = "Производитель:";
+            this.label13.Text = "Марка:";
             // 
             // label14
             // 
@@ -506,14 +514,14 @@
             // 
             // textBox12
             // 
-            this.textBox12.Location = new System.Drawing.Point(133, 104);
+            this.textBox12.Location = new System.Drawing.Point(147, 105);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(276, 20);
             this.textBox12.TabIndex = 19;
             // 
             // textBoxModelTachograph
             // 
-            this.textBoxModelTachograph.Location = new System.Drawing.Point(133, 78);
+            this.textBoxModelTachograph.Location = new System.Drawing.Point(147, 79);
             this.textBoxModelTachograph.Name = "textBoxModelTachograph";
             this.textBoxModelTachograph.Size = new System.Drawing.Size(276, 20);
             this.textBoxModelTachograph.TabIndex = 15;
@@ -524,9 +532,9 @@
             this.label19.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(4, 105);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(94, 17);
+            this.label19.Size = new System.Drawing.Size(140, 17);
             this.label19.TabIndex = 17;
-            this.label19.Text = "Произведен:";
+            this.label19.Text = "Дата производства";
             // 
             // label20
             // 
@@ -540,14 +548,14 @@
             // 
             // textBox15
             // 
-            this.textBox15.Location = new System.Drawing.Point(133, 52);
+            this.textBox15.Location = new System.Drawing.Point(147, 53);
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(276, 20);
             this.textBox15.TabIndex = 13;
             // 
             // textBoxManufacturerTachograph
             // 
-            this.textBoxManufacturerTachograph.Location = new System.Drawing.Point(133, 26);
+            this.textBoxManufacturerTachograph.Location = new System.Drawing.Point(147, 27);
             this.textBoxManufacturerTachograph.Name = "textBoxManufacturerTachograph";
             this.textBoxManufacturerTachograph.Size = new System.Drawing.Size(276, 20);
             this.textBoxManufacturerTachograph.TabIndex = 9;
@@ -601,12 +609,8 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(79)))), ((int)(((byte)(105)))));
-            this.panel4.Controls.Add(this.textBoxNameCustomerEng);
-            this.panel4.Controls.Add(this.label34);
-            this.panel4.Controls.Add(this.textBoxSerialNumberTachograph);
             this.panel4.Controls.Add(this.textBoxAdresCustomer);
             this.panel4.Controls.Add(this.textBoxNameCustomer);
-            this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.label9);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label7);
@@ -616,33 +620,9 @@
             this.panel4.Size = new System.Drawing.Size(588, 150);
             this.panel4.TabIndex = 2;
             // 
-            // textBoxNameCustomerEng
-            // 
-            this.textBoxNameCustomerEng.Location = new System.Drawing.Point(70, 52);
-            this.textBoxNameCustomerEng.Name = "textBoxNameCustomerEng";
-            this.textBoxNameCustomerEng.Size = new System.Drawing.Size(321, 20);
-            this.textBoxNameCustomerEng.TabIndex = 15;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label34.Location = new System.Drawing.Point(4, 53);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(69, 20);
-            this.label34.TabIndex = 16;
-            this.label34.Text = "Имя (Eng):";
-            // 
-            // textBoxSerialNumberTachograph
-            // 
-            this.textBoxSerialNumberTachograph.Location = new System.Drawing.Point(70, 119);
-            this.textBoxSerialNumberTachograph.Name = "textBoxSerialNumberTachograph";
-            this.textBoxSerialNumberTachograph.Size = new System.Drawing.Size(422, 20);
-            this.textBoxSerialNumberTachograph.TabIndex = 14;
-            // 
             // textBoxAdresCustomer
             // 
-            this.textBoxAdresCustomer.Location = new System.Drawing.Point(70, 93);
+            this.textBoxAdresCustomer.Location = new System.Drawing.Point(70, 52);
             this.textBoxAdresCustomer.Name = "textBoxAdresCustomer";
             this.textBoxAdresCustomer.Size = new System.Drawing.Size(422, 20);
             this.textBoxAdresCustomer.TabIndex = 13;
@@ -654,21 +634,11 @@
             this.textBoxNameCustomer.Size = new System.Drawing.Size(321, 20);
             this.textBoxNameCustomer.TabIndex = 9;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(4, 120);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(66, 20);
-            this.label10.TabIndex = 12;
-            this.label10.Text = "Телефон:";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(4, 94);
+            this.label9.Location = new System.Drawing.Point(4, 53);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(47, 20);
             this.label9.TabIndex = 11;
@@ -697,11 +667,11 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(196)))));
+            this.panel3.Controls.Add(this.dateTimePickerJob);
             this.panel3.Controls.Add(this.numericUpDowntextBoxOrderNumber);
             this.panel3.Controls.Add(this.comboBoxMaster);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(dateTimePickerJob);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -716,11 +686,6 @@
             this.numericUpDowntextBoxOrderNumber.Name = "numericUpDowntextBoxOrderNumber";
             this.numericUpDowntextBoxOrderNumber.Size = new System.Drawing.Size(107, 20);
             this.numericUpDowntextBoxOrderNumber.TabIndex = 9;
-            this.numericUpDowntextBoxOrderNumber.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
             // 
             // comboBoxMaster
             // 
@@ -754,17 +719,6 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Дата";
             // 
-            // dateTimePickerJob
-            // 
-            dateTimePickerJob.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dateTimePickerJob.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            dateTimePickerJob.Location = new System.Drawing.Point(70, 82);
-            dateTimePickerJob.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            dateTimePickerJob.Name = "dateTimePickerJob";
-            dateTimePickerJob.Size = new System.Drawing.Size(114, 25);
-            dateTimePickerJob.TabIndex = 3;
-            dateTimePickerJob.Value = new System.DateTime(2025, 2, 10, 0, 0, 0, 0);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -791,7 +745,7 @@
             this.toolStripMenuItem1,
             this.toolStripMenuItem2,
             this.toolStripMenuItem3,
-            this.toolStripMenuItem4});
+            this.toolStripMenuItemLoadRussianDocument});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Size = new System.Drawing.Size(977, 24);
@@ -816,11 +770,21 @@
             this.toolStripMenuItem3.Size = new System.Drawing.Size(78, 20);
             this.toolStripMenuItem3.Text = "Сохранить";
             // 
-            // toolStripMenuItem4
+            // toolStripMenuItemLoadRussianDocument
             // 
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(73, 20);
-            this.toolStripMenuItem4.Text = "Загрузить";
+            this.toolStripMenuItemLoadRussianDocument.Name = "toolStripMenuItemLoadRussianDocument";
+            this.toolStripMenuItemLoadRussianDocument.Size = new System.Drawing.Size(73, 20);
+            this.toolStripMenuItemLoadRussianDocument.Text = "Загрузить";
+            this.toolStripMenuItemLoadRussianDocument.Click += new System.EventHandler(this.toolStripMenuItemLoadRussianDocument_Click);
+            // 
+            // dateTimePickerJob
+            // 
+            this.dateTimePickerJob.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePickerJob.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerJob.Location = new System.Drawing.Point(70, 83);
+            this.dateTimePickerJob.Name = "dateTimePickerJob";
+            this.dateTimePickerJob.Size = new System.Drawing.Size(114, 25);
+            this.dateTimePickerJob.TabIndex = 10;
             // 
             // RussianTypeForm
             // 
@@ -906,12 +870,8 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBoxNameCustomerEng;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.TextBox textBoxSerialNumberTachograph;
         private System.Windows.Forms.TextBox textBoxAdresCustomer;
         private System.Windows.Forms.TextBox textBoxNameCustomer;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -926,6 +886,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemLoadRussianDocument;
+        private System.Windows.Forms.DateTimePicker dateTimePickerJob;
     }
 }

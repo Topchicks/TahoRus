@@ -5,24 +5,22 @@
         #region order
         public int orderNumber; // номер заказа
         public string master; // мастер
-        public string noteOrder; // примечание
         public string dataJob; // дата выполнение работ
+        public string newDataJob; // дата выполнение новых работ
         #endregion
 
         #region customer
         public string nameCustomer; // имя заказчика
-        public string nameCustomerEng; // имя заказчика на английском
         public string adresCustomer; // адрес заказчика
         #endregion
 
         #region vehicle
-        public string manufacturerVehicle; // производитель транспорта
+        public string markaVehicle; // марка
         public string modelVehicle; // модель транспорта
         public string vinVehicle; // вин номер транспорта
         public string registrationNumberVehicle; // рег. номер
         public string tireMarkingsVehicle; // маркировка шин
         public string odometerKmVehicle; // одометр км
-        public string yearOfIssueVehiccle; // год выпуска
         #endregion
 
         #region Tachograph
@@ -35,6 +33,12 @@
         public string l;
         public string w;
         public string k;
-        
+
+
+        public string LocationInstallationTable; // Расположение установочной таблицы
+        public string InspectionResult; // Результат инспекции
+        public string SignsManipulation; // Признаки манипуляции
+        public string SpecialMarks; // Особые отметки
+
     }
 }

@@ -33,7 +33,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
             this.buttonOpenRussianPanel = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.buttonOpenEuropeanTypeForm = new System.Windows.Forms.Button();
@@ -61,20 +60,11 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(64)))));
-            this.panel3.Controls.Add(this.button4);
             this.panel3.Controls.Add(this.buttonOpenRussianPanel);
             this.panel3.Controls.Add(this.button3);
             this.panel3.Controls.Add(this.buttonOpenEuropeanTypeForm);
             resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Name = "panel3";
-            // 
-            // button4
-            // 
-            resources.ApplyResources(this.button4, "button4");
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Name = "button4";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // buttonOpenRussianPanel
             // 
@@ -142,7 +132,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.WebBrowser webBrowser1;
     }
