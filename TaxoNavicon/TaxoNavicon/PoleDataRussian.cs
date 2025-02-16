@@ -25,7 +25,7 @@
 
         #region Tachograph
         public string manufacturerTahograph; // производитель
-        public string serialNumberTachograph; // срийный номр
+        public string serialNumberTahograph; // срийный номр
         public string modelTachograph; // модель
         public string producedTachograph; // произведен .год
         #endregion
@@ -35,10 +35,10 @@
         public string k;
 
 
-        public string LocationInstallationTable; // Расположение установочной таблицы
-        public string InspectionResult; // Результат инспекции
-        public string SignsManipulation; // Признаки манипуляции
-        public string SpecialMarks; // Особые отметки
+        public string locationInstallationTable; // Расположение установочной таблицы
+        public string inspectionResult; // Результат инспекции
+        public string signsManipulation; // Признаки манипуляции
+        public string specialMarks; // Особые отметки
 
     }
 }

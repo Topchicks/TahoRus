@@ -2,7 +2,6 @@
 using System;
 using System.Drawing.Printing;
 using System.IO;
-using System.Net.Http;
 using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;
 
@@ -20,7 +19,7 @@ namespace TaxoNavicon
         {
             InitializeComponent();
             poleDataEuropean = new PoleDataEuropean();
-            string relativePath = @"test.doc"; // Относительный путь к файлу
+            string relativePath = @"EuropeanCertidicate.doc"; // Относительный путь к файлу
             filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
             wordApp = new Word.Application();
             dateTimePickerJob.CustomFormat = "dd/MM/yyyy"; // Устанавливаем только дату
@@ -45,6 +44,7 @@ namespace TaxoNavicon
             poleDataEuropean.registrationNumberVehicle = textBoxRegistrationNumberVehicle.Text; // рег. номер машины
             poleDataEuropean.odometerKmVehicle = textBoxOdometerKmVehicle.Text; // одометр км
             poleDataEuropean.yearOfIssueVehiccle = textBoxYearOfIssueVehiccle.Text; // год выпуска
+            poleDataEuropean.tireMarkingsVehicle = textBoxTireMarkingsVehicle.Text; // маркировка шин
 
             //Tahograf
             poleDataEuropean.manufacturerTahograph = textBoxManufacturerTachograph.Text; // производитель
@@ -54,14 +54,11 @@ namespace TaxoNavicon
             poleDataEuropean.w = textBoxW.Text;
             poleDataEuropean.k = textBoxK.Text;
 
-            poleDataEuropean.noteOrder = textBoxNoteOrder.Text; // примечания
             poleDataEuropean.dataJob = dateTimePickerJob.Value.ToShortDateString();//  время выполнения работ
         }
 
         private void ToolStripMenuItemPrintCertificate_Click(object sender, EventArgs e)
         {
-            SetData();
-            Console.WriteLine(poleDataEuropean.dataJob);
             CheckOpenDock();
             //wordDoc = wordApp.Documents.Open(filePath);
 
@@ -90,7 +87,6 @@ namespace TaxoNavicon
             FindAndReplace(wordDoc, "<L>", poleDataEuropean.l);
             FindAndReplace(wordDoc, "<W>", poleDataEuropean.w);
             FindAndReplace(wordDoc, "<K>", poleDataEuropean.k);
-            FindAndReplace(wordDoc, "<noteOrder>", poleDataEuropean.noteOrder);
             #endregion
 
             PrintDialog printDialog = new PrintDialog();
@@ -181,6 +177,11 @@ namespace TaxoNavicon
                     MessageBox.Show("Ошибка при открытии документа: " + ex.Message);
                 }
             }
+        }
+
+        private void ToolStripMenuItemSetData_Click(object sender, EventArgs e)
+        {
+            SetData();
         }
     }
 }

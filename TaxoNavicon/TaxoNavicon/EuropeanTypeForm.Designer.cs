@@ -32,10 +32,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.textBoxNoteOrder = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.textBoxYearOfIssueVehiccle = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
@@ -45,7 +41,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBoxTireMarkingsVehicle = new System.Windows.Forms.TextBox();
             this.textBoxVinNumberVehicle = new System.Windows.Forms.TextBox();
             this.textBoxManufacturerVehicle = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -95,10 +91,11 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ToolStripMenuItemSetData = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -151,46 +148,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(977, 406);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
-            this.panel8.Controls.Add(this.textBoxNoteOrder);
-            this.panel8.Controls.Add(this.label26);
-            this.panel8.Controls.Add(this.label33);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(446, 141);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(528, 262);
-            this.panel8.TabIndex = 6;
-            // 
-            // textBoxNoteOrder
-            // 
-            this.textBoxNoteOrder.Location = new System.Drawing.Point(105, 27);
-            this.textBoxNoteOrder.Multiline = true;
-            this.textBoxNoteOrder.Name = "textBoxNoteOrder";
-            this.textBoxNoteOrder.Size = new System.Drawing.Size(298, 126);
-            this.textBoxNoteOrder.TabIndex = 14;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label26.Location = new System.Drawing.Point(3, 30);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(96, 17);
-            this.label26.TabIndex = 15;
-            this.label26.Text = "Примечания:";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label33.Location = new System.Drawing.Point(3, 3);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(84, 18);
-            this.label33.TabIndex = 9;
-            this.label33.Text = "Результат:";
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(196)))));
@@ -202,7 +159,7 @@
             this.panel5.Controls.Add(this.label15);
             this.panel5.Controls.Add(this.label16);
             this.panel5.Controls.Add(this.label17);
-            this.panel5.Controls.Add(this.textBox5);
+            this.panel5.Controls.Add(this.textBoxTireMarkingsVehicle);
             this.panel5.Controls.Add(this.textBoxVinNumberVehicle);
             this.panel5.Controls.Add(this.textBoxManufacturerVehicle);
             this.panel5.Controls.Add(this.label11);
@@ -283,12 +240,12 @@
             this.label17.TabIndex = 16;
             this.label17.Text = "Модель:";
             // 
-            // textBox5
+            // textBoxTireMarkingsVehicle
             // 
-            this.textBox5.Location = new System.Drawing.Point(122, 81);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(287, 20);
-            this.textBox5.TabIndex = 14;
+            this.textBoxTireMarkingsVehicle.Location = new System.Drawing.Point(122, 81);
+            this.textBoxTireMarkingsVehicle.Name = "textBoxTireMarkingsVehicle";
+            this.textBoxTireMarkingsVehicle.Size = new System.Drawing.Size(287, 20);
+            this.textBoxTireMarkingsVehicle.TabIndex = 14;
             // 
             // textBoxVinNumberVehicle
             // 
@@ -684,7 +641,8 @@
             this.наклейкаToolStripMenuItem,
             this.ToolStripMenuItemCreate,
             this.сохранитьToolStripMenuItem,
-            this.загрузитьToolStripMenuItem});
+            this.загрузитьToolStripMenuItem,
+            this.ToolStripMenuItemSetData});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(977, 24);
@@ -747,6 +705,22 @@
             this.contextMenuStrip3.Name = "contextMenuStrip3";
             this.contextMenuStrip3.Size = new System.Drawing.Size(61, 4);
             // 
+            // ToolStripMenuItemSetData
+            // 
+            this.ToolStripMenuItemSetData.Name = "ToolStripMenuItemSetData";
+            this.ToolStripMenuItemSetData.Size = new System.Drawing.Size(69, 20);
+            this.ToolStripMenuItemSetData.Text = "Записать";
+            this.ToolStripMenuItemSetData.Click += new System.EventHandler(this.ToolStripMenuItemSetData_Click);
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(446, 141);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(528, 262);
+            this.panel8.TabIndex = 6;
+            // 
             // EuropeanTypeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -764,8 +738,6 @@
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel7.ResumeLayout(false);
@@ -803,7 +775,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBoxTireMarkingsVehicle;
         private System.Windows.Forms.TextBox textBoxVinNumberVehicle;
         private System.Windows.Forms.TextBox textBoxManufacturerVehicle;
         private System.Windows.Forms.Label label11;
@@ -820,8 +792,6 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.TextBox textBoxL;
         private System.Windows.Forms.Label label31;
@@ -830,8 +800,6 @@
         private System.Windows.Forms.TextBox textBoxW;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox textBoxNoteOrder;
-        private System.Windows.Forms.Label label26;
         private System.Windows.Forms.NumericUpDown numericUpDowntextBoxOrderNumber;
         private System.Windows.Forms.TextBox textBoxNameCustomerEng;
         private System.Windows.Forms.Label label34;
@@ -851,6 +819,8 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerJob;
         private System.Windows.Forms.ToolStripMenuItem печатьНаклейкиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemPrintCertificate;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSetData;
+        private System.Windows.Forms.Panel panel8;
     }
 }
 

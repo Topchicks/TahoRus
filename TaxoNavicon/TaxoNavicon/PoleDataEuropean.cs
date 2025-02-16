@@ -11,7 +11,6 @@ namespace TaxoNavicon
         #region order
         public int orderNumber; // номер заказа
         public string master; // мастер
-        public string noteOrder; // примечание
         public string dataJob; // дата выполнение работ
         #endregion
 

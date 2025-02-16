@@ -32,13 +32,13 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.textBoxNoteOrder = new System.Windows.Forms.TextBox();
+            this.textBoxSpecialMarks = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBoxSignsManipulation = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBoxInspectionResult = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.textBoxLocationInstallationTable = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -50,9 +50,9 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBoxTireMarkingsVehicle = new System.Windows.Forms.TextBox();
             this.textBoxVinNumberVehicle = new System.Windows.Forms.TextBox();
-            this.textBoxManufacturerVehicle = new System.Windows.Forms.TextBox();
+            this.textBoxMarkaVehicle = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -66,11 +66,11 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBoxProducedTachograph = new System.Windows.Forms.TextBox();
             this.textBoxModelTachograph = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.textBoxSerialNumberTahograph = new System.Windows.Forms.TextBox();
             this.textBoxManufacturerTachograph = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -83,6 +83,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.dateTimePickerJob = new System.Windows.Forms.DateTimePicker();
             this.numericUpDowntextBoxOrderNumber = new System.Windows.Forms.NumericUpDown();
             this.comboBoxMaster = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -91,10 +92,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.печатьНаклейкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemPrintCertificate = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemSaveData = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemLoadRussianDocument = new System.Windows.Forms.ToolStripMenuItem();
-            this.dateTimePickerJob = new System.Windows.Forms.DateTimePicker();
+            this.ToolStripMenuItemSetData = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -154,13 +157,13 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(79)))), ((int)(((byte)(105)))));
-            this.panel8.Controls.Add(this.textBoxNoteOrder);
+            this.panel8.Controls.Add(this.textBoxSpecialMarks);
             this.panel8.Controls.Add(this.label26);
-            this.panel8.Controls.Add(this.comboBox4);
+            this.panel8.Controls.Add(this.comboBoxSignsManipulation);
             this.panel8.Controls.Add(this.label25);
-            this.panel8.Controls.Add(this.comboBox3);
+            this.panel8.Controls.Add(this.comboBoxInspectionResult);
             this.panel8.Controls.Add(this.label18);
-            this.panel8.Controls.Add(this.textBox18);
+            this.panel8.Controls.Add(this.textBoxLocationInstallationTable);
             this.panel8.Controls.Add(this.label32);
             this.panel8.Controls.Add(this.label33);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -169,15 +172,15 @@
             this.panel8.Size = new System.Drawing.Size(528, 262);
             this.panel8.TabIndex = 6;
             // 
-            // textBoxNoteOrder
+            // textBoxSpecialMarks
             // 
-            this.textBoxNoteOrder.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxNoteOrder.Location = new System.Drawing.Point(3, 208);
-            this.textBoxNoteOrder.Multiline = true;
-            this.textBoxNoteOrder.Name = "textBoxNoteOrder";
-            this.textBoxNoteOrder.Size = new System.Drawing.Size(358, 38);
-            this.textBoxNoteOrder.TabIndex = 14;
-            this.textBoxNoteOrder.Text = "Эксплуатация только на территории РФ.";
+            this.textBoxSpecialMarks.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxSpecialMarks.Location = new System.Drawing.Point(3, 208);
+            this.textBoxSpecialMarks.Multiline = true;
+            this.textBoxSpecialMarks.Name = "textBoxSpecialMarks";
+            this.textBoxSpecialMarks.Size = new System.Drawing.Size(358, 38);
+            this.textBoxSpecialMarks.TabIndex = 14;
+            this.textBoxSpecialMarks.Text = "Эксплуатация только на территории РФ.";
             // 
             // label26
             // 
@@ -189,17 +192,17 @@
             this.label26.TabIndex = 15;
             this.label26.Text = "Особые отметки:";
             // 
-            // comboBox4
+            // comboBoxSignsManipulation
             // 
-            this.comboBox4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.comboBoxSignsManipulation.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxSignsManipulation.FormattingEnabled = true;
+            this.comboBoxSignsManipulation.Items.AddRange(new object[] {
             "Отсутствуют"});
-            this.comboBox4.Location = new System.Drawing.Point(3, 156);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(358, 24);
-            this.comboBox4.TabIndex = 12;
-            this.comboBox4.Text = "Отсутствуют";
+            this.comboBoxSignsManipulation.Location = new System.Drawing.Point(3, 156);
+            this.comboBoxSignsManipulation.Name = "comboBoxSignsManipulation";
+            this.comboBoxSignsManipulation.Size = new System.Drawing.Size(358, 24);
+            this.comboBoxSignsManipulation.TabIndex = 12;
+            this.comboBoxSignsManipulation.Text = "Отсутствуют";
             // 
             // label25
             // 
@@ -211,18 +214,18 @@
             this.label25.TabIndex = 13;
             this.label25.Text = "Признаки манипуляции:";
             // 
-            // comboBox3
+            // comboBoxInspectionResult
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.comboBoxInspectionResult.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxInspectionResult.FormattingEnabled = true;
+            this.comboBoxInspectionResult.Items.AddRange(new object[] {
             "Положительный",
             "Отрицательный"});
-            this.comboBox3.Location = new System.Drawing.Point(3, 107);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(358, 24);
-            this.comboBox3.TabIndex = 9;
-            this.comboBox3.Text = "Положительный";
+            this.comboBoxInspectionResult.Location = new System.Drawing.Point(3, 107);
+            this.comboBoxInspectionResult.Name = "comboBoxInspectionResult";
+            this.comboBoxInspectionResult.Size = new System.Drawing.Size(358, 24);
+            this.comboBoxInspectionResult.TabIndex = 9;
+            this.comboBoxInspectionResult.Text = "Положительный";
             // 
             // label18
             // 
@@ -234,15 +237,15 @@
             this.label18.TabIndex = 11;
             this.label18.Text = "Результат инспекции:";
             // 
-            // textBox18
+            // textBoxLocationInstallationTable
             // 
-            this.textBox18.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox18.Location = new System.Drawing.Point(3, 48);
-            this.textBox18.Multiline = true;
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(358, 36);
-            this.textBox18.TabIndex = 9;
-            this.textBox18.Text = "Стойка двери водителя";
+            this.textBoxLocationInstallationTable.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxLocationInstallationTable.Location = new System.Drawing.Point(3, 48);
+            this.textBoxLocationInstallationTable.Multiline = true;
+            this.textBoxLocationInstallationTable.Name = "textBoxLocationInstallationTable";
+            this.textBoxLocationInstallationTable.Size = new System.Drawing.Size(358, 36);
+            this.textBoxLocationInstallationTable.TabIndex = 9;
+            this.textBoxLocationInstallationTable.Text = "Стойка двери водителя";
             // 
             // label32
             // 
@@ -275,9 +278,9 @@
             this.panel5.Controls.Add(this.label15);
             this.panel5.Controls.Add(this.label16);
             this.panel5.Controls.Add(this.label17);
-            this.panel5.Controls.Add(this.textBox5);
+            this.panel5.Controls.Add(this.textBoxTireMarkingsVehicle);
             this.panel5.Controls.Add(this.textBoxVinNumberVehicle);
-            this.panel5.Controls.Add(this.textBoxManufacturerVehicle);
+            this.panel5.Controls.Add(this.textBoxMarkaVehicle);
             this.panel5.Controls.Add(this.label11);
             this.panel5.Controls.Add(this.label12);
             this.panel5.Controls.Add(this.label13);
@@ -356,12 +359,12 @@
             this.label17.TabIndex = 16;
             this.label17.Text = "Модель:";
             // 
-            // textBox5
+            // textBoxTireMarkingsVehicle
             // 
-            this.textBox5.Location = new System.Drawing.Point(122, 81);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(287, 20);
-            this.textBox5.TabIndex = 14;
+            this.textBoxTireMarkingsVehicle.Location = new System.Drawing.Point(122, 81);
+            this.textBoxTireMarkingsVehicle.Name = "textBoxTireMarkingsVehicle";
+            this.textBoxTireMarkingsVehicle.Size = new System.Drawing.Size(287, 20);
+            this.textBoxTireMarkingsVehicle.TabIndex = 14;
             // 
             // textBoxVinNumberVehicle
             // 
@@ -370,12 +373,12 @@
             this.textBoxVinNumberVehicle.Size = new System.Drawing.Size(287, 20);
             this.textBoxVinNumberVehicle.TabIndex = 13;
             // 
-            // textBoxManufacturerVehicle
+            // textBoxMarkaVehicle
             // 
-            this.textBoxManufacturerVehicle.Location = new System.Drawing.Point(122, 29);
-            this.textBoxManufacturerVehicle.Name = "textBoxManufacturerVehicle";
-            this.textBoxManufacturerVehicle.Size = new System.Drawing.Size(287, 20);
-            this.textBoxManufacturerVehicle.TabIndex = 9;
+            this.textBoxMarkaVehicle.Location = new System.Drawing.Point(122, 29);
+            this.textBoxMarkaVehicle.Name = "textBoxMarkaVehicle";
+            this.textBoxMarkaVehicle.Size = new System.Drawing.Size(287, 20);
+            this.textBoxMarkaVehicle.TabIndex = 9;
             // 
             // label11
             // 
@@ -497,11 +500,11 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(79)))), ((int)(((byte)(105)))));
-            this.panel6.Controls.Add(this.textBox12);
+            this.panel6.Controls.Add(this.textBoxProducedTachograph);
             this.panel6.Controls.Add(this.textBoxModelTachograph);
             this.panel6.Controls.Add(this.label19);
             this.panel6.Controls.Add(this.label20);
-            this.panel6.Controls.Add(this.textBox15);
+            this.panel6.Controls.Add(this.textBoxSerialNumberTahograph);
             this.panel6.Controls.Add(this.textBoxManufacturerTachograph);
             this.panel6.Controls.Add(this.label22);
             this.panel6.Controls.Add(this.label23);
@@ -512,12 +515,12 @@
             this.panel6.Size = new System.Drawing.Size(437, 132);
             this.panel6.TabIndex = 4;
             // 
-            // textBox12
+            // textBoxProducedTachograph
             // 
-            this.textBox12.Location = new System.Drawing.Point(147, 105);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(276, 20);
-            this.textBox12.TabIndex = 19;
+            this.textBoxProducedTachograph.Location = new System.Drawing.Point(147, 105);
+            this.textBoxProducedTachograph.Name = "textBoxProducedTachograph";
+            this.textBoxProducedTachograph.Size = new System.Drawing.Size(276, 20);
+            this.textBoxProducedTachograph.TabIndex = 19;
             // 
             // textBoxModelTachograph
             // 
@@ -546,12 +549,12 @@
             this.label20.TabIndex = 16;
             this.label20.Text = "Модель:";
             // 
-            // textBox15
+            // textBoxSerialNumberTahograph
             // 
-            this.textBox15.Location = new System.Drawing.Point(147, 53);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(276, 20);
-            this.textBox15.TabIndex = 13;
+            this.textBoxSerialNumberTahograph.Location = new System.Drawing.Point(147, 53);
+            this.textBoxSerialNumberTahograph.Name = "textBoxSerialNumberTahograph";
+            this.textBoxSerialNumberTahograph.Size = new System.Drawing.Size(276, 20);
+            this.textBoxSerialNumberTahograph.TabIndex = 13;
             // 
             // textBoxManufacturerTachograph
             // 
@@ -680,9 +683,23 @@
             this.panel3.Size = new System.Drawing.Size(377, 150);
             this.panel3.TabIndex = 1;
             // 
+            // dateTimePickerJob
+            // 
+            this.dateTimePickerJob.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateTimePickerJob.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerJob.Location = new System.Drawing.Point(70, 83);
+            this.dateTimePickerJob.Name = "dateTimePickerJob";
+            this.dateTimePickerJob.Size = new System.Drawing.Size(114, 25);
+            this.dateTimePickerJob.TabIndex = 10;
+            // 
             // numericUpDowntextBoxOrderNumber
             // 
             this.numericUpDowntextBoxOrderNumber.Location = new System.Drawing.Point(81, 29);
+            this.numericUpDowntextBoxOrderNumber.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
             this.numericUpDowntextBoxOrderNumber.Name = "numericUpDowntextBoxOrderNumber";
             this.numericUpDowntextBoxOrderNumber.Size = new System.Drawing.Size(107, 20);
             this.numericUpDowntextBoxOrderNumber.TabIndex = 9;
@@ -744,8 +761,9 @@
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.toolStripMenuItem2,
-            this.toolStripMenuItem3,
-            this.toolStripMenuItemLoadRussianDocument});
+            this.toolStripMenuItemSaveData,
+            this.toolStripMenuItemLoadRussianDocument,
+            this.ToolStripMenuItemSetData});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Size = new System.Drawing.Size(977, 24);
@@ -754,21 +772,39 @@
             // 
             // toolStripMenuItem1
             // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.печатьНаклейкиToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(72, 20);
             this.toolStripMenuItem1.Text = "Наклейка";
             // 
+            // печатьНаклейкиToolStripMenuItem
+            // 
+            this.печатьНаклейкиToolStripMenuItem.Name = "печатьНаклейкиToolStripMenuItem";
+            this.печатьНаклейкиToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.печатьНаклейкиToolStripMenuItem.Text = "Печать наклейки";
+            // 
             // toolStripMenuItem2
             // 
+            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItemPrintCertificate});
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(85, 20);
             this.toolStripMenuItem2.Text = "Сертификат";
             // 
-            // toolStripMenuItem3
+            // ToolStripMenuItemPrintCertificate
             // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(78, 20);
-            this.toolStripMenuItem3.Text = "Сохранить";
+            this.ToolStripMenuItemPrintCertificate.Name = "ToolStripMenuItemPrintCertificate";
+            this.ToolStripMenuItemPrintCertificate.Size = new System.Drawing.Size(186, 22);
+            this.ToolStripMenuItemPrintCertificate.Text = "Печать сертификата";
+            this.ToolStripMenuItemPrintCertificate.Click += new System.EventHandler(this.ToolStripMenuItemPrintCertificate_Click_1);
+            // 
+            // toolStripMenuItemSaveData
+            // 
+            this.toolStripMenuItemSaveData.Name = "toolStripMenuItemSaveData";
+            this.toolStripMenuItemSaveData.Size = new System.Drawing.Size(78, 20);
+            this.toolStripMenuItemSaveData.Text = "Сохранить";
+            this.toolStripMenuItemSaveData.Click += new System.EventHandler(this.toolStripMenuItemSaveData_Click);
             // 
             // toolStripMenuItemLoadRussianDocument
             // 
@@ -777,14 +813,12 @@
             this.toolStripMenuItemLoadRussianDocument.Text = "Загрузить";
             this.toolStripMenuItemLoadRussianDocument.Click += new System.EventHandler(this.toolStripMenuItemLoadRussianDocument_Click);
             // 
-            // dateTimePickerJob
+            // ToolStripMenuItemSetData
             // 
-            this.dateTimePickerJob.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePickerJob.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerJob.Location = new System.Drawing.Point(70, 83);
-            this.dateTimePickerJob.Name = "dateTimePickerJob";
-            this.dateTimePickerJob.Size = new System.Drawing.Size(114, 25);
-            this.dateTimePickerJob.TabIndex = 10;
+            this.ToolStripMenuItemSetData.Name = "ToolStripMenuItemSetData";
+            this.ToolStripMenuItemSetData.Size = new System.Drawing.Size(69, 20);
+            this.ToolStripMenuItemSetData.Text = "Записать";
+            this.ToolStripMenuItemSetData.Click += new System.EventHandler(this.ToolStripMenuItemSetData_Click);
             // 
             // RussianTypeForm
             // 
@@ -825,13 +859,13 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.TextBox textBoxNoteOrder;
+        private System.Windows.Forms.TextBox textBoxSpecialMarks;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBoxSignsManipulation;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBoxInspectionResult;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.TextBox textBoxLocationInstallationTable;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Panel panel5;
@@ -843,9 +877,9 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBoxTireMarkingsVehicle;
         private System.Windows.Forms.TextBox textBoxVinNumberVehicle;
-        private System.Windows.Forms.TextBox textBoxManufacturerVehicle;
+        private System.Windows.Forms.TextBox textBoxMarkaVehicle;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
@@ -859,11 +893,11 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox textBoxProducedTachograph;
         private System.Windows.Forms.TextBox textBoxModelTachograph;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox textBoxSerialNumberTahograph;
         private System.Windows.Forms.TextBox textBoxManufacturerTachograph;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
@@ -885,8 +919,11 @@
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSaveData;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemLoadRussianDocument;
         private System.Windows.Forms.DateTimePicker dateTimePickerJob;
+        private System.Windows.Forms.ToolStripMenuItem печатьНаклейкиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemPrintCertificate;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSetData;
     }
 }
