@@ -62,10 +62,6 @@ namespace TaxoNavicon
         {
             InitializeComponent();
             poleDataRussian = new PoleDataRussian();
-            string relativePath = @"RussianCertificate.docx"; // Относительный путь к файлу
-            filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
-            wordApp = new Word.Application();
-            dateTimePickerJob.CustomFormat = "dd/MM/yyyy"; // Устанавливаем только дату
         }
 
 
@@ -118,10 +114,12 @@ namespace TaxoNavicon
 
         private void ToolStripMenuItemPrintCertificate_Click_1(object sender, EventArgs e)
         {
-            Console.WriteLine(poleDataRussian.newDataJob);
-            Console.WriteLine(poleDataRussian.dataJob);
-            Console.WriteLine(poleDataRussian.markaVehicle);
-            Console.WriteLine(poleDataRussian.manufacturerTahograph);
+            
+            string relativePath = @"RussianCertificate.docx"; // Относительный путь к файлу
+            filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
+            wordApp = new Word.Application();
+            dateTimePickerJob.CustomFormat = "dd/MM/yyyy"; // Устанавливаем только дату
+
             CheckOpenDock();
             //wordDoc = wordApp.Documents.Open(filePath);
 
@@ -161,8 +159,8 @@ namespace TaxoNavicon
             if (printDialog.ShowDialog() == DialogResult.OK)
             {
                 wordDoc.PrintOut();
-                ClouseConnectionWord();
             }
+            ClouseConnectionWord();
         }
 
         private void FindAndReplace(Word.Document doc, string findText, string replaceText)
@@ -260,32 +258,28 @@ namespace TaxoNavicon
 
         private void SqlConnection()
         {
-            NpgsqlConnection npgsqlConnection = new NpgsqlConnection(sql);
+            /*NpgsqlConnection npgsqlConnection = new NpgsqlConnection(sql);
 
-            try
+            string connectionString = "Host=localhost;Username=postgres;Password=123;Database=Certificate";
+
+            using (var connection = new NpgsqlConnection(connectionString))
             {
-                npgsqlConnection.Open();
+                connection.Open();
 
-                NpgsqlCommand npgsqlCommand = new NpgsqlCommand();
-                npgsqlCommand.Connection = npgsqlConnection;
-                npgsqlCommand.CommandType = System.Data.CommandType.Text;
+                // Создание команды на вставку данных
+                string insertQuery = "INSERT INTO russianCertificate (orderNumber, master) VALUES (@orderNumber, @master)";
 
-                // Подготовка команды на вставку данныхs
-                npgsqlCommand.CommandText = "INSERT INTO russiancertificate(orderNumber,master) VALUES (1,Sergey)";
-
-                NpgsqlDataReader npgsqlDataReader = npgsqlCommand.ExecuteReader();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"An error occurred: {ex.Message}");
-            }
-            finally
-            {
-                if (npgsqlConnection.State == System.Data.ConnectionState.Open)
+                using (var command = new NpgsqlCommand(insertQuery, connection))
                 {
-                    npgsqlConnection.Close(); // Закрываем соединение, если оно открыто
+                    // Добавление параметров
+                    command.Parameters.AddWithValue("orderNumber", "1");
+                    command.Parameters.AddWithValue("master", "Беляев Сергей");
+
+                    // Выполнение команды
+                    int rowsAffected = command.ExecuteNonQuery();
+                    Console.WriteLine($"{rowsAffected} rows were inserted.");
                 }
-            }
+            }*/
         }
     }
 }

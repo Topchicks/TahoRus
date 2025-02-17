@@ -19,10 +19,6 @@ namespace TaxoNavicon
         {
             InitializeComponent();
             poleDataEuropean = new PoleDataEuropean();
-            string relativePath = @"EuropeanCertidicate.doc"; // Относительный путь к файлу
-            filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
-            wordApp = new Word.Application();
-            dateTimePickerJob.CustomFormat = "dd/MM/yyyy"; // Устанавливаем только дату
         }
         
         private void SetData()
@@ -59,6 +55,12 @@ namespace TaxoNavicon
 
         private void ToolStripMenuItemPrintCertificate_Click(object sender, EventArgs e)
         {
+            
+            string relativePath = @"EuropeanCertidicate.doc"; // Относительный путь к файлу
+            filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
+            wordApp = new Word.Application();
+            dateTimePickerJob.CustomFormat = "dd/MM/yyyy"; // Устанавливаем только дату
+
             CheckOpenDock();
             //wordDoc = wordApp.Documents.Open(filePath);
 
@@ -94,6 +96,7 @@ namespace TaxoNavicon
             {
                 wordDoc.PrintOut();
             }
+            ClouseConnectionWord();
         }
 
         private void FindAndReplace(Word.Document doc, string findText, string replaceText)
