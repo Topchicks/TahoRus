@@ -1,6 +1,7 @@
 ﻿using Microsoft.Office.Interop.Word;
 using Npgsql;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing.Printing;
 using System.IO;
@@ -17,38 +18,37 @@ namespace TaxoNavicon
     {
         /*
         --order
-        <orderNumber>
-        <master>
-        <dataJob> - дата выполнение работ
-        <newDataJob> - дата выполнение новых работ
+        <orderNumber> номерЗаказа
+        <master>  мастер
+        <dataJob> - датаВыполнениеРабот
+        <newDataJob> - датаВыполнениеНовыхРабот
 
          --customer
-        <nameCustomer>
-        <adresCustomer>
+        <nameCustomer> имяКлиента
+        <adresCustomer> адресКлиента
 
         --vehicle
-        <markaVehicle>
-        <modelVehicle>
-        <vinVehicle>
-        <registrationNumberVehicle>
-        <tireMarkingsVehicle>
-        <odometrKmVehicle>
+        <markaVehicle> маркаТранспорта
+        <modelVehicle> модельТранспорта
+        <vinVehicle> винТранспорта
+        <registrationNumberVehicle> регНомерТранспорта
+        <tireMarkingsVehicle> маркировкаШинТранспорта
+        <odometrKmVehicle> одометрТранспорта
 
         --Tachograph
-        <manufacturerTahograph>
-        <serialNumberTahograph>
-        <modelTahograph>
-        <dataTahograph>
-        <productionTahograph>
+        <manufacturerTahograph> производительТахографа
+        <serialNumberTahograph> серийныйНомерТахографа
+        <modelTahograph> модельТахографа
+        <productionTahograph> датаПроизводстваТахографа
 
         <L>
         <W>
         <k>
 
-        <locationInstallationTable> // Расположение установочной таблицы
-        <inspectionResult> // Результат инспекции
-        <signsManipulation> // Признаки манипуляции
-        <specialMarks> // Особые отметки
+        <locationInstallationTable> // расположениеУстановочнойТаблицы
+        <inspectionResult> // результатИнспекции
+        <signsManipulation> // признакиМанипуляции
+        <specialMarks> // особыеОтметки
         */
 
         string sql = "Server=localhost;Port=5432;Database=Certificate; User Id = postgres; Password=123;";
@@ -68,7 +68,7 @@ namespace TaxoNavicon
         // Открытие окна загрузок
         private void toolStripMenuItemLoadRussianDocument_Click(object sender, System.EventArgs e)
         {
-            LoadRussianDocument loadRussianDocument = new LoadRussianDocument();
+            LoadRussianDocument loadRussianDocument = new LoadRussianDocument(GetDataLoad);
 
             loadRussianDocument.Show();
         }
@@ -258,28 +258,118 @@ namespace TaxoNavicon
 
         private void SqlConnection()
         {
-            /*NpgsqlConnection npgsqlConnection = new NpgsqlConnection(sql);
+            NpgsqlConnection npgsqlConnection = new NpgsqlConnection(sql);
 
             string connectionString = "Host=localhost;Username=postgres;Password=123;Database=Certificate";
 
             using (var connection = new NpgsqlConnection(connectionString))
             {
-                connection.Open();
-
                 // Создание команды на вставку данных
-                string insertQuery = "INSERT INTO russianCertificate (orderNumber, master) VALUES (@orderNumber, @master)";
+                string insertQuery = "INSERT INTO \"RussianCertificate\" " +
+                    "(номерЗаказа,мастер,датаВыполнениеРабот,датаВыполнениеНовыхРабот,имяКлиента,адресКлиента,маркаТранспорта," +
+                    "модельТранспорта,винТранспорта,регНомерТранспорта, маркировкаШинТранспорта,одометрТранспорта," +
+                    "производительТахографа,серийныйНомерТахографа,модельТахографа,датаПроизводстваТахографа," +
+                    "расположениеУстановочнойТаблицы,результатИнспекции,признакиМанипуляции,особыеОтметки) " +
+                    "VALUES " +
+                    "(@номерЗаказа,@мастер,@датаВыполнениеРабот,@датаВыполнениеНовыхРабот,@имяКлиента,@адресКлиента,@маркаТранспорта," +
+                    "@модельТранспорта,@винТранспорта,@регНомерТранспорта, @маркировкаШинТранспорта,@одометрТранспорта," +
+                    "@производительТахографа,@серийныйНомерТахографа,@модельТахографа,@датаПроизводстваТахографа," +
+                    "@расположениеУстановочнойТаблицы,@результатИнспекции,@признакиМанипуляции,@особыеОтметки)";
 
                 using (var command = new NpgsqlCommand(insertQuery, connection))
                 {
                     // Добавление параметров
-                    command.Parameters.AddWithValue("orderNumber", "1");
-                    command.Parameters.AddWithValue("master", "Беляев Сергей");
+                    command.Parameters.AddWithValue("@номерЗаказа", poleDataRussian.orderNumber);
+                    command.Parameters.AddWithValue("@мастер", poleDataRussian.master);
+                    command.Parameters.AddWithValue("@датаВыполнениеРабот", poleDataRussian.dataJob);
+                    command.Parameters.AddWithValue("@датаВыполнениеНовыхРабот", poleDataRussian.newDataJob);
+                    command.Parameters.AddWithValue("@имяКлиента", poleDataRussian.nameCustomer);
+                    command.Parameters.AddWithValue("@адресКлиента", poleDataRussian.adresCustomer);
+                    command.Parameters.AddWithValue("@маркаТранспорта", poleDataRussian.markaVehicle);
+                    command.Parameters.AddWithValue("@модельТранспорта", poleDataRussian.modelVehicle);
+                    command.Parameters.AddWithValue("@винТранспорта", poleDataRussian.vinVehicle);
+                    command.Parameters.AddWithValue("@регНомерТранспорта", poleDataRussian.registrationNumberVehicle);
+                    command.Parameters.AddWithValue("@маркировкаШинТранспорта", poleDataRussian.tireMarkingsVehicle);
+                    command.Parameters.AddWithValue("@одометрТранспорта", poleDataRussian.odometerKmVehicle);
+                    command.Parameters.AddWithValue("@производительТахографа", poleDataRussian.manufacturerTahograph);
+                    command.Parameters.AddWithValue("@серийныйНомерТахографа", poleDataRussian.serialNumberTahograph);
+                    command.Parameters.AddWithValue("@модельТахографа", poleDataRussian.modelTachograph);
+                    command.Parameters.AddWithValue("@датаПроизводстваТахографа", poleDataRussian.modelTachograph);
+                    command.Parameters.AddWithValue("@расположениеУстановочнойТаблицы", poleDataRussian.locationInstallationTable);
+                    command.Parameters.AddWithValue("@результатИнспекции", poleDataRussian.inspectionResult);
+                    command.Parameters.AddWithValue("@признакиМанипуляции", poleDataRussian.signsManipulation);
+                    command.Parameters.AddWithValue("@особыеОтметки", poleDataRussian.specialMarks);
 
-                    // Выполнение команды
-                    int rowsAffected = command.ExecuteNonQuery();
-                    Console.WriteLine($"{rowsAffected} rows were inserted.");
+                    // Открываем соединение
+                    connection.Open();
+
+                    // Выполняем команду
+                    command.ExecuteNonQuery();
                 }
-            }*/
+                connection.Close();
+            }
+        }
+
+        /// <summary>
+        /// Метод который будет принимать параметры из окна загрузок
+        /// </summary>
+        public void GetDataLoad(int orderNumber,
+                                string master,
+                                string dataJob,
+                                string nameCustomer,
+                                string adresCustomer,
+                                string markaVehicle,
+                                string modelVehicle,
+                                string vinVehicle,
+                                string registrationNumberVehicle,
+                                string tireMarkingsVehicle,
+                                string odometerKmVehicle,
+                                string manufacturerTahograph,
+                                string serialNumberTahograph,
+                                string modelTachograph,
+                                string producedTachograph,
+                                string locationInstallationTable,
+                                string inspectionResult,
+                                string signsManipulation,
+                                string specialMarks,
+                                string l,
+                                string w,
+                                string k
+                                )
+        {
+            //Order - заказ
+            numericUpDowntextBoxOrderNumber.Value = orderNumber;// номер заказа
+            comboBoxMaster.Text = master; // мастер
+
+
+            //Customer - заказчик
+            textBoxNameCustomer.Text = nameCustomer; // имя русском
+            textBoxAdresCustomer.Text = adresCustomer;// адрес заказчика
+
+            //Vehicle - транспорт
+            textBoxMarkaVehicle.Text = markaVehicle; // марка машины
+            textBoxModelVehicle.Text = modelVehicle; // модель машины
+            textBoxVinNumberVehicle.Text = vinVehicle; // вин номер машины
+            textBoxRegistrationNumberVehicle.Text = registrationNumberVehicle; // рег. номер машины
+            textBoxOdometerKmVehicle.Text = odometerKmVehicle; // одометр км
+            textBoxTireMarkingsVehicle.Text = tireMarkingsVehicle;// маркировка шин
+
+            //Tahograf - тахограф
+            textBoxManufacturerTachograph.Text = manufacturerTahograph; // производитель
+            textBoxModelTachograph.Text = modelTachograph; // модель тахографа
+            textBoxProducedTachograph.Text = producedTachograph; // год производства
+            textBoxSerialNumberTahograph.Text = serialNumberTahograph; // год производства
+
+            textBoxL.Text = l;
+            textBoxW.Text = w;
+            textBoxK.Text = k;
+
+            dateTimePickerJob.Value = DateTime.Parse(dataJob); // Установка значения в DateTimePicker
+
+            textBoxLocationInstallationTable.Text = locationInstallationTable;
+            comboBoxInspectionResult.Text = inspectionResult;
+            comboBoxSignsManipulation.Text = signsManipulation;
+            textBoxSpecialMarks.Text = specialMarks;
         }
     }
 }
