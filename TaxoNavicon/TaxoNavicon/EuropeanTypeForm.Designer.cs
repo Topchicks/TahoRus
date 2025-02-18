@@ -66,7 +66,7 @@
             this.label24 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.textBoxNameCustomerEng = new System.Windows.Forms.TextBox();
+            this.toolStripMenuItemLoadEuropeanDocument = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
             this.textBoxAdresCustomer = new System.Windows.Forms.TextBox();
             this.textBoxNameCustomer = new System.Windows.Forms.TextBox();
@@ -86,13 +86,14 @@
             this.печатьНаклейкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemCreate = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemPrintCertificate = new System.Windows.Forms.ToolStripMenuItem();
-            this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemSaveData = new System.Windows.Forms.ToolStripMenuItem();
+            this.LoadEuropeanDocuments = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemSetData = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.ToolStripMenuItemSetData = new System.Windows.Forms.ToolStripMenuItem();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.применитьИToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -126,15 +127,15 @@
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(0, 24);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(977, 562);
+            this.panel9.Size = new System.Drawing.Size(977, 1009);
             this.panel9.TabIndex = 8;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.40764F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.59236F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.80758F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.19242F));
             this.tableLayoutPanel1.Controls.Add(this.panel8, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel5, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel7, 1, 0);
@@ -143,9 +144,9 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 156);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.06326F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.93674F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(977, 406);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.17473F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.82526F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(977, 853);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
             // panel5
@@ -167,9 +168,9 @@
             this.panel5.Controls.Add(this.label13);
             this.panel5.Controls.Add(this.label14);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(3, 141);
+            this.panel5.Location = new System.Drawing.Point(3, 140);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(437, 262);
+            this.panel5.Size = new System.Drawing.Size(422, 710);
             this.panel5.TabIndex = 3;
             // 
             // textBoxYearOfIssueVehiccle
@@ -312,9 +313,9 @@
             this.panel7.Controls.Add(this.label28);
             this.panel7.Controls.Add(this.label29);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(446, 3);
+            this.panel7.Location = new System.Drawing.Point(431, 3);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(528, 132);
+            this.panel7.Size = new System.Drawing.Size(543, 131);
             this.panel7.TabIndex = 5;
             // 
             // textBoxL
@@ -391,7 +392,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(3, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(437, 132);
+            this.panel6.Size = new System.Drawing.Size(422, 131);
             this.panel6.TabIndex = 4;
             // 
             // textBoxModelTachograph
@@ -474,7 +475,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
-            this.panel4.Controls.Add(this.textBoxNameCustomerEng);
+            this.panel4.Controls.Add(this.toolStripMenuItemLoadEuropeanDocument);
             this.panel4.Controls.Add(this.label34);
             this.panel4.Controls.Add(this.textBoxAdresCustomer);
             this.panel4.Controls.Add(this.textBoxNameCustomer);
@@ -487,12 +488,12 @@
             this.panel4.Size = new System.Drawing.Size(588, 150);
             this.panel4.TabIndex = 2;
             // 
-            // textBoxNameCustomerEng
+            // toolStripMenuItemLoadEuropeanDocument
             // 
-            this.textBoxNameCustomerEng.Location = new System.Drawing.Point(70, 52);
-            this.textBoxNameCustomerEng.Name = "textBoxNameCustomerEng";
-            this.textBoxNameCustomerEng.Size = new System.Drawing.Size(321, 20);
-            this.textBoxNameCustomerEng.TabIndex = 15;
+            this.toolStripMenuItemLoadEuropeanDocument.Location = new System.Drawing.Point(70, 52);
+            this.toolStripMenuItemLoadEuropeanDocument.Name = "toolStripMenuItemLoadEuropeanDocument";
+            this.toolStripMenuItemLoadEuropeanDocument.Size = new System.Drawing.Size(321, 20);
+            this.toolStripMenuItemLoadEuropeanDocument.TabIndex = 15;
             // 
             // label34
             // 
@@ -640,9 +641,10 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.наклейкаToolStripMenuItem,
             this.ToolStripMenuItemCreate,
-            this.сохранитьToolStripMenuItem,
-            this.загрузитьToolStripMenuItem,
-            this.ToolStripMenuItemSetData});
+            this.ToolStripMenuItemSaveData,
+            this.LoadEuropeanDocuments,
+            this.ToolStripMenuItemSetData,
+            this.применитьИToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(977, 24);
@@ -678,17 +680,26 @@
             this.ToolStripMenuItemPrintCertificate.Text = "Печать сертификата";
             this.ToolStripMenuItemPrintCertificate.Click += new System.EventHandler(this.ToolStripMenuItemPrintCertificate_Click);
             // 
-            // сохранитьToolStripMenuItem
+            // ToolStripMenuItemSaveData
             // 
-            this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
-            this.сохранитьToolStripMenuItem.Text = "Сохранить";
+            this.ToolStripMenuItemSaveData.Name = "ToolStripMenuItemSaveData";
+            this.ToolStripMenuItemSaveData.Size = new System.Drawing.Size(78, 20);
+            this.ToolStripMenuItemSaveData.Text = "Сохранить";
+            this.ToolStripMenuItemSaveData.Click += new System.EventHandler(this.ToolStripMenuItemSaveData_Click);
             // 
-            // загрузитьToolStripMenuItem
+            // LoadEuropeanDocuments
             // 
-            this.загрузитьToolStripMenuItem.Name = "загрузитьToolStripMenuItem";
-            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
-            this.загрузитьToolStripMenuItem.Text = "Загрузить";
+            this.LoadEuropeanDocuments.Name = "LoadEuropeanDocuments";
+            this.LoadEuropeanDocuments.Size = new System.Drawing.Size(73, 20);
+            this.LoadEuropeanDocuments.Text = "Загрузить";
+            this.LoadEuropeanDocuments.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
+            // 
+            // ToolStripMenuItemSetData
+            // 
+            this.ToolStripMenuItemSetData.Name = "ToolStripMenuItemSetData";
+            this.ToolStripMenuItemSetData.Size = new System.Drawing.Size(69, 20);
+            this.ToolStripMenuItemSetData.Text = "Записать";
+            this.ToolStripMenuItemSetData.Click += new System.EventHandler(this.ToolStripMenuItemSetData_Click);
             // 
             // contextMenuStrip1
             // 
@@ -705,21 +716,20 @@
             this.contextMenuStrip3.Name = "contextMenuStrip3";
             this.contextMenuStrip3.Size = new System.Drawing.Size(61, 4);
             // 
-            // ToolStripMenuItemSetData
-            // 
-            this.ToolStripMenuItemSetData.Name = "ToolStripMenuItemSetData";
-            this.ToolStripMenuItemSetData.Size = new System.Drawing.Size(69, 20);
-            this.ToolStripMenuItemSetData.Text = "Записать";
-            this.ToolStripMenuItemSetData.Click += new System.EventHandler(this.ToolStripMenuItemSetData_Click);
-            // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(446, 141);
+            this.panel8.Location = new System.Drawing.Point(431, 140);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(528, 262);
+            this.panel8.Size = new System.Drawing.Size(543, 710);
             this.panel8.TabIndex = 6;
+            // 
+            // применитьИToolStripMenuItem
+            // 
+            this.применитьИToolStripMenuItem.Name = "применитьИToolStripMenuItem";
+            this.применитьИToolStripMenuItem.Size = new System.Drawing.Size(145, 20);
+            this.применитьИToolStripMenuItem.Text = "Применить изменения";
             // 
             // EuropeanTypeForm
             // 
@@ -801,7 +811,7 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.NumericUpDown numericUpDowntextBoxOrderNumber;
-        private System.Windows.Forms.TextBox textBoxNameCustomerEng;
+        private System.Windows.Forms.TextBox toolStripMenuItemLoadEuropeanDocument;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.TextBox textBoxYearOfIssueVehiccle;
         private System.Windows.Forms.Label label35;
@@ -811,8 +821,8 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem наклейкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemCreate;
-        private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem загрузитьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSaveData;
+        private System.Windows.Forms.ToolStripMenuItem LoadEuropeanDocuments;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip3;
@@ -821,6 +831,7 @@
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemPrintCertificate;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSetData;
         private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.ToolStripMenuItem применитьИToolStripMenuItem;
     }
 }
 

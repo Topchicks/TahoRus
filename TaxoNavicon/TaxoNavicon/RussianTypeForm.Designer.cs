@@ -98,6 +98,7 @@
             this.toolStripMenuItemSaveData = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemLoadRussianDocument = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemSetData = new System.Windows.Forms.ToolStripMenuItem();
+            this.применитьИзмененияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -763,7 +764,8 @@
             this.toolStripMenuItem2,
             this.toolStripMenuItemSaveData,
             this.toolStripMenuItemLoadRussianDocument,
-            this.ToolStripMenuItemSetData});
+            this.ToolStripMenuItemSetData,
+            this.применитьИзмененияToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Size = new System.Drawing.Size(977, 24);
@@ -819,6 +821,12 @@
             this.ToolStripMenuItemSetData.Size = new System.Drawing.Size(69, 20);
             this.ToolStripMenuItemSetData.Text = "Записать";
             this.ToolStripMenuItemSetData.Click += new System.EventHandler(this.ToolStripMenuItemSetData_Click);
+            // 
+            // применитьИзмененияToolStripMenuItem
+            // 
+            this.применитьИзмененияToolStripMenuItem.Name = "применитьИзмененияToolStripMenuItem";
+            this.применитьИзмененияToolStripMenuItem.Size = new System.Drawing.Size(145, 20);
+            this.применитьИзмененияToolStripMenuItem.Text = "Применить изменения";
             // 
             // RussianTypeForm
             // 
@@ -925,5 +933,6 @@
         private System.Windows.Forms.ToolStripMenuItem печатьНаклейкиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemPrintCertificate;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSetData;
+        private System.Windows.Forms.ToolStripMenuItem применитьИзмененияToolStripMenuItem;
     }
 }

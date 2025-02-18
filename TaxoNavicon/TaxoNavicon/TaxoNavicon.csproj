@@ -139,6 +139,12 @@
     <Compile Include="EuropeanTypeForm.Designer.cs">
       <DependentUpon>EuropeanTypeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoadEuropeanDocument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadEuropeanDocument.Designer.cs">
+      <DependentUpon>LoadEuropeanDocument.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoadRussianDocument.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +180,9 @@
     </Compile>
     <EmbeddedResource Include="EuropeanTypeForm.resx">
       <DependentUpon>EuropeanTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadEuropeanDocument.resx">
+      <DependentUpon>LoadEuropeanDocument.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoadRussianDocument.resx">
       <DependentUpon>LoadRussianDocument.cs</DependentUpon>
