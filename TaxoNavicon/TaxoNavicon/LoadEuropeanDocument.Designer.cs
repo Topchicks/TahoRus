@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.startOrderPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.startOrderPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.startOrderPanel.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.startOrderPanel.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,38 +53,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(391, 61);
+            this.panel1.Size = new System.Drawing.Size(407, 61);
             this.panel1.TabIndex = 0;
-            // 
-            // startOrderPanel
-            // 
-            this.startOrderPanel.Controls.Add(this.panel3);
-            this.startOrderPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.startOrderPanel.Location = new System.Drawing.Point(0, 61);
-            this.startOrderPanel.Name = "startOrderPanel";
-            this.startOrderPanel.Size = new System.Drawing.Size(391, 528);
-            this.startOrderPanel.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(64)))));
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(391, 35);
-            this.panel2.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 18);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Список документов";
             // 
             // label3
             // 
@@ -107,6 +77,36 @@
             this.label1.Size = new System.Drawing.Size(77, 18);
             this.label1.TabIndex = 3;
             this.label1.Text = "№ заказа";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(64)))));
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(407, 35);
+            this.panel2.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(149, 18);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Список документов";
+            // 
+            // startOrderPanel
+            // 
+            this.startOrderPanel.Controls.Add(this.panel3);
+            this.startOrderPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.startOrderPanel.Location = new System.Drawing.Point(0, 61);
+            this.startOrderPanel.Name = "startOrderPanel";
+            this.startOrderPanel.Size = new System.Drawing.Size(407, 567);
+            this.startOrderPanel.TabIndex = 1;
             // 
             // panel3
             // 
@@ -159,6 +159,7 @@
             this.ClientSize = new System.Drawing.Size(391, 589);
             this.Controls.Add(this.startOrderPanel);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(407, 628);
             this.MinimizeBox = false;
@@ -169,9 +170,9 @@
             this.Load += new System.EventHandler(this.LoadEuropeanDocument_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.startOrderPanel.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.startOrderPanel.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 

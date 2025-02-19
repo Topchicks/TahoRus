@@ -50,8 +50,6 @@ namespace TaxoNavicon
         <signsManipulation> // признакиМанипуляции
         <specialMarks> // особыеОтметки
         */
-
-        string sql = "Server=localhost;Port=5432;Database=Certificate; User Id = postgres; Password=123;";
         PoleDataRussian poleDataRussian;
         private PrintDocument printDocument;
 
@@ -258,8 +256,6 @@ namespace TaxoNavicon
 
         private void SqlConnection()
         {
-            NpgsqlConnection npgsqlConnection = new NpgsqlConnection(sql);
-
             string connectionString = "Host=localhost;Username=postgres;Password=123;Database=Certificate";
 
             using (var connection = new NpgsqlConnection(connectionString))
@@ -269,12 +265,12 @@ namespace TaxoNavicon
                     "(номерЗаказа,мастер,датаВыполнениеРабот,датаВыполнениеНовыхРабот,имяКлиента,адресКлиента,маркаТранспорта," +
                     "модельТранспорта,винТранспорта,регНомерТранспорта, маркировкаШинТранспорта,одометрТранспорта," +
                     "производительТахографа,серийныйНомерТахографа,модельТахографа,датаПроизводстваТахографа," +
-                    "расположениеУстановочнойТаблицы,результатИнспекции,признакиМанипуляции,особыеОтметки) " +
-                    "VALUES " +
+                    "расположениеУстановочнойТаблицы,результатИнспекции,признакиМанипуляции,особыеОтметки, l, k, w)" +
+                    "VALUES" +
                     "(@номерЗаказа,@мастер,@датаВыполнениеРабот,@датаВыполнениеНовыхРабот,@имяКлиента,@адресКлиента,@маркаТранспорта," +
                     "@модельТранспорта,@винТранспорта,@регНомерТранспорта, @маркировкаШинТранспорта,@одометрТранспорта," +
                     "@производительТахографа,@серийныйНомерТахографа,@модельТахографа,@датаПроизводстваТахографа," +
-                    "@расположениеУстановочнойТаблицы,@результатИнспекции,@признакиМанипуляции,@особыеОтметки)";
+                    "@расположениеУстановочнойТаблицы,@результатИнспекции,@признакиМанипуляции,@особыеОтметки, @l, @k, @w)";
 
                 using (var command = new NpgsqlCommand(insertQuery, connection))
                 {
@@ -283,28 +279,43 @@ namespace TaxoNavicon
                     command.Parameters.AddWithValue("@мастер", poleDataRussian.master);
                     command.Parameters.AddWithValue("@датаВыполнениеРабот", poleDataRussian.dataJob);
                     command.Parameters.AddWithValue("@датаВыполнениеНовыхРабот", poleDataRussian.newDataJob);
+
                     command.Parameters.AddWithValue("@имяКлиента", poleDataRussian.nameCustomer);
                     command.Parameters.AddWithValue("@адресКлиента", poleDataRussian.adresCustomer);
+
                     command.Parameters.AddWithValue("@маркаТранспорта", poleDataRussian.markaVehicle);
                     command.Parameters.AddWithValue("@модельТранспорта", poleDataRussian.modelVehicle);
                     command.Parameters.AddWithValue("@винТранспорта", poleDataRussian.vinVehicle);
                     command.Parameters.AddWithValue("@регНомерТранспорта", poleDataRussian.registrationNumberVehicle);
                     command.Parameters.AddWithValue("@маркировкаШинТранспорта", poleDataRussian.tireMarkingsVehicle);
                     command.Parameters.AddWithValue("@одометрТранспорта", poleDataRussian.odometerKmVehicle);
+
                     command.Parameters.AddWithValue("@производительТахографа", poleDataRussian.manufacturerTahograph);
                     command.Parameters.AddWithValue("@серийныйНомерТахографа", poleDataRussian.serialNumberTahograph);
                     command.Parameters.AddWithValue("@модельТахографа", poleDataRussian.modelTachograph);
-                    command.Parameters.AddWithValue("@датаПроизводстваТахографа", poleDataRussian.modelTachograph);
+                    command.Parameters.AddWithValue("@датаПроизводстваТахографа", poleDataRussian.producedTachograph);
+
                     command.Parameters.AddWithValue("@расположениеУстановочнойТаблицы", poleDataRussian.locationInstallationTable);
                     command.Parameters.AddWithValue("@результатИнспекции", poleDataRussian.inspectionResult);
                     command.Parameters.AddWithValue("@признакиМанипуляции", poleDataRussian.signsManipulation);
                     command.Parameters.AddWithValue("@особыеОтметки", poleDataRussian.specialMarks);
 
+                    command.Parameters.AddWithValue("@l", poleDataRussian.l);
+                    command.Parameters.AddWithValue("@k", poleDataRussian.k);
+                    command.Parameters.AddWithValue("@w", poleDataRussian.w);
+
                     // Открываем соединение
                     connection.Open();
 
-                    // Выполняем команду
-                    command.ExecuteNonQuery();
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Данные успешно сохранены в базе данных.");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ошибка при сохранении данных: " + ex.Message);
+                    }
                 }
                 connection.Close();
             }
@@ -313,25 +324,31 @@ namespace TaxoNavicon
         /// <summary>
         /// Метод который будет принимать параметры из окна загрузок
         /// </summary>
-        public void GetDataLoad(int orderNumber,
+        public void GetDataLoad(
+                                int orderNumber,
                                 string master,
                                 string dataJob,
+
                                 string nameCustomer,
                                 string adresCustomer,
+
                                 string markaVehicle,
                                 string modelVehicle,
                                 string vinVehicle,
                                 string registrationNumberVehicle,
                                 string tireMarkingsVehicle,
                                 string odometerKmVehicle,
+
                                 string manufacturerTahograph,
                                 string serialNumberTahograph,
                                 string modelTachograph,
                                 string producedTachograph,
+
                                 string locationInstallationTable,
                                 string inspectionResult,
                                 string signsManipulation,
                                 string specialMarks,
+
                                 string l,
                                 string w,
                                 string k

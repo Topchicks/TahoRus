@@ -42,8 +42,6 @@
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.textBoxYearOfIssueVehiccle = new System.Windows.Forms.TextBox();
-            this.label35 = new System.Windows.Forms.Label();
             this.textBoxOdometerKmVehicle = new System.Windows.Forms.TextBox();
             this.textBoxRegistrationNumberVehicle = new System.Windows.Forms.TextBox();
             this.textBoxModelVehicle = new System.Windows.Forms.TextBox();
@@ -271,8 +269,6 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(196)))));
-            this.panel5.Controls.Add(this.textBoxYearOfIssueVehiccle);
-            this.panel5.Controls.Add(this.label35);
             this.panel5.Controls.Add(this.textBoxOdometerKmVehicle);
             this.panel5.Controls.Add(this.textBoxRegistrationNumberVehicle);
             this.panel5.Controls.Add(this.textBoxModelVehicle);
@@ -292,33 +288,16 @@
             this.panel5.Size = new System.Drawing.Size(437, 262);
             this.panel5.TabIndex = 3;
             // 
-            // textBoxYearOfIssueVehiccle
-            // 
-            this.textBoxYearOfIssueVehiccle.Location = new System.Drawing.Point(122, 107);
-            this.textBoxYearOfIssueVehiccle.Name = "textBoxYearOfIssueVehiccle";
-            this.textBoxYearOfIssueVehiccle.Size = new System.Drawing.Size(287, 20);
-            this.textBoxYearOfIssueVehiccle.TabIndex = 21;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label35.Location = new System.Drawing.Point(4, 105);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(89, 20);
-            this.label35.TabIndex = 22;
-            this.label35.Text = "Дата выпуска:";
-            // 
             // textBoxOdometerKmVehicle
             // 
-            this.textBoxOdometerKmVehicle.Location = new System.Drawing.Point(122, 185);
+            this.textBoxOdometerKmVehicle.Location = new System.Drawing.Point(123, 161);
             this.textBoxOdometerKmVehicle.Name = "textBoxOdometerKmVehicle";
             this.textBoxOdometerKmVehicle.Size = new System.Drawing.Size(287, 20);
             this.textBoxOdometerKmVehicle.TabIndex = 20;
             // 
             // textBoxRegistrationNumberVehicle
             // 
-            this.textBoxRegistrationNumberVehicle.Location = new System.Drawing.Point(122, 159);
+            this.textBoxRegistrationNumberVehicle.Location = new System.Drawing.Point(123, 135);
             this.textBoxRegistrationNumberVehicle.Name = "textBoxRegistrationNumberVehicle";
             this.textBoxRegistrationNumberVehicle.Size = new System.Drawing.Size(287, 20);
             this.textBoxRegistrationNumberVehicle.TabIndex = 19;
@@ -334,7 +313,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label15.Location = new System.Drawing.Point(4, 183);
+            this.label15.Location = new System.Drawing.Point(5, 159);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(82, 20);
             this.label15.TabIndex = 18;
@@ -344,7 +323,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label16.Location = new System.Drawing.Point(4, 157);
+            this.label16.Location = new System.Drawing.Point(5, 133);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(73, 20);
             this.label16.TabIndex = 17;
@@ -369,7 +348,7 @@
             // 
             // textBoxVinNumberVehicle
             // 
-            this.textBoxVinNumberVehicle.Location = new System.Drawing.Point(122, 133);
+            this.textBoxVinNumberVehicle.Location = new System.Drawing.Point(123, 109);
             this.textBoxVinNumberVehicle.Name = "textBoxVinNumberVehicle";
             this.textBoxVinNumberVehicle.Size = new System.Drawing.Size(287, 20);
             this.textBoxVinNumberVehicle.TabIndex = 13;
@@ -395,7 +374,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(4, 131);
+            this.label12.Location = new System.Drawing.Point(5, 107);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(31, 20);
             this.label12.TabIndex = 11;
@@ -877,8 +856,6 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox textBoxYearOfIssueVehiccle;
-        private System.Windows.Forms.Label label35;
         private System.Windows.Forms.TextBox textBoxOdometerKmVehicle;
         private System.Windows.Forms.TextBox textBoxRegistrationNumberVehicle;
         private System.Windows.Forms.TextBox textBoxModelVehicle;

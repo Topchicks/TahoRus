@@ -54,10 +54,5 @@ namespace TaxoNavicon
 
             russianTypeForm.ShowDialog();
         }
-
-        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-
-        }
     }
 }

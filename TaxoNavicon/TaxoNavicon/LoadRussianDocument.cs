@@ -82,6 +82,7 @@ namespace TaxoNavicon
                     }
                 }
                 connection.Close();
+
             }
 
             // Пример вывода значений из словаря
@@ -238,6 +239,7 @@ namespace TaxoNavicon
                     connection.Close();
                 }
             }
+            this.Close();
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)

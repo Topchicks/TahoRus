@@ -34,7 +34,6 @@ namespace TaxoNavicon
         public string manufacturerTahograph; // производитель
         public string serialNumberTahograph; // срийный номр
         public string modelTachograph; // модель
-        public string producedTachograph; // произведен .год
         #endregion
 
         public string l;

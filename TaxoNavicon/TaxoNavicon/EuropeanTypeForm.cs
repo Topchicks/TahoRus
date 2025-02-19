@@ -31,7 +31,7 @@ namespace TaxoNavicon
 
             //Customer
             poleDataEuropean.nameCustomer = textBoxNameCustomer.Text; // имя русском
-            poleDataEuropean.nameCustomerEng = toolStripMenuItemLoadEuropeanDocument.Text; // имя на английском
+            poleDataEuropean.nameCustomerEng = textBoxNameCustomerEng.Text; // имя на английском
             poleDataEuropean.adresCustomer = textBoxAdresCustomer.Text;// адрес заказчика
 
             //Vehicle
@@ -85,7 +85,6 @@ namespace TaxoNavicon
             FindAndReplace(wordDoc, "<manufacturerTahograph>", poleDataEuropean.manufacturerTahograph);
             FindAndReplace(wordDoc, "<serialNumberTahograph>", poleDataEuropean.serialNumberTahograph);
             FindAndReplace(wordDoc, "<modelTahograph>", poleDataEuropean.modelTachograph);
-            FindAndReplace(wordDoc, "<producedTachograph>", poleDataEuropean.producedTachograph);
 
             FindAndReplace(wordDoc, "<L>", poleDataEuropean.l);
             FindAndReplace(wordDoc, "<W>", poleDataEuropean.w);
@@ -197,55 +196,77 @@ namespace TaxoNavicon
 
         private void SqlConnection()
         {
-            NpgsqlConnection npgsqlConnection = new NpgsqlConnection(sql);
-
             string connectionString = "Host=localhost;Username=postgres;Password=123;Database=Certificate";
 
             using (var connection = new NpgsqlConnection(connectionString))
-            {
+            {   
                 // Создание команды на вставку данных
-                string insertQuery = "INSERT INTO \"RussianCertificate\" " +
-                    "(номерЗаказа,мастер,датаВыполнениеРабот,датаВыполнениеНовыхРабот,имяКлиента,адресКлиента,маркаТранспорта," +
-                    "модельТранспорта,винТранспорта,регНомерТранспорта, маркировкаШинТранспорта,одометрТранспорта," +
-                    "производительТахографа,серийныйНомерТахографа,модельТахографа,датаПроизводстваТахографа," +
-                    "расположениеУстановочнойТаблицы,результатИнспекции,признакиМанипуляции,особыеОтметки) " +
-                    "VALUES " +
-                    "(@номерЗаказа,@мастер,@датаВыполнениеРабот,@датаВыполнениеНовыхРабот,@имяКлиента,@адресКлиента,@маркаТранспорта," +
-                    "@модельТранспорта,@винТранспорта,@регНомерТранспорта, @маркировкаШинТранспорта,@одометрТранспорта," +
-                    "@производительТахографа,@серийныйНомерТахографа,@модельТахографа,@датаПроизводстваТахографа," +
-                    "@расположениеУстановочнойТаблицы,@результатИнспекции,@признакиМанипуляции,@особыеОтметки)";
+                string insertQuery = "INSERT INTO \"EuropeanCertificate\" " +
+            "(номерЗаказа, мастер, датаВыполнениеРабот, имяКлиента, имяКлиентаАнглийский, адресКлиента, производительТранспорта, " +
+            "модельТранспорта, винТранспорта, регНомерТранспорта, маркировкаШинТранспорта, одометрТранспорта, датаВыпускаТранспорта, " +
+            "производительТахографа, модельТахографа, l, k, w) " +
+            "VALUES " +
+            "(@номерЗаказа, @мастер, @датаВыполнениеРабот, @имяКлиента, @имяКлиентаАнглийский, @адресКлиента, @производительТранспорта, " +
+            "@модельТранспорта, @винТранспорта, @регНомерТранспорта, @маркировкаШинТранспорта, @одометрТранспорта, @датаВыпускаТранспорта, " +
+            "@производительТахографа,@модельТахографа, @l, @k, @w)";
 
                 using (var command = new NpgsqlCommand(insertQuery, connection))
                 {
+
                     // Добавление параметров
                     command.Parameters.AddWithValue("@номерЗаказа", poleDataEuropean.orderNumber);
                     command.Parameters.AddWithValue("@мастер", poleDataEuropean.master);
                     command.Parameters.AddWithValue("@датаВыполнениеРабот", poleDataEuropean.dataJob);
-                    command.Parameters.AddWithValue("@датаВыполнениеНовыхРабот", poleDataEuropean.newDataJob); /// удалить
                     command.Parameters.AddWithValue("@имяКлиента", poleDataEuropean.nameCustomer);
+                    command.Parameters.AddWithValue("@имяКлиентаАнглийский", poleDataEuropean.nameCustomerEng);
                     command.Parameters.AddWithValue("@адресКлиента", poleDataEuropean.adresCustomer);
-                    command.Parameters.AddWithValue("@маркаТранспорта", poleDataEuropean.manufacturerVehicle); /// редактировать
+                    command.Parameters.AddWithValue("@производительТранспорта", poleDataEuropean.manufacturerVehicle);
                     command.Parameters.AddWithValue("@модельТранспорта", poleDataEuropean.modelVehicle);
                     command.Parameters.AddWithValue("@винТранспорта", poleDataEuropean.vinVehicle);
                     command.Parameters.AddWithValue("@регНомерТранспорта", poleDataEuropean.registrationNumberVehicle);
                     command.Parameters.AddWithValue("@маркировкаШинТранспорта", poleDataEuropean.tireMarkingsVehicle);
                     command.Parameters.AddWithValue("@одометрТранспорта", poleDataEuropean.odometerKmVehicle);
+                    command.Parameters.AddWithValue("@датаВыпускаТранспорта", poleDataEuropean.yearOfIssueVehiccle);
                     command.Parameters.AddWithValue("@производительТахографа", poleDataEuropean.manufacturerTahograph);
-                    command.Parameters.AddWithValue("@серийныйНомерТахографа", poleDataEuropean.serialNumberTahograph);
+                    
                     command.Parameters.AddWithValue("@модельТахографа", poleDataEuropean.modelTachograph);
-                    command.Parameters.AddWithValue("@датаПроизводстваТахографа", poleDataEuropean.modelTachograph);
-                    command.Parameters.AddWithValue("@расположениеУстановочнойТаблицы", poleDataEuropean.locationInstallationTable); // Удалить
-                    command.Parameters.AddWithValue("@результатИнспекции", poleDataEuropean.inspectionResult); // Удалить
-                    command.Parameters.AddWithValue("@признакиМанипуляции", poleDataEuropean.signsManipulation); // Удалить
-                    command.Parameters.AddWithValue("@особыеОтметки", poleDataEuropean.specialMarks); // Удалить
+                    command.Parameters.AddWithValue("@l", poleDataEuropean.l);
+                    command.Parameters.AddWithValue("@k", poleDataEuropean.k);
+                    command.Parameters.AddWithValue("@w", poleDataEuropean.w);
 
-                    // Открываем соединение
-                    connection.Open();
-
+                    Console.WriteLine(poleDataEuropean.orderNumber.ToString());
+                    Console.WriteLine(poleDataEuropean.master);
+                    Console.WriteLine(poleDataEuropean.dataJob);
+                    Console.WriteLine(poleDataEuropean.nameCustomer);
+                    Console.WriteLine(poleDataEuropean.nameCustomerEng);
+                    Console.WriteLine(poleDataEuropean.adresCustomer);
+                    Console.WriteLine(poleDataEuropean.manufacturerVehicle);
+                    Console.WriteLine(poleDataEuropean.modelVehicle);
+                    Console.WriteLine(poleDataEuropean.vinVehicle);
+                    Console.WriteLine(poleDataEuropean.registrationNumberVehicle);
+                    Console.WriteLine(poleDataEuropean.tireMarkingsVehicle);
+                    Console.WriteLine(poleDataEuropean.odometerKmVehicle);
+                    Console.WriteLine(poleDataEuropean.yearOfIssueVehiccle);
+                    Console.WriteLine(poleDataEuropean.manufacturerTahograph);
+                    Console.WriteLine(poleDataEuropean.modelTachograph);
+                    Console.WriteLine(poleDataEuropean.l);
+                    Console.WriteLine(poleDataEuropean.k);
+                    Console.WriteLine(poleDataEuropean.w);
+                // Открываем соединение
+                connection.Open();
                     // Выполняем команду
-                    command.ExecuteNonQuery();
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Данные успешно сохранены в базе данных.");
+                        connection.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ошибка при сохранении данных: " + ex.Message);
+                        connection.Close();
+                    }
                 }
-                connection.Close();
             }
         }
 
@@ -256,21 +277,21 @@ namespace TaxoNavicon
                                 string master,
                                 string dataJob,
                                 string nameCustomer,
+                                string nameCustomerEng,
                                 string adresCustomer,
-                                string markaVehicle,
+
+                                string manufacturerVehicle,
                                 string modelVehicle,
                                 string vinVehicle,
                                 string registrationNumberVehicle,
                                 string tireMarkingsVehicle,
                                 string odometerKmVehicle,
+                                string yearOfIssueVehiccle,
+
                                 string manufacturerTahograph,
                                 string serialNumberTahograph,
                                 string modelTachograph,
-                                string producedTachograph,
-                                string locationInstallationTable,
-                                string inspectionResult,
-                                string signsManipulation,
-                                string specialMarks,
+
                                 string l,
                                 string w,
                                 string k
@@ -279,36 +300,32 @@ namespace TaxoNavicon
             //Order - заказ
             numericUpDowntextBoxOrderNumber.Value = orderNumber;// номер заказа
             comboBoxMaster.Text = master; // мастер
-
+            dateTimePickerJob.Value = DateTime.Parse(dataJob); // Установка значения в DateTimePicker
 
             //Customer - заказчик
             textBoxNameCustomer.Text = nameCustomer; // имя русском
+            textBoxNameCustomerEng.Text = nameCustomerEng; // имя английский
             textBoxAdresCustomer.Text = adresCustomer;// адрес заказчика
 
             //Vehicle - транспорт
-            textBoxMarkaVehicle.Text = markaVehicle; // марка машины
+            textBoxManufacturerVehicle.Text = manufacturerVehicle; // Производитель машины
             textBoxModelVehicle.Text = modelVehicle; // модель машины
             textBoxVinNumberVehicle.Text = vinVehicle; // вин номер машины
             textBoxRegistrationNumberVehicle.Text = registrationNumberVehicle; // рег. номер машины
             textBoxOdometerKmVehicle.Text = odometerKmVehicle; // одометр км
             textBoxTireMarkingsVehicle.Text = tireMarkingsVehicle;// маркировка шин
+            textBoxYearOfIssueVehiccle.Text = yearOfIssueVehiccle;// маркировка шин
 
             //Tahograf - тахограф
             textBoxManufacturerTachograph.Text = manufacturerTahograph; // производитель
             textBoxModelTachograph.Text = modelTachograph; // модель тахографа
-            textBoxProducedTachograph.Text = producedTachograph; // год производства
             textBoxSerialNumberTahograph.Text = serialNumberTahograph; // год производства
 
             textBoxL.Text = l;
             textBoxW.Text = w;
             textBoxK.Text = k;
 
-            dateTimePickerJob.Value = DateTime.Parse(dataJob); // Установка значения в DateTimePicker
-
-            textBoxLocationInstallationTable.Text = locationInstallationTable;
-            comboBoxInspectionResult.Text = inspectionResult;
-            comboBoxSignsManipulation.Text = signsManipulation;
-            textBoxSpecialMarks.Text = specialMarks;
+            
         }
 
         private void ToolStripMenuItemSaveData_Click(object sender, EventArgs e)

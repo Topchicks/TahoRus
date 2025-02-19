@@ -17,28 +17,29 @@ namespace TaxoNavicon
     {
         private Dictionary<string, string> data = new Dictionary<string, string>();
         private Button buttonLoad;
-        private PoleDataRussian poleDataRussian;
+        private PoleDataEuropean poleDataEuropean;
 
         // Делегат для метода
         public delegate void MyDelegate(int orderNumber,
                                         string master,
                                         string dataJob,
+
                                         string nameCustomer,
+                                        string nameCustomerEng,
                                         string adresCustomer,
+
                                         string markaVehicle,
                                         string modelVehicle,
                                         string vinVehicle,
                                         string registrationNumberVehicle,
                                         string tireMarkingsVehicle,
                                         string odometerKmVehicle,
+                                        string yearOfIssueVehiccle,
+
                                         string manufacturerTahograph,
                                         string serialNumberTahograph,
                                         string modelTachograph,
-                                        string producedTachograph,
-                                        string locationInstallationTable,
-                                        string inspectionResult,
-                                        string signsManipulation,
-                                        string specialMarks,
+
                                         string l,
                                         string w,
                                         string k
@@ -61,7 +62,7 @@ namespace TaxoNavicon
                 connection.Open();
 
                 // Создаем запрос
-                string selectQuery = "SELECT номерЗаказа, имяКлиента FROM \"RussianCertificate\"";
+                string selectQuery = "SELECT номерЗаказа, имяКлиента FROM \"EuropeanCertificate\"";
 
                 using (var command = new NpgsqlCommand(selectQuery, connection))
                 {
@@ -72,15 +73,16 @@ namespace TaxoNavicon
                         while (reader.Read())
                         {
                             // Получаем значения столбцов
-                            var номерЗаказа = reader["номерЗаказа"].ToString();
-                            var имяКлиента = reader["имяКлиента"].ToString();
-                            data.Add(номерЗаказа, имяКлиента);
+                            var orderNumber = reader["номерЗаказа"].ToString();
+                            var nameCustomer = reader["имяКлиента"].ToString();
+                            data.Add(orderNumber, nameCustomer);
                             // Выводим данные (или обрабатываем их как нужно)
-                            Console.WriteLine($"Номер Заказа: {номерЗаказа}, Имя Клиента: {имяКлиента}");
+                            Console.WriteLine($"Номер Заказа: {orderNumber}, Имя Клиента: {nameCustomer}");
                         }
                     }
                 }
                 connection.Close();
+                
             }
 
             // Пример вывода значений из словаря
@@ -169,102 +171,83 @@ namespace TaxoNavicon
 
         private void LoadDataByOrderNumber(string orderNumber)
         {
-            poleDataRussian = new PoleDataRussian();
+            poleDataEuropean = new PoleDataEuropean();
             string connectionString = "Host=localhost;Username=postgres;Password=123;Database=Certificate";
             using (var connection = new NpgsqlConnection(connectionString))
             {
-                // Открываем соединение
-                connection.Open();
-
-                // Создание команды на вставку данных
-                string insertQuery = "INSERT INTO \"RussianCertificate\" " +
-                    "(номерЗаказа, мастер, датаВыполнениеРабот, датаВыполнениеНовыхРабот, имяКлиента, адресКлиента, маркаТранспорта, " +
-                    "модельТранспорта, винТранспорта, регНомерТранспорта, маркировкаШинТранспорта, одометрТранспорта, " +
-                    "производительТахографа, серийныйНомерТахографа, модельТахографа, датаПроизводстваТахографа, " +
-                    "расположениеУстановочнойТаблицы, результатИнспекции, признакиМанипуляции, особыеОтметки) " +
-                    "VALUES " +
-                    "(@номерЗаказа, @мастер, @датаВыполнениеРабот, @датаВыполнениеНовыхРабот, @имяКлиента, @адресКлиента, @маркаТранспорта, " +
-                    "@модельТранспорта, @винТранспорта, @регНомерТранспорта, @маркировкаШинТранспорта, @одометрТранспорта, " +
-                    "@производительТахографа, @серийныйНомерТахографа, @модельТахографа, @датаПроизводстваТахографа, " +
-                    "@расположениеУстановочнойТаблицы, @результатИнспекции, @признакиМанипуляции, @особыеОтметки)";
-
-                using (var command = new NpgsqlCommand(insertQuery, connection))
-                {
+                
                     // Создание команды на выборку данных по номеру заказа
-                    string selectQuery = "SELECT * FROM \"RussianCertificate\" WHERE \"номерЗаказа\" = @номерЗаказа";
+                    string selectQuery = "SELECT * FROM \"EuropeanCertificate\" WHERE \"номерЗаказа\" = @номерЗаказа";
 
                     using (var selectCommand = new NpgsqlCommand(selectQuery, connection))
                     {
+                        // Открываем соединение
+                        connection.Open();
                         selectCommand.Parameters.AddWithValue("@номерЗаказа", orderNumber);
-
+                       
                         using (var reader = selectCommand.ExecuteReader())
                         {
                             if (reader.Read()) // Если есть результаты
                             {
                                 // Получаем значения столбцов и сохраняем их в переменные
-                                poleDataRussian.orderNumber = Convert.ToInt32(reader["номерЗаказа"]);
-                                poleDataRussian.master = reader["мастер"].ToString();
-                                poleDataRussian.dataJob = reader["датаВыполнениеРабот"].ToString();
-                                poleDataRussian.newDataJob = reader["датаВыполнениеНовыхРабот"].ToString();
-                                poleDataRussian.nameCustomer = reader["имяКлиента"].ToString();
-                                poleDataRussian.adresCustomer = reader["адресКлиента"].ToString();
-                                poleDataRussian.markaVehicle = reader["маркаТранспорта"].ToString();
-                                poleDataRussian.modelVehicle = reader["модельТранспорта"].ToString();
-                                poleDataRussian.vinVehicle = reader["винТранспорта"].ToString();
-                                poleDataRussian.registrationNumberVehicle = reader["регНомерТранспорта"].ToString();
-                                poleDataRussian.tireMarkingsVehicle = reader["маркировкаШинТранспорта"].ToString();
-                                poleDataRussian.odometerKmVehicle = reader["одометрТранспорта"].ToString();
-                                poleDataRussian.manufacturerTahograph = reader["производительТахографа"].ToString();
-                                poleDataRussian.serialNumberTahograph = reader["серийныйНомерТахографа"].ToString();
-                                poleDataRussian.modelTachograph = reader["модельТахографа"].ToString();
-                                poleDataRussian.producedTachograph = reader["датаПроизводстваТахографа"].ToString();
-                                poleDataRussian.locationInstallationTable = reader["расположениеУстановочнойТаблицы"].ToString();
-                                poleDataRussian.inspectionResult = reader["результатИнспекции"].ToString();
-                                poleDataRussian.signsManipulation = reader["признакиМанипуляции"].ToString();
-                                poleDataRussian.specialMarks = reader["особыеОтметки"].ToString();
+                                poleDataEuropean.orderNumber = Convert.ToInt32(reader["номерЗаказа"]);
+                                poleDataEuropean.master = reader["мастер"].ToString();
+                                poleDataEuropean.dataJob = reader["датаВыполнениеРабот"].ToString();
+                                poleDataEuropean.nameCustomer = reader["имяКлиента"].ToString();
+                                poleDataEuropean.nameCustomerEng = reader["имяКлиентаАнглийский"].ToString();
+                                poleDataEuropean.nameCustomer = reader["имяКлиентаАнглийский"].ToString();
+                                poleDataEuropean.adresCustomer = reader["адресКлиента"].ToString();
+                                poleDataEuropean.manufacturerVehicle = reader["производительТранспорта"].ToString();
+                                poleDataEuropean.modelVehicle = reader["модельТранспорта"].ToString();
+                                poleDataEuropean.vinVehicle = reader["винТранспорта"].ToString();
+                                poleDataEuropean.registrationNumberVehicle = reader["регНомерТранспорта"].ToString();
+                                poleDataEuropean.tireMarkingsVehicle = reader["маркировкаШинТранспорта"].ToString();
+                                poleDataEuropean.odometerKmVehicle = reader["одометрТранспорта"].ToString();
+                                poleDataEuropean.manufacturerTahograph = reader["производительТахографа"].ToString();
+                                poleDataEuropean.modelTachograph = reader["модельТахографа"].ToString();
+                                poleDataEuropean.w = reader["w"].ToString();
+                                poleDataEuropean.l = reader["l"].ToString();
+                                poleDataEuropean.k = reader["k"].ToString();
+                            /*                             // Здесь вы можете использовать переменные по своему усмотрению
+                                                         Console.WriteLine($"Номер Заказа: {poleDataRussian.orderNumber}, " +
+                                                                           $"Мастер: {poleDataRussian.master}, " +
+                                                                           $"Имя Клиента: {poleDataRussian.nameCustomer}" +
+                                                                           $"датаВыполнениеРабот: {poleDataRussian.dataJob}" + 
+                                                                           $"адресКлиента: {poleDataRussian.adresCustomer}");*/
+                            // И так далее для остальных переменных...
 
-                                /*                             // Здесь вы можете использовать переменные по своему усмотрению
-                                                             Console.WriteLine($"Номер Заказа: {poleDataRussian.orderNumber}, " +
-                                                                               $"Мастер: {poleDataRussian.master}, " +
-                                                                               $"Имя Клиента: {poleDataRussian.nameCustomer}" +
-                                                                               $"датаВыполнениеРабот: {poleDataRussian.dataJob}" + 
-                                                                               $"адресКлиента: {poleDataRussian.adresCustomer}");*/
-                                // И так далее для остальных переменных...
-                            }
+                           
+                        }
                         }
                     }
-
                     connection.Close();
-                }
             }
+            this.Close();
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             Console.WriteLine("Окно закрыто");
 
-            _myMethod?.Invoke(poleDataRussian.orderNumber,
-                                poleDataRussian.master,
-                                poleDataRussian.dataJob,
-                                poleDataRussian.nameCustomer,
-                                poleDataRussian.adresCustomer,
-                                poleDataRussian.markaVehicle,
-                                poleDataRussian.modelVehicle,
-                                poleDataRussian.vinVehicle,
-                                poleDataRussian.registrationNumberVehicle,
-                                poleDataRussian.tireMarkingsVehicle,
-                                poleDataRussian.odometerKmVehicle,
-                                poleDataRussian.manufacturerTahograph,
-                                poleDataRussian.serialNumberTahograph,
-                                poleDataRussian.modelTachograph,
-                                poleDataRussian.producedTachograph,
-                                poleDataRussian.locationInstallationTable,
-                                poleDataRussian.inspectionResult,
-                                poleDataRussian.signsManipulation,
-                                poleDataRussian.specialMarks,
-                                poleDataRussian.l,
-                                poleDataRussian.w,
-                                poleDataRussian.k
+            _myMethod?.Invoke(poleDataEuropean.orderNumber,
+                                poleDataEuropean.master,
+                                poleDataEuropean.dataJob,
+                                poleDataEuropean.nameCustomer,
+                                poleDataEuropean.nameCustomerEng,
+                                poleDataEuropean.adresCustomer,
+                                poleDataEuropean.manufacturerVehicle,
+                                poleDataEuropean.modelVehicle,
+                                poleDataEuropean.vinVehicle,
+                                poleDataEuropean.yearOfIssueVehiccle,
+                                poleDataEuropean.registrationNumberVehicle,
+                                poleDataEuropean.tireMarkingsVehicle,
+                                poleDataEuropean.odometerKmVehicle,
+                                poleDataEuropean.manufacturerTahograph,
+                                poleDataEuropean.serialNumberTahograph,
+                                poleDataEuropean.modelTachograph,
+                                poleDataEuropean.l,
+                                poleDataEuropean.w,
+                                poleDataEuropean.k
                              );
             base.OnFormClosing(e);
         }
