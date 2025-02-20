@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TaxoNavicon
+﻿namespace TaxoNavicon
 {
     public class PoleDataEuropean
     {
@@ -32,13 +26,39 @@ namespace TaxoNavicon
 
         #region Tachograph
         public string manufacturerTahograph; // производитель
-        public string serialNumberTahograph; // срийный номр
+        public string serialNumberTahograph; // серийный номр
         public string modelTachograph; // модель
         #endregion
 
         public string l;
         public string w;
         public string k;
+
+        /*
+            номерЗаказа
+            мастер
+            датаВыполненияРабот
         
+            имяКлиента
+            имяКлиентаАнлийский
+            адресЗаказчика
+
+            производительТранспорта
+            модельТранспорта
+            винНомерТранспорта
+            регНомерТранспорта
+            маркировкаШин
+            одометрКм
+            годВыпуска
+            
+            производительТахографа
+            серийныйНомерТахографа
+            модельТахографа
+
+            l
+            w
+            k
+        */
+
     }
 }

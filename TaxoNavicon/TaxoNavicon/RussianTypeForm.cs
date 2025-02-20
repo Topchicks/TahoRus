@@ -244,13 +244,16 @@ namespace TaxoNavicon
             }
         }
 
+        // Тут происходит сохранение в переменные программы
         private void ToolStripMenuItemSetData_Click(object sender, EventArgs e)
         {
             SetData();
         }
 
+        // Тут происходит сохранение в базу данных
         private void toolStripMenuItemSaveData_Click(object sender, EventArgs e)
         {
+            SetData();
             SqlConnection();
         }
 
@@ -357,7 +360,7 @@ namespace TaxoNavicon
             //Order - заказ
             numericUpDowntextBoxOrderNumber.Value = orderNumber;// номер заказа
             comboBoxMaster.Text = master; // мастер
-
+            dateTimePickerJob.Value = DateTime.Parse(dataJob); // Установка значения в DateTimePicker
 
             //Customer - заказчик
             textBoxNameCustomer.Text = nameCustomer; // имя русском
@@ -377,16 +380,19 @@ namespace TaxoNavicon
             textBoxProducedTachograph.Text = producedTachograph; // год производства
             textBoxSerialNumberTahograph.Text = serialNumberTahograph; // год производства
 
-            textBoxL.Text = l;
-            textBoxW.Text = w;
-            textBoxK.Text = k;
-
-            dateTimePickerJob.Value = DateTime.Parse(dataJob); // Установка значения в DateTimePicker
+            
 
             textBoxLocationInstallationTable.Text = locationInstallationTable;
             comboBoxInspectionResult.Text = inspectionResult;
             comboBoxSignsManipulation.Text = signsManipulation;
             textBoxSpecialMarks.Text = specialMarks;
+
+            textBoxL.Text = l;
+            textBoxW.Text = w;
+            textBoxK.Text = k;
+
+            // Подгружаем наши данные в переменные экземпляра то есть локально
+            SetData();
         }
     }
 }

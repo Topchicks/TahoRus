@@ -13,6 +13,31 @@ using TaxoNaviconRussian;
 
 namespace TaxoNavicon
 {
+    /*
+        номерЗаказа
+        мастер
+        датаВыполненияРабот
+        
+        имяЗаказчика
+        имяЗаказчикаАнлийский
+        адресЗаказчика
+
+        производительТранспорта
+        модельТранспорта
+        винНомерТранспорта
+        регНомерТранспорта
+        маркировкаШин
+        одометрКм
+        годВыпуска
+            
+        производительТахографа
+        серийныйНомерТахографаЕвропа
+        модельТахографа
+
+        l
+        w
+        k
+    */
     public partial class LoadEuropeanDocument : Form
     {
         private Dictionary<string, string> data = new Dictionary<string, string>();
@@ -158,19 +183,20 @@ namespace TaxoNavicon
             if (clickedButton != null)
             {
                 // Передаем данные в метод
-                string orderNumber = clickedButton.Tag.ToString();
+                int orderNumber = Convert.ToInt32(clickedButton.Tag);
                 ShowMessage(orderNumber);
             }
         }
 
         // Метод для отображения сообщения
-        private void ShowMessage(string orderNumber)
+        private void ShowMessage(int orderNumber)
         {
             LoadDataByOrderNumber(orderNumber);
         }
 
-        private void LoadDataByOrderNumber(string orderNumber)
+        private void LoadDataByOrderNumber(int orderNumber)
         {
+            poleDataEuropean = null;
             poleDataEuropean = new PoleDataEuropean();
             string connectionString = "Host=localhost;Username=postgres;Password=123;Database=Certificate";
             using (var connection = new NpgsqlConnection(connectionString))
@@ -185,6 +211,7 @@ namespace TaxoNavicon
                         connection.Open();
                         selectCommand.Parameters.AddWithValue("@номерЗаказа", orderNumber);
                        
+
                         using (var reader = selectCommand.ExecuteReader())
                         {
                             if (reader.Read()) // Если есть результаты
@@ -192,33 +219,30 @@ namespace TaxoNavicon
                                 // Получаем значения столбцов и сохраняем их в переменные
                                 poleDataEuropean.orderNumber = Convert.ToInt32(reader["номерЗаказа"]);
                                 poleDataEuropean.master = reader["мастер"].ToString();
-                                poleDataEuropean.dataJob = reader["датаВыполнениеРабот"].ToString();
+                                poleDataEuropean.dataJob = reader["датаВыполненияРабот"].ToString();
+
                                 poleDataEuropean.nameCustomer = reader["имяКлиента"].ToString();
-                                poleDataEuropean.nameCustomerEng = reader["имяКлиентаАнглийский"].ToString();
-                                poleDataEuropean.nameCustomer = reader["имяКлиентаАнглийский"].ToString();
-                                poleDataEuropean.adresCustomer = reader["адресКлиента"].ToString();
+                                poleDataEuropean.nameCustomerEng = reader["имяКлиентаАнлийский"].ToString();
+                                poleDataEuropean.adresCustomer = reader["адресЗаказчика"].ToString();
+
                                 poleDataEuropean.manufacturerVehicle = reader["производительТранспорта"].ToString();
                                 poleDataEuropean.modelVehicle = reader["модельТранспорта"].ToString();
-                                poleDataEuropean.vinVehicle = reader["винТранспорта"].ToString();
+                                poleDataEuropean.vinVehicle = reader["винНомерТранспорта"].ToString();
                                 poleDataEuropean.registrationNumberVehicle = reader["регНомерТранспорта"].ToString();
-                                poleDataEuropean.tireMarkingsVehicle = reader["маркировкаШинТранспорта"].ToString();
-                                poleDataEuropean.odometerKmVehicle = reader["одометрТранспорта"].ToString();
+                                poleDataEuropean.tireMarkingsVehicle = reader["маркировкаШин"].ToString();
+                                poleDataEuropean.odometerKmVehicle = reader["одометрКм"].ToString();
+                                poleDataEuropean.yearOfIssueVehiccle = reader["годВыпуска"].ToString();
+
                                 poleDataEuropean.manufacturerTahograph = reader["производительТахографа"].ToString();
+                                poleDataEuropean.serialNumberTahograph = reader["серийныйНомерТахографа"].ToString();
                                 poleDataEuropean.modelTachograph = reader["модельТахографа"].ToString();
+
                                 poleDataEuropean.w = reader["w"].ToString();
                                 poleDataEuropean.l = reader["l"].ToString();
                                 poleDataEuropean.k = reader["k"].ToString();
-                            /*                             // Здесь вы можете использовать переменные по своему усмотрению
-                                                         Console.WriteLine($"Номер Заказа: {poleDataRussian.orderNumber}, " +
-                                                                           $"Мастер: {poleDataRussian.master}, " +
-                                                                           $"Имя Клиента: {poleDataRussian.nameCustomer}" +
-                                                                           $"датаВыполнениеРабот: {poleDataRussian.dataJob}" + 
-                                                                           $"адресКлиента: {poleDataRussian.adresCustomer}");*/
-                            // И так далее для остальных переменных...
-
-                           
+                                
                         }
-                        }
+                    }
                     }
                     connection.Close();
             }

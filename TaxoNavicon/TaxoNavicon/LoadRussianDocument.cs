@@ -158,18 +158,18 @@ namespace TaxoNavicon
             if (clickedButton != null)
             {
                 // Передаем данные в метод
-                string orderNumber = clickedButton.Tag.ToString();
+                int orderNumber = Convert.ToInt32(clickedButton.Tag);
                 ShowMessage(orderNumber);
             }
         }
 
         // Метод для отображения сообщения
-        private void ShowMessage(string orderNumber)
+        private void ShowMessage(int orderNumber)
         {
             LoadDataByOrderNumber(orderNumber);
         }
 
-        private void LoadDataByOrderNumber(string orderNumber)
+        private void LoadDataByOrderNumber(int orderNumber)
         {
             poleDataRussian = new PoleDataRussian();
             string connectionString = "Host=localhost;Username=postgres;Password=123;Database=Certificate";
@@ -177,29 +177,12 @@ namespace TaxoNavicon
             {
                 // Открываем соединение
                 connection.Open();
-
-                // Создание команды на вставку данных
-                string insertQuery = "INSERT INTO \"RussianCertificate\" " +
-                    "(номерЗаказа, мастер, датаВыполнениеРабот, датаВыполнениеНовыхРабот, имяКлиента, адресКлиента, маркаТранспорта, " +
-                    "модельТранспорта, винТранспорта, регНомерТранспорта, маркировкаШинТранспорта, одометрТранспорта, " +
-                    "производительТахографа, серийныйНомерТахографа, модельТахографа, датаПроизводстваТахографа, " +
-                    "расположениеУстановочнойТаблицы, результатИнспекции, признакиМанипуляции, особыеОтметки) " +
-                    "VALUES " +
-                    "(@номерЗаказа, @мастер, @датаВыполнениеРабот, @датаВыполнениеНовыхРабот, @имяКлиента, @адресКлиента, @маркаТранспорта, " +
-                    "@модельТранспорта, @винТранспорта, @регНомерТранспорта, @маркировкаШинТранспорта, @одометрТранспорта, " +
-                    "@производительТахографа, @серийныйНомерТахографа, @модельТахографа, @датаПроизводстваТахографа, " +
-                    "@расположениеУстановочнойТаблицы, @результатИнспекции, @признакиМанипуляции, @особыеОтметки)";
-
-                using (var command = new NpgsqlCommand(insertQuery, connection))
-                {
-                    // Создание команды на выборку данных по номеру заказа
-                    string selectQuery = "SELECT * FROM \"RussianCertificate\" WHERE \"номерЗаказа\" = @номерЗаказа";
-
-                    using (var selectCommand = new NpgsqlCommand(selectQuery, connection))
+                string selectQuery = "SELECT * FROM \"RussianCertificate\" WHERE \"номерЗаказа\" = @номерЗаказа";
+                using (var selectCommand = new NpgsqlCommand(selectQuery, connection))
                     {
-                        selectCommand.Parameters.AddWithValue("@номерЗаказа", orderNumber);
+                    selectCommand.Parameters.AddWithValue("@номерЗаказа", orderNumber);
 
-                        using (var reader = selectCommand.ExecuteReader())
+                    using (var reader = selectCommand.ExecuteReader())
                         {
                             if (reader.Read()) // Если есть результаты
                             {
@@ -207,7 +190,6 @@ namespace TaxoNavicon
                                 poleDataRussian.orderNumber = Convert.ToInt32(reader["номерЗаказа"]);
                                 poleDataRussian.master = reader["мастер"].ToString();
                                 poleDataRussian.dataJob = reader["датаВыполнениеРабот"].ToString();
-                                poleDataRussian.newDataJob = reader["датаВыполнениеНовыхРабот"].ToString();
                                 poleDataRussian.nameCustomer = reader["имяКлиента"].ToString();
                                 poleDataRussian.adresCustomer = reader["адресКлиента"].ToString();
                                 poleDataRussian.markaVehicle = reader["маркаТранспорта"].ToString();
@@ -224,6 +206,9 @@ namespace TaxoNavicon
                                 poleDataRussian.inspectionResult = reader["результатИнспекции"].ToString();
                                 poleDataRussian.signsManipulation = reader["признакиМанипуляции"].ToString();
                                 poleDataRussian.specialMarks = reader["особыеОтметки"].ToString();
+                                poleDataRussian.l = reader["l"].ToString();
+                                poleDataRussian.k = reader["k"].ToString();
+                                poleDataRussian.w = reader["w"].ToString();
 
    /*                             // Здесь вы можете использовать переменные по своему усмотрению
                                 Console.WriteLine($"Номер Заказа: {poleDataRussian.orderNumber}, " +
@@ -235,9 +220,7 @@ namespace TaxoNavicon
                             }
                         }
                     }
-
                     connection.Close();
-                }
             }
             this.Close();
         }

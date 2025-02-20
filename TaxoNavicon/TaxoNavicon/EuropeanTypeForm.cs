@@ -10,6 +10,31 @@ namespace TaxoNavicon
 {
     public partial class EuropeanTypeForm : Form
     {
+        /*
+            номерЗаказа
+            мастер
+            датаВыполненияРабот
+        
+            имяЗаказчика
+            имяЗаказчикаАнлийский
+            адресЗаказчика
+
+            производительТранспорта
+            модельТранспорта
+            винНомерТранспорта
+            регНомерТранспорта
+            маркировкаШин
+            одометрКм
+            годВыпуска
+            
+            производительТахографа
+            серийныйНомерТахографапа
+            модельТахографа
+
+            l
+            w
+            k
+        */
         PoleDataEuropean poleDataEuropean;
         private PrintDocument printDocument;
 
@@ -45,6 +70,7 @@ namespace TaxoNavicon
 
             //Tahograf
             poleDataEuropean.manufacturerTahograph = textBoxManufacturerTachograph.Text; // производитель
+            poleDataEuropean.serialNumberTahograph = textBoxSerialNumberTahograph.Text; // производитель
             poleDataEuropean.modelTachograph = textBoxModelTachograph.Text; // модель тахографа
 
             poleDataEuropean.l = textBoxL.Text;
@@ -182,6 +208,7 @@ namespace TaxoNavicon
             }
         }
 
+        // Тут происходит сохранение в переменные программы
         private void ToolStripMenuItemSetData_Click(object sender, EventArgs e)
         {
             SetData();
@@ -202,13 +229,17 @@ namespace TaxoNavicon
             {   
                 // Создание команды на вставку данных
                 string insertQuery = "INSERT INTO \"EuropeanCertificate\" " +
-            "(номерЗаказа, мастер, датаВыполнениеРабот, имяКлиента, имяКлиентаАнглийский, адресКлиента, производительТранспорта, " +
-            "модельТранспорта, винТранспорта, регНомерТранспорта, маркировкаШинТранспорта, одометрТранспорта, датаВыпускаТранспорта, " +
-            "производительТахографа, модельТахографа, l, k, w) " +
+            "(номерЗаказа,мастер,датаВыполненияРабот," +
+            "имяКлиента,имяКлиентаАнлийский,адресЗаказчика," +
+            "производительТранспорта,модельТранспорта,винНомерТранспорта," +
+            "регНомерТранспорта,маркировкаШин,одометрКм,годВыпуска,производительТахографа," +
+            "серийныйНомерТахографа,модельТахографа,l,w,k) " +
             "VALUES " +
-            "(@номерЗаказа, @мастер, @датаВыполнениеРабот, @имяКлиента, @имяКлиентаАнглийский, @адресКлиента, @производительТранспорта, " +
-            "@модельТранспорта, @винТранспорта, @регНомерТранспорта, @маркировкаШинТранспорта, @одометрТранспорта, @датаВыпускаТранспорта, " +
-            "@производительТахографа,@модельТахографа, @l, @k, @w)";
+            "(@номерЗаказа,@мастер,@датаВыполненияРабот," +
+            "@имяКлиента,@имяКлиентаАнлийский,@адресЗаказчика," +
+            "@производительТранспорта,@модельТранспорта,@винНомерТранспорта," +
+            "@регНомерТранспорта,@маркировкаШин,@одометрКм,@годВыпуска,@производительТахографа," +
+            "@серийныйНомерТахографа,@модельТахографа,@l,@w,@k)";
 
                 using (var command = new NpgsqlCommand(insertQuery, connection))
                 {
@@ -216,20 +247,24 @@ namespace TaxoNavicon
                     // Добавление параметров
                     command.Parameters.AddWithValue("@номерЗаказа", poleDataEuropean.orderNumber);
                     command.Parameters.AddWithValue("@мастер", poleDataEuropean.master);
-                    command.Parameters.AddWithValue("@датаВыполнениеРабот", poleDataEuropean.dataJob);
+                    command.Parameters.AddWithValue("@датаВыполненияРабот", poleDataEuropean.dataJob);
+                                                     
                     command.Parameters.AddWithValue("@имяКлиента", poleDataEuropean.nameCustomer);
-                    command.Parameters.AddWithValue("@имяКлиентаАнглийский", poleDataEuropean.nameCustomerEng);
-                    command.Parameters.AddWithValue("@адресКлиента", poleDataEuropean.adresCustomer);
-                    command.Parameters.AddWithValue("@производительТранспорта", poleDataEuropean.manufacturerVehicle);
+                    command.Parameters.AddWithValue("@имяКлиентаАнлийский", poleDataEuropean.nameCustomerEng);
+                    command.Parameters.AddWithValue("@адресЗаказчика", poleDataEuropean.adresCustomer);
+                                                     
+                    command.Parameters.AddWithValue("@производительТранспорта",poleDataEuropean.manufacturerVehicle);
                     command.Parameters.AddWithValue("@модельТранспорта", poleDataEuropean.modelVehicle);
-                    command.Parameters.AddWithValue("@винТранспорта", poleDataEuropean.vinVehicle);
+                    command.Parameters.AddWithValue("@винНомерТранспорта", poleDataEuropean.vinVehicle);
                     command.Parameters.AddWithValue("@регНомерТранспорта", poleDataEuropean.registrationNumberVehicle);
-                    command.Parameters.AddWithValue("@маркировкаШинТранспорта", poleDataEuropean.tireMarkingsVehicle);
-                    command.Parameters.AddWithValue("@одометрТранспорта", poleDataEuropean.odometerKmVehicle);
-                    command.Parameters.AddWithValue("@датаВыпускаТранспорта", poleDataEuropean.yearOfIssueVehiccle);
+                    command.Parameters.AddWithValue("@маркировкаШин",poleDataEuropean.tireMarkingsVehicle);
+                    command.Parameters.AddWithValue("@одометрКм", poleDataEuropean.odometerKmVehicle);
+                    command.Parameters.AddWithValue("@годВыпуска", poleDataEuropean.yearOfIssueVehiccle);
+                                                     
                     command.Parameters.AddWithValue("@производительТахографа", poleDataEuropean.manufacturerTahograph);
-                    
+                    command.Parameters.AddWithValue("@серийныйНомерТахографа", poleDataEuropean.serialNumberTahograph);
                     command.Parameters.AddWithValue("@модельТахографа", poleDataEuropean.modelTachograph);
+                                                     
                     command.Parameters.AddWithValue("@l", poleDataEuropean.l);
                     command.Parameters.AddWithValue("@k", poleDataEuropean.k);
                     command.Parameters.AddWithValue("@w", poleDataEuropean.w);
@@ -248,6 +283,7 @@ namespace TaxoNavicon
                     Console.WriteLine(poleDataEuropean.odometerKmVehicle);
                     Console.WriteLine(poleDataEuropean.yearOfIssueVehiccle);
                     Console.WriteLine(poleDataEuropean.manufacturerTahograph);
+                    Console.WriteLine(poleDataEuropean.serialNumberTahograph);
                     Console.WriteLine(poleDataEuropean.modelTachograph);
                     Console.WriteLine(poleDataEuropean.l);
                     Console.WriteLine(poleDataEuropean.k);
@@ -264,6 +300,7 @@ namespace TaxoNavicon
                     catch (Exception ex)
                     {
                         MessageBox.Show("Ошибка при сохранении данных: " + ex.Message);
+                        Console.WriteLine(ex.Message);
                         connection.Close();
                     }
                 }
@@ -276,14 +313,17 @@ namespace TaxoNavicon
         public void GetDataLoad(int orderNumber,
                                 string master,
                                 string dataJob,
+
                                 string nameCustomer,
                                 string nameCustomerEng,
                                 string adresCustomer,
 
                                 string manufacturerVehicle,
+
                                 string modelVehicle,
                                 string vinVehicle,
                                 string registrationNumberVehicle,
+
                                 string tireMarkingsVehicle,
                                 string odometerKmVehicle,
                                 string yearOfIssueVehiccle,
@@ -297,6 +337,7 @@ namespace TaxoNavicon
                                 string k
                                 )
         {
+            
             //Order - заказ
             numericUpDowntextBoxOrderNumber.Value = orderNumber;// номер заказа
             comboBoxMaster.Text = master; // мастер
@@ -311,7 +352,7 @@ namespace TaxoNavicon
             textBoxManufacturerVehicle.Text = manufacturerVehicle; // Производитель машины
             textBoxModelVehicle.Text = modelVehicle; // модель машины
             textBoxVinNumberVehicle.Text = vinVehicle; // вин номер машины
-            textBoxRegistrationNumberVehicle.Text = registrationNumberVehicle; // рег. номер машины
+            
             textBoxOdometerKmVehicle.Text = odometerKmVehicle; // одометр км
             textBoxTireMarkingsVehicle.Text = tireMarkingsVehicle;// маркировка шин
             textBoxYearOfIssueVehiccle.Text = yearOfIssueVehiccle;// маркировка шин
@@ -325,11 +366,17 @@ namespace TaxoNavicon
             textBoxW.Text = w;
             textBoxK.Text = k;
 
-            
+            textBoxRegistrationNumberVehicle.Text = registrationNumberVehicle; // рег. номер машины
+
+            // Подгружаем наши данные в переменные экземпляра то есть локально
+            SetData();
         }
 
+
+        // Тут происходит сохранение в базу данных
         private void ToolStripMenuItemSaveData_Click(object sender, EventArgs e)
         {
+            SetData();
             SqlConnection();
         }
     }
