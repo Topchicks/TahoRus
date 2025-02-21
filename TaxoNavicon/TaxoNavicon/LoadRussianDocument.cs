@@ -54,7 +54,7 @@ namespace TaxoNavicon
         private void LoadRussianDocument_Load(object sender, EventArgs e)
         {
             
-            string connectionString = "Host=localhost;Username=postgres;Password=123;Database=Certificate";
+            string connectionString = "Host=192.168.88.30;Port=5432;Username=postgres;Password=123;Database=Certificate";
 
             using (var connection = new NpgsqlConnection(connectionString))
             {
