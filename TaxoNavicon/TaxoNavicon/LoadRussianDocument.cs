@@ -54,7 +54,7 @@ namespace TaxoNavicon
         private void LoadRussianDocument_Load(object sender, EventArgs e)
         {
             
-            string connectionString = "Host=localhost;Username=postgres;Password=123;Database=Certificate";
+            string connectionString = "Server=192.168.88.49;Port=5432;Username=postgres;Password=123;Database=Certificate";
 
             using (var connection = new NpgsqlConnection(connectionString))
             {
@@ -157,7 +157,7 @@ namespace TaxoNavicon
             Button clickedButton = sender as Button;
             if (clickedButton != null)
             {
-                // Передаем данные в метод
+                // Передаем данные в методS
                 int orderNumber = Convert.ToInt32(clickedButton.Tag);
                 ShowMessage(orderNumber);
             }
@@ -172,7 +172,7 @@ namespace TaxoNavicon
         private void LoadDataByOrderNumber(int orderNumber)
         {
             poleDataRussian = new PoleDataRussian();
-            string connectionString = "Host=localhost;Username=postgres;Password=123;Database=Certificate";
+            string connectionString = "Server=192.168.88.49;Port=5432;Username=postgres;Password=123;Database=Certificate";
             using (var connection = new NpgsqlConnection(connectionString))
             {
                 // Открываем соединение
