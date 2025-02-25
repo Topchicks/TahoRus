@@ -1,5 +1,6 @@
 ﻿using Microsoft.Office.Interop.Word;
 using Npgsql;
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -59,6 +60,7 @@ namespace TaxoNavicon
         public RussianTypeForm()
         {
             InitializeComponent();
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial; // Или LicenseContext.Commercial, если у вас коммерческая лицензия
             poleDataRussian = new PoleDataRussian();
         }
 
@@ -254,7 +256,54 @@ namespace TaxoNavicon
         private void toolStripMenuItemSaveData_Click(object sender, EventArgs e)
         {
             SetData();
-            SqlConnection();
+            var filePath = "C:/Users/TGS/Desktop/Certificate.xlsx"; // Укажите путь к вашему существующему файлу.xlsx"; // Укажите путь к вашему существующему файлу
+            FileInfo existingFile = new FileInfo(filePath);
+            using (ExcelPackage excelPackage = new ExcelPackage(existingFile))
+            {
+                // Получаем существующий лист или создаем новый, если его нет
+                var worksheet = excelPackage.Workbook.Worksheets["RussianCertificate"] ?? excelPackage.Workbook.Worksheets.Add("RussianCertificate");
+
+                // Находим первую пустую строку, чтобы добавить данные
+                int row = worksheet.Dimension?.End.Row + 1 ?? 1;
+                // Заполняем данные из формы
+                worksheet.Cells[row, 1].Value = poleDataRussian.orderNumber.ToString();
+                worksheet.Cells[row, 2].Value = poleDataRussian.master; 
+                worksheet.Cells[row, 3].Value = poleDataRussian.dataJob; 
+                worksheet.Cells[row, 4].Value = poleDataRussian.newDataJob;
+
+                worksheet.Cells[row, 5].Value = poleDataRussian.nameCustomer;
+                worksheet.Cells[row, 6].Value = poleDataRussian.adresCustomer; 
+
+                worksheet.Cells[row, 7].Value = poleDataRussian.manufacturerTahograph; 
+                worksheet.Cells[row, 8].Value = poleDataRussian.serialNumberTahograph; 
+                worksheet.Cells[row, 9].Value = poleDataRussian.modelTachograph; 
+                worksheet.Cells[row, 10].Value = poleDataRussian.producedTachograph;
+                
+                worksheet.Cells[row, 11].Value = poleDataRussian.markaVehicle; 
+                worksheet.Cells[row, 12].Value = poleDataRussian.vinVehicle; 
+                worksheet.Cells[row, 13].Value = poleDataRussian.tireMarkingsVehicle;  
+                worksheet.Cells[row, 14].Value = poleDataRussian.modelVehicle;  
+                worksheet.Cells[row, 15].Value = poleDataRussian.registrationNumberVehicle;  
+                worksheet.Cells[row, 16].Value = poleDataRussian.odometerKmVehicle; 
+                
+                worksheet.Cells[row, 17].Value = poleDataRussian.w;  
+                worksheet.Cells[row, 18].Value = poleDataRussian.k;  
+                worksheet.Cells[row, 19].Value = poleDataRussian.l; 
+                
+
+                worksheet.Cells[row, 20].Value = poleDataRussian.locationInstallationTable;
+                worksheet.Cells[row, 21].Value = poleDataRussian.inspectionResult;
+                worksheet.Cells[row, 22].Value = poleDataRussian.signsManipulation;
+                worksheet.Cells[row, 23].Value = poleDataRussian.specialMarks;
+
+
+
+                // Сохраняем изменения
+                excelPackage.Save();
+                MessageBox.Show("Данные успешно добавлены в Excel!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            //SqlConnection();
         }
 
         private void SqlConnection()
