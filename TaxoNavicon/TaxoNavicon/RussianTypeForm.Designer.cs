@@ -113,7 +113,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(64)))));
+            this.panel2.BackColor = System.Drawing.Color.Gray;
             this.panel2.Controls.Add(this.panel9);
             this.panel2.Controls.Add(this.menuStrip2);
             this.panel2.Cursor = System.Windows.Forms.Cursors.Default;
@@ -155,7 +155,7 @@
             // 
             // panel8
             // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(79)))), ((int)(((byte)(105)))));
+            this.panel8.BackColor = System.Drawing.Color.Silver;
             this.panel8.Controls.Add(this.textBoxSpecialMarks);
             this.panel8.Controls.Add(this.label26);
             this.panel8.Controls.Add(this.comboBoxSignsManipulation);
@@ -268,7 +268,7 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(196)))));
+            this.panel5.BackColor = System.Drawing.Color.Silver;
             this.panel5.Controls.Add(this.textBoxOdometerKmVehicle);
             this.panel5.Controls.Add(this.textBoxRegistrationNumberVehicle);
             this.panel5.Controls.Add(this.textBoxModelVehicle);
@@ -402,7 +402,7 @@
             // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(196)))));
+            this.panel7.BackColor = System.Drawing.Color.Silver;
             this.panel7.Controls.Add(this.textBoxL);
             this.panel7.Controls.Add(this.label31);
             this.panel7.Controls.Add(this.textBoxK);
@@ -479,7 +479,7 @@
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(79)))), ((int)(((byte)(105)))));
+            this.panel6.BackColor = System.Drawing.Color.Silver;
             this.panel6.Controls.Add(this.textBoxProducedTachograph);
             this.panel6.Controls.Add(this.textBoxModelTachograph);
             this.panel6.Controls.Add(this.label19);
@@ -591,7 +591,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(79)))), ((int)(((byte)(105)))));
+            this.panel4.BackColor = System.Drawing.Color.Silver;
             this.panel4.Controls.Add(this.textBoxAdresCustomer);
             this.panel4.Controls.Add(this.textBoxNameCustomer);
             this.panel4.Controls.Add(this.label9);
@@ -649,7 +649,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(196)))));
+            this.panel3.BackColor = System.Drawing.Color.Silver;
             this.panel3.Controls.Add(this.dateTimePickerJob);
             this.panel3.Controls.Add(this.numericUpDowntextBoxOrderNumber);
             this.panel3.Controls.Add(this.comboBoxMaster);
@@ -813,8 +813,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(977, 590);
             this.Controls.Add(this.panel2);
+            this.MaximumSize = new System.Drawing.Size(993, 629);
+            this.MinimumSize = new System.Drawing.Size(993, 629);
             this.Name = "RussianTypeForm";
-            this.Text = "Российский документы";
+            this.Text = "Российский документ";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel9.ResumeLayout(false);

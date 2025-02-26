@@ -1,22 +1,21 @@
-﻿using Npgsql;
+﻿using Microsoft.Office.Interop.Word;
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 using TaxoNaviconRussian;
+using Font = System.Drawing.Font;
 
 namespace TaxoNavicon
 {
     public partial class LoadRussianDocument : Form
     {
-        private Dictionary<string, string> data = new Dictionary<string, string>();
+        private Dictionary<int, string> data = new Dictionary<int, string>();
         private Button buttonLoad;
         private PoleDataRussian poleDataRussian;
+        private string filePathCertificate;
 
         // Делегат для метода
         public delegate void MyDelegate(int orderNumber,
@@ -44,14 +43,51 @@ namespace TaxoNavicon
                                         );
         private MyDelegate _myMethod;
 
-        public LoadRussianDocument(MyDelegate myMethod)
+        public LoadRussianDocument(MyDelegate myMethod, string filePathCertificate)
         {
             InitializeComponent();
+            this.filePathCertificate = filePathCertificate;
+            poleDataRussian = new PoleDataRussian();
             _myMethod = myMethod; // Сохраняем ссылку на метод
-            
+
+            FileInfo existingFile = new FileInfo(this.filePathCertificate);
+
+            using (ExcelPackage excelPackage = new ExcelPackage(existingFile))
+            {
+                // Получаем существующий лист
+                var worksheet = excelPackage.Workbook.Worksheets["RussianCertificate"];
+                if (worksheet == null)
+                {
+                    MessageBox.Show("Лист 'RussianCertificate' не найден!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Проходим по всем строкам, начиная со второй (первая - заголовки)
+                for (int row = 3; row <= worksheet.Dimension.End.Row; row++)
+                {
+                    // Проверка на пустую ячейку в первом столбце
+                    if (string.IsNullOrWhiteSpace(worksheet.Cells[row, 1].Text))
+                    {
+                        Console.WriteLine("Пустая строчка выход");
+
+                        break; // Выход из цикла, если ячейка пустая
+                    }
+                    // Пример загрузки данных в поля (предполагается, что у вас есть соответствующие свойства)
+                    string order = worksheet.Cells[row, 1].Text;
+
+                    data.Add(Convert.ToInt32(order), worksheet.Cells[row, 5].Text);
+                }
+
+                foreach (var kvp in data)
+                {
+                    CreatPanel(kvp.Key, kvp.Value);
+                }
+            }
+
         }
 
-        private void CreatPanel(string numberOrderText, string nameCustomerText)
+        // Создаём панельки с данными 
+        private void CreatPanel(int numberOrderText, string nameCustomerText)
         {
             // Создание панели
             Panel panel = new Panel
@@ -63,7 +99,7 @@ namespace TaxoNavicon
             // Создание первого текстового элемента
             Label orderNumber = new Label
             {
-                Text = numberOrderText,
+                Text = numberOrderText.ToString(),
                 AutoSize = false, // Автоматическая подстройка размера
                 Location = new System.Drawing.Point(-3, 0), // Положение на панели
                 Size = new System.Drawing.Size(100, 34),
@@ -116,6 +152,7 @@ namespace TaxoNavicon
             {
                 // Передаем данные в методS
                 int orderNumber = Convert.ToInt32(clickedButton.Tag);
+
                 ShowMessage(orderNumber);
             }
         }
@@ -128,57 +165,69 @@ namespace TaxoNavicon
 
         private void LoadDataByOrderNumber(int orderNumber)
         {
-            poleDataRussian = new PoleDataRussian();
-            string connectionString = "Server=192.168.88.49;Port=5432;Username=postgres;Password=123;Database=Certificate";
-            using (var connection = new NpgsqlConnection(connectionString))
+            using (ExcelPackage excelPackage = new ExcelPackage(filePathCertificate))
             {
-                // Открываем соединение
-                connection.Open();
-                string selectQuery = "SELECT * FROM \"RussianCertificate\" WHERE \"номерЗаказа\" = @номерЗаказа";
-                using (var selectCommand = new NpgsqlCommand(selectQuery, connection))
+                FileInfo existingFile = new FileInfo(filePathCertificate);
+                var worksheet = excelPackage.Workbook.Worksheets["RussianCertificate"];
+                if (worksheet == null)
+                {
+                    MessageBox.Show("Лист 'RussianCertificate' не найден!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Проверим есть ли такой ключ в дикшенери
+                if (data.ContainsKey(orderNumber))
+                {
+                    // То запускаем цикл на поиск данных в нашей таблице
+                    for (int row = 3; row <= worksheet.Dimension.End.Row; row++)
                     {
-                    selectCommand.Parameters.AddWithValue("@номерЗаказа", orderNumber);
-
-                    using (var reader = selectCommand.ExecuteReader())
+                        // Проверка на пустую ячейку в первом столбце
+                        if (string.IsNullOrWhiteSpace(worksheet.Cells[row, 1].Text))
                         {
-                            if (reader.Read()) // Если есть результаты
-                            {
-                                // Получаем значения столбцов и сохраняем их в переменные
-                                poleDataRussian.orderNumber = Convert.ToInt32(reader["номерЗаказа"]);
-                                poleDataRussian.master = reader["мастер"].ToString();
-                                poleDataRussian.dataJob = reader["датаВыполнениеРабот"].ToString();
-                                poleDataRussian.nameCustomer = reader["имяКлиента"].ToString();
-                                poleDataRussian.adresCustomer = reader["адресКлиента"].ToString();
-                                poleDataRussian.markaVehicle = reader["маркаТранспорта"].ToString();
-                                poleDataRussian.modelVehicle = reader["модельТранспорта"].ToString();
-                                poleDataRussian.vinVehicle = reader["винТранспорта"].ToString();
-                                poleDataRussian.registrationNumberVehicle = reader["регНомерТранспорта"].ToString();
-                                poleDataRussian.tireMarkingsVehicle = reader["маркировкаШинТранспорта"].ToString();
-                                poleDataRussian.odometerKmVehicle = reader["одометрТранспорта"].ToString();
-                                poleDataRussian.manufacturerTahograph = reader["производительТахографа"].ToString();
-                                poleDataRussian.serialNumberTahograph = reader["серийныйНомерТахографа"].ToString();
-                                poleDataRussian.modelTachograph = reader["модельТахографа"].ToString();
-                                poleDataRussian.producedTachograph = reader["датаПроизводстваТахографа"].ToString();
-                                poleDataRussian.locationInstallationTable = reader["расположениеУстановочнойТаблицы"].ToString();
-                                poleDataRussian.inspectionResult = reader["результатИнспекции"].ToString();
-                                poleDataRussian.signsManipulation = reader["признакиМанипуляции"].ToString();
-                                poleDataRussian.specialMarks = reader["особыеОтметки"].ToString();
-                                poleDataRussian.l = reader["l"].ToString();
-                                poleDataRussian.k = reader["k"].ToString();
-                                poleDataRussian.w = reader["w"].ToString();
+                            Console.WriteLine("Пустая строчка выход");
 
-   /*                             // Здесь вы можете использовать переменные по своему усмотрению
-                                Console.WriteLine($"Номер Заказа: {poleDataRussian.orderNumber}, " +
-                                                  $"Мастер: {poleDataRussian.master}, " +
-                                                  $"Имя Клиента: {poleDataRussian.nameCustomer}" +
-                                                  $"датаВыполнениеРабот: {poleDataRussian.dataJob}" + 
-                                                  $"адресКлиента: {poleDataRussian.adresCustomer}");*/
-                                // И так далее для остальных переменных...
-                            }
+                            break; // Выход из цикла, если ячейка пустая
+                        }
+                        
+                        string order = worksheet.Cells[row, 1].Text;
+
+                        // Тут проверка этого столбика и если такие данные есть то запускаем процесс записи данных в poleDataRussian
+                        if (Convert.ToInt32(order) == orderNumber)
+                        {
+                            poleDataRussian.orderNumber = Convert.ToInt32(order);
+                            poleDataRussian.master = worksheet.Cells[row, 2].Text;
+                            poleDataRussian.dataJob = worksheet.Cells[row, 3].Text;
+                            poleDataRussian.newDataJob = worksheet.Cells[row, 4].Text;
+
+                            poleDataRussian.nameCustomer = worksheet.Cells[row, 5].Text;
+                            poleDataRussian.adresCustomer = worksheet.Cells[row, 6].Text;
+
+                            poleDataRussian.manufacturerTahograph = worksheet.Cells[row, 7].Text;
+                            poleDataRussian.serialNumberTahograph = worksheet.Cells[row, 8].Text;
+                            poleDataRussian.modelTachograph = worksheet.Cells[row, 9].Text;
+                            poleDataRussian.producedTachograph = worksheet.Cells[row, 10].Text;
+
+                            poleDataRussian.markaVehicle = worksheet.Cells[row, 11].Text;
+                            poleDataRussian.vinVehicle = worksheet.Cells[row, 12].Text;
+                            poleDataRussian.tireMarkingsVehicle = worksheet.Cells[row, 13].Text;
+                            poleDataRussian.modelVehicle = worksheet.Cells[row, 14].Text;
+                            poleDataRussian.registrationNumberVehicle = worksheet.Cells[row, 15].Text;
+                            poleDataRussian.odometerKmVehicle = worksheet.Cells[row, 16].Text;
+
+                            poleDataRussian.w = worksheet.Cells[row, 17].Text;
+                            poleDataRussian.k = worksheet.Cells[row, 18].Text;
+                            poleDataRussian.l = worksheet.Cells[row, 19].Text;
+
+                            poleDataRussian.locationInstallationTable = worksheet.Cells[row, 20].Text;
+                            poleDataRussian.inspectionResult = worksheet.Cells[row, 21].Text;
+                            poleDataRussian.signsManipulation = worksheet.Cells[row, 22].Text;
+                            poleDataRussian.specialMarks = worksheet.Cells[row, 23].Text;
                         }
                     }
-                    connection.Close();
+                }
             }
+
+            // Тут закрываем окно и запускается процесс передачи данных на другое окно
             this.Close();
         }
 

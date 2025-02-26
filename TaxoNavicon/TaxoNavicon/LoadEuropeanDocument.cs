@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -70,7 +71,7 @@ namespace TaxoNavicon
                                         string k
                                         );
         private MyDelegate _myMethod;
-        public LoadEuropeanDocument(MyDelegate myMethod)
+        public LoadEuropeanDocument(MyDelegate myMethod, string filePathCertificate)
         {
             InitializeComponent();
             _myMethod = myMethod; // Сохраняем ссылку на метод
@@ -275,6 +276,6 @@ namespace TaxoNavicon
                              );
             base.OnFormClosing(e);
         }
-
+       
     }
 }

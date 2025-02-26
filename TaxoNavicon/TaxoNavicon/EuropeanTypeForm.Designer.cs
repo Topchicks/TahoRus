@@ -33,6 +33,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.textBoxRegistrationNumberVehicle = new System.Windows.Forms.TextBox();
             this.textBoxYearOfIssueVehiccle = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
             this.textBoxOdometerKmVehicle = new System.Windows.Forms.TextBox();
@@ -89,7 +90,6 @@
             this.LoadEuropeanDocuments = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemSetData = new System.Windows.Forms.ToolStripMenuItem();
             this.применитьИToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBoxRegistrationNumberVehicle = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -129,6 +129,7 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.AutoSize = true;
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Gray;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.80758F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.19242F));
@@ -147,7 +148,7 @@
             // 
             // panel8
             // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.panel8.BackColor = System.Drawing.Color.Silver;
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(431, 141);
             this.panel8.Name = "panel8";
@@ -156,7 +157,7 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(196)))));
+            this.panel5.BackColor = System.Drawing.Color.Silver;
             this.panel5.Controls.Add(this.textBoxRegistrationNumberVehicle);
             this.panel5.Controls.Add(this.textBoxYearOfIssueVehiccle);
             this.panel5.Controls.Add(this.label35);
@@ -177,6 +178,13 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(422, 710);
             this.panel5.TabIndex = 3;
+            // 
+            // textBoxRegistrationNumberVehicle
+            // 
+            this.textBoxRegistrationNumberVehicle.Location = new System.Drawing.Point(122, 159);
+            this.textBoxRegistrationNumberVehicle.Name = "textBoxRegistrationNumberVehicle";
+            this.textBoxRegistrationNumberVehicle.Size = new System.Drawing.Size(287, 20);
+            this.textBoxRegistrationNumberVehicle.TabIndex = 24;
             // 
             // textBoxYearOfIssueVehiccle
             // 
@@ -302,7 +310,7 @@
             // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(196)))));
+            this.panel7.BackColor = System.Drawing.Color.Silver;
             this.panel7.Controls.Add(this.textBoxL);
             this.panel7.Controls.Add(this.label31);
             this.panel7.Controls.Add(this.textBoxK);
@@ -379,7 +387,7 @@
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.panel6.BackColor = System.Drawing.Color.Silver;
             this.panel6.Controls.Add(this.textBoxModelTachograph);
             this.panel6.Controls.Add(this.label20);
             this.panel6.Controls.Add(this.textBoxSerialNumberTahograph);
@@ -456,6 +464,7 @@
             // 
             // tableLayoutPanel2
             // 
+            this.tableLayoutPanel2.BackColor = System.Drawing.Color.Gray;
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.21569F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.78431F));
@@ -472,7 +481,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(209)))), ((int)(((byte)(209)))));
+            this.panel4.BackColor = System.Drawing.Color.Silver;
             this.panel4.Controls.Add(this.textBoxNameCustomerEng);
             this.panel4.Controls.Add(this.label34);
             this.panel4.Controls.Add(this.textBoxAdresCustomer);
@@ -549,7 +558,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(196)))));
+            this.panel3.BackColor = System.Drawing.Color.Silver;
             this.panel3.Controls.Add(this.numericUpDowntextBoxOrderNumber);
             this.panel3.Controls.Add(this.comboBoxMaster);
             this.panel3.Controls.Add(this.label5);
@@ -710,13 +719,6 @@
             this.применитьИToolStripMenuItem.Size = new System.Drawing.Size(145, 20);
             this.применитьИToolStripMenuItem.Text = "Применить изменения";
             // 
-            // textBoxRegistrationNumberVehicle
-            // 
-            this.textBoxRegistrationNumberVehicle.Location = new System.Drawing.Point(122, 159);
-            this.textBoxRegistrationNumberVehicle.Name = "textBoxRegistrationNumberVehicle";
-            this.textBoxRegistrationNumberVehicle.Size = new System.Drawing.Size(287, 20);
-            this.textBoxRegistrationNumberVehicle.TabIndex = 24;
-            // 
             // EuropeanTypeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -725,10 +727,12 @@
             this.ClientSize = new System.Drawing.Size(977, 590);
             this.Controls.Add(this.panel2);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(993, 629);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(993, 629);
             this.Name = "EuropeanTypeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Европейская форма ";
+            this.Text = "Европейский документ";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel9.ResumeLayout(false);

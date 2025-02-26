@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Newtonsoft.Json;
+using System;
+using System.IO;
 using System.Windows.Forms;
-using static System.Net.WebRequestMethods;
 
 namespace TaxoNavicon
 {
     public partial class StartApp : Form
     {
+        public string filePath;
         public StartApp()
         {
             InitializeComponent();
@@ -44,7 +39,7 @@ namespace TaxoNavicon
             EuropeanTypeForm europeanTypeForm = new EuropeanTypeForm();
 
             europeanTypeForm.ShowDialog();
-            
+
         }
 
         private void buttonOpenRussianPanel_Click(object sender, EventArgs e)
@@ -52,7 +47,17 @@ namespace TaxoNavicon
             this.Hide();
             RussianTypeForm russianTypeForm = new RussianTypeForm();
 
-            russianTypeForm.ShowDialog();
+            russianTypeForm.Show();
+        }
+
+        private void btnOpenSettings_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Settings settings = new Settings();
+            // Подписываемся на событие закрытия формы
+            settings.FormClosed += (s, args) => this.Show();
+
+            settings.Show();
         }
     }
 }

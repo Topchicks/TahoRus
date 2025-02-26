@@ -1,9 +1,11 @@
 ﻿using Microsoft.Office.Interop.Word;
-using Npgsql;
+using OfficeOpenXml;
 using System;
 using System.Drawing.Printing;
 using System.IO;
+using System.Text.Json;
 using System.Windows.Forms;
+using TaxoNaviconRussian;
 using Word = Microsoft.Office.Interop.Word;
 
 namespace TaxoNavicon
@@ -41,10 +43,20 @@ namespace TaxoNavicon
         private Word.Application wordApp;
         private Word.Document wordDoc;
         private string filePath;
+
+        private string filePathSaveJson;
+        private string filePathCertificate;
         public EuropeanTypeForm()
         {
             InitializeComponent();
             poleDataEuropean = new PoleDataEuropean();
+
+
+            filePathSaveJson = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "JsonSetting.json");
+            LoadSettingJS();
+
+
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial; // Или LicenseContext.Commercial, если у вас коммерческая лицензия
         }
 
         private void SetData()
@@ -79,10 +91,9 @@ namespace TaxoNavicon
 
             poleDataEuropean.dataJob = dateTimePickerJob.Value.ToShortDateString();//  время выполнения работ
         }
-
+        // Для Word
         private void ToolStripMenuItemPrintCertificate_Click(object sender, EventArgs e)
         {
-
             string relativePath = @"EuropeanCertidicate.doc"; // Относительный путь к файлу
             filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
             wordApp = new Word.Application();
@@ -145,6 +156,7 @@ namespace TaxoNavicon
             base.OnFormClosing(e);
         }
 
+        // Для Word
         private void ClouseConnectionWord()
         {
             // Закрываем документ и приложение Word
@@ -162,7 +174,7 @@ namespace TaxoNavicon
                 wordApp = null;
             }
         }
-
+        // Для Word
         private void CheckOpenDock()
         {
             bool isOpen = false;
@@ -216,95 +228,9 @@ namespace TaxoNavicon
 
         private void ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LoadEuropeanDocument loadEuropeanDocument = new LoadEuropeanDocument(GetDataLoad);
+            LoadEuropeanDocument loadEuropeanDocument = new LoadEuropeanDocument(GetDataLoad, filePathCertificate);
 
             loadEuropeanDocument.Show();
-        }
-
-        private void SqlConnection()
-        {
-            string connectionString = "Host=localhost;Username=postgres;Password=123;Database=Certificate";
-
-            using (var connection = new NpgsqlConnection(connectionString))
-            {   
-                // Создание команды на вставку данных
-                string insertQuery = "INSERT INTO \"EuropeanCertificate\" " +
-            "(номерЗаказа,мастер,датаВыполненияРабот," +
-            "имяКлиента,имяКлиентаАнлийский,адресЗаказчика," +
-            "производительТранспорта,модельТранспорта,винНомерТранспорта," +
-            "регНомерТранспорта,маркировкаШин,одометрКм,годВыпуска,производительТахографа," +
-            "серийныйНомерТахографа,модельТахографа,l,w,k) " +
-            "VALUES " +
-            "(@номерЗаказа,@мастер,@датаВыполненияРабот," +
-            "@имяКлиента,@имяКлиентаАнлийский,@адресЗаказчика," +
-            "@производительТранспорта,@модельТранспорта,@винНомерТранспорта," +
-            "@регНомерТранспорта,@маркировкаШин,@одометрКм,@годВыпуска,@производительТахографа," +
-            "@серийныйНомерТахографа,@модельТахографа,@l,@w,@k)";
-
-                using (var command = new NpgsqlCommand(insertQuery, connection))
-                {
-
-                    // Добавление параметров
-                    command.Parameters.AddWithValue("@номерЗаказа", poleDataEuropean.orderNumber);
-                    command.Parameters.AddWithValue("@мастер", poleDataEuropean.master);
-                    command.Parameters.AddWithValue("@датаВыполненияРабот", poleDataEuropean.dataJob);
-                                                     
-                    command.Parameters.AddWithValue("@имяКлиента", poleDataEuropean.nameCustomer);
-                    command.Parameters.AddWithValue("@имяКлиентаАнлийский", poleDataEuropean.nameCustomerEng);
-                    command.Parameters.AddWithValue("@адресЗаказчика", poleDataEuropean.adresCustomer);
-                                                     
-                    command.Parameters.AddWithValue("@производительТранспорта",poleDataEuropean.manufacturerVehicle);
-                    command.Parameters.AddWithValue("@модельТранспорта", poleDataEuropean.modelVehicle);
-                    command.Parameters.AddWithValue("@винНомерТранспорта", poleDataEuropean.vinVehicle);
-                    command.Parameters.AddWithValue("@регНомерТранспорта", poleDataEuropean.registrationNumberVehicle);
-                    command.Parameters.AddWithValue("@маркировкаШин",poleDataEuropean.tireMarkingsVehicle);
-                    command.Parameters.AddWithValue("@одометрКм", poleDataEuropean.odometerKmVehicle);
-                    command.Parameters.AddWithValue("@годВыпуска", poleDataEuropean.yearOfIssueVehiccle);
-                                                     
-                    command.Parameters.AddWithValue("@производительТахографа", poleDataEuropean.manufacturerTahograph);
-                    command.Parameters.AddWithValue("@серийныйНомерТахографа", poleDataEuropean.serialNumberTahograph);
-                    command.Parameters.AddWithValue("@модельТахографа", poleDataEuropean.modelTachograph);
-                                                     
-                    command.Parameters.AddWithValue("@l", poleDataEuropean.l);
-                    command.Parameters.AddWithValue("@k", poleDataEuropean.k);
-                    command.Parameters.AddWithValue("@w", poleDataEuropean.w);
-
-                    Console.WriteLine(poleDataEuropean.orderNumber.ToString());
-                    Console.WriteLine(poleDataEuropean.master);
-                    Console.WriteLine(poleDataEuropean.dataJob);
-                    Console.WriteLine(poleDataEuropean.nameCustomer);
-                    Console.WriteLine(poleDataEuropean.nameCustomerEng);
-                    Console.WriteLine(poleDataEuropean.adresCustomer);
-                    Console.WriteLine(poleDataEuropean.manufacturerVehicle);
-                    Console.WriteLine(poleDataEuropean.modelVehicle);
-                    Console.WriteLine(poleDataEuropean.vinVehicle);
-                    Console.WriteLine(poleDataEuropean.registrationNumberVehicle);
-                    Console.WriteLine(poleDataEuropean.tireMarkingsVehicle);
-                    Console.WriteLine(poleDataEuropean.odometerKmVehicle);
-                    Console.WriteLine(poleDataEuropean.yearOfIssueVehiccle);
-                    Console.WriteLine(poleDataEuropean.manufacturerTahograph);
-                    Console.WriteLine(poleDataEuropean.serialNumberTahograph);
-                    Console.WriteLine(poleDataEuropean.modelTachograph);
-                    Console.WriteLine(poleDataEuropean.l);
-                    Console.WriteLine(poleDataEuropean.k);
-                    Console.WriteLine(poleDataEuropean.w);
-                // Открываем соединение
-                connection.Open();
-                    // Выполняем команду
-                    try
-                    {
-                        command.ExecuteNonQuery();
-                        MessageBox.Show("Данные успешно сохранены в базе данных.");
-                        connection.Close();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Ошибка при сохранении данных: " + ex.Message);
-                        Console.WriteLine(ex.Message);
-                        connection.Close();
-                    }
-                }
-            }
         }
 
         /// <summary>
@@ -377,7 +303,56 @@ namespace TaxoNavicon
         private void ToolStripMenuItemSaveData_Click(object sender, EventArgs e)
         {
             SetData();
-            SqlConnection();
+
+            FileInfo existingFile = new FileInfo(filePathCertificate);
+            using (ExcelPackage excelPackage = new ExcelPackage(existingFile))
+            {
+                // Получаем существующий лист или создаем новый, если его нет
+                var worksheet = excelPackage.Workbook.Worksheets["EuropeanCertificate"] ?? excelPackage.Workbook.Worksheets.Add("EuropeanCertificate");
+
+                int startRow = 3; // Первые 2 строчки это заголовки
+                int row = startRow;
+
+                // Ищем первую пустую строку
+                while (worksheet.Cells[row, 1].Value != null) // Проверяем первую ячейку в строке
+                {
+                    row++;
+                }
+                // Заполняем данные из формы
+                worksheet.Cells[row, 1].Value = poleDataEuropean.orderNumber.ToString();
+                worksheet.Cells[row, 2].Value = poleDataEuropean.master;
+                worksheet.Cells[row, 3].Value = poleDataEuropean.dataJob;
+
+                worksheet.Cells[row, 4].Value = poleDataEuropean.nameCustomer;
+                worksheet.Cells[row, 5].Value = poleDataEuropean.nameCustomerEng;
+                worksheet.Cells[row, 6].Value = poleDataEuropean.adresCustomer;
+
+                worksheet.Cells[row, 7].Value = poleDataEuropean.manufacturerTahograph;
+                worksheet.Cells[row, 8].Value = poleDataEuropean.serialNumberTahograph;
+                worksheet.Cells[row, 9].Value = poleDataEuropean.modelTachograph;
+
+                worksheet.Cells[row, 10].Value = poleDataEuropean.manufacturerVehicle;
+                worksheet.Cells[row, 11].Value = poleDataEuropean.vinVehicle;
+                worksheet.Cells[row, 12].Value = poleDataEuropean.tireMarkingsVehicle;
+                worksheet.Cells[row, 13].Value = poleDataEuropean.modelVehicle;
+                worksheet.Cells[row, 14].Value = poleDataEuropean.registrationNumberVehicle;
+                worksheet.Cells[row, 15].Value = poleDataEuropean.odometerKmVehicle;
+
+                worksheet.Cells[row, 16].Value = poleDataEuropean.w;
+                worksheet.Cells[row, 17].Value = poleDataEuropean.k;
+                worksheet.Cells[row, 18].Value = poleDataEuropean.l;
+
+                // Сохраняем изменения
+                excelPackage.Save();
+                MessageBox.Show("Данные успешно добавлены в Excel!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        public void LoadSettingJS()
+        {
+            var saveJson = File.ReadAllText(filePathSaveJson);
+
+            SettingsJS settingsJS = JsonSerializer.Deserialize<SettingsJS>(saveJson);
+            filePathCertificate = settingsJS.FilePath;
         }
     }
 }

@@ -34,7 +34,7 @@
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.panel3 = new System.Windows.Forms.Panel();
             this.buttonOpenRussianPanel = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnOpenSettings = new System.Windows.Forms.Button();
             this.buttonOpenEuropeanTypeForm = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -61,7 +61,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(64)))));
             this.panel3.Controls.Add(this.buttonOpenRussianPanel);
-            this.panel3.Controls.Add(this.button3);
+            this.panel3.Controls.Add(this.btnOpenSettings);
             this.panel3.Controls.Add(this.buttonOpenEuropeanTypeForm);
             resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Name = "panel3";
@@ -75,13 +75,14 @@
             this.buttonOpenRussianPanel.UseVisualStyleBackColor = true;
             this.buttonOpenRussianPanel.Click += new System.EventHandler(this.buttonOpenRussianPanel_Click);
             // 
-            // button3
+            // btnOpenSettings
             // 
-            resources.ApplyResources(this.button3, "button3");
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Name = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btnOpenSettings, "btnOpenSettings");
+            this.btnOpenSettings.FlatAppearance.BorderSize = 0;
+            this.btnOpenSettings.ForeColor = System.Drawing.Color.White;
+            this.btnOpenSettings.Name = "btnOpenSettings";
+            this.btnOpenSettings.UseVisualStyleBackColor = true;
+            this.btnOpenSettings.Click += new System.EventHandler(this.btnOpenSettings_Click);
             // 
             // buttonOpenEuropeanTypeForm
             // 
@@ -129,7 +130,7 @@
         private System.Windows.Forms.Button buttonOpenRussianPanel;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnOpenSettings;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.WebBrowser webBrowser1;

@@ -1,15 +1,11 @@
 ﻿using Microsoft.Office.Interop.Word;
-using Npgsql;
 using OfficeOpenXml;
 using System;
-using System.Collections.Generic;
-using System.Data;
 using System.Drawing.Printing;
 using System.IO;
-using System.Net.Http;
+using System.Text.Json;
 using System.Windows.Forms;
 using TaxoNaviconRussian;
-using static System.ComponentModel.Design.ObjectSelectorEditor;
 using Word = Microsoft.Office.Interop.Word;
 
 namespace TaxoNavicon
@@ -57,9 +53,17 @@ namespace TaxoNavicon
         private Word.Application wordApp;
         private Word.Document wordDoc;
         private string filePath;
+
+        private string filePathSaveJson;
+        private string filePathCertificate;
         public RussianTypeForm()
         {
             InitializeComponent();
+
+            filePathSaveJson = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "JsonSetting.json");
+            LoadSettingJS();
+
+
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial; // Или LicenseContext.Commercial, если у вас коммерческая лицензия
             poleDataRussian = new PoleDataRussian();
         }
@@ -70,6 +74,8 @@ namespace TaxoNavicon
         {
             LoadData();
         }
+
+        #region SetData
         private void SetData()
         {
             //Order - заказ
@@ -109,7 +115,9 @@ namespace TaxoNavicon
             poleDataRussian.signsManipulation = comboBoxSignsManipulation.Text;
             poleDataRussian.specialMarks = textBoxSpecialMarks.Text;
         }
+        #endregion
 
+        #region PrintDock
         private void ToolStripMenuItemPrintCertificate_Click_1(object sender, EventArgs e)
         {
             
@@ -160,6 +168,7 @@ namespace TaxoNavicon
             }
             ClouseConnectionWord();
         }
+        #endregion
 
         private void FindAndReplace(Word.Document doc, string findText, string replaceText)
         {
@@ -181,6 +190,7 @@ namespace TaxoNavicon
             base.OnFormClosing(e);
         }
 
+        #region ClouseConnection
         private void ClouseConnectionWord()
         {
             // Закрываем документ и приложение Word
@@ -198,7 +208,8 @@ namespace TaxoNavicon
                 wordApp = null;
             }
         }
-
+        #endregion
+        // Word документ
         private void CheckOpenDock()
         {
             bool isOpen = false;
@@ -250,19 +261,24 @@ namespace TaxoNavicon
             SetData();
         }
 
-        // Тут происходит сохранение в базу данных
+        // Тут происходит сохранение в Exel
         private void toolStripMenuItemSaveData_Click(object sender, EventArgs e)
         {
             SetData();
-            var filePath = "C:/Users/TGS_Navicon/Desktop/Git/TahoRus/TaxoNavicon/Certificate.xlsx"; // Укажите путь к вашему существующему файлу.xlsx"; // Укажите путь к вашему существующему файлу
-            FileInfo existingFile = new FileInfo(filePath);
+            FileInfo existingFile = new FileInfo(filePathCertificate);
             using (ExcelPackage excelPackage = new ExcelPackage(existingFile))
             {
                 // Получаем существующий лист или создаем новый, если его нет
                 var worksheet = excelPackage.Workbook.Worksheets["RussianCertificate"] ?? excelPackage.Workbook.Worksheets.Add("RussianCertificate");
+                
+                int startRow = 3; // Первые 2 строчки это заголовки
+                int row = startRow;
 
-                // Находим первую пустую строку, чтобы добавить данные
-                int row = worksheet.Dimension?.End.Row + 1 ?? 1;
+                // Ищем первую пустую строку
+                while (worksheet.Cells[row, 1].Value != null) // Проверяем первую ячейку в строке
+                {
+                    row++;
+                }
                 // Заполняем данные из формы
                 worksheet.Cells[row, 1].Value = poleDataRussian.orderNumber.ToString();
                 worksheet.Cells[row, 2].Value = poleDataRussian.master; 
@@ -294,8 +310,6 @@ namespace TaxoNavicon
                 worksheet.Cells[row, 22].Value = poleDataRussian.signsManipulation;
                 worksheet.Cells[row, 23].Value = poleDataRussian.specialMarks;
 
-
-
                 // Сохраняем изменения
                 excelPackage.Save();
                 MessageBox.Show("Данные успешно добавлены в Excel!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -304,62 +318,9 @@ namespace TaxoNavicon
 
         private void LoadData()
         {
-            var filePath = "C:/Users/TGS_Navicon/Desktop/Git/TahoRus/TaxoNavicon/Certificate.xlsx"; // Укажите путь к вашему существующему файлу.xlsx
-            FileInfo existingFile = new FileInfo(filePath);
+            LoadRussianDocument loadRussianDocument = new LoadRussianDocument(GetDataLoad, filePathCertificate);
 
-            using (ExcelPackage excelPackage = new ExcelPackage(existingFile))
-            {
-                // Получаем существующий лист
-                var worksheet = excelPackage.Workbook.Worksheets["RussianCertificate"];
-                if (worksheet == null)
-                {
-                    MessageBox.Show("Лист 'RussianCertificate' не найден!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                // Проходим по всем строкам, начиная со второй (первая - заголовки)
-                for (int row = 3; row <= worksheet.Dimension.End.Row; row++)
-                {
-                    // Проверка на пустую ячейку в первом столбце
-                    if (string.IsNullOrWhiteSpace(worksheet.Cells[row, 1].Text))
-                    {
-                        Console.WriteLine("Пустая строчка выход");
-
-                        break; // Выход из цикла, если ячейка пустая
-                    }
-                    // Пример загрузки данных в поля (предполагается, что у вас есть соответствующие свойства)
-                    string order = worksheet.Cells[row, 1].Text;
-                    Console.WriteLine("Номер заявки" + order);
-                    poleDataRussian.orderNumber = Convert.ToInt32(order);
-                    poleDataRussian.master = worksheet.Cells[row, 2].Text;
-                    poleDataRussian.dataJob = worksheet.Cells[row, 3].Text;
-                    poleDataRussian.newDataJob = worksheet.Cells[row, 4].Text;
-
-                    poleDataRussian.nameCustomer = worksheet.Cells[row, 5].Text;
-                    poleDataRussian.adresCustomer = worksheet.Cells[row, 6].Text;
-
-                    poleDataRussian.manufacturerTahograph = worksheet.Cells[row, 7].Text;
-                    poleDataRussian.serialNumberTahograph = worksheet.Cells[row, 8].Text;
-                    poleDataRussian.modelTachograph = worksheet.Cells[row, 9].Text;
-                    poleDataRussian.producedTachograph = worksheet.Cells[row, 10].Text;
-
-                    poleDataRussian.markaVehicle = worksheet.Cells[row, 11].Text;
-                    poleDataRussian.vinVehicle = worksheet.Cells[row, 12].Text;
-                    poleDataRussian.tireMarkingsVehicle = worksheet.Cells[row, 13].Text;
-                    poleDataRussian.modelVehicle = worksheet.Cells[row, 14].Text;
-                    poleDataRussian.registrationNumberVehicle = worksheet.Cells[row, 15].Text;
-                    poleDataRussian.odometerKmVehicle = worksheet.Cells[row, 16].Text;
-
-                    poleDataRussian.w = worksheet.Cells[row, 17].Text;
-                    poleDataRussian.k = worksheet.Cells[row, 18].Text;
-                    poleDataRussian.l = worksheet.Cells[row, 19].Text;
-
-                    poleDataRussian.locationInstallationTable = worksheet.Cells[row, 20].Text;
-                    poleDataRussian.inspectionResult = worksheet.Cells[row, 21].Text;
-                    poleDataRussian.signsManipulation = worksheet.Cells[row, 22].Text;
-                    poleDataRussian.specialMarks = worksheet.Cells[row, 23].Text;
-                }
-            }
+            loadRussianDocument.Show();
         }
 
         /// <summary>
@@ -431,6 +392,17 @@ namespace TaxoNavicon
 
             // Подгружаем наши данные в переменные экземпляра то есть локально
             SetData();
+        }
+
+        /// <summary>
+        /// Метод загружает путь к таблице
+        /// </summary>
+        public void LoadSettingJS()
+        {
+            var saveJson = File.ReadAllText(filePathSaveJson);
+
+            SettingsJS settingsJS = JsonSerializer.Deserialize<SettingsJS>(saveJson);
+            filePathCertificate = settingsJS.FilePath;
         }
     }
 }
