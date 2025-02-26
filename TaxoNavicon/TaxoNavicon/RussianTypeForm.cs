@@ -68,9 +68,7 @@ namespace TaxoNavicon
         // Открытие окна загрузок
         private void toolStripMenuItemLoadRussianDocument_Click(object sender, System.EventArgs e)
         {
-            LoadRussianDocument loadRussianDocument = new LoadRussianDocument(GetDataLoad);
-
-            loadRussianDocument.Show();
+            LoadData();
         }
         private void SetData()
         {
@@ -256,7 +254,7 @@ namespace TaxoNavicon
         private void toolStripMenuItemSaveData_Click(object sender, EventArgs e)
         {
             SetData();
-            var filePath = "C:/Users/TGS/Desktop/Certificate.xlsx"; // Укажите путь к вашему существующему файлу.xlsx"; // Укажите путь к вашему существующему файлу
+            var filePath = "C:/Users/TGS_Navicon/Desktop/Git/TahoRus/TaxoNavicon/Certificate.xlsx"; // Укажите путь к вашему существующему файлу.xlsx"; // Укажите путь к вашему существующему файлу
             FileInfo existingFile = new FileInfo(filePath);
             using (ExcelPackage excelPackage = new ExcelPackage(existingFile))
             {
@@ -302,74 +300,65 @@ namespace TaxoNavicon
                 excelPackage.Save();
                 MessageBox.Show("Данные успешно добавлены в Excel!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-            //SqlConnection();
         }
 
-        private void SqlConnection()
+        private void LoadData()
         {
-            string connectionString = "Host=localhost;Username=postgres;Password=123;Database=Certificate";
+            var filePath = "C:/Users/TGS_Navicon/Desktop/Git/TahoRus/TaxoNavicon/Certificate.xlsx"; // Укажите путь к вашему существующему файлу.xlsx
+            FileInfo existingFile = new FileInfo(filePath);
 
-            using (var connection = new NpgsqlConnection(connectionString))
+            using (ExcelPackage excelPackage = new ExcelPackage(existingFile))
             {
-                // Создание команды на вставку данных
-                string insertQuery = "INSERT INTO \"RussianCertificate\" " +
-                    "(номерЗаказа,мастер,датаВыполнениеРабот,датаВыполнениеНовыхРабот,имяКлиента,адресКлиента,маркаТранспорта," +
-                    "модельТранспорта,винТранспорта,регНомерТранспорта, маркировкаШинТранспорта,одометрТранспорта," +
-                    "производительТахографа,серийныйНомерТахографа,модельТахографа,датаПроизводстваТахографа," +
-                    "расположениеУстановочнойТаблицы,результатИнспекции,признакиМанипуляции,особыеОтметки, l, k, w)" +
-                    "VALUES" +
-                    "(@номерЗаказа,@мастер,@датаВыполнениеРабот,@датаВыполнениеНовыхРабот,@имяКлиента,@адресКлиента,@маркаТранспорта," +
-                    "@модельТранспорта,@винТранспорта,@регНомерТранспорта, @маркировкаШинТранспорта,@одометрТранспорта," +
-                    "@производительТахографа,@серийныйНомерТахографа,@модельТахографа,@датаПроизводстваТахографа," +
-                    "@расположениеУстановочнойТаблицы,@результатИнспекции,@признакиМанипуляции,@особыеОтметки, @l, @k, @w)";
-
-                using (var command = new NpgsqlCommand(insertQuery, connection))
+                // Получаем существующий лист
+                var worksheet = excelPackage.Workbook.Worksheets["RussianCertificate"];
+                if (worksheet == null)
                 {
-                    // Добавление параметров
-                    command.Parameters.AddWithValue("@номерЗаказа", poleDataRussian.orderNumber);
-                    command.Parameters.AddWithValue("@мастер", poleDataRussian.master);
-                    command.Parameters.AddWithValue("@датаВыполнениеРабот", poleDataRussian.dataJob);
-                    command.Parameters.AddWithValue("@датаВыполнениеНовыхРабот", poleDataRussian.newDataJob);
-
-                    command.Parameters.AddWithValue("@имяКлиента", poleDataRussian.nameCustomer);
-                    command.Parameters.AddWithValue("@адресКлиента", poleDataRussian.adresCustomer);
-
-                    command.Parameters.AddWithValue("@маркаТранспорта", poleDataRussian.markaVehicle);
-                    command.Parameters.AddWithValue("@модельТранспорта", poleDataRussian.modelVehicle);
-                    command.Parameters.AddWithValue("@винТранспорта", poleDataRussian.vinVehicle);
-                    command.Parameters.AddWithValue("@регНомерТранспорта", poleDataRussian.registrationNumberVehicle);
-                    command.Parameters.AddWithValue("@маркировкаШинТранспорта", poleDataRussian.tireMarkingsVehicle);
-                    command.Parameters.AddWithValue("@одометрТранспорта", poleDataRussian.odometerKmVehicle);
-
-                    command.Parameters.AddWithValue("@производительТахографа", poleDataRussian.manufacturerTahograph);
-                    command.Parameters.AddWithValue("@серийныйНомерТахографа", poleDataRussian.serialNumberTahograph);
-                    command.Parameters.AddWithValue("@модельТахографа", poleDataRussian.modelTachograph);
-                    command.Parameters.AddWithValue("@датаПроизводстваТахографа", poleDataRussian.producedTachograph);
-
-                    command.Parameters.AddWithValue("@расположениеУстановочнойТаблицы", poleDataRussian.locationInstallationTable);
-                    command.Parameters.AddWithValue("@результатИнспекции", poleDataRussian.inspectionResult);
-                    command.Parameters.AddWithValue("@признакиМанипуляции", poleDataRussian.signsManipulation);
-                    command.Parameters.AddWithValue("@особыеОтметки", poleDataRussian.specialMarks);
-
-                    command.Parameters.AddWithValue("@l", poleDataRussian.l);
-                    command.Parameters.AddWithValue("@k", poleDataRussian.k);
-                    command.Parameters.AddWithValue("@w", poleDataRussian.w);
-
-                    // Открываем соединение
-                    connection.Open();
-
-                    try
-                    {
-                        command.ExecuteNonQuery();
-                        MessageBox.Show("Данные успешно сохранены в базе данных.");
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Ошибка при сохранении данных: " + ex.Message);
-                    }
+                    MessageBox.Show("Лист 'RussianCertificate' не найден!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
-                connection.Close();
+
+                // Проходим по всем строкам, начиная со второй (первая - заголовки)
+                for (int row = 3; row <= worksheet.Dimension.End.Row; row++)
+                {
+                    // Проверка на пустую ячейку в первом столбце
+                    if (string.IsNullOrWhiteSpace(worksheet.Cells[row, 1].Text))
+                    {
+                        Console.WriteLine("Пустая строчка выход");
+
+                        break; // Выход из цикла, если ячейка пустая
+                    }
+                    // Пример загрузки данных в поля (предполагается, что у вас есть соответствующие свойства)
+                    string order = worksheet.Cells[row, 1].Text;
+                    Console.WriteLine("Номер заявки" + order);
+                    poleDataRussian.orderNumber = Convert.ToInt32(order);
+                    poleDataRussian.master = worksheet.Cells[row, 2].Text;
+                    poleDataRussian.dataJob = worksheet.Cells[row, 3].Text;
+                    poleDataRussian.newDataJob = worksheet.Cells[row, 4].Text;
+
+                    poleDataRussian.nameCustomer = worksheet.Cells[row, 5].Text;
+                    poleDataRussian.adresCustomer = worksheet.Cells[row, 6].Text;
+
+                    poleDataRussian.manufacturerTahograph = worksheet.Cells[row, 7].Text;
+                    poleDataRussian.serialNumberTahograph = worksheet.Cells[row, 8].Text;
+                    poleDataRussian.modelTachograph = worksheet.Cells[row, 9].Text;
+                    poleDataRussian.producedTachograph = worksheet.Cells[row, 10].Text;
+
+                    poleDataRussian.markaVehicle = worksheet.Cells[row, 11].Text;
+                    poleDataRussian.vinVehicle = worksheet.Cells[row, 12].Text;
+                    poleDataRussian.tireMarkingsVehicle = worksheet.Cells[row, 13].Text;
+                    poleDataRussian.modelVehicle = worksheet.Cells[row, 14].Text;
+                    poleDataRussian.registrationNumberVehicle = worksheet.Cells[row, 15].Text;
+                    poleDataRussian.odometerKmVehicle = worksheet.Cells[row, 16].Text;
+
+                    poleDataRussian.w = worksheet.Cells[row, 17].Text;
+                    poleDataRussian.k = worksheet.Cells[row, 18].Text;
+                    poleDataRussian.l = worksheet.Cells[row, 19].Text;
+
+                    poleDataRussian.locationInstallationTable = worksheet.Cells[row, 20].Text;
+                    poleDataRussian.inspectionResult = worksheet.Cells[row, 21].Text;
+                    poleDataRussian.signsManipulation = worksheet.Cells[row, 22].Text;
+                    poleDataRussian.specialMarks = worksheet.Cells[row, 23].Text;
+                }
             }
         }
 

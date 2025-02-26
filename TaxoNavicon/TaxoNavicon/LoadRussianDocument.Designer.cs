@@ -116,7 +116,6 @@
             this.Name = "LoadRussianDocument";
             this.ShowIcon = false;
             this.Text = "Российские документы";
-            this.Load += new System.EventHandler(this.LoadRussianDocument_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

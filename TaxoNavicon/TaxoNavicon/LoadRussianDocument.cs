@@ -51,49 +51,6 @@ namespace TaxoNavicon
             
         }
 
-        private void LoadRussianDocument_Load(object sender, EventArgs e)
-        {
-            
-            string connectionString = "Server=192.168.88.49;Port=5432;Username=postgres;Password=123;Database=Certificate";
-
-            using (var connection = new NpgsqlConnection(connectionString))
-            {
-                // Открываем соединение
-                connection.Open();
-
-                // Создаем запрос
-                string selectQuery = "SELECT номерЗаказа, имяКлиента FROM \"RussianCertificate\"";
-
-                using (var command = new NpgsqlCommand(selectQuery, connection))
-                {
-                    // Выполняем запрос и получаем данные
-                    using (var reader = command.ExecuteReader())
-                    {
-                        // Читаем данные
-                        while (reader.Read())
-                        {
-                            // Получаем значения столбцов
-                            var номерЗаказа = reader["номерЗаказа"].ToString();
-                            var имяКлиента = reader["имяКлиента"].ToString();
-                            data.Add(номерЗаказа, имяКлиента);
-                            // Выводим данные (или обрабатываем их как нужно)
-                            Console.WriteLine($"Номер Заказа: {номерЗаказа}, Имя Клиента: {имяКлиента}");
-                        }
-                    }
-                }
-                connection.Close();
-
-            }
-
-            // Пример вывода значений из словаря
-            foreach (var kvp in data)
-            {
-                CreatPanel(kvp.Key, kvp.Value);
-            }
-            // удаляем мусор
-            data.Clear();
-        }
-
         private void CreatPanel(string numberOrderText, string nameCustomerText)
         {
             // Создание панели

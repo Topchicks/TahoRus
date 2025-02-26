@@ -142,3 +142,13 @@ E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\EPPlus.xml
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\System.Drawing.Common.pdb
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\System.Drawing.Common.xml
+C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\EPPlus.dll
+C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\System.ComponentModel.Annotations.dll
+C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\System.Drawing.Common.dll
+C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\EPPlus.xml
+C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\System.Drawing.Common.pdb
+C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\System.Drawing.Common.xml
