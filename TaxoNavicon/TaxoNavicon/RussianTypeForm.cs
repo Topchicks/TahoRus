@@ -48,7 +48,6 @@ namespace TaxoNavicon
         <specialMarks> // особыеОтметки
         */
         PoleDataRussian poleDataRussian;
-        private PrintDocument printDocument;
 
         private Word.Application wordApp;
         private Word.Document wordDoc;
@@ -120,7 +119,7 @@ namespace TaxoNavicon
         #region PrintDock
         private void ToolStripMenuItemPrintCertificate_Click_1(object sender, EventArgs e)
         {
-            
+            SetData();
             string relativePath = @"RussianCertificate.docx"; // Относительный путь к файлу
             filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
             wordApp = new Word.Application();
@@ -254,13 +253,6 @@ namespace TaxoNavicon
                 }
             }
         }
-
-        // Тут происходит сохранение в переменные программы
-        private void ToolStripMenuItemSetData_Click(object sender, EventArgs e)
-        {
-            SetData();
-        }
-
         // Тут происходит сохранение в Exel
         private void toolStripMenuItemSaveData_Click(object sender, EventArgs e)
         {
@@ -403,6 +395,12 @@ namespace TaxoNavicon
 
             SettingsJS settingsJS = JsonSerializer.Deserialize<SettingsJS>(saveJson);
             filePathCertificate = settingsJS.FilePath;
+        }
+
+        // Метод будет следить за именением данных в полях
+        public void ChangeBox(object sender, EventArgs e)
+        {
+            SetData();
         }
     }
 }

@@ -38,7 +38,6 @@ namespace TaxoNavicon
             k
         */
         PoleDataEuropean poleDataEuropean;
-        private PrintDocument printDocument;
 
         private Word.Application wordApp;
         private Word.Document wordDoc;

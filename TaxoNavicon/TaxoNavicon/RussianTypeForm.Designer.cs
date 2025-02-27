@@ -180,6 +180,7 @@
             this.textBoxSpecialMarks.Size = new System.Drawing.Size(358, 38);
             this.textBoxSpecialMarks.TabIndex = 14;
             this.textBoxSpecialMarks.Text = "Эксплуатация только на территории РФ.";
+            this.textBoxSpecialMarks.TextChanged += new System.EventHandler(this.ChangeBox);
             // 
             // label26
             // 
@@ -202,6 +203,7 @@
             this.comboBoxSignsManipulation.Size = new System.Drawing.Size(358, 24);
             this.comboBoxSignsManipulation.TabIndex = 12;
             this.comboBoxSignsManipulation.Text = "Отсутствуют";
+            this.comboBoxSignsManipulation.TextChanged += new System.EventHandler(this.ChangeBox);
             // 
             // label25
             // 
@@ -225,6 +227,7 @@
             this.comboBoxInspectionResult.Size = new System.Drawing.Size(358, 24);
             this.comboBoxInspectionResult.TabIndex = 9;
             this.comboBoxInspectionResult.Text = "Положительный";
+            this.comboBoxInspectionResult.TextChanged += new System.EventHandler(this.ChangeBox);
             // 
             // label18
             // 
@@ -245,6 +248,7 @@
             this.textBoxLocationInstallationTable.Size = new System.Drawing.Size(358, 36);
             this.textBoxLocationInstallationTable.TabIndex = 9;
             this.textBoxLocationInstallationTable.Text = "Стойка двери водителя";
+            this.textBoxLocationInstallationTable.TextChanged += new System.EventHandler(this.ChangeBox);
             // 
             // label32
             // 
@@ -294,6 +298,7 @@
             this.textBoxOdometerKmVehicle.Name = "textBoxOdometerKmVehicle";
             this.textBoxOdometerKmVehicle.Size = new System.Drawing.Size(287, 20);
             this.textBoxOdometerKmVehicle.TabIndex = 20;
+            this.textBoxOdometerKmVehicle.TextChanged += new System.EventHandler(this.ChangeBox);
             // 
             // textBoxRegistrationNumberVehicle
             // 
@@ -301,6 +306,7 @@
             this.textBoxRegistrationNumberVehicle.Name = "textBoxRegistrationNumberVehicle";
             this.textBoxRegistrationNumberVehicle.Size = new System.Drawing.Size(287, 20);
             this.textBoxRegistrationNumberVehicle.TabIndex = 19;
+            this.textBoxRegistrationNumberVehicle.TextChanged += new System.EventHandler(this.ChangeBox);
             // 
             // textBoxModelVehicle
             // 
@@ -308,6 +314,7 @@
             this.textBoxModelVehicle.Name = "textBoxModelVehicle";
             this.textBoxModelVehicle.Size = new System.Drawing.Size(287, 20);
             this.textBoxModelVehicle.TabIndex = 15;
+            this.textBoxModelVehicle.TextChanged += new System.EventHandler(this.ChangeBox);
             // 
             // label15
             // 
@@ -345,6 +352,7 @@
             this.textBoxTireMarkingsVehicle.Name = "textBoxTireMarkingsVehicle";
             this.textBoxTireMarkingsVehicle.Size = new System.Drawing.Size(287, 20);
             this.textBoxTireMarkingsVehicle.TabIndex = 14;
+            this.textBoxTireMarkingsVehicle.TextChanged += new System.EventHandler(this.ChangeBox);
             // 
             // textBoxVinNumberVehicle
             // 
@@ -352,6 +360,7 @@
             this.textBoxVinNumberVehicle.Name = "textBoxVinNumberVehicle";
             this.textBoxVinNumberVehicle.Size = new System.Drawing.Size(287, 20);
             this.textBoxVinNumberVehicle.TabIndex = 13;
+            this.textBoxVinNumberVehicle.TextChanged += new System.EventHandler(this.ChangeBox);
             // 
             // textBoxMarkaVehicle
             // 
@@ -359,6 +368,7 @@
             this.textBoxMarkaVehicle.Name = "textBoxMarkaVehicle";
             this.textBoxMarkaVehicle.Size = new System.Drawing.Size(287, 20);
             this.textBoxMarkaVehicle.TabIndex = 9;
+            this.textBoxMarkaVehicle.TextChanged += new System.EventHandler(this.ChangeBox);
             // 
             // label11
             // 
@@ -422,6 +432,7 @@
             this.textBoxL.Name = "textBoxL";
             this.textBoxL.Size = new System.Drawing.Size(119, 20);
             this.textBoxL.TabIndex = 22;
+            this.textBoxL.TextChanged += new System.EventHandler(this.ChangeBox);
             // 
             // label31
             // 
@@ -439,6 +450,7 @@
             this.textBoxK.Name = "textBoxK";
             this.textBoxK.Size = new System.Drawing.Size(119, 20);
             this.textBoxK.TabIndex = 20;
+            this.textBoxK.TextChanged += new System.EventHandler(this.ChangeBox);
             // 
             // label30
             // 
@@ -456,6 +468,7 @@
             this.textBoxW.Name = "textBoxW";
             this.textBoxW.Size = new System.Drawing.Size(119, 20);
             this.textBoxW.TabIndex = 9;
+            this.textBoxW.TextChanged += new System.EventHandler(this.ChangeBox);
             // 
             // label28
             // 
@@ -501,6 +514,7 @@
             this.textBoxProducedTachograph.Name = "textBoxProducedTachograph";
             this.textBoxProducedTachograph.Size = new System.Drawing.Size(276, 20);
             this.textBoxProducedTachograph.TabIndex = 19;
+            this.textBoxProducedTachograph.TextChanged += new System.EventHandler(this.ChangeBox);
             // 
             // textBoxModelTachograph
             // 
@@ -508,6 +522,7 @@
             this.textBoxModelTachograph.Name = "textBoxModelTachograph";
             this.textBoxModelTachograph.Size = new System.Drawing.Size(276, 20);
             this.textBoxModelTachograph.TabIndex = 15;
+            this.textBoxModelTachograph.TextChanged += new System.EventHandler(this.ChangeBox);
             // 
             // label19
             // 
@@ -535,6 +550,7 @@
             this.textBoxSerialNumberTahograph.Name = "textBoxSerialNumberTahograph";
             this.textBoxSerialNumberTahograph.Size = new System.Drawing.Size(276, 20);
             this.textBoxSerialNumberTahograph.TabIndex = 13;
+            this.textBoxSerialNumberTahograph.TextChanged += new System.EventHandler(this.ChangeBox);
             // 
             // textBoxManufacturerTachograph
             // 
@@ -542,6 +558,7 @@
             this.textBoxManufacturerTachograph.Name = "textBoxManufacturerTachograph";
             this.textBoxManufacturerTachograph.Size = new System.Drawing.Size(276, 20);
             this.textBoxManufacturerTachograph.TabIndex = 9;
+            this.textBoxManufacturerTachograph.TextChanged += new System.EventHandler(this.ChangeBox);
             // 
             // label22
             // 
@@ -609,6 +626,7 @@
             this.textBoxAdresCustomer.Name = "textBoxAdresCustomer";
             this.textBoxAdresCustomer.Size = new System.Drawing.Size(422, 20);
             this.textBoxAdresCustomer.TabIndex = 13;
+            this.textBoxAdresCustomer.TextChanged += new System.EventHandler(this.ChangeBox);
             // 
             // textBoxNameCustomer
             // 
@@ -616,6 +634,7 @@
             this.textBoxNameCustomer.Name = "textBoxNameCustomer";
             this.textBoxNameCustomer.Size = new System.Drawing.Size(321, 20);
             this.textBoxNameCustomer.TabIndex = 9;
+            this.textBoxNameCustomer.TextChanged += new System.EventHandler(this.ChangeBox);
             // 
             // label9
             // 
@@ -671,6 +690,7 @@
             this.dateTimePickerJob.Name = "dateTimePickerJob";
             this.dateTimePickerJob.Size = new System.Drawing.Size(114, 25);
             this.dateTimePickerJob.TabIndex = 10;
+            this.dateTimePickerJob.ValueChanged += new System.EventHandler(this.ChangeBox);
             // 
             // numericUpDowntextBoxOrderNumber
             // 
@@ -683,6 +703,7 @@
             this.numericUpDowntextBoxOrderNumber.Name = "numericUpDowntextBoxOrderNumber";
             this.numericUpDowntextBoxOrderNumber.Size = new System.Drawing.Size(107, 20);
             this.numericUpDowntextBoxOrderNumber.TabIndex = 9;
+            this.numericUpDowntextBoxOrderNumber.ValueChanged += new System.EventHandler(this.ChangeBox);
             // 
             // comboBoxMaster
             // 
@@ -695,6 +716,7 @@
             this.comboBoxMaster.Size = new System.Drawing.Size(246, 25);
             this.comboBoxMaster.TabIndex = 6;
             this.comboBoxMaster.Text = "Беляев Сергей Александрович";
+            this.comboBoxMaster.TextChanged += new System.EventHandler(this.ChangeBox);
             // 
             // label5
             // 
@@ -797,9 +819,7 @@
             // ToolStripMenuItemSetData
             // 
             this.ToolStripMenuItemSetData.Name = "ToolStripMenuItemSetData";
-            this.ToolStripMenuItemSetData.Size = new System.Drawing.Size(69, 20);
-            this.ToolStripMenuItemSetData.Text = "Записать";
-            this.ToolStripMenuItemSetData.Click += new System.EventHandler(this.ToolStripMenuItemSetData_Click);
+            this.ToolStripMenuItemSetData.Size = new System.Drawing.Size(12, 20);
             // 
             // применитьИзмененияToolStripMenuItem
             // 
