@@ -156,7 +156,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(391, 589);
+            this.ClientSize = new System.Drawing.Size(407, 628);
             this.Controls.Add(this.startOrderPanel);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -167,7 +167,6 @@
             this.Name = "LoadEuropeanDocument";
             this.ShowIcon = false;
             this.Text = "Европейские документы";
-            this.Load += new System.EventHandler(this.LoadEuropeanDocument_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

@@ -5,7 +5,6 @@ using System.Drawing.Printing;
 using System.IO;
 using System.Text.Json;
 using System.Windows.Forms;
-using TaxoNaviconRussian;
 using Word = Microsoft.Office.Interop.Word;
 
 namespace TaxoNavicon
@@ -93,6 +92,7 @@ namespace TaxoNavicon
         // Для Word
         private void ToolStripMenuItemPrintCertificate_Click(object sender, EventArgs e)
         {
+            SetData();
             string relativePath = @"EuropeanCertidicate.doc"; // Относительный путь к файлу
             filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
             wordApp = new Word.Application();
@@ -217,12 +217,6 @@ namespace TaxoNavicon
                     MessageBox.Show("Ошибка при открытии документа: " + ex.Message);
                 }
             }
-        }
-
-        // Тут происходит сохранение в переменные программы
-        private void ToolStripMenuItemSetData_Click(object sender, EventArgs e)
-        {
-            SetData();
         }
 
         private void ToolStripMenuItem_Click(object sender, EventArgs e)

@@ -83,7 +83,6 @@ namespace TaxoNavicon
                     CreatPanel(kvp.Key, kvp.Value);
                 }
             }
-
         }
 
         // Создаём панельки с данными 

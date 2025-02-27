@@ -706,13 +706,6 @@
             this.LoadEuropeanDocuments.Text = "Загрузить";
             this.LoadEuropeanDocuments.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
-            // ToolStripMenuItemSetData
-            // 
-            this.ToolStripMenuItemSetData.Name = "ToolStripMenuItemSetData";
-            this.ToolStripMenuItemSetData.Size = new System.Drawing.Size(69, 20);
-            this.ToolStripMenuItemSetData.Text = "Записать";
-            this.ToolStripMenuItemSetData.Click += new System.EventHandler(this.ToolStripMenuItemSetData_Click);
-            // 
             // применитьИToolStripMenuItem
             // 
             this.применитьИToolStripMenuItem.Name = "применитьИToolStripMenuItem";

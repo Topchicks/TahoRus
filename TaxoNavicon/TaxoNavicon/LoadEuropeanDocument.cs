@@ -1,4 +1,5 @@
 ﻿using Npgsql;
+using OfficeOpenXml;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -41,9 +42,10 @@ namespace TaxoNavicon
     */
     public partial class LoadEuropeanDocument : Form
     {
-        private Dictionary<string, string> data = new Dictionary<string, string>();
+        private Dictionary<int, string> data = new Dictionary<int, string>();
         private Button buttonLoad;
         private PoleDataEuropean poleDataEuropean;
+        private string filePathCertificate;
 
         // Делегат для метода
         public delegate void MyDelegate(int orderNumber,
@@ -74,53 +76,45 @@ namespace TaxoNavicon
         public LoadEuropeanDocument(MyDelegate myMethod, string filePathCertificate)
         {
             InitializeComponent();
+            this.filePathCertificate = filePathCertificate;
+            poleDataEuropean = new PoleDataEuropean();
             _myMethod = myMethod; // Сохраняем ссылку на метод
-        }
+            FileInfo existingFile = new FileInfo(this.filePathCertificate);
 
-        private void LoadEuropeanDocument_Load(object sender, EventArgs e)
-        {
-
-            string connectionString = "Host=localhost;Username=postgres;Password=123;Database=Certificate";
-
-            using (var connection = new NpgsqlConnection(connectionString))
+            using (ExcelPackage excelPackage = new ExcelPackage(existingFile))
             {
-                // Открываем соединение
-                connection.Open();
-
-                // Создаем запрос
-                string selectQuery = "SELECT номерЗаказа, имяКлиента FROM \"EuropeanCertificate\"";
-
-                using (var command = new NpgsqlCommand(selectQuery, connection))
+                // Получаем существующий лист
+                var worksheet = excelPackage.Workbook.Worksheets["EuropeanCertificate"];
+                if (worksheet == null)
                 {
-                    // Выполняем запрос и получаем данные
-                    using (var reader = command.ExecuteReader())
-                    {
-                        // Читаем данные
-                        while (reader.Read())
-                        {
-                            // Получаем значения столбцов
-                            var orderNumber = reader["номерЗаказа"].ToString();
-                            var nameCustomer = reader["имяКлиента"].ToString();
-                            data.Add(orderNumber, nameCustomer);
-                            // Выводим данные (или обрабатываем их как нужно)
-                            Console.WriteLine($"Номер Заказа: {orderNumber}, Имя Клиента: {nameCustomer}");
-                        }
-                    }
+                    MessageBox.Show("Лист 'EuropeanCertificate' не найден!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
-                connection.Close();
-                
-            }
 
-            // Пример вывода значений из словаря
-            foreach (var kvp in data)
-            {
-                CreatPanel(kvp.Key, kvp.Value);
+                // Проходим по всем строкам, начиная со второй (первая - заголовки)
+                for (int row = 3; row <= worksheet.Dimension.End.Row; row++)
+                {
+                    // Проверка на пустую ячейку в первом столбце
+                    if (string.IsNullOrWhiteSpace(worksheet.Cells[row, 1].Text))
+                    {
+                        Console.WriteLine("Пустая строчка выход");
+
+                        break; // Выход из цикла, если ячейка пустая
+                    }
+                    // Пример загрузки данных в поля (предполагается, что у вас есть соответствующие свойства)
+                    string order = worksheet.Cells[row, 1].Text;
+
+                    data.Add(Convert.ToInt32(order), worksheet.Cells[row, 5].Text);
+                }
+
+                foreach (var kvp in data)
+                {
+                    CreatPanel(kvp.Key, kvp.Value);
+                }
             }
-            // удаляем мусор
-            data.Clear();
         }
 
-        private void CreatPanel(string numberOrderText, string nameCustomerText)
+        private void CreatPanel(int numberOrderText, string nameCustomerText)
         {
             // Создание панели
             Panel panel = new Panel
@@ -132,7 +126,7 @@ namespace TaxoNavicon
             // Создание первого текстового элемента
             Label orderNumber = new Label
             {
-                Text = numberOrderText,
+                Text = numberOrderText.ToString(),
                 AutoSize = false, // Автоматическая подстройка размера
                 Location = new System.Drawing.Point(-3, 0), // Положение на панели
                 Size = new System.Drawing.Size(100, 34),
@@ -197,56 +191,64 @@ namespace TaxoNavicon
 
         private void LoadDataByOrderNumber(int orderNumber)
         {
-            poleDataEuropean = null;
-            poleDataEuropean = new PoleDataEuropean();
-            string connectionString = "Host=localhost;Username=postgres;Password=123;Database=Certificate";
-            using (var connection = new NpgsqlConnection(connectionString))
+            using (ExcelPackage excelPackage = new ExcelPackage(filePathCertificate))
             {
-                
-                    // Создание команды на выборку данных по номеру заказа
-                    string selectQuery = "SELECT * FROM \"EuropeanCertificate\" WHERE \"номерЗаказа\" = @номерЗаказа";
+                FileInfo existingFile = new FileInfo(filePathCertificate);
+                var worksheet = excelPackage.Workbook.Worksheets["EuropeanCertificate"];
+                if (worksheet == null)
+                {
+                    MessageBox.Show("Лист 'EuropeanCertificate' не найден!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
-                    using (var selectCommand = new NpgsqlCommand(selectQuery, connection))
+                // Проверим есть ли такой ключ в дикшенери
+                if (data.ContainsKey(orderNumber))
+                {
+                    // То запускаем цикл на поиск данных в нашей таблице
+                    for (int row = 3; row <= worksheet.Dimension.End.Row; row++)
                     {
-                        // Открываем соединение
-                        connection.Open();
-                        selectCommand.Parameters.AddWithValue("@номерЗаказа", orderNumber);
-                       
-
-                        using (var reader = selectCommand.ExecuteReader())
+                        // Проверка на пустую ячейку в первом столбце
+                        if (string.IsNullOrWhiteSpace(worksheet.Cells[row, 1].Text))
                         {
-                            if (reader.Read()) // Если есть результаты
-                            {
-                                // Получаем значения столбцов и сохраняем их в переменные
-                                poleDataEuropean.orderNumber = Convert.ToInt32(reader["номерЗаказа"]);
-                                poleDataEuropean.master = reader["мастер"].ToString();
-                                poleDataEuropean.dataJob = reader["датаВыполненияРабот"].ToString();
+                            Console.WriteLine("Пустая строчка выход");
 
-                                poleDataEuropean.nameCustomer = reader["имяКлиента"].ToString();
-                                poleDataEuropean.nameCustomerEng = reader["имяКлиентаАнлийский"].ToString();
-                                poleDataEuropean.adresCustomer = reader["адресЗаказчика"].ToString();
+                            break; // Выход из цикла, если ячейка пустая
+                        }
 
-                                poleDataEuropean.manufacturerVehicle = reader["производительТранспорта"].ToString();
-                                poleDataEuropean.modelVehicle = reader["модельТранспорта"].ToString();
-                                poleDataEuropean.vinVehicle = reader["винНомерТранспорта"].ToString();
-                                poleDataEuropean.registrationNumberVehicle = reader["регНомерТранспорта"].ToString();
-                                poleDataEuropean.tireMarkingsVehicle = reader["маркировкаШин"].ToString();
-                                poleDataEuropean.odometerKmVehicle = reader["одометрКм"].ToString();
-                                poleDataEuropean.yearOfIssueVehiccle = reader["годВыпуска"].ToString();
+                        string order = worksheet.Cells[row, 1].Text;
 
-                                poleDataEuropean.manufacturerTahograph = reader["производительТахографа"].ToString();
-                                poleDataEuropean.serialNumberTahograph = reader["серийныйНомерТахографа"].ToString();
-                                poleDataEuropean.modelTachograph = reader["модельТахографа"].ToString();
+                        // Тут проверка этого столбика и если такие данные есть то запускаем процесс записи данных в poleDataRussian
+                        if (Convert.ToInt32(order) == orderNumber)
+                        {
+                            poleDataEuropean.orderNumber = Convert.ToInt32(order);
+                            poleDataEuropean.master = worksheet.Cells[row, 2].Text;
+                            poleDataEuropean.dataJob = worksheet.Cells[row, 3].Text;
+                            
+                            poleDataEuropean.nameCustomer = worksheet.Cells[row, 4].Text;
+                            poleDataEuropean.nameCustomerEng = worksheet.Cells[row, 5].Text;
+                            poleDataEuropean.adresCustomer = worksheet.Cells[row, 6].Text;
+                            
+                            poleDataEuropean.manufacturerTahograph = worksheet.Cells[row, 7].Text;
+                            poleDataEuropean.serialNumberTahograph = worksheet.Cells[row, 8].Text;
+                            poleDataEuropean.modelTachograph = worksheet.Cells[row, 9].Text;
 
-                                poleDataEuropean.w = reader["w"].ToString();
-                                poleDataEuropean.l = reader["l"].ToString();
-                                poleDataEuropean.k = reader["k"].ToString();
-                                
+                            
+                            poleDataEuropean.manufacturerVehicle = worksheet.Cells[row, 10].Text;
+                            poleDataEuropean.vinVehicle = worksheet.Cells[row, 11].Text;
+                            poleDataEuropean.tireMarkingsVehicle = worksheet.Cells[row, 12].Text;
+                            poleDataEuropean.modelVehicle = worksheet.Cells[row, 13].Text;
+                            poleDataEuropean.registrationNumberVehicle = worksheet.Cells[row, 14].Text;
+                            poleDataEuropean.odometerKmVehicle = worksheet.Cells[row, 15].Text;
+                            
+                            poleDataEuropean.w = worksheet.Cells[row, 17].Text;
+                            poleDataEuropean.k = worksheet.Cells[row, 18].Text;
+                            poleDataEuropean.l = worksheet.Cells[row, 19].Text;
                         }
                     }
-                    }
-                    connection.Close();
+                }
             }
+
+            // Тут закрываем окно и запускается процесс передачи данных на другое окно
             this.Close();
         }
 
