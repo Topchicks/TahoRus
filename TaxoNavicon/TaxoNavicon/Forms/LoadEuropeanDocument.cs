@@ -1,64 +1,93 @@
-﻿using Microsoft.Office.Interop.Word;
+﻿using Npgsql;
 using OfficeOpenXml;
+using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
 using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using TaxoNaviconRussian;
-using Font = System.Drawing.Font;
 
 namespace TaxoNavicon
 {
-    public partial class LoadRussianDocument : Form
+    /*
+        номерЗаказа
+        мастер
+        датаВыполненияРабот
+        
+        имяЗаказчика
+        имяЗаказчикаАнлийский
+        адресЗаказчика
+
+        производительТранспорта
+        модельТранспорта
+        винНомерТранспорта
+        регНомерТранспорта
+        маркировкаШин
+        одометрКм
+        годВыпуска
+            
+        производительТахографа
+        серийныйНомерТахографаЕвропа
+        модельТахографа
+
+        l
+        w
+        k
+    */
+    public partial class LoadEuropeanDocument : Form
     {
         private Dictionary<int, string> data = new Dictionary<int, string>();
         private Button buttonLoad;
-        private PoleDataRussian poleDataRussian;
+        private PoleDataEuropean poleDataEuropean;
         private string filePathCertificate;
 
         // Делегат для метода
         public delegate void MyDelegate(int orderNumber,
                                         string master,
                                         string dataJob,
+
                                         string nameCustomer,
+                                        string nameCustomerEng,
                                         string adresCustomer,
+
                                         string markaVehicle,
                                         string modelVehicle,
                                         string vinVehicle,
                                         string registrationNumberVehicle,
                                         string tireMarkingsVehicle,
                                         string odometerKmVehicle,
+                                        string yearOfIssueVehiccle,
+
                                         string manufacturerTahograph,
                                         string serialNumberTahograph,
                                         string modelTachograph,
-                                        string producedTachograph,
-                                        string locationInstallationTable,
-                                        string inspectionResult,
-                                        string signsManipulation,
-                                        string specialMarks,
+
                                         string l,
                                         string w,
                                         string k
                                         );
         private MyDelegate _myMethod;
-
-        public LoadRussianDocument(MyDelegate myMethod, string filePathCertificate)
+        public LoadEuropeanDocument(MyDelegate myMethod, string filePathCertificate)
         {
             InitializeComponent();
             this.filePathCertificate = filePathCertificate;
-            poleDataRussian = new PoleDataRussian();
+            poleDataEuropean = new PoleDataEuropean();
             _myMethod = myMethod; // Сохраняем ссылку на метод
-
             FileInfo existingFile = new FileInfo(this.filePathCertificate);
 
             using (ExcelPackage excelPackage = new ExcelPackage(existingFile))
             {
                 // Получаем существующий лист
-                var worksheet = excelPackage.Workbook.Worksheets["RussianCertificate"];
+                var worksheet = excelPackage.Workbook.Worksheets["EuropeanCertificate"];
                 if (worksheet == null)
                 {
-                    MessageBox.Show("Лист 'RussianCertificate' не найден!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Лист 'EuropeanCertificate' не найден!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -85,7 +114,6 @@ namespace TaxoNavicon
             }
         }
 
-        // Создаём панельки с данными 
         private void CreatPanel(int numberOrderText, string nameCustomerText)
         {
             // Создание панели
@@ -149,9 +177,8 @@ namespace TaxoNavicon
             Button clickedButton = sender as Button;
             if (clickedButton != null)
             {
-                // Передаем данные в методS
+                // Передаем данные в метод
                 int orderNumber = Convert.ToInt32(clickedButton.Tag);
-
                 ShowMessage(orderNumber);
             }
         }
@@ -167,10 +194,10 @@ namespace TaxoNavicon
             using (ExcelPackage excelPackage = new ExcelPackage(filePathCertificate))
             {
                 FileInfo existingFile = new FileInfo(filePathCertificate);
-                var worksheet = excelPackage.Workbook.Worksheets["RussianCertificate"];
+                var worksheet = excelPackage.Workbook.Worksheets["EuropeanCertificate"];
                 if (worksheet == null)
                 {
-                    MessageBox.Show("Лист 'RussianCertificate' не найден!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Лист 'EuropeanCertificate' не найден!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -187,40 +214,35 @@ namespace TaxoNavicon
 
                             break; // Выход из цикла, если ячейка пустая
                         }
-                        
+
                         string order = worksheet.Cells[row, 1].Text;
 
                         // Тут проверка этого столбика и если такие данные есть то запускаем процесс записи данных в poleDataRussian
                         if (Convert.ToInt32(order) == orderNumber)
                         {
-                            poleDataRussian.orderNumber = Convert.ToInt32(order);
-                            poleDataRussian.master = worksheet.Cells[row, 2].Text;
-                            poleDataRussian.dataJob = worksheet.Cells[row, 3].Text;
-                            poleDataRussian.newDataJob = worksheet.Cells[row, 4].Text;
+                            poleDataEuropean.orderNumber = Convert.ToInt32(order);
+                            poleDataEuropean.master = worksheet.Cells[row, 2].Text;
+                            poleDataEuropean.dataJob = worksheet.Cells[row, 3].Text;
+                            
+                            poleDataEuropean.nameCustomer = worksheet.Cells[row, 4].Text;
+                            poleDataEuropean.nameCustomerEng = worksheet.Cells[row, 5].Text;
+                            poleDataEuropean.adresCustomer = worksheet.Cells[row, 6].Text;
+                            
+                            poleDataEuropean.manufacturerTahograph = worksheet.Cells[row, 7].Text;
+                            poleDataEuropean.serialNumberTahograph = worksheet.Cells[row, 8].Text;
+                            poleDataEuropean.modelTachograph = worksheet.Cells[row, 9].Text;
 
-                            poleDataRussian.nameCustomer = worksheet.Cells[row, 5].Text;
-                            poleDataRussian.adresCustomer = worksheet.Cells[row, 6].Text;
-
-                            poleDataRussian.manufacturerTahograph = worksheet.Cells[row, 7].Text;
-                            poleDataRussian.serialNumberTahograph = worksheet.Cells[row, 8].Text;
-                            poleDataRussian.modelTachograph = worksheet.Cells[row, 9].Text;
-                            poleDataRussian.producedTachograph = worksheet.Cells[row, 10].Text;
-
-                            poleDataRussian.markaVehicle = worksheet.Cells[row, 11].Text;
-                            poleDataRussian.vinVehicle = worksheet.Cells[row, 12].Text;
-                            poleDataRussian.tireMarkingsVehicle = worksheet.Cells[row, 13].Text;
-                            poleDataRussian.modelVehicle = worksheet.Cells[row, 14].Text;
-                            poleDataRussian.registrationNumberVehicle = worksheet.Cells[row, 15].Text;
-                            poleDataRussian.odometerKmVehicle = worksheet.Cells[row, 16].Text;
-
-                            poleDataRussian.w = worksheet.Cells[row, 17].Text;
-                            poleDataRussian.k = worksheet.Cells[row, 18].Text;
-                            poleDataRussian.l = worksheet.Cells[row, 19].Text;
-
-                            poleDataRussian.locationInstallationTable = worksheet.Cells[row, 20].Text;
-                            poleDataRussian.inspectionResult = worksheet.Cells[row, 21].Text;
-                            poleDataRussian.signsManipulation = worksheet.Cells[row, 22].Text;
-                            poleDataRussian.specialMarks = worksheet.Cells[row, 23].Text;
+                            
+                            poleDataEuropean.manufacturerVehicle = worksheet.Cells[row, 10].Text;
+                            poleDataEuropean.vinVehicle = worksheet.Cells[row, 11].Text;
+                            poleDataEuropean.tireMarkingsVehicle = worksheet.Cells[row, 12].Text;
+                            poleDataEuropean.modelVehicle = worksheet.Cells[row, 13].Text;
+                            poleDataEuropean.registrationNumberVehicle = worksheet.Cells[row, 14].Text;
+                            poleDataEuropean.odometerKmVehicle = worksheet.Cells[row, 15].Text;
+                            
+                            poleDataEuropean.w = worksheet.Cells[row, 16].Text;
+                            poleDataEuropean.k = worksheet.Cells[row, 17].Text;
+                            poleDataEuropean.l = worksheet.Cells[row, 18].Text;
                         }
                     }
                 }
@@ -232,33 +254,63 @@ namespace TaxoNavicon
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            Console.WriteLine("Окно закрыто");
-            
-            _myMethod?.Invoke(  poleDataRussian.orderNumber,
-                                poleDataRussian.master,
-                                poleDataRussian.dataJob,
-                                poleDataRussian.nameCustomer,
-                                poleDataRussian.adresCustomer,
-                                poleDataRussian.markaVehicle,
-                                poleDataRussian.modelVehicle,
-                                poleDataRussian.vinVehicle,
-                                poleDataRussian.registrationNumberVehicle,
-                                poleDataRussian.tireMarkingsVehicle,
-                                poleDataRussian.odometerKmVehicle,
-                                poleDataRussian.manufacturerTahograph,
-                                poleDataRussian.serialNumberTahograph,
-                                poleDataRussian.modelTachograph,
-                                poleDataRussian.producedTachograph,
-                                poleDataRussian.locationInstallationTable,
-                                poleDataRussian.inspectionResult,
-                                poleDataRussian.signsManipulation,
-                                poleDataRussian.specialMarks,
-                                poleDataRussian.l,
-                                poleDataRussian.w,
-                                poleDataRussian.k
+           
+            if(poleDataEuropean.master != null)
+            {
+                _myMethod?.Invoke(poleDataEuropean.orderNumber,
+                                poleDataEuropean.master,
+                                poleDataEuropean.dataJob,
+                                poleDataEuropean.nameCustomer,
+                                poleDataEuropean.nameCustomerEng,
+                                poleDataEuropean.adresCustomer,
+                                poleDataEuropean.manufacturerVehicle,
+                                poleDataEuropean.modelVehicle,
+                                poleDataEuropean.vinVehicle,
+                                poleDataEuropean.yearOfIssueVehiccle,
+                                poleDataEuropean.registrationNumberVehicle,
+                                poleDataEuropean.tireMarkingsVehicle,
+                                poleDataEuropean.odometerKmVehicle,
+                                poleDataEuropean.manufacturerTahograph,
+                                poleDataEuropean.serialNumberTahograph,
+                                poleDataEuropean.modelTachograph,
+                                poleDataEuropean.l,
+                                poleDataEuropean.w,
+                                poleDataEuropean.k
                              );
+                Console.WriteLine("Окно закрыто с возвратом данных");
+            }
+            else
+            {
+                Console.WriteLine("Окно закрыто без возврата данных");
+            }
             base.OnFormClosing(e);
         }
 
+        // Тут когда вводим данные будем сортировать и выводить все заявки которые есть с таким номером заказа
+        private void textBoxSearchOrder_TextChanged(object sender, EventArgs e)
+        {
+            startOrderPanel.Controls.Clear();
+            if(textBoxSearchOrder.Text != "")
+            {
+                int order = Convert.ToInt32(textBoxSearchOrder.Text);
+
+                foreach (var idorder in data)
+                {
+                    if (order == idorder.Key)
+                    {
+                        CreatPanel(idorder.Key, idorder.Value);
+                    }
+                    
+                }
+            }
+            else if (textBoxSearchOrder.Text == "")
+            {
+                foreach (var allOrder in data)
+                {
+                    CreatPanel(allOrder.Key, allOrder.Value);
+                }
+            }
+
+        }
     }
 }

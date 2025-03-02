@@ -156,65 +156,59 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EuropeanTypeForm.cs">
+    <Compile Include="Forms\EuropeanTypeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EuropeanTypeForm.Designer.cs">
+    <Compile Include="Forms\EuropeanTypeForm.Designer.cs">
       <DependentUpon>EuropeanTypeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoadEuropeanDocument.cs">
+    <Compile Include="Forms\LoadEuropeanDocument.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoadEuropeanDocument.Designer.cs">
+    <Compile Include="Forms\LoadEuropeanDocument.Designer.cs">
       <DependentUpon>LoadEuropeanDocument.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoadRussianDocument.cs">
+    <Compile Include="Forms\LoadRussianDocument.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoadRussianDocument.Designer.cs">
+    <Compile Include="Forms\LoadRussianDocument.Designer.cs">
       <DependentUpon>LoadRussianDocument.cs</DependentUpon>
     </Compile>
-    <Compile Include="PoleDataRussian.cs" />
-    <Compile Include="PoleDataEuropean.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Model\PoleDataRussian.cs" />
+    <Compile Include="Model\PoleDataEuropean.cs" />
+    <Compile Include="Model\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="RussianTypeForm.cs">
+    <Compile Include="Forms\RussianTypeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RussianTypeForm.Designer.cs">
+    <Compile Include="Forms\RussianTypeForm.Designer.cs">
       <DependentUpon>RussianTypeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Settings.cs">
+    <Compile Include="Forms\Settings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Settings.Designer.cs">
+    <Compile Include="Forms\Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
-    <Compile Include="SettingsJS.cs" />
-    <Compile Include="StartApp.cs">
+    <Compile Include="Model\SettingsJS.cs" />
+    <Compile Include="Forms\StartApp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StartApp.Designer.cs">
+    <Compile Include="Forms\StartApp.Designer.cs">
       <DependentUpon>StartApp.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sticker.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sticker.Designer.cs">
-      <DependentUpon>Sticker.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="EuropeanTypeForm.resx">
+    <EmbeddedResource Include="Forms\EuropeanTypeForm.resx">
       <DependentUpon>EuropeanTypeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoadEuropeanDocument.resx">
+    <EmbeddedResource Include="Forms\LoadEuropeanDocument.resx">
       <DependentUpon>LoadEuropeanDocument.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoadRussianDocument.resx">
+    <EmbeddedResource Include="Forms\LoadRussianDocument.resx">
       <DependentUpon>LoadRussianDocument.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -222,17 +216,14 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="RussianTypeForm.resx">
+    <EmbeddedResource Include="Forms\RussianTypeForm.resx">
       <DependentUpon>RussianTypeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Settings.resx">
+    <EmbeddedResource Include="Forms\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StartApp.resx">
+    <EmbeddedResource Include="Forms\StartApp.resx">
       <DependentUpon>StartApp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Sticker.resx">
-      <DependentUpon>Sticker.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -250,9 +241,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\navicon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.7.2 %28x86 и x64%29</ProductName>
@@ -263,6 +251,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoNaviCon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

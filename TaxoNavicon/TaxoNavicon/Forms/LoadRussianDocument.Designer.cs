@@ -33,21 +33,24 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBoxSearchOrder = new System.Windows.Forms.TextBox();
             this.startOrderPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.startOrderPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(49)))), ((int)(((byte)(82)))));
+            this.panel1.Controls.Add(this.textBoxSearchOrder);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(407, 61);
+            this.panel1.Size = new System.Drawing.Size(391, 61);
             this.panel1.TabIndex = 0;
             // 
             // label3
@@ -79,7 +82,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(407, 35);
+            this.panel2.Size = new System.Drawing.Size(391, 35);
             this.panel2.TabIndex = 1;
             // 
             // label1
@@ -93,12 +96,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Список документов";
             // 
+            // textBoxSearchOrder
+            // 
+            this.textBoxSearchOrder.Location = new System.Drawing.Point(249, 38);
+            this.textBoxSearchOrder.Name = "textBoxSearchOrder";
+            this.textBoxSearchOrder.Size = new System.Drawing.Size(146, 20);
+            this.textBoxSearchOrder.TabIndex = 3;
+            this.textBoxSearchOrder.TextChanged += new System.EventHandler(this.textBoxSearchOrder_TextChanged);
+            // 
             // startOrderPanel
             // 
             this.startOrderPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.startOrderPanel.Location = new System.Drawing.Point(0, 61);
             this.startOrderPanel.Name = "startOrderPanel";
-            this.startOrderPanel.Size = new System.Drawing.Size(407, 567);
+            this.startOrderPanel.Size = new System.Drawing.Size(391, 528);
             this.startOrderPanel.TabIndex = 1;
             // 
             // LoadRussianDocument
@@ -108,7 +119,7 @@
             this.ClientSize = new System.Drawing.Size(391, 589);
             this.Controls.Add(this.startOrderPanel);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(407, 628);
             this.MinimizeBox = false;
@@ -120,6 +131,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.startOrderPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -131,6 +143,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBoxSearchOrder;
         private System.Windows.Forms.FlowLayoutPanel startOrderPanel;
     }
 }

@@ -5,6 +5,7 @@ using System.Drawing.Printing;
 using System.IO;
 using System.Text.Json;
 using System.Windows.Forms;
+using TaxoNaviconRussian;
 using Word = Microsoft.Office.Interop.Word;
 
 namespace TaxoNavicon
@@ -219,6 +220,7 @@ namespace TaxoNavicon
             }
         }
 
+        // Открытие окна для зпгрузки д
         private void ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoadEuropeanDocument loadEuropeanDocument = new LoadEuropeanDocument(GetDataLoad, filePathCertificate);
@@ -274,7 +276,8 @@ namespace TaxoNavicon
             
             textBoxOdometerKmVehicle.Text = odometerKmVehicle; // одометр км
             textBoxTireMarkingsVehicle.Text = tireMarkingsVehicle;// маркировка шин
-            textBoxYearOfIssueVehiccle.Text = yearOfIssueVehiccle;// маркировка шин
+            textBoxYearOfIssueVehiccle.Text = yearOfIssueVehiccle;// 
+            textBoxRegistrationNumberVehicle.Text = registrationNumberVehicle; // рег. номер машины
 
             //Tahograf - тахограф
             textBoxManufacturerTachograph.Text = manufacturerTahograph; // производитель
@@ -285,14 +288,12 @@ namespace TaxoNavicon
             textBoxW.Text = w;
             textBoxK.Text = k;
 
-            textBoxRegistrationNumberVehicle.Text = registrationNumberVehicle; // рег. номер машины
-
             // Подгружаем наши данные в переменные экземпляра то есть локально
             SetData();
         }
 
 
-        // Тут происходит сохранение в базу данных
+        // Тут происходит сохранение в базу данных и проверка на повторение номера заказа
         private void ToolStripMenuItemSaveData_Click(object sender, EventArgs e)
         {
             SetData();
@@ -300,15 +301,21 @@ namespace TaxoNavicon
             FileInfo existingFile = new FileInfo(filePathCertificate);
             using (ExcelPackage excelPackage = new ExcelPackage(existingFile))
             {
-                // Получаем существующий лист или создаем новый, если его нет
-                var worksheet = excelPackage.Workbook.Worksheets["EuropeanCertificate"] ?? excelPackage.Workbook.Worksheets.Add("EuropeanCertificate");
-
+                // Получаем существующий лист
+                var worksheet = excelPackage.Workbook.Worksheets["EuropeanCertificate"];
                 int startRow = 3; // Первые 2 строчки это заголовки
                 int row = startRow;
 
                 // Ищем первую пустую строку
                 while (worksheet.Cells[row, 1].Value != null) // Проверяем первую ячейку в строке
                 {
+                    var cellValue = worksheet.Cells[row, 1].Text;
+                    if (string.Equals(cellValue, poleDataEuropean.orderNumber.ToString(), StringComparison.OrdinalIgnoreCase))
+                    {
+                        MessageBox.Show("Такой номер заказа уже есть!");
+
+                        return; // Копия найдена
+                    }
                     row++;
                 }
                 // Заполняем данные из формы
@@ -346,6 +353,61 @@ namespace TaxoNavicon
 
             SettingsJS settingsJS = JsonSerializer.Deserialize<SettingsJS>(saveJson);
             filePathCertificate = settingsJS.FilePath;
+        }
+
+        private void ToolStripMenuItemResetData_Click(object sender, EventArgs e)
+        {
+            SetData();
+            FileInfo existingFile = new FileInfo(filePathCertificate);
+            using (ExcelPackage excelPackage = new ExcelPackage(existingFile))
+            {
+                // Получаем существующий лист
+                var worksheet = excelPackage.Workbook.Worksheets["EuropeanCertificate"];
+
+                int startRow = 3; // Первые 2 строчки это заголовки
+                int row = startRow;
+
+                // Ищем первую пустую строку
+                while (worksheet.Cells[row, 1].Value != null) // Проверяем первую ячейку в строке
+                {
+                    var cellValue = worksheet.Cells[row, 1].Text;
+                    if (string.Equals(cellValue, poleDataEuropean.orderNumber.ToString(), StringComparison.OrdinalIgnoreCase))
+                    {
+                        MessageBox.Show("Данные перезаписанны!");
+                        // Заполняем данные из формы
+                        worksheet.Cells[row, 1].Value = poleDataEuropean.orderNumber.ToString();
+                        worksheet.Cells[row, 2].Value = poleDataEuropean.master;
+                        worksheet.Cells[row, 3].Value = poleDataEuropean.dataJob;
+
+                        worksheet.Cells[row, 4].Value = poleDataEuropean.nameCustomer;
+                        worksheet.Cells[row, 5].Value = poleDataEuropean.nameCustomerEng;
+                        worksheet.Cells[row, 6].Value = poleDataEuropean.adresCustomer;
+
+                        worksheet.Cells[row, 7].Value = poleDataEuropean.manufacturerTahograph;
+                        worksheet.Cells[row, 8].Value = poleDataEuropean.serialNumberTahograph;
+                        worksheet.Cells[row, 9].Value = poleDataEuropean.modelTachograph;
+
+                        worksheet.Cells[row, 10].Value = poleDataEuropean.manufacturerVehicle;
+                        worksheet.Cells[row, 11].Value = poleDataEuropean.vinVehicle;
+                        worksheet.Cells[row, 12].Value = poleDataEuropean.tireMarkingsVehicle;
+                        worksheet.Cells[row, 13].Value = poleDataEuropean.modelVehicle;
+                        worksheet.Cells[row, 14].Value = poleDataEuropean.registrationNumberVehicle;
+                        worksheet.Cells[row, 15].Value = poleDataEuropean.odometerKmVehicle;
+
+                        worksheet.Cells[row, 16].Value = poleDataEuropean.w;
+                        worksheet.Cells[row, 17].Value = poleDataEuropean.k;
+                        worksheet.Cells[row, 18].Value = poleDataEuropean.l;
+                        excelPackage.Save();
+                        return; // Копия найдена
+                    }
+                    row++;
+                }
+            }
+        }
+
+        private void ToolStripMenuItemPrintSticker_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -253,15 +253,15 @@ namespace TaxoNavicon
                 }
             }
         }
-        // Тут происходит сохранение в Exel
+        // Тут происходит сохранение в базу данных и проверка на повторение номера заказа
         private void toolStripMenuItemSaveData_Click(object sender, EventArgs e)
         {
             SetData();
             FileInfo existingFile = new FileInfo(filePathCertificate);
             using (ExcelPackage excelPackage = new ExcelPackage(existingFile))
             {
-                // Получаем существующий лист или создаем новый, если его нет
-                var worksheet = excelPackage.Workbook.Worksheets["RussianCertificate"] ?? excelPackage.Workbook.Worksheets.Add("RussianCertificate");
+                // Получаем существующий лист
+                var worksheet = excelPackage.Workbook.Worksheets["RussianCertificate"];
                 
                 int startRow = 3; // Первые 2 строчки это заголовки
                 int row = startRow;
@@ -269,8 +269,15 @@ namespace TaxoNavicon
                 // Ищем первую пустую строку
                 while (worksheet.Cells[row, 1].Value != null) // Проверяем первую ячейку в строке
                 {
+                    var cellValue = worksheet.Cells[row, 1].Text;
+                    if (string.Equals(cellValue, poleDataRussian.orderNumber.ToString(), StringComparison.OrdinalIgnoreCase))
+                    {
+                        MessageBox.Show("Такой номер заказа уже есть!");
+                        return; // Копия найдена
+                    }
                     row++;
-                }
+                }   
+
                 // Заполняем данные из формы
                 worksheet.Cells[row, 1].Value = poleDataRussian.orderNumber.ToString();
                 worksheet.Cells[row, 2].Value = poleDataRussian.master; 
@@ -401,6 +408,64 @@ namespace TaxoNavicon
         public void ChangeBox(object sender, EventArgs e)
         {
             SetData();
+        }
+
+        // Метод просто перезаписывает данные
+        private void ToolStripMenuItemResetData_Click(object sender, EventArgs e)
+        {
+            SetData();
+            FileInfo existingFile = new FileInfo(filePathCertificate);
+            using (ExcelPackage excelPackage = new ExcelPackage(existingFile))
+            {
+                // Получаем существующий лист
+                var worksheet = excelPackage.Workbook.Worksheets["RussianCertificate"];
+
+                int startRow = 3; // Первые 2 строчки это заголовки
+                int row = startRow;
+
+                // Ищем первую пустую строку
+                while (worksheet.Cells[row, 1].Value != null) // Проверяем первую ячейку в строке
+                {
+                    var cellValue = worksheet.Cells[row, 1].Text;
+                    if (string.Equals(cellValue, poleDataRussian.orderNumber.ToString(), StringComparison.OrdinalIgnoreCase))
+                    {
+                        MessageBox.Show("Данные перезаписанны!");
+                        // Заполняем данные из формы
+                        worksheet.Cells[row, 1].Value = poleDataRussian.orderNumber.ToString();
+                        worksheet.Cells[row, 2].Value = poleDataRussian.master;
+                        worksheet.Cells[row, 3].Value = poleDataRussian.dataJob;
+                        worksheet.Cells[row, 4].Value = poleDataRussian.newDataJob;
+
+                        worksheet.Cells[row, 5].Value = poleDataRussian.nameCustomer;
+                        worksheet.Cells[row, 6].Value = poleDataRussian.adresCustomer;
+
+                        worksheet.Cells[row, 7].Value = poleDataRussian.manufacturerTahograph;
+                        worksheet.Cells[row, 8].Value = poleDataRussian.serialNumberTahograph;
+                        worksheet.Cells[row, 9].Value = poleDataRussian.modelTachograph;
+                        worksheet.Cells[row, 10].Value = poleDataRussian.producedTachograph;
+
+                        worksheet.Cells[row, 11].Value = poleDataRussian.markaVehicle;
+                        worksheet.Cells[row, 12].Value = poleDataRussian.vinVehicle;
+                        worksheet.Cells[row, 13].Value = poleDataRussian.tireMarkingsVehicle;
+                        worksheet.Cells[row, 14].Value = poleDataRussian.modelVehicle;
+                        worksheet.Cells[row, 15].Value = poleDataRussian.registrationNumberVehicle;
+                        worksheet.Cells[row, 16].Value = poleDataRussian.odometerKmVehicle;
+
+                        worksheet.Cells[row, 17].Value = poleDataRussian.w;
+                        worksheet.Cells[row, 18].Value = poleDataRussian.k;
+                        worksheet.Cells[row, 19].Value = poleDataRussian.l;
+
+
+                        worksheet.Cells[row, 20].Value = poleDataRussian.locationInstallationTable;
+                        worksheet.Cells[row, 21].Value = poleDataRussian.inspectionResult;
+                        worksheet.Cells[row, 22].Value = poleDataRussian.signsManipulation;
+                        worksheet.Cells[row, 23].Value = poleDataRussian.specialMarks;
+                        excelPackage.Save();
+                        return; // Копия найдена
+                    }
+                    row++;
+                }
+            }
         }
     }
 }
