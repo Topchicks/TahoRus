@@ -18,29 +18,7 @@ namespace TaxoNavicon
         private string filePathCertificate;
 
         // Делегат для метода
-        public delegate void MyDelegate(int orderNumber,
-                                        string master,
-                                        string dataJob,
-                                        string nameCustomer,
-                                        string adresCustomer,
-                                        string markaVehicle,
-                                        string modelVehicle,
-                                        string vinVehicle,
-                                        string registrationNumberVehicle,
-                                        string tireMarkingsVehicle,
-                                        string odometerKmVehicle,
-                                        string manufacturerTahograph,
-                                        string serialNumberTahograph,
-                                        string modelTachograph,
-                                        string producedTachograph,
-                                        string locationInstallationTable,
-                                        string inspectionResult,
-                                        string signsManipulation,
-                                        string specialMarks,
-                                        string l,
-                                        string w,
-                                        string k
-                                        );
+        public delegate void MyDelegate(PoleDataRussian poleDataRussian);
         private MyDelegate _myMethod;
 
         public LoadRussianDocument(MyDelegate myMethod, string filePathCertificate)
@@ -234,29 +212,7 @@ namespace TaxoNavicon
         {
             if (poleDataRussian.master != null)
             {
-                _myMethod?.Invoke(poleDataRussian.orderNumber,
-                                poleDataRussian.master,
-                                poleDataRussian.dataJob,
-                                poleDataRussian.nameCustomer,
-                                poleDataRussian.adresCustomer,
-                                poleDataRussian.markaVehicle,
-                                poleDataRussian.modelVehicle,
-                                poleDataRussian.vinVehicle,
-                                poleDataRussian.registrationNumberVehicle,
-                                poleDataRussian.tireMarkingsVehicle,
-                                poleDataRussian.odometerKmVehicle,
-                                poleDataRussian.manufacturerTahograph,
-                                poleDataRussian.serialNumberTahograph,
-                                poleDataRussian.modelTachograph,
-                                poleDataRussian.producedTachograph,
-                                poleDataRussian.locationInstallationTable,
-                                poleDataRussian.inspectionResult,
-                                poleDataRussian.signsManipulation,
-                                poleDataRussian.specialMarks,
-                                poleDataRussian.l,
-                                poleDataRussian.w,
-                                poleDataRussian.k
-                             );
+                _myMethod?.Invoke(poleDataRussian);
                 Console.WriteLine("Окно закрыто с возвратом данных");
             }
             else

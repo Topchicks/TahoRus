@@ -325,69 +325,41 @@ namespace TaxoNavicon
         /// <summary>
         /// Метод который будет принимать параметры из окна загрузок
         /// </summary>
-        public void GetDataLoad(
-                                int orderNumber,
-                                string master,
-                                string dataJob,
-
-                                string nameCustomer,
-                                string adresCustomer,
-
-                                string markaVehicle,
-                                string modelVehicle,
-                                string vinVehicle,
-                                string registrationNumberVehicle,
-                                string tireMarkingsVehicle,
-                                string odometerKmVehicle,
-
-                                string manufacturerTahograph,
-                                string serialNumberTahograph,
-                                string modelTachograph,
-                                string producedTachograph,
-
-                                string locationInstallationTable,
-                                string inspectionResult,
-                                string signsManipulation,
-                                string specialMarks,
-
-                                string l,
-                                string w,
-                                string k
-                                )
+        public void GetDataLoad(PoleDataRussian poleDataRussian)
         {
             //Order - заказ
-            numericUpDowntextBoxOrderNumber.Value = orderNumber;// номер заказа
-            comboBoxMaster.Text = master; // мастер
-            dateTimePickerJob.Value = DateTime.Parse(dataJob); // Установка значения в DateTimePicker
+            numericUpDowntextBoxOrderNumber.Value = poleDataRussian.orderNumber;// номер заказа
+            comboBoxMaster.Text = poleDataRussian.master; // мастер
+            dateTimePickerJob.Value = DateTime.Parse(poleDataRussian.dataJob); // Установка значения в DateTimePicker
 
             //Customer - заказчик
-            textBoxNameCustomer.Text = nameCustomer; // имя русском
-            textBoxAdresCustomer.Text = adresCustomer;// адрес заказчика
+            textBoxNameCustomer.Text = poleDataRussian.nameCustomer; // имя русском
+            textBoxAdresCustomer.Text = poleDataRussian.adresCustomer;// адрес заказчика
 
             //Vehicle - транспорт
-            textBoxMarkaVehicle.Text = markaVehicle; // марка машины
-            textBoxModelVehicle.Text = modelVehicle; // модель машины
-            textBoxVinNumberVehicle.Text = vinVehicle; // вин номер машины
-            textBoxRegistrationNumberVehicle.Text = registrationNumberVehicle; // рег. номер машины
-            textBoxOdometerKmVehicle.Text = odometerKmVehicle; // одометр км
-            textBoxTireMarkingsVehicle.Text = tireMarkingsVehicle;// маркировка шин
+            textBoxMarkaVehicle.Text = poleDataRussian.markaVehicle; // марка машины
+            textBoxModelVehicle.Text = poleDataRussian.modelVehicle; // модель машины
+            textBoxVinNumberVehicle.Text = poleDataRussian.vinVehicle; // вин номер машины
+            textBoxRegistrationNumberVehicle.Text = poleDataRussian.registrationNumberVehicle; // рег. номер машины
+            textBoxOdometerKmVehicle.Text = poleDataRussian.odometerKmVehicle; // одометр км
+            textBoxTireMarkingsVehicle.Text = poleDataRussian.tireMarkingsVehicle;// маркировка шин
 
             //Tahograf - тахограф
-            textBoxManufacturerTachograph.Text = manufacturerTahograph; // производитель
-            textBoxModelTachograph.Text = modelTachograph; // модель тахографа
-            textBoxProducedTachograph.Text = producedTachograph; // год производства
-            textBoxSerialNumberTahograph.Text = serialNumberTahograph; // год производства
+            textBoxManufacturerTachograph.Text = poleDataRussian.manufacturerTahograph; // производитель
+            textBoxModelTachograph.Text = poleDataRussian.modelTachograph; // модель тахографа
+            textBoxProducedTachograph.Text = poleDataRussian.producedTachograph; // год производства
+            textBoxSerialNumberTahograph.Text = poleDataRussian.serialNumberTahograph; // год производства
 
             
 
-            textBoxLocationInstallationTable.Text = locationInstallationTable;
-            comboBoxInspectionResult.Text = inspectionResult;
-            comboBoxSignsManipulation.Text = signsManipulation;
-            textBoxSpecialMarks.Text = specialMarks;
+            textBoxLocationInstallationTable.Text = poleDataRussian.locationInstallationTable;
+            comboBoxInspectionResult.Text = poleDataRussian.inspectionResult;
+            comboBoxSignsManipulation.Text = poleDataRussian.signsManipulation;
+            textBoxSpecialMarks.Text = poleDataRussian.specialMarks;
 
-            textBoxL.Text = l;
-            textBoxW.Text = w;
-            textBoxK.Text = k;
+            textBoxL.Text = poleDataRussian.l;
+            textBoxW.Text = poleDataRussian.w;
+            textBoxK.Text = poleDataRussian.k;
 
             // Подгружаем наши данные в переменные экземпляра то есть локально
             SetData();

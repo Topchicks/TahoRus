@@ -1,17 +1,9 @@
-﻿using Npgsql;
-using OfficeOpenXml;
-using RestSharp;
+﻿using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using TaxoNaviconRussian;
 
 namespace TaxoNavicon
 {
@@ -48,7 +40,7 @@ namespace TaxoNavicon
         private string filePathCertificate;
 
         // Делегат для метода
-        public delegate void MyDelegate(int orderNumber,
+        public delegate void MyDelegate(/*int orderNumber,
                                         string master,
                                         string dataJob,
 
@@ -70,7 +62,7 @@ namespace TaxoNavicon
 
                                         string l,
                                         string w,
-                                        string k
+                                        string k*/ PoleDataEuropean poleDataEuropean
                                         );
         private MyDelegate _myMethod;
         public LoadEuropeanDocument(MyDelegate myMethod, string filePathCertificate)
@@ -237,12 +229,13 @@ namespace TaxoNavicon
                             poleDataEuropean.vinVehicle = worksheet.Cells[row, 11].Text;
                             poleDataEuropean.tireMarkingsVehicle = worksheet.Cells[row, 12].Text;
                             poleDataEuropean.modelVehicle = worksheet.Cells[row, 13].Text;
-                            poleDataEuropean.registrationNumberVehicle = worksheet.Cells[row, 14].Text;
-                            poleDataEuropean.odometerKmVehicle = worksheet.Cells[row, 15].Text;
+                            poleDataEuropean.yearOfIssueVehiccle = worksheet.Cells[row, 14].Text;
+                            poleDataEuropean.registrationNumberVehicle = worksheet.Cells[row, 15].Text;
+                            poleDataEuropean.odometerKmVehicle = worksheet.Cells[row, 16].Text;
                             
-                            poleDataEuropean.w = worksheet.Cells[row, 16].Text;
-                            poleDataEuropean.k = worksheet.Cells[row, 17].Text;
-                            poleDataEuropean.l = worksheet.Cells[row, 18].Text;
+                            poleDataEuropean.w = worksheet.Cells[row, 17].Text;
+                            poleDataEuropean.k = worksheet.Cells[row, 18].Text;
+                            poleDataEuropean.l = worksheet.Cells[row, 19].Text;
                         }
                     }
                 }
@@ -257,26 +250,7 @@ namespace TaxoNavicon
            
             if(poleDataEuropean.master != null)
             {
-                _myMethod?.Invoke(poleDataEuropean.orderNumber,
-                                poleDataEuropean.master,
-                                poleDataEuropean.dataJob,
-                                poleDataEuropean.nameCustomer,
-                                poleDataEuropean.nameCustomerEng,
-                                poleDataEuropean.adresCustomer,
-                                poleDataEuropean.manufacturerVehicle,
-                                poleDataEuropean.modelVehicle,
-                                poleDataEuropean.vinVehicle,
-                                poleDataEuropean.yearOfIssueVehiccle,
-                                poleDataEuropean.registrationNumberVehicle,
-                                poleDataEuropean.tireMarkingsVehicle,
-                                poleDataEuropean.odometerKmVehicle,
-                                poleDataEuropean.manufacturerTahograph,
-                                poleDataEuropean.serialNumberTahograph,
-                                poleDataEuropean.modelTachograph,
-                                poleDataEuropean.l,
-                                poleDataEuropean.w,
-                                poleDataEuropean.k
-                             );
+                _myMethod?.Invoke(poleDataEuropean);
                 Console.WriteLine("Окно закрыто с возвратом данных");
             }
             else

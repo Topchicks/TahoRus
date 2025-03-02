@@ -1253,285 +1253,80 @@
         QAAAAoX/////////////8BUAAKgv//////8=
 </value>
   </data>
-  <data name="notifyIcon1.Text" xml:space="preserve">
-    <value>Навикон</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="notifyIcon1.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="buttonOpenRussianPanel.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="buttonOpenRussianPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="buttonOpenRussianPanel.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="buttonOpenRussianPanel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 12pt</value>
-  </data>
-  <data name="buttonOpenRussianPanel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="buttonOpenRussianPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 44</value>
-  </data>
-  <data name="buttonOpenRussianPanel.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
-  <data name="buttonOpenRussianPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 44</value>
-  </data>
-  <data name="buttonOpenRussianPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="buttonOpenRussianPanel.Text" xml:space="preserve">
-    <value>Российский документ</value>
-  </data>
-  <data name="&gt;&gt;buttonOpenRussianPanel.Name" xml:space="preserve">
-    <value>buttonOpenRussianPanel</value>
-  </data>
-  <data name="&gt;&gt;buttonOpenRussianPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonOpenRussianPanel.Parent" xml:space="preserve">
-    <value>panelButton</value>
-  </data>
-  <data name="&gt;&gt;buttonOpenRussianPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnOpenSettings.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="btnOpenSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="btnOpenSettings.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnOpenSettings.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 12pt</value>
-  </data>
-  <data name="btnOpenSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnOpenSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 453</value>
-  </data>
-  <data name="btnOpenSettings.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
-  <data name="btnOpenSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 44</value>
-  </data>
-  <data name="btnOpenSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnOpenSettings.Text" xml:space="preserve">
-    <value>Настройки</value>
-  </data>
-  <data name="&gt;&gt;btnOpenSettings.Name" xml:space="preserve">
-    <value>btnOpenSettings</value>
-  </data>
-  <data name="&gt;&gt;btnOpenSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnOpenSettings.Parent" xml:space="preserve">
-    <value>panelButton</value>
-  </data>
-  <data name="&gt;&gt;btnOpenSettings.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="buttonOpenEuropeanTypeForm.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="buttonOpenEuropeanTypeForm.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="buttonOpenEuropeanTypeForm.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="buttonOpenEuropeanTypeForm.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial, 12pt</value>
-  </data>
-  <data name="buttonOpenEuropeanTypeForm.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="buttonOpenEuropeanTypeForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="buttonOpenEuropeanTypeForm.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
-  <data name="buttonOpenEuropeanTypeForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 44</value>
-  </data>
-  <data name="buttonOpenEuropeanTypeForm.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="buttonOpenEuropeanTypeForm.Text" xml:space="preserve">
-    <value>Европейский документ</value>
-  </data>
-  <data name="&gt;&gt;buttonOpenEuropeanTypeForm.Name" xml:space="preserve">
-    <value>buttonOpenEuropeanTypeForm</value>
-  </data>
-  <data name="&gt;&gt;buttonOpenEuropeanTypeForm.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonOpenEuropeanTypeForm.Parent" xml:space="preserve">
-    <value>panelButton</value>
-  </data>
-  <data name="&gt;&gt;buttonOpenEuropeanTypeForm.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="panelButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="panelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 70</value>
-  </data>
-  <data name="panelButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 497</value>
-  </data>
-  <data name="panelButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;panelButton.Name" xml:space="preserve">
-    <value>panelButton</value>
-  </data>
-  <data name="&gt;&gt;panelButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelButton.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panelButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1032, 70</value>
-  </data>
-  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1032, 567</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Arial Black, 32pt, style=Bold, Italic</value>
-  </data>
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1032, 70</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>TachoPrint</value>
-  </data>
-  <data name="label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1032, 567</value>
-  </data>
-  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1048, 606</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Главное меню</value>
-  </data>
-  <data name="&gt;&gt;notifyIcon1.Name" xml:space="preserve">
-    <value>notifyIcon1</value>
-  </data>
-  <data name="&gt;&gt;notifyIcon1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>StartApp</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAABMLAAATCwAAAAAAAAAA
+        AAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD68dgA68pOjfjsxwD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A789f/9meAP/UlwD/3qUA//XltAD57s0A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A+vPdAOGuAP/RkgD/1pgA/+W7AP/w1Hv/2Z4A/9ibAP////8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////APLclP/ZoQD/0pMA/9iVAP/x3Z3/47AA/9SXAP/UlQD/468A/v///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wDmwSv/0pQA/9OWAP/grgD/79qT/9mdAP/SkwD/3KUA//DTdP7///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD26sMA6sUv/+nHR//58dsA2akA/8uLAP/SlgD/7tF0/+S4AP/UlAD/0pAA/+KwAP/79uYA////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD46sAA4bEA/9SMAP/mvAD/9ObBANGaAP/JigD/1ZwA//HbmP/aowD/0ZQA/9aXAP/uz2X/////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A+Oq/ANidAP/TkgD/68tX//LlvgDHigD/x4wA/9ejAP/y4rIAzY0A/82OAP/apQD/9+q/AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////APrz3ADYmwD/2aAA//HZiP/o0pr/wYMA/8mPAP/ozXv/4r5I/8qNAP/KigD/5L87//bq
+        yADr1Zr/////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A3qkA/9mdAP/99t8A1Koc/7yAAP/LlAD/+fPnAM+XAP/FiAD/zJEA/+/a
+        mv/06dEAwH0A/795AP/69uoA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////APbmsgDirQD/+vXmAM+hAP+8fQD/2bE7//LnywDIjgD/wIIA/8+b
+        AP/68+AA2bdk/7x9AP+7fgD/vHoA/+XHdP7///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A+OzFAP78+wDOpSz/t3gA/+fPl//v3bUAw4wA/7t6
+        AP/ZsBP//fryAMqbC/+1dgD/uHoA/7t8AP+8ewD/z5wA/////wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD38eYAwZAA/7mAAP/z6tMA2LRY/7h6
+        AP+/hwD/79+1AO3hzQCyeQD/rm4A/7R2AP+0eQD/uHoA/7t8AP/IjwD/////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A+vbvALR7AP+5ggD/9O3dANKs
+        Rv+zdQD/wosA//TpywDXvI3/q3AA/6ptAP+tcQD/sHQA/7R2AP+1eQD/uHkA/8mVAP////8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////APjz6gC9jAD/uoUA//j0
+        6wDEkwD/sXYA/8CGAP/9/PcAxZ9b/6BjAP+mawD/qG0A/6txAP+ucwD/sXUA/7V3AP+2dQD/17FI////
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AtoMA/7B3
+        AP/17NwAv44A/690AP/LoTL/7eXaALCBMf+aXwD/oWcA/6NqAP+mbAD/qW0A/6xxAP+ucwD/sXUA/7Z4
+        AP/v4L8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A9e3jAKly
+        AP+5iQD/7+POALF5AP+lZAD/4MWO/9jCqf+cZgD/mF4A/5tjAP+fZAD/oWcA/6RpAP+nbAD/qnAA/61x
+        AP+ucAD/zaMu/////wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A+/v7AP//
+        /wC1hyX/q3UA/+3izQCzfgD/qnIA/97Ekv/ayLX/ik4A/5RcAP+YXwD/mWEA/51kAP+fZgD/o2gA/6Vr
+        AP+pbgD/qW0A/65tAP/69+8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD+/v0AtIUs/6l0AP/z7eIAp2wA/6FjAP/dxJf/////AP///wC7mHD/jFAA/5JZAP+XXwD/mmEA/51k
+        AP+gZgD/o2gA/6ZsAP+3hAD/8ujUAP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AMSfa/+fZQD/4s+z/6x5AP+gZQD/2sGZ/////wD///8A////AP///wDr4NgAto5c/6Jw
+        JP+eZwD/nmUA/6RuAP+9kkP/4Mqm//7+/gD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wDRtY//mV8A//Tv5gCzgy//ml4A/9O4if////8A////AP///wD///8A////AP//
+        /wD///8A+PXxAOzi1ADv5dcA9e/mAPz7+gD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A8OfeAJZcAP/axar/2cOk/5dcAP/Bm17/////ANXV1QBoZ2n/4ODgAP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wCrfkT/tItV/////wCxhEH/m2QA/+bYxAD+/fwAR0dH/zQz
+        NP9PTk//+/v7AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A0bag/41TAP/r4dYA+fb1AKp7Nv+VWgD/mV4A/8ig
+        Yf+FhYf/Ghoc/4yLjf/+/v4A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wChczX/nGks//Tu6AD//v4A5tjGANG3
+        mP/u5NcA/v38APz8/ADx8fEA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AJhjGv+WYhj/6t/SAPr4
+        9gD28ewA6+LVAPv69wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AvZp1/5to
+        Iv+gbjD/v5x3/9fAqP/v5twA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wDr4dcAr4RPJKl7RRXJrY8J+PTyAP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//
+        /wD///8A////AP///wD///8A///////////////v////h////wH///wB///4A///kA///iAf//xEf//4
+        AL//8iE///REH//4iB//8jAf/+RAH//IgB//kQA//yAAP/5AAH/8jAD/+B8B//I////wb///5Mf//8wH
+        ///O////z////8H////j//////////////8=
+</value>
   </data>
 </root>

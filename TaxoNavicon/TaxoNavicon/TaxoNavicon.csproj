@@ -48,6 +48,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <Win32Resource>
+    </Win32Resource>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo32x32.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EPPlus, Version=7.6.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
       <HintPath>..\packages\EPPlus.7.6.0\lib\net462\EPPlus.dll</HintPath>
@@ -255,5 +262,25 @@
   <ItemGroup>
     <None Include="Resources\LogoNaviCon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo32x32.ico" />
+    <Content Include="Resources\logo32x32.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>move "$(TargetDir)*.xml" "$(TargetDir)xml\"
+move "$(TargetDir)*.dll" "$(TargetDir)dll\"
+move "$(TargetDir)*.config" "$(TargetDir)config\"
+move "$(TargetDir)*.pdb" "$(TargetDir)config\"
+
+rmdir /s /q "$(TargetDir)es"
+rmdir /s /q "$(TargetDir)de"
+rmdir /s /q "$(TargetDir)fr"
+rmdir /s /q "$(TargetDir)ja"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>mkdir "$(TargetDir)xml"
+mkdir "$(TargetDir)dll"
+mkdir "$(TargetDir)config"</PreBuildEvent>
+  </PropertyGroup>
 </Project>

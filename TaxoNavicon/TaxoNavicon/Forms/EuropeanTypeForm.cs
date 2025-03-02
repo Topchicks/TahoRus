@@ -231,62 +231,36 @@ namespace TaxoNavicon
         /// <summary>
         /// Метод который будет принимать параметры из окна загрузок
         /// </summary>
-        public void GetDataLoad(int orderNumber,
-                                string master,
-                                string dataJob,
-
-                                string nameCustomer,
-                                string nameCustomerEng,
-                                string adresCustomer,
-
-                                string manufacturerVehicle,
-
-                                string modelVehicle,
-                                string vinVehicle,
-                                string registrationNumberVehicle,
-
-                                string tireMarkingsVehicle,
-                                string odometerKmVehicle,
-                                string yearOfIssueVehiccle,
-
-                                string manufacturerTahograph,
-                                string serialNumberTahograph,
-                                string modelTachograph,
-
-                                string l,
-                                string w,
-                                string k
-                                )
+        public void GetDataLoad(PoleDataEuropean poleDataEuropean)
         {
-            
             //Order - заказ
-            numericUpDowntextBoxOrderNumber.Value = orderNumber;// номер заказа
-            comboBoxMaster.Text = master; // мастер
-            dateTimePickerJob.Value = DateTime.Parse(dataJob); // Установка значения в DateTimePicker
+            numericUpDowntextBoxOrderNumber.Value = poleDataEuropean.orderNumber;// номер заказа
+            comboBoxMaster.Text = poleDataEuropean.master; // мастер
+            dateTimePickerJob.Value = DateTime.Parse(poleDataEuropean.dataJob); // Установка значения в DateTimePicker
 
             //Customer - заказчик
-            textBoxNameCustomer.Text = nameCustomer; // имя русском
-            textBoxNameCustomerEng.Text = nameCustomerEng; // имя английский
-            textBoxAdresCustomer.Text = adresCustomer;// адрес заказчика
+            textBoxNameCustomer.Text = poleDataEuropean.nameCustomer; // имя русском
+            textBoxNameCustomerEng.Text = poleDataEuropean.nameCustomerEng; // имя английский
+            textBoxAdresCustomer.Text = poleDataEuropean.adresCustomer;// адрес заказчика
 
             //Vehicle - транспорт
-            textBoxManufacturerVehicle.Text = manufacturerVehicle; // Производитель машины
-            textBoxModelVehicle.Text = modelVehicle; // модель машины
-            textBoxVinNumberVehicle.Text = vinVehicle; // вин номер машины
-            
-            textBoxOdometerKmVehicle.Text = odometerKmVehicle; // одометр км
-            textBoxTireMarkingsVehicle.Text = tireMarkingsVehicle;// маркировка шин
-            textBoxYearOfIssueVehiccle.Text = yearOfIssueVehiccle;// 
-            textBoxRegistrationNumberVehicle.Text = registrationNumberVehicle; // рег. номер машины
+            textBoxManufacturerVehicle.Text = poleDataEuropean.manufacturerVehicle; // Производитель машины
+            textBoxModelVehicle.Text = poleDataEuropean.modelVehicle; // модель машины
+            textBoxVinNumberVehicle.Text = poleDataEuropean.vinVehicle; // вин номер машины
+
+            textBoxOdometerKmVehicle.Text = poleDataEuropean.odometerKmVehicle; // одометр км
+            textBoxTireMarkingsVehicle.Text = poleDataEuropean.tireMarkingsVehicle;// маркировка шин
+            textBoxYearOfIssueVehiccle.Text = poleDataEuropean.yearOfIssueVehiccle;// 
+            textBoxRegistrationNumberVehicle.Text = poleDataEuropean.registrationNumberVehicle; // рег. номер машины
 
             //Tahograf - тахограф
-            textBoxManufacturerTachograph.Text = manufacturerTahograph; // производитель
-            textBoxModelTachograph.Text = modelTachograph; // модель тахографа
-            textBoxSerialNumberTahograph.Text = serialNumberTahograph; // год производства
+            textBoxManufacturerTachograph.Text = poleDataEuropean.manufacturerTahograph; // производитель
+            textBoxModelTachograph.Text = poleDataEuropean.modelTachograph; // модель тахографа
+            textBoxSerialNumberTahograph.Text = poleDataEuropean.serialNumberTahograph; // год производства
 
-            textBoxL.Text = l;
-            textBoxW.Text = w;
-            textBoxK.Text = k;
+            textBoxL.Text = poleDataEuropean.l;
+            textBoxW.Text = poleDataEuropean.w;
+            textBoxK.Text = poleDataEuropean.k;
 
             // Подгружаем наши данные в переменные экземпляра то есть локально
             SetData();
@@ -335,12 +309,13 @@ namespace TaxoNavicon
                 worksheet.Cells[row, 11].Value = poleDataEuropean.vinVehicle;
                 worksheet.Cells[row, 12].Value = poleDataEuropean.tireMarkingsVehicle;
                 worksheet.Cells[row, 13].Value = poleDataEuropean.modelVehicle;
-                worksheet.Cells[row, 14].Value = poleDataEuropean.registrationNumberVehicle;
-                worksheet.Cells[row, 15].Value = poleDataEuropean.odometerKmVehicle;
+                worksheet.Cells[row, 14].Value = poleDataEuropean.yearOfIssueVehiccle;
+                worksheet.Cells[row, 15].Value = poleDataEuropean.registrationNumberVehicle;
+                worksheet.Cells[row, 16].Value = poleDataEuropean.odometerKmVehicle;
 
-                worksheet.Cells[row, 16].Value = poleDataEuropean.w;
-                worksheet.Cells[row, 17].Value = poleDataEuropean.k;
-                worksheet.Cells[row, 18].Value = poleDataEuropean.l;
+                worksheet.Cells[row, 17].Value = poleDataEuropean.w;
+                worksheet.Cells[row, 18].Value = poleDataEuropean.k;
+                worksheet.Cells[row, 19].Value = poleDataEuropean.l;
 
                 // Сохраняем изменения
                 excelPackage.Save();
