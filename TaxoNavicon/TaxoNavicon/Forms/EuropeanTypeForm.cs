@@ -5,6 +5,7 @@ using System.Drawing.Printing;
 using System.IO;
 using System.Text.Json;
 using System.Windows.Forms;
+using TaxoNavicon.Forms;
 using TaxoNaviconRussian;
 using Word = Microsoft.Office.Interop.Word;
 
@@ -382,7 +383,9 @@ namespace TaxoNavicon
 
         private void ToolStripMenuItemPrintSticker_Click(object sender, EventArgs e)
         {
+            PrintStickerEuropean printStickerEuropean = new PrintStickerEuropean(poleDataEuropean);
 
+            printStickerEuropean.ShowDialog();
         }
     }
 }

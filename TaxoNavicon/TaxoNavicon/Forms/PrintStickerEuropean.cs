@@ -1,0 +1,115 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Drawing.Printing;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace TaxoNavicon.Forms
+{
+    public partial class PrintStickerEuropean : Form
+    {
+        private PrintDocument printDocument;
+        private PoleDataEuropean poleDataEuropean;
+        public PrintStickerEuropean(PoleDataEuropean poleDataEuropean)
+        {
+            InitializeComponent();
+            printDocument = new PrintDocument();
+            printDocument.PrintPage += new PrintPageEventHandler(PrintDocument_PrintPage);
+
+            // Устанавливаем размер страницы
+            printDocument.DefaultPageSettings.PaperSize = new PaperSize("Custom", 94, 512); // 24mm x 130mm в 1/100 дюймах
+            printPreviewControl.Document = printDocument;
+
+            // Задаем масштабирование
+            printPreviewControl.Zoom = 1.0;
+
+            // Для отображения в предварительном просмотре
+            printPreviewControl.Document = printDocument;
+            this.poleDataEuropean = poleDataEuropean;
+        }
+
+        private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            g.Clear(Color.White);
+            Rectangle margins = e.MarginBounds;
+            Font font = new Font("Microsoft Sans Serif", 9);
+            Font boldFont = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
+
+            // Установим начальные координаты
+            int xOffset = 10; // Начальное смещение по X
+            int yOffset = 10; // Начальное смещение по Y
+            int lineSpacing = 20; // расстояние между строками
+
+            // Отображение данных
+            g.DrawString("Date: " + poleDataEuropean.dataJob, boldFont, Brushes.Black, xOffset, yOffset);
+
+            yOffset += lineSpacing;
+            g.DrawString("Tyres: " + poleDataEuropean.tireMarkingsVehicle, boldFont, Brushes.Black, xOffset, yOffset);
+
+            yOffset += lineSpacing;
+            g.DrawString("Ø1: " + poleDataEuropean.l, boldFont, Brushes.Black, xOffset, yOffset);
+
+            yOffset += lineSpacing;
+            g.DrawString("s/n Tacho: " + poleDataEuropean.serialNumberTahograph, boldFont, Brushes.Black, xOffset, yOffset);
+
+            xOffset = 150;
+            yOffset = 10;
+
+            g.DrawString("VIN: " + poleDataEuropean.vinVehicle, boldFont, Brushes.Black, xOffset, yOffset);
+
+            yOffset += lineSpacing;
+            g.DrawString("TNo: " + poleDataEuropean.registrationNumberVehicle, boldFont, Brushes.Black, xOffset, yOffset);
+
+            yOffset += lineSpacing;
+            g.DrawString("w: " + poleDataEuropean.w, boldFont, Brushes.Black, xOffset, yOffset);
+
+            yOffset += lineSpacing;
+            g.DrawString("k: " + poleDataEuropean.k, boldFont, Brushes.Black, xOffset, yOffset);
+
+            xOffset = 250;
+            yOffset = 10;
+
+            // Возможно, добавьте отступы для визуального разделения
+            xOffset += lineSpacing * 2; // Дополнительный отступ перед следующей секцией
+
+            // Ниже можно добавить информацию о компании
+            g.DrawString("NaviCon OOO", boldFont, Brushes.Black, xOffset, yOffset);
+            yOffset += lineSpacing;
+            g.DrawString("Bulvar stroiteley st., 3G, \n     Tambov", font, Brushes.Black, xOffset, yOffset);
+            yOffset += lineSpacing+2;
+            g.DrawString("+7(4752)55-94-00", font, Brushes.Black, xOffset, yOffset);
+            yOffset += lineSpacing;
+            g.DrawString("navicontmb.ru", font, Brushes.Black, xOffset, yOffset);
+
+            // Вертикальный текст "RUS 526"
+            string verticalText = "RUS 526";
+            // Устанавливаем позицию текста
+            int verticalTextX = 470; // Позиция по X для вертикального текста
+            int verticalTextY = 15;   // Позиция по Y для вертикального текста
+
+            // Поворачиваем графику для вертикального текста
+            g.TranslateTransform(verticalTextX, verticalTextY);
+            g.RotateTransform(90); // Поворачиваем на 90 градусов влево
+            g.DrawString(verticalText, boldFont, Brushes.Black, 0, 0); // Рисуем вертикальный текст
+            g.ResetTransform(); // Сбрасываем трансформацию
+        }
+
+        private void toolStripLabelPrint_Click(object sender, EventArgs e)
+        {
+            PrintDialog printDialog = new PrintDialog();
+            printDialog.Document = printDocument;
+
+            if (printDialog.ShowDialog() == DialogResult.OK)
+            {
+                printDocument.Print();
+            }
+        }
+    }
+}

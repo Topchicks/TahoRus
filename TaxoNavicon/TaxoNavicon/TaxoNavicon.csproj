@@ -181,6 +181,12 @@
     <Compile Include="Forms\LoadRussianDocument.Designer.cs">
       <DependentUpon>LoadRussianDocument.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PrintStickerEuropean.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrintStickerEuropean.Designer.cs">
+      <DependentUpon>PrintStickerEuropean.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\PoleDataRussian.cs" />
     <Compile Include="Model\PoleDataEuropean.cs" />
     <Compile Include="Model\Program.cs" />
@@ -217,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoadRussianDocument.resx">
       <DependentUpon>LoadRussianDocument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrintStickerEuropean.resx">
+      <DependentUpon>PrintStickerEuropean.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -268,19 +277,11 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>move "$(TargetDir)*.xml" "$(TargetDir)xml\"
-move "$(TargetDir)*.dll" "$(TargetDir)dll\"
-move "$(TargetDir)*.config" "$(TargetDir)config\"
-move "$(TargetDir)*.pdb" "$(TargetDir)config\"
-
-rmdir /s /q "$(TargetDir)es"
-rmdir /s /q "$(TargetDir)de"
-rmdir /s /q "$(TargetDir)fr"
-rmdir /s /q "$(TargetDir)ja"</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>mkdir "$(TargetDir)xml"
-mkdir "$(TargetDir)dll"
-mkdir "$(TargetDir)config"</PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
 </Project>

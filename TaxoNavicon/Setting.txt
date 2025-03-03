@@ -1,0 +1,13 @@
+mkdir "$(TargetDir)xml"
+mkdir "$(TargetDir)dll"
+mkdir "$(TargetDir)config"
+
+move "$(TargetDir)*.xml" "$(TargetDir)xml\"
+move "$(TargetDir)*.dll" "$(TargetDir)dll\"
+move "$(TargetDir)*.config" "$(TargetDir)config\"
+move "$(TargetDir)*.pdb" "$(TargetDir)config\"
+
+rmdir /s /q "$(TargetDir)es"
+rmdir /s /q "$(TargetDir)de"
+rmdir /s /q "$(TargetDir)fr"
+rmdir /s /q "$(TargetDir)ja"

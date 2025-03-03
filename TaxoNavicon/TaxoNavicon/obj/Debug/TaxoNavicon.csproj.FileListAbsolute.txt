@@ -22,7 +22,6 @@ C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\TaxoN
 C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\TaxoNavicon.pdb
 C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.csproj.AssemblyReference.cache
 C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.Properties.Resources.resources
-C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.Sticker.resources
 C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.csproj.GenerateResource.cache
 C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.csproj.CoreCompileInputs.cache
 C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.exe
@@ -153,3 +152,4 @@ C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\Syste
 C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\System.Drawing.Common.xml
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.Settings.resources
 C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.Settings.resources
+C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.Forms.PrintStickerEuropean.resources
