@@ -1,22 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using TaxoNaviconRussian;
 
 namespace TaxoNavicon.Forms
 {
-    public partial class PrintStickerEuropean : Form
+    public partial class PrintStickerRussian : Form
     {
         private PrintDocument printDocument;
-        private PoleDataEuropean poleDataEuropean;
-        public PrintStickerEuropean(PoleDataEuropean poleDataEuropean)
+        private PoleDataRussian poleDataRussian;
+        public PrintStickerRussian(PoleDataRussian poleDataRussian)
         {
             InitializeComponent();
             printDocument = new PrintDocument();
@@ -31,7 +25,7 @@ namespace TaxoNavicon.Forms
 
             // Для отображения в предварительном просмотре
             printPreviewControl.Document = printDocument;
-            this.poleDataEuropean = poleDataEuropean;
+            this.poleDataRussian = poleDataRussian;
         }
 
         private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
@@ -47,30 +41,30 @@ namespace TaxoNavicon.Forms
             int lineSpacing = 20; // расстояние между строками
 
             // Отображение данных
-            g.DrawString("Date: " + poleDataEuropean.dataJob, boldFont, Brushes.Black, xOffset, yOffset);
+            g.DrawString("Date: " + poleDataRussian.dataJob, boldFont, Brushes.Black, xOffset, yOffset);
 
             yOffset += lineSpacing;
-            g.DrawString("Tyres: " + poleDataEuropean.tireMarkingsVehicle, boldFont, Brushes.Black, xOffset, yOffset);
+            g.DrawString("Tyres: " + poleDataRussian.tireMarkingsVehicle, boldFont, Brushes.Black, xOffset, yOffset);
 
             yOffset += lineSpacing;
-            g.DrawString("Ø1: " + poleDataEuropean.l, boldFont, Brushes.Black, xOffset, yOffset);
+            g.DrawString("Ø1: " + poleDataRussian.l, boldFont, Brushes.Black, xOffset, yOffset);
 
             yOffset += lineSpacing;
-            g.DrawString("s/n Tacho: " + poleDataEuropean.serialNumberTahograph, boldFont, Brushes.Black, xOffset, yOffset);
+            g.DrawString("s/n Tacho: " + poleDataRussian.serialNumberTahograph, boldFont, Brushes.Black, xOffset, yOffset);
 
             xOffset = 150;
             yOffset = 10;
 
-            g.DrawString("VIN: " + poleDataEuropean.vinVehicle, boldFont, Brushes.Black, xOffset, yOffset);
+            g.DrawString("VIN: " + poleDataRussian.vinVehicle, boldFont, Brushes.Black, xOffset, yOffset);
 
             yOffset += lineSpacing;
-            g.DrawString("TNo: " + poleDataEuropean.registrationNumberVehicle, boldFont, Brushes.Black, xOffset, yOffset);
+            g.DrawString("TNo: " + poleDataRussian.registrationNumberVehicle, boldFont, Brushes.Black, xOffset, yOffset);
 
             yOffset += lineSpacing;
-            g.DrawString("w: " + poleDataEuropean.w, boldFont, Brushes.Black, xOffset, yOffset);
+            g.DrawString("w: " + poleDataRussian.w, boldFont, Brushes.Black, xOffset, yOffset);
 
             yOffset += lineSpacing;
-            g.DrawString("k: " + poleDataEuropean.k, boldFont, Brushes.Black, xOffset, yOffset);
+            g.DrawString("k: " + poleDataRussian.k, boldFont, Brushes.Black, xOffset, yOffset);
 
             xOffset = 250;
             yOffset = 10;
@@ -82,7 +76,7 @@ namespace TaxoNavicon.Forms
             g.DrawString("NaviCon OOO", boldFont, Brushes.Black, xOffset, yOffset);
             yOffset += lineSpacing;
             g.DrawString("Bulvar stroiteley st., 3G, \n     Tambov", font, Brushes.Black, xOffset, yOffset);
-            yOffset += lineSpacing+4;
+            yOffset += lineSpacing + 4;
             g.DrawString("+7(4752)55-94-00", font, Brushes.Black, xOffset, yOffset);
             yOffset += lineSpacing;
             g.DrawString("navicontmb.ru", font, Brushes.Black, xOffset, yOffset);
@@ -99,8 +93,7 @@ namespace TaxoNavicon.Forms
             g.DrawString(verticalText, boldFont, Brushes.Black, 0, 0); // Рисуем вертикальный текст
             g.ResetTransform(); // Сбрасываем трансформацию
         }
-
-        private void toolStripLabelPrint_Click(object sender, EventArgs e)
+        private void ToolStripMenuItemPrintSticker_Click(object sender, EventArgs e)
         {
             PrintDialog printDialog = new PrintDialog();
             printDialog.Document = printDocument;

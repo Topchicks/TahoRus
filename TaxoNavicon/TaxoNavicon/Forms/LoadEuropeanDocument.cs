@@ -96,7 +96,7 @@ namespace TaxoNavicon
                     // Пример загрузки данных в поля (предполагается, что у вас есть соответствующие свойства)
                     string order = worksheet.Cells[row, 1].Text;
 
-                    data.Add(Convert.ToInt32(order), worksheet.Cells[row, 5].Text);
+                    data.Add(Convert.ToInt32(order), worksheet.Cells[row, 4].Text);
                 }
 
                 foreach (var kvp in data)

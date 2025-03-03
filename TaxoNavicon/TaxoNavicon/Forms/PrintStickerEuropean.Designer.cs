@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrintStickerEuropean));
             this.printPreviewControl = new System.Windows.Forms.PrintPreviewControl();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabelPrint = new System.Windows.Forms.ToolStripLabel();
@@ -61,6 +62,11 @@
             this.toolStripLabelPrint.Text = "Печать";
             this.toolStripLabelPrint.Click += new System.EventHandler(this.toolStripLabelPrint_Click);
             // 
+            // toolStripLabelAddLable
+            // 
+            this.toolStripLabelAddLable.Name = "toolStripLabelAddLable";
+            this.toolStripLabelAddLable.Size = new System.Drawing.Size(0, 22);
+            // 
             // PrintStickerEuropean
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -68,6 +74,7 @@
             this.ClientSize = new System.Drawing.Size(892, 423);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.printPreviewControl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PrintStickerEuropean";
             this.Text = "PrintStickerEuropean";
             this.toolStrip1.ResumeLayout(false);

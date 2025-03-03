@@ -53,7 +53,7 @@
     </Win32Resource>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>logo32x32.ico</ApplicationIcon>
+    <ApplicationIcon>logo256x256.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EPPlus, Version=7.6.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
@@ -152,6 +152,7 @@
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -186,6 +187,12 @@
     </Compile>
     <Compile Include="Forms\PrintStickerEuropean.Designer.cs">
       <DependentUpon>PrintStickerEuropean.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PrintStickerRussian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PrintStickerRussian.Designer.cs">
+      <DependentUpon>PrintStickerRussian.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\PoleDataRussian.cs" />
     <Compile Include="Model\PoleDataEuropean.cs" />
@@ -226,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PrintStickerEuropean.resx">
       <DependentUpon>PrintStickerEuropean.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PrintStickerRussian.resx">
+      <DependentUpon>PrintStickerRussian.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -272,8 +282,9 @@
     <None Include="Resources\LogoNaviCon.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="logo256x256.ico" />
     <Content Include="logo32x32.ico" />
-    <Content Include="Resources\logo32x32.ico" />
+    <Content Include="Resources\logo256x256.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

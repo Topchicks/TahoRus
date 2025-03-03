@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RussianTypeForm));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -91,7 +92,7 @@
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.печатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemPrintCertificate = new System.Windows.Forms.ToolStripMenuItem();
-            this.печатьНаклейкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemPrintSticker = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemSaveData = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemLoadRussianDocument = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemSetData = new System.Windows.Forms.ToolStripMenuItem();
@@ -775,7 +776,7 @@
             // 
             this.печатьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuItemPrintCertificate,
-            this.печатьНаклейкиToolStripMenuItem});
+            this.ToolStripMenuItemPrintSticker});
             this.печатьToolStripMenuItem.Name = "печатьToolStripMenuItem";
             this.печатьToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
             this.печатьToolStripMenuItem.Text = "Печать";
@@ -786,11 +787,12 @@
             this.ToolStripMenuItemPrintCertificate.Size = new System.Drawing.Size(186, 22);
             this.ToolStripMenuItemPrintCertificate.Text = "Печать сертификата";
             // 
-            // печатьНаклейкиToolStripMenuItem
+            // ToolStripMenuItemPrintSticker
             // 
-            this.печатьНаклейкиToolStripMenuItem.Name = "печатьНаклейкиToolStripMenuItem";
-            this.печатьНаклейкиToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.печатьНаклейкиToolStripMenuItem.Text = "Печать наклейки";
+            this.ToolStripMenuItemPrintSticker.Name = "ToolStripMenuItemPrintSticker";
+            this.ToolStripMenuItemPrintSticker.Size = new System.Drawing.Size(186, 22);
+            this.ToolStripMenuItemPrintSticker.Text = "Печать наклейки";
+            this.ToolStripMenuItemPrintSticker.Click += new System.EventHandler(this.ToolStripMenuItemPrintSticker_Click);
             // 
             // toolStripMenuItemSaveData
             // 
@@ -824,12 +826,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(977, 590);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(993, 629);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(993, 629);
             this.Name = "RussianTypeForm";
-            this.ShowIcon = false;
             this.Text = "Российский документ";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -925,6 +927,6 @@
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemResetData;
         private System.Windows.Forms.ToolStripMenuItem печатьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemPrintCertificate;
-        private System.Windows.Forms.ToolStripMenuItem печатьНаклейкиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemPrintSticker;
     }
 }

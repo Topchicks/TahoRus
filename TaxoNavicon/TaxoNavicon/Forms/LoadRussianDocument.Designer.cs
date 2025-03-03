@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoadRussianDocument));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxSearchOrder = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxSearchOrder = new System.Windows.Forms.TextBox();
             this.startOrderPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.startOrderPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -52,6 +52,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(391, 61);
             this.panel1.TabIndex = 0;
+            // 
+            // textBoxSearchOrder
+            // 
+            this.textBoxSearchOrder.Location = new System.Drawing.Point(249, 38);
+            this.textBoxSearchOrder.Name = "textBoxSearchOrder";
+            this.textBoxSearchOrder.Size = new System.Drawing.Size(146, 20);
+            this.textBoxSearchOrder.TabIndex = 3;
+            this.textBoxSearchOrder.TextChanged += new System.EventHandler(this.textBoxSearchOrder_TextChanged);
             // 
             // label3
             // 
@@ -96,14 +104,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Список документов";
             // 
-            // textBoxSearchOrder
-            // 
-            this.textBoxSearchOrder.Location = new System.Drawing.Point(249, 38);
-            this.textBoxSearchOrder.Name = "textBoxSearchOrder";
-            this.textBoxSearchOrder.Size = new System.Drawing.Size(146, 20);
-            this.textBoxSearchOrder.TabIndex = 3;
-            this.textBoxSearchOrder.TextChanged += new System.EventHandler(this.textBoxSearchOrder_TextChanged);
-            // 
             // startOrderPanel
             // 
             this.startOrderPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -120,18 +120,17 @@
             this.Controls.Add(this.startOrderPanel);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(407, 628);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(407, 628);
             this.Name = "LoadRussianDocument";
-            this.ShowIcon = false;
             this.Text = "Российские документы";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.startOrderPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

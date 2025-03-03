@@ -2,6 +2,7 @@
 using System;
 using System.IO;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace TaxoNavicon
 {
@@ -11,7 +12,6 @@ namespace TaxoNavicon
         public StartApp()
         {
             InitializeComponent();
-
             #region
             // Создаем контекстное меню
             ContextMenuStrip contextMenu = new ContextMenuStrip();
