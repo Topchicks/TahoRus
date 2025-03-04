@@ -155,3 +155,4 @@ C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoN
 C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.Forms.PrintStickerEuropean.resources
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.Forms.PrintStickerEuropean.resources
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.Forms.PrintStickerRussian.resources
+C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.Forms.PrintStickerRussian.resources

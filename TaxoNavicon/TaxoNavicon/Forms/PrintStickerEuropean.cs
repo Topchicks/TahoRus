@@ -9,6 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TaxoNaviconRussian;
 
 namespace TaxoNavicon.Forms
 {
@@ -23,7 +24,7 @@ namespace TaxoNavicon.Forms
             printDocument.PrintPage += new PrintPageEventHandler(PrintDocument_PrintPage);
 
             // Устанавливаем размер страницы
-            printDocument.DefaultPageSettings.PaperSize = new PaperSize("Custom", 612, 94); // 24mm x 130mm в 1/100 дюймах
+            printDocument.DefaultPageSettings.PaperSize = new PaperSize("Custom", 94, 512); // 24mm x 130mm в 1/100 дюймах
             printPreviewControl.Document = printDocument;
 
             // Задаем масштабирование
@@ -82,7 +83,7 @@ namespace TaxoNavicon.Forms
             g.DrawString("NaviCon OOO", boldFont, Brushes.Black, xOffset, yOffset);
             yOffset += lineSpacing;
             g.DrawString("Bulvar stroiteley st., 3G, \n     Tambov", font, Brushes.Black, xOffset, yOffset);
-            yOffset += lineSpacing+4;
+            yOffset += lineSpacing + 4;
             g.DrawString("+7(4752)55-94-00", font, Brushes.Black, xOffset, yOffset);
             yOffset += lineSpacing;
             g.DrawString("navicontmb.ru", font, Brushes.Black, xOffset, yOffset);
