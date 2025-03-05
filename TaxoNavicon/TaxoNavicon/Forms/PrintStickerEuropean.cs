@@ -17,9 +17,6 @@ namespace TaxoNavicon.Forms
         private string filePath;
         private PrintDocument printDocument;
         private PoleDataEuropean poleDataEuropean;
-
-        private Word.Application wordApp;
-        private Word.Document wordDoc;
         public PrintStickerEuropean(PoleDataEuropean poleDataEuropean)
         {
             InitializeComponent();
@@ -106,88 +103,12 @@ namespace TaxoNavicon.Forms
 
         private void toolStripLabelPrint_Click(object sender, EventArgs e)
         {
-            /* string relativePath = @"EuropianSticker.lbx"; // Относительный путь к файлу
-             filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
-
-             // Открытие документа Word
-             Word.Application wordApp = new Word.Application();
-             Word.Document doc = null;
-
-             try
-             {
-                 // Открываем файл в Word
-                 doc = wordApp.Documents.Open(filePath);
-
-                 // Заменяем текст (пример замены)
-                 FindAndReplace(doc, "<Data>", poleDataEuropean.dataJob);
-
-                 // Сохраняем и закрываем документ
-                 doc.Save();
-             }
-             catch (Exception ex)
-             {
-                 MessageBox.Show("Ошибка: " + ex.Message);
-             }
-             finally
-             {
-                 // Закрываем документ и приложение Word
-                 if (doc != null)
-                 {
-                     doc.Close();
-                 }
-                 wordApp.Quit();
-             }
-
-
-             // Открытие диалогового окна для выбора принтера
-             PrintDialog printDialog = new PrintDialog();
-             if (printDialog.ShowDialog() == DialogResult.OK)
-             {
-                 // Здесь вы должны указать, как именно печатать файл .lbx
-                 // Например, если у вас есть программа, которая может печатать этот файл:
-                 PrintLbxFile(filePath, printDialog.PrinterSettings.PrinterName);
-             }*/
-
             // Открытие диалогового окна для выбора принтера
             PrintDialog printDialog = new PrintDialog();
             if (printDialog.ShowDialog() == DialogResult.OK)
             {
                 printDocument.Print();
             }
-        }
-
-        private void PrintLbxFile(string filePath, string printerName)
-        {
-            // Создаем новый процесс для печати .lbx файла
-            Process process = new Process();
-            process.StartInfo.FileName = "C:\\Program Files (x86)\\Brother\\P-touch Editor\\6\\PtouchEditor6.Wpf.exe"; // Укажите путь к программе для печати
-            process.StartInfo.Arguments = $"{filePath} /P {printerName}"; // Пример аргументов, зависит от программы
-            process.StartInfo.UseShellExecute = false; // Убедитесь, что программа может быть запущена без оболочки
-            process.StartInfo.CreateNoWindow = true; // Не показывать окно программы
-
-            try
-            {
-                process.Start();
-                process.WaitForExit(); // Ожидание завершения процесса
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ошибка при отправке на печать: " + ex.Message);
-            }
-        }
-
-
-        private void FindAndReplace(Word.Document doc, string findText, string replaceText)
-        {
-            Word.Find findObject = doc.Application.Selection.Find;
-            findObject.ClearFormatting();
-            findObject.Text = findText;
-            findObject.Replacement.ClearFormatting();
-            findObject.Replacement.Text = replaceText;
-
-            object missing = Type.Missing;
-            findObject.Execute(FindText: missing, ReplaceWith: missing,
-                               Replace: Word.WdReplace.wdReplaceAll);
         }
     }
 }

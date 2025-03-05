@@ -17,7 +17,7 @@ namespace TaxoNavicon.Forms
             printDocument.PrintPage += new PrintPageEventHandler(PrintDocument_PrintPage);
 
             // Устанавливаем размер страницы
-            printDocument.DefaultPageSettings.PaperSize = new PaperSize("Custom", 612, 94); // 24mm x 130mm в 1/100 дюймах
+            printDocument.DefaultPageSettings.PaperSize = new PaperSize("Custom", 94, 512); // 24mm x 130mm в 1/100 дюймах
             printPreviewControl.Document = printDocument;
 
             // Задаем масштабирование
@@ -37,8 +37,8 @@ namespace TaxoNavicon.Forms
 
             // Установим начальные координаты
             int xOffset = 10; // Начальное смещение по X
-            int yOffset = 10; // Начальное смещение по Y
-            int lineSpacing = 20; // расстояние между строками
+            int yOffset = 5; // Начальное смещение по Y
+            int lineSpacing = 15; // расстояние между строками
 
             // Отображение данных
             g.DrawString("Date: " + poleDataRussian.dataJob, boldFont, Brushes.Black, xOffset, yOffset);
@@ -52,8 +52,8 @@ namespace TaxoNavicon.Forms
             yOffset += lineSpacing;
             g.DrawString("s/n Tacho: " + poleDataRussian.serialNumberTahograph, boldFont, Brushes.Black, xOffset, yOffset);
 
-            xOffset = 150;
-            yOffset = 10;
+            xOffset = 160;
+            yOffset = 5;
 
             g.DrawString("VIN: " + poleDataRussian.vinVehicle, boldFont, Brushes.Black, xOffset, yOffset);
 
@@ -66,26 +66,26 @@ namespace TaxoNavicon.Forms
             yOffset += lineSpacing;
             g.DrawString("k: " + poleDataRussian.k, boldFont, Brushes.Black, xOffset, yOffset);
 
-            xOffset = 250;
-            yOffset = 10;
+            xOffset = 305;
+            yOffset = 5;
 
             // Возможно, добавьте отступы для визуального разделения
             xOffset += lineSpacing * 2; // Дополнительный отступ перед следующей секцией
 
             // Ниже можно добавить информацию о компании
-            g.DrawString("NaviCon OOO", boldFont, Brushes.Black, xOffset, yOffset);
+            g.DrawString("  NaviCon OOO", boldFont, Brushes.Black, xOffset, yOffset);
             yOffset += lineSpacing;
-            g.DrawString("Bulvar stroiteley st., 3G, \n     Tambov", font, Brushes.Black, xOffset, yOffset);
-            yOffset += lineSpacing + 4;
+            g.DrawString("Bulvar stroiteley st., 3G, \n       Tambov", font, Brushes.Black, xOffset, yOffset);
+            yOffset += lineSpacing + 7;
             g.DrawString("+7(4752)55-94-00", font, Brushes.Black, xOffset, yOffset);
-            yOffset += lineSpacing;
+            yOffset += lineSpacing + 1;
             g.DrawString("navicontmb.ru", font, Brushes.Black, xOffset, yOffset);
 
             // Вертикальный текст "RUS 526"
             string verticalText = "RUS 526";
             // Устанавливаем позицию текста
-            int verticalTextX = 470; // Позиция по X для вертикального текста
-            int verticalTextY = 15;   // Позиция по Y для вертикального текста
+            int verticalTextX = 495; // Позиция по X для вертикального текста
+            int verticalTextY = 12;   // Позиция по Y для вертикального текста
 
             // Поворачиваем графику для вертикального текста
             g.TranslateTransform(verticalTextX, verticalTextY);
@@ -95,9 +95,8 @@ namespace TaxoNavicon.Forms
         }
         private void ToolStripMenuItemPrintSticker_Click(object sender, EventArgs e)
         {
+            // Открытие диалогового окна для выбора принтера
             PrintDialog printDialog = new PrintDialog();
-            printDialog.Document = printDocument;
-
             if (printDialog.ShowDialog() == DialogResult.OK)
             {
                 printDocument.Print();

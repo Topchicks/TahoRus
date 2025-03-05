@@ -284,7 +284,11 @@
   <ItemGroup>
     <Content Include="logo256x256.ico" />
     <Content Include="logo32x32.ico" />
+    <None Include="Resources\Gazel.png" />
+    <None Include="Resources\Copter.png" />
+    <None Include="Resources\Gear.png" />
     <Content Include="Resources\logo256x256.ico" />
+    <None Include="Resources\Truck.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

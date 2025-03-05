@@ -30,6 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartApp));
+            System.Windows.Forms.PictureBox pictureBox4;
+            System.Windows.Forms.PictureBox pictureBox2;
+            System.Windows.Forms.PictureBox pictureBox1;
+            System.Windows.Forms.PictureBox pictureBox3;
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.panelButton = new System.Windows.Forms.Panel();
             this.buttonOpenRussianPanel = new System.Windows.Forms.Button();
@@ -38,9 +42,17 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            pictureBox4 = new System.Windows.Forms.PictureBox();
+            pictureBox2 = new System.Windows.Forms.PictureBox();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panelButton.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // notifyIcon1
@@ -52,6 +64,7 @@
             // panelButton
             // 
             this.panelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(64)))));
+            this.panelButton.Controls.Add(pictureBox4);
             this.panelButton.Controls.Add(this.buttonOpenRussianPanel);
             this.panelButton.Controls.Add(this.btnOpenSettings);
             this.panelButton.Controls.Add(this.buttonOpenEuropeanTypeForm);
@@ -117,8 +130,11 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(pictureBox2);
             this.panel1.Controls.Add(this.panelButton);
             this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(pictureBox1);
+            this.panel1.Controls.Add(pictureBox3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -148,6 +164,50 @@
             this.label1.Text = "TachoPrint";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pictureBox4
+            // 
+            pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            pictureBox4.BackgroundImage = global::TaxoNavicon.Properties.Resources.Gear;
+            pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox4.Location = new System.Drawing.Point(26, 460);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new System.Drawing.Size(30, 30);
+            pictureBox4.TabIndex = 8;
+            pictureBox4.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackgroundImage = global::TaxoNavicon.Properties.Resources.Gazel;
+            pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            pictureBox2.Location = new System.Drawing.Point(605, 278);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(331, 239);
+            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            pictureBox2.TabIndex = 6;
+            pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = global::TaxoNavicon.Properties.Resources.Truck;
+            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox1.Location = new System.Drawing.Point(206, 76);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(415, 409);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackgroundImage = global::TaxoNavicon.Properties.Resources.Copter;
+            pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            pictureBox3.Location = new System.Drawing.Point(627, 45);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new System.Drawing.Size(331, 239);
+            pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            pictureBox3.TabIndex = 7;
+            pictureBox3.TabStop = false;
+            // 
             // StartApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -161,6 +221,10 @@
             this.panelButton.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
