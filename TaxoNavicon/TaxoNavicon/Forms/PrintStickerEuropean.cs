@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using Font = System.Drawing.Font;
 using Word = Microsoft.Office.Interop.Word;
 using System.Runtime.InteropServices;
+using Rectangle = System.Drawing.Rectangle;
 
 namespace TaxoNavicon.Forms
 {
@@ -99,7 +100,14 @@ namespace TaxoNavicon.Forms
             g.RotateTransform(90); // Поворачиваем на 90 градусов влево
             g.DrawString(verticalText, boldFont, Brushes.Black, 0, 0); // Рисуем вертикальный текст
             g.ResetTransform(); // Сбрасываем трансформацию
+
+            // Рисуем обводку
+            Pen pen = new Pen(Color.Black, 2); // Черная обводка шириной 2 пикселя
+            Rectangle rect = new Rectangle(5, 5, 5,5); // Прямоугольник для обводки
+            g.DrawRectangle(pen, rect);
         }
+
+           
 
         private void toolStripLabelPrint_Click(object sender, EventArgs e)
         {

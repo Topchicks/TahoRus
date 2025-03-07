@@ -143,3 +143,4 @@ C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Release\Tax
 C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Release\TaxoNavi.80F56615.Up2Date
 C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Release\TaxoNavicon.exe
 C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Release\TaxoNavicon.pdb
+C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Release\TaxoNavicon.Forms.PrintStickerRussian.resources
