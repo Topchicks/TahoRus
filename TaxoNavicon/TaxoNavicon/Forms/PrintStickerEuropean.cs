@@ -25,7 +25,7 @@ namespace TaxoNavicon.Forms
             printDocument.PrintPage += new PrintPageEventHandler(PrintDocument_PrintPage);
 
             // Устанавливаем размер страницы
-            printDocument.DefaultPageSettings.PaperSize = new PaperSize("Custom", 94, 512); // 24mm x 130mm в 1/100 дюймах
+            printDocument.DefaultPageSettings.PaperSize = new PaperSize("Custom", 512,94); // 24mm x 130mm в 1/100 дюймах
             printPreviewControl.Document = printDocument;
 
             // Задаем масштабирование
@@ -41,7 +41,6 @@ namespace TaxoNavicon.Forms
             Graphics g = e.Graphics;
             g.Clear(Color.White);
             Font font = new Font("Microsoft Sans Serif", 9);
-            Font boldFont = new Font("Microsoft Sans Serif", 9, FontStyle.Bold);
 
             // Установим начальные координаты
             int xOffset = 10; // Начальное смещение по X
@@ -49,30 +48,30 @@ namespace TaxoNavicon.Forms
             int lineSpacing = 15; // расстояние между строками
 
             // Отображение данных
-            g.DrawString("Date: " + poleDataEuropean.dataJob, boldFont, Brushes.Black, xOffset, yOffset);
+            g.DrawString("Date: " + poleDataEuropean.dataJob, font, Brushes.Black, xOffset, yOffset);
 
             yOffset += lineSpacing;
-            g.DrawString("Tyres: " + poleDataEuropean.tireMarkingsVehicle, boldFont, Brushes.Black, xOffset, yOffset);
+            g.DrawString("Tyres: " + poleDataEuropean.tireMarkingsVehicle, font, Brushes.Black, xOffset, yOffset);
 
             yOffset += lineSpacing;
-            g.DrawString("Ø1: " + poleDataEuropean.l, boldFont, Brushes.Black, xOffset, yOffset);
+            g.DrawString("Ø1: " + poleDataEuropean.l, font, Brushes.Black, xOffset, yOffset);
 
             yOffset += lineSpacing;
-            g.DrawString("s/n Tacho: " + poleDataEuropean.serialNumberTahograph, boldFont, Brushes.Black, xOffset, yOffset);
+            g.DrawString("s/n Tacho: " + poleDataEuropean.serialNumberTahograph, font, Brushes.Black, xOffset, yOffset);
 
             xOffset = 160;
             yOffset = 5;
 
-            g.DrawString("VIN: " + poleDataEuropean.vinVehicle, boldFont, Brushes.Black, xOffset, yOffset);
+            g.DrawString("VIN: " + poleDataEuropean.vinVehicle, font, Brushes.Black, xOffset, yOffset);
 
             yOffset += lineSpacing;
-            g.DrawString("TNo: " + poleDataEuropean.registrationNumberVehicle, boldFont, Brushes.Black, xOffset, yOffset);
+            g.DrawString("TNo: " + poleDataEuropean.registrationNumberVehicle, font, Brushes.Black, xOffset, yOffset);
 
             yOffset += lineSpacing;
-            g.DrawString("w: " + poleDataEuropean.w, boldFont, Brushes.Black, xOffset, yOffset);
+            g.DrawString("w: " + poleDataEuropean.w, font, Brushes.Black, xOffset, yOffset);
 
             yOffset += lineSpacing;
-            g.DrawString("k: " + poleDataEuropean.k, boldFont, Brushes.Black, xOffset, yOffset);
+            g.DrawString("k: " + poleDataEuropean.k, font, Brushes.Black, xOffset, yOffset);
 
             xOffset = 305;
             yOffset = 5;
@@ -81,13 +80,13 @@ namespace TaxoNavicon.Forms
             xOffset += lineSpacing * 2; // Дополнительный отступ перед следующей секцией
 
             // Ниже можно добавить информацию о компании
-            g.DrawString("  NaviCon OOO", boldFont, Brushes.Black, xOffset, yOffset);
+            g.DrawString("  NaviCon OOO", font, Brushes.Black, xOffset, yOffset);
             yOffset += lineSpacing;
-            g.DrawString("Bulvar stroiteley st., 3G, \n       Tambov", font, Brushes.Black, xOffset, yOffset);
-            yOffset += lineSpacing + 7;
+            g.DrawString("BulvarStroiteley, 3G, \n       Tambov", font, Brushes.Black, xOffset, yOffset);
+            yOffset += lineSpacing + 12;
             g.DrawString("+7(4752)55-94-00", font, Brushes.Black, xOffset, yOffset);
-            yOffset += lineSpacing + 1;
-            g.DrawString("navicontmb.ru", font, Brushes.Black, xOffset, yOffset);
+            yOffset += lineSpacing;
+            g.DrawString("   navicontmb.ru", font, Brushes.Black, xOffset, yOffset);
 
             // Вертикальный текст "RUS 526"
             string verticalText = "RUS 526";
@@ -98,12 +97,12 @@ namespace TaxoNavicon.Forms
             // Поворачиваем графику для вертикального текста
             g.TranslateTransform(verticalTextX, verticalTextY);
             g.RotateTransform(90); // Поворачиваем на 90 градусов влево
-            g.DrawString(verticalText, boldFont, Brushes.Black, 0, 0); // Рисуем вертикальный текст
+            g.DrawString(verticalText, font, Brushes.Black, 0, 0); // Рисуем вертикальный текст
             g.ResetTransform(); // Сбрасываем трансформацию
 
             // Рисуем обводку
             Pen pen = new Pen(Color.Black, 2); // Черная обводка шириной 2 пикселя
-            Rectangle rect = new Rectangle(5, 5, 5,5); // Прямоугольник для обводки
+            Rectangle rect = new Rectangle(478, 10, 20,65); // Прямоугольник для обводки
             g.DrawRectangle(pen, rect);
         }
 

@@ -1,8 +1,11 @@
 ﻿using OfficeOpenXml;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace TaxoNavicon
@@ -98,14 +101,9 @@ namespace TaxoNavicon
 
                     data.Add(Convert.ToInt32(order), worksheet.Cells[row, 4].Text);
                 }
-
-                foreach (var kvp in data)
-                {
-                    CreatPanel(kvp.Key, kvp.Value);
-                }
             }
+            CreatePanelsForLastEntries();
         }
-
         private void CreatPanel(int numberOrderText, string nameCustomerText)
         {
             // Создание панели
@@ -251,7 +249,7 @@ namespace TaxoNavicon
             if(poleDataEuropean.master != null)
             {
                 _myMethod?.Invoke(poleDataEuropean);
-                Console.WriteLine("Окно закрыто с возвратом данных");
+                //Console.WriteLine("Окно закрыто с возвратом данных");
             }
             else
             {
@@ -277,14 +275,21 @@ namespace TaxoNavicon
                     
                 }
             }
-            else if (textBoxSearchOrder.Text == "")
+            else
             {
-                foreach (var allOrder in data)
-                {
-                    CreatPanel(allOrder.Key, allOrder.Value);
-                }
+                CreatePanelsForLastEntries();
             }
+        }
 
+        private  void CreatePanelsForLastEntries()
+        {
+            // Получаем последние 10 элементов
+            var lastEntries = data.Reverse().Take(50);
+
+            foreach (var kvp in lastEntries)
+            {
+                CreatPanel(kvp.Key, kvp.Value);
+            }
         }
     }
 }
