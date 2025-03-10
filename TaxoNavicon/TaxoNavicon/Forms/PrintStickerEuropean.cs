@@ -25,7 +25,7 @@ namespace TaxoNavicon.Forms
             printDocument.PrintPage += new PrintPageEventHandler(PrintDocument_PrintPage);
 
             // Устанавливаем размер страницы
-            printDocument.DefaultPageSettings.PaperSize = new PaperSize("Custom", 512,94); // 24mm x 130mm в 1/100 дюймах
+            printDocument.DefaultPageSettings.PaperSize = new PaperSize("Custom", 94, 512); // 24mm x 130mm в 1/100 дюймах
             printPreviewControl.Document = printDocument;
 
             // Задаем масштабирование
@@ -40,7 +40,7 @@ namespace TaxoNavicon.Forms
         {
             Graphics g = e.Graphics;
             g.Clear(Color.White);
-            Font font = new Font("Microsoft Sans Serif", 9);
+            Font font = new Font("Microsoft Sans Serif", 8);
 
             // Установим начальные координаты
             int xOffset = 10; // Начальное смещение по X
@@ -74,8 +74,7 @@ namespace TaxoNavicon.Forms
             g.DrawString("k: " + poleDataEuropean.k, font, Brushes.Black, xOffset, yOffset);
 
             xOffset = 305;
-            yOffset = 5;
-
+            yOffset = 1;
             // Возможно, добавьте отступы для визуального разделения
             xOffset += lineSpacing * 2; // Дополнительный отступ перед следующей секцией
 
@@ -85,14 +84,14 @@ namespace TaxoNavicon.Forms
             g.DrawString("BulvarStroiteley, 3G, \n       Tambov", font, Brushes.Black, xOffset, yOffset);
             yOffset += lineSpacing + 12;
             g.DrawString("+7(4752)55-94-00", font, Brushes.Black, xOffset, yOffset);
-            yOffset += lineSpacing;
+            yOffset += lineSpacing -1;
             g.DrawString("   navicontmb.ru", font, Brushes.Black, xOffset, yOffset);
 
             // Вертикальный текст "RUS 526"
             string verticalText = "RUS 526";
             // Устанавливаем позицию текста
-            int verticalTextX = 495; // Позиция по X для вертикального текста
-            int verticalTextY = 12;   // Позиция по Y для вертикального текста
+            int verticalTextX = 489; // Позиция по X для вертикального текста
+            int verticalTextY = 10;   // Позиция по Y для вертикального текста
 
             // Поворачиваем графику для вертикального текста
             g.TranslateTransform(verticalTextX, verticalTextY);
@@ -102,7 +101,7 @@ namespace TaxoNavicon.Forms
 
             // Рисуем обводку
             Pen pen = new Pen(Color.Black, 2); // Черная обводка шириной 2 пикселя
-            Rectangle rect = new Rectangle(478, 10, 20,65); // Прямоугольник для обводки
+            Rectangle rect = new Rectangle(472, 9, 20, 50); // Прямоугольник для обводки
             g.DrawRectangle(pen, rect);
         }
 
