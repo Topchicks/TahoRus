@@ -35,6 +35,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.checkBoxFormateSticker = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -92,6 +93,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.checkBoxFormateSticker);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.FileSavePath);
             this.panel2.Controls.Add(this.textBoxFileSavePath);
@@ -100,6 +102,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(896, 457);
             this.panel2.TabIndex = 4;
+            // 
+            // checkBoxFormateSticker
+            // 
+            this.checkBoxFormateSticker.AutoSize = true;
+            this.checkBoxFormateSticker.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBoxFormateSticker.Location = new System.Drawing.Point(10, 86);
+            this.checkBoxFormateSticker.Name = "checkBoxFormateSticker";
+            this.checkBoxFormateSticker.Size = new System.Drawing.Size(220, 22);
+            this.checkBoxFormateSticker.TabIndex = 3;
+            this.checkBoxFormateSticker.Text = "Форматирование наклейки";
+            this.checkBoxFormateSticker.UseVisualStyleBackColor = true;
+            this.checkBoxFormateSticker.CheckedChanged += new System.EventHandler(this.checkBoxFormateSticker_CheckedChanged);
             // 
             // Settings
             // 
@@ -126,5 +140,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.CheckBox checkBoxFormateSticker;
     }
 }

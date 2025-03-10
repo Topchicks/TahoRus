@@ -9,12 +9,14 @@ namespace TaxoNavicon
     {
         private string pathSettingsFile; // Путь к файлу json сохранения
         public string filePath; // Путь к файлу с таблицей Certificate
+        public bool formatingSticker;
         public Settings()
         {
             InitializeComponent();
             // Тут получим относительный путь к файлу JSon настроек
             pathSettingsFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "JsonSetting.json");
             LoadSaveJson();
+            checkBoxFormateSticker.Checked = formatingSticker;
         }
 
         private void FileSavePath_Click(object sender, EventArgs e)
@@ -31,7 +33,7 @@ namespace TaxoNavicon
 
                     // Заполним поле для видимости пути к сохранению
                     textBoxFileSavePath.Text = filePath;
-                    SaveJsonSettings(textBoxFileSavePath.Text);
+                    SaveJsonSettings();
                 }
             }
         }
@@ -42,11 +44,12 @@ namespace TaxoNavicon
         }
 
         // Метод для сохранения пути к файлу
-        private void SaveJsonSettings(string filePath)
+        private void SaveJsonSettings()
         {
             SettingsJS settingsJS = new SettingsJS()
             {
-                FilePath = filePath
+                FilePath = filePath,
+                FormatingSticker = formatingSticker,
             };
 
             var options = new JsonSerializerOptions();
@@ -63,7 +66,7 @@ namespace TaxoNavicon
         private void textBoxFileSavePath_TextChanged(object sender, EventArgs e)
         {
             filePath = textBoxFileSavePath.Text;
-            SaveJsonSettings(filePath);
+            SaveJsonSettings();
         }
 
         private void LoadSaveJson()
@@ -75,11 +78,18 @@ namespace TaxoNavicon
                 SettingsJS settingsJS = JsonSerializer.Deserialize<SettingsJS>(saveJson);
 
                 textBoxFileSavePath.Text = settingsJS.FilePath;
+                formatingSticker = settingsJS.FormatingSticker;
             }
             catch(Exception ex)
             {
                 Console.WriteLine(ex);
             }
+        }
+
+        private void checkBoxFormateSticker_CheckedChanged(object sender, EventArgs e)
+        {
+            formatingSticker = checkBoxFormateSticker.Checked;
+            SaveJsonSettings();
         }
     }
 }

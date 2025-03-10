@@ -9,23 +9,35 @@ using Font = System.Drawing.Font;
 using Word = Microsoft.Office.Interop.Word;
 using System.Runtime.InteropServices;
 using Rectangle = System.Drawing.Rectangle;
+using System.Text.Json;
 
 namespace TaxoNavicon.Forms
 {
     
     public partial class PrintStickerEuropean : Form
     {
-        private string filePath;
+        private string filePath; // Путь к фалу с данными
         private PrintDocument printDocument;
         private PoleDataEuropean poleDataEuropean;
+        private bool formatingSticker;
+        private string pathSettingsFile; // Путь к файлу с настройками
         public PrintStickerEuropean(PoleDataEuropean poleDataEuropean)
         {
             InitializeComponent();
+            pathSettingsFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "JsonSetting.json");
+            LoadSaveJson();
             printDocument = new PrintDocument();
             printDocument.PrintPage += new PrintPageEventHandler(PrintDocument_PrintPage);
 
             // Устанавливаем размер страницы
-            printDocument.DefaultPageSettings.PaperSize = new PaperSize("Custom", 94, 512); // 24mm x 130mm в 1/100 дюймах
+            if(formatingSticker == true)
+            {
+                printDocument.DefaultPageSettings.PaperSize = new PaperSize("Custom", 94, 512); // 24mm x 130mm в 1/100 дюймах
+            }
+            else
+            {
+                printDocument.DefaultPageSettings.PaperSize = new PaperSize("Custom", 512, 94); // 24mm x 130mm в 1/100 дюймах
+            }
             printPreviewControl.Document = printDocument;
 
             // Задаем масштабирование
@@ -34,8 +46,23 @@ namespace TaxoNavicon.Forms
             // Для отображения в предварительном просмотре
             printPreviewControl.Document = printDocument;
             this.poleDataEuropean = poleDataEuropean;
-        }
 
+            
+        }
+        private void LoadSaveJson()
+        {
+            try
+            {
+                var saveJson = File.ReadAllText(pathSettingsFile);
+                SettingsJS settingsJS = JsonSerializer.Deserialize<SettingsJS>(saveJson);
+                formatingSticker = settingsJS.FormatingSticker;
+                Console.WriteLine("Данные успешно подгруженны");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -74,7 +101,7 @@ namespace TaxoNavicon.Forms
             g.DrawString("k: " + poleDataEuropean.k, font, Brushes.Black, xOffset, yOffset);
 
             xOffset = 305;
-            yOffset = 1;
+            yOffset = 2;
             // Возможно, добавьте отступы для визуального разделения
             xOffset += lineSpacing * 2; // Дополнительный отступ перед следующей секцией
 

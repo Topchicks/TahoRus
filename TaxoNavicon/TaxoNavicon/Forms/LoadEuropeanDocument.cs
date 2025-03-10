@@ -281,6 +281,8 @@ namespace TaxoNavicon
             }
         }
 
+
+        // Доделать сделать болье нормальное воявление панелей
         private  void CreatePanelsForLastEntries()
         {
             // Получаем последние 10 элементов
