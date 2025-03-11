@@ -20,7 +20,7 @@ namespace TaxoNavicon
             // Тут получим относительный путь к файлу JSon настроек
             pathSettingsFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "JsonSetting.json");
             LoadSaveJson();
-            checkBoxFormateSticker.Text = defualtPrinterSticker;
+            checkBoxFormateSticker.Checked = formatingSticker;
             comboBoxPrinterWord.Text = defualtPrinterWord;
             comboBoxPrinterSticker.Text = defualtPrinterSticker;
             foreach (string printer in PrinterSettings.InstalledPrinters)

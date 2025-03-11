@@ -1,4 +1,4 @@
-﻿namespace TaxoNavicon
+﻿ namespace TaxoNavicon
 {
     public class SettingsJS
     {

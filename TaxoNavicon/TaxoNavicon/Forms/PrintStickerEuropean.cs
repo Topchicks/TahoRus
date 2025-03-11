@@ -21,6 +21,7 @@ namespace TaxoNavicon.Forms
         private PoleDataEuropean poleDataEuropean;
         private bool formatingSticker;
         private string pathSettingsFile; // Путь к файлу с настройками
+        private string defualtPrinterSticker; // 
         public PrintStickerEuropean(PoleDataEuropean poleDataEuropean)
         {
             InitializeComponent();
@@ -56,6 +57,7 @@ namespace TaxoNavicon.Forms
                 var saveJson = File.ReadAllText(pathSettingsFile);
                 SettingsJS settingsJS = JsonSerializer.Deserialize<SettingsJS>(saveJson);
                 formatingSticker = settingsJS.FormatingSticker;
+                defualtPrinterSticker = settingsJS.DefualtPrinterSticker;
                 Console.WriteLine("Данные успешно подгруженны");
             }
             catch (Exception ex)
@@ -138,10 +140,17 @@ namespace TaxoNavicon.Forms
         {
             // Открытие диалогового окна для выбора принтера
             PrintDialog printDialog = new PrintDialog();
-            if (printDialog.ShowDialog() == DialogResult.OK)
-            {
-                printDocument.Print();
-            }
+            printDialog.PrinterSettings = new PrinterSettings();
+
+            // Устанавливаем выбранный принтер
+            printDialog.PrinterSettings.PrinterName = defualtPrinterSticker;
+
+            // Также есть автоматический вывод на печать
+            printDocument.Print();
+            /* if (printDialog.ShowDialog() == DialogResult.OK)
+             {
+
+             }*/
         }
     }
 }

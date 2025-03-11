@@ -1,6 +1,7 @@
 ﻿using Microsoft.Office.Interop.Word;
 using OfficeOpenXml;
 using System;
+using System.Collections.Generic;
 using System.Drawing.Printing;
 using System.IO;
 using System.Text.Json;
@@ -46,6 +47,8 @@ namespace TaxoNavicon
 
         private string filePathSaveJson;
         private string filePathCertificate;
+
+        private string defualtPrinterWord;
         public EuropeanTypeForm()
         {
             InitializeComponent();
@@ -109,6 +112,9 @@ namespace TaxoNavicon
         {
             ClouseConnectionWord();
             Console.WriteLine("Окно закрыто");
+
+            
+
             base.OnFormClosing(e);
         }
 
@@ -284,6 +290,7 @@ namespace TaxoNavicon
 
             SettingsJS settingsJS = JsonSerializer.Deserialize<SettingsJS>(saveJson);
             filePathCertificate = settingsJS.FilePath;
+            defualtPrinterWord = settingsJS.DefualtPrinterWord;
         }
 
         private void ToolStripMenuItemResetData_Click(object sender, EventArgs e)
@@ -336,6 +343,7 @@ namespace TaxoNavicon
             }
         }
 
+        // Открытие окна печати стикера
         private void ToolStripMenuItemPrintSticker_Click(object sender, EventArgs e)
         {
             PrintStickerEuropean printStickerEuropean = new PrintStickerEuropean(poleDataEuropean);
@@ -383,18 +391,32 @@ namespace TaxoNavicon
                 #endregion
 
                 PrintDialog printDialog = new PrintDialog();
-                if (printDialog.ShowDialog() == DialogResult.OK)
-                {
+                printDialog.PrinterSettings = new PrinterSettings();
+
+                // Устанавливаем выбранный принтер
+                wordApp.ActivePrinter = defualtPrinterWord;
+
+                // Это тестовый вариант при выборе принтера в настройках достаточно
+                // будет нажать кнопку печать и всё само напечатается
+                /* if (printDialog.ShowDialog() == DialogResult.OK)
+                 {
+                    // Печатаем документ
                     wordDoc.PrintOut();
-                }
+                 }*/
+
+                // Печатаем документ
+                wordDoc.PrintOut();
+
                 ClouseConnectionWord();
+
             }
             catch(Exception ex)
             {
                 ClouseConnectionWord();
                 MessageBox.Show("Ошибка: " + ex);
             }
-            
+
+
         }
     }
 }
