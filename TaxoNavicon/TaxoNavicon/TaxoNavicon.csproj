@@ -265,7 +265,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Resources\SteckerPrefabs.doc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -676,6 +676,7 @@
             this.ToolStripMenuItemPrintCertificate.Name = "ToolStripMenuItemPrintCertificate";
             this.ToolStripMenuItemPrintCertificate.Size = new System.Drawing.Size(186, 22);
             this.ToolStripMenuItemPrintCertificate.Text = "Печать сертификата";
+            this.ToolStripMenuItemPrintCertificate.Click += new System.EventHandler(this.ToolStripMenuItemPrintCertificate_Click_1);
             // 
             // ToolStripMenuItemPrintSticker
             // 
@@ -718,10 +719,6 @@
             this.ClientSize = new System.Drawing.Size(977, 590);
             this.Controls.Add(this.panel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(993, 629);
-            this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(993, 629);
             this.Name = "EuropeanTypeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Европейский документ";

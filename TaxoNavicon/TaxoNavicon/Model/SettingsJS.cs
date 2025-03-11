@@ -4,5 +4,8 @@
     {
         public string FilePath { get; set; }
         public bool FormatingSticker { get; set; }
+
+        public string DefualtPrinterWord { get; set; }
+        public string DefualtPrinterSticker { get; set; }
     }
 }

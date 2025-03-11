@@ -91,51 +91,6 @@ namespace TaxoNavicon
 
             poleDataEuropean.dataJob = dateTimePickerJob.Value.ToShortDateString();//  время выполнения работ
         }
-        // Для Word
-        private void ToolStripMenuItemPrintCertificate_Click(object sender, EventArgs e)
-        {
-            SetData();
-            string relativePath = @"EuropeanCertidicate.doc"; // Относительный путь к файлу
-            filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
-            wordApp = new Word.Application();
-            dateTimePickerJob.CustomFormat = "dd/MM/yyyy"; // Устанавливаем только дату
-
-            CheckOpenDock();
-            //wordDoc = wordApp.Documents.Open(filePath);
-
-            #region money
-            FindAndReplace(wordDoc, "<orderNumber>", poleDataEuropean.orderNumber.ToString());
-            FindAndReplace(wordDoc, "<master>", poleDataEuropean.master);
-            FindAndReplace(wordDoc, "<dataJob>", poleDataEuropean.dataJob);
-
-            FindAndReplace(wordDoc, "<nameCustomer>", poleDataEuropean.nameCustomer);
-            FindAndReplace(wordDoc, "<nameCustomerEng>", poleDataEuropean.nameCustomerEng);
-            FindAndReplace(wordDoc, "<adresCustomer>", poleDataEuropean.adresCustomer);
-
-            FindAndReplace(wordDoc, "<manufacturerVehicle>", poleDataEuropean.manufacturerVehicle);
-            FindAndReplace(wordDoc, "<modelVehicle>", poleDataEuropean.modelVehicle);
-            FindAndReplace(wordDoc, "<yearOfIssueVehicle>", poleDataEuropean.yearOfIssueVehiccle);
-            FindAndReplace(wordDoc, "<vinVehicle>", poleDataEuropean.vinVehicle);
-            FindAndReplace(wordDoc, "<registrationNumberVehicle>", poleDataEuropean.registrationNumberVehicle);
-            FindAndReplace(wordDoc, "<tireMarkingsVehicle>", poleDataEuropean.tireMarkingsVehicle);
-            FindAndReplace(wordDoc, "<odometrKmVehicle>", poleDataEuropean.odometerKmVehicle);
-
-            FindAndReplace(wordDoc, "<manufacturerTahograph>", poleDataEuropean.manufacturerTahograph);
-            FindAndReplace(wordDoc, "<serialNumberTahograph>", poleDataEuropean.serialNumberTahograph);
-            FindAndReplace(wordDoc, "<modelTahograph>", poleDataEuropean.modelTachograph);
-
-            FindAndReplace(wordDoc, "<L>", poleDataEuropean.l);
-            FindAndReplace(wordDoc, "<W>", poleDataEuropean.w);
-            FindAndReplace(wordDoc, "<K>", poleDataEuropean.k);
-            #endregion
-
-            PrintDialog printDialog = new PrintDialog();
-            if (printDialog.ShowDialog() == DialogResult.OK)
-            {
-                wordDoc.PrintOut();
-            }
-            ClouseConnectionWord();
-        }
 
         private void FindAndReplace(Word.Document doc, string findText, string replaceText)
         {
@@ -386,6 +341,60 @@ namespace TaxoNavicon
             PrintStickerEuropean printStickerEuropean = new PrintStickerEuropean(poleDataEuropean);
 
             printStickerEuropean.ShowDialog();
+        }
+
+        private void ToolStripMenuItemPrintCertificate_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                SetData();
+                string relativePath = @"EuropeanCertidicate.doc"; // Относительный путь к файлу
+                filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
+                wordApp = new Word.Application();
+                dateTimePickerJob.CustomFormat = "dd/MM/yyyy"; // Устанавливаем только дату
+
+                CheckOpenDock();
+                //wordDoc = wordApp.Documents.Open(filePath);
+
+                #region money
+                FindAndReplace(wordDoc, "<orderNumber>", poleDataEuropean.orderNumber.ToString());
+                FindAndReplace(wordDoc, "<master>", poleDataEuropean.master);
+                FindAndReplace(wordDoc, "<dataJob>", poleDataEuropean.dataJob);
+
+                FindAndReplace(wordDoc, "<nameCustomer>", poleDataEuropean.nameCustomer);
+                FindAndReplace(wordDoc, "<nameCustomerEng>", poleDataEuropean.nameCustomerEng);
+                FindAndReplace(wordDoc, "<adresCustomer>", poleDataEuropean.adresCustomer);
+
+                FindAndReplace(wordDoc, "<manufacturerVehicle>", poleDataEuropean.manufacturerVehicle);
+                FindAndReplace(wordDoc, "<modelVehicle>", poleDataEuropean.modelVehicle);
+                FindAndReplace(wordDoc, "<yearOfIssueVehicle>", poleDataEuropean.yearOfIssueVehiccle);
+                FindAndReplace(wordDoc, "<vinVehicle>", poleDataEuropean.vinVehicle);
+                FindAndReplace(wordDoc, "<registrationNumberVehicle>", poleDataEuropean.registrationNumberVehicle);
+                FindAndReplace(wordDoc, "<tireMarkingsVehicle>", poleDataEuropean.tireMarkingsVehicle);
+                FindAndReplace(wordDoc, "<odometrKmVehicle>", poleDataEuropean.odometerKmVehicle);
+
+                FindAndReplace(wordDoc, "<manufacturerTahograph>", poleDataEuropean.manufacturerTahograph);
+                FindAndReplace(wordDoc, "<serialNumberTahograph>", poleDataEuropean.serialNumberTahograph);
+                FindAndReplace(wordDoc, "<modelTahograph>", poleDataEuropean.modelTachograph);
+
+                FindAndReplace(wordDoc, "<L>", poleDataEuropean.l);
+                FindAndReplace(wordDoc, "<W>", poleDataEuropean.w);
+                FindAndReplace(wordDoc, "<K>", poleDataEuropean.k);
+                #endregion
+
+                PrintDialog printDialog = new PrintDialog();
+                if (printDialog.ShowDialog() == DialogResult.OK)
+                {
+                    wordDoc.PrintOut();
+                }
+                ClouseConnectionWord();
+            }
+            catch(Exception ex)
+            {
+                ClouseConnectionWord();
+                MessageBox.Show("Ошибка: " + ex);
+            }
+            
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing.Printing;
 using System.IO;
 using System.Text.Json;
 using System.Windows.Forms;
@@ -10,13 +11,23 @@ namespace TaxoNavicon
         private string pathSettingsFile; // Путь к файлу json сохранения
         public string filePath; // Путь к файлу с таблицей Certificate
         public bool formatingSticker;
+
+        public string defualtPrinterWord;
+        public string defualtPrinterSticker;
         public Settings()
         {
             InitializeComponent();
             // Тут получим относительный путь к файлу JSon настроек
             pathSettingsFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "JsonSetting.json");
             LoadSaveJson();
-            checkBoxFormateSticker.Checked = formatingSticker;
+            checkBoxFormateSticker.Text = defualtPrinterSticker;
+            comboBoxPrinterWord.Text = defualtPrinterWord;
+            comboBoxPrinterSticker.Text = defualtPrinterSticker;
+            foreach (string printer in PrinterSettings.InstalledPrinters)
+            {
+                comboBoxPrinterWord.Items.Add(printer);
+                comboBoxPrinterSticker.Items.Add(printer);
+            }
         }
 
         private void FileSavePath_Click(object sender, EventArgs e)
@@ -50,6 +61,8 @@ namespace TaxoNavicon
             {
                 FilePath = filePath,
                 FormatingSticker = formatingSticker,
+                DefualtPrinterWord = defualtPrinterWord,
+                DefualtPrinterSticker = defualtPrinterSticker
             };
 
             var options = new JsonSerializerOptions();
@@ -79,6 +92,8 @@ namespace TaxoNavicon
 
                 textBoxFileSavePath.Text = settingsJS.FilePath;
                 formatingSticker = settingsJS.FormatingSticker;
+                defualtPrinterSticker = settingsJS.DefualtPrinterSticker;
+                defualtPrinterWord = settingsJS.DefualtPrinterWord;
             }
             catch(Exception ex)
             {
@@ -89,6 +104,18 @@ namespace TaxoNavicon
         private void checkBoxFormateSticker_CheckedChanged(object sender, EventArgs e)
         {
             formatingSticker = checkBoxFormateSticker.Checked;
+            SaveJsonSettings();
+        }
+
+        private void comboBoxPrinterWord_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            defualtPrinterWord = comboBoxPrinterWord.Text;
+            SaveJsonSettings();
+        }
+
+        private void comboBoxPrinterSticker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            defualtPrinterSticker = comboBoxPrinterSticker.Text;
             SaveJsonSettings();
         }
     }

@@ -36,6 +36,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.checkBoxFormateSticker = new System.Windows.Forms.CheckBox();
+            this.comboBoxPrinterWord = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBoxPrinterSticker = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -93,6 +97,10 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.comboBoxPrinterSticker);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.comboBoxPrinterWord);
             this.panel2.Controls.Add(this.checkBoxFormateSticker);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.FileSavePath);
@@ -114,6 +122,44 @@
             this.checkBoxFormateSticker.Text = "Форматирование наклейки";
             this.checkBoxFormateSticker.UseVisualStyleBackColor = true;
             this.checkBoxFormateSticker.CheckedChanged += new System.EventHandler(this.checkBoxFormateSticker_CheckedChanged);
+            // 
+            // comboBoxPrinterWord
+            // 
+            this.comboBoxPrinterWord.FormattingEnabled = true;
+            this.comboBoxPrinterWord.Location = new System.Drawing.Point(10, 141);
+            this.comboBoxPrinterWord.Name = "comboBoxPrinterWord";
+            this.comboBoxPrinterWord.Size = new System.Drawing.Size(185, 21);
+            this.comboBoxPrinterWord.TabIndex = 4;
+            this.comboBoxPrinterWord.SelectedIndexChanged += new System.EventHandler(this.comboBoxPrinterWord_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(201, 141);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(249, 18);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Принтер для печати сертификата";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(201, 180);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(212, 18);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Принтер для печати наклеек";
+            // 
+            // comboBoxPrinterSticker
+            // 
+            this.comboBoxPrinterSticker.FormattingEnabled = true;
+            this.comboBoxPrinterSticker.Location = new System.Drawing.Point(10, 180);
+            this.comboBoxPrinterSticker.Name = "comboBoxPrinterSticker";
+            this.comboBoxPrinterSticker.Size = new System.Drawing.Size(185, 21);
+            this.comboBoxPrinterSticker.TabIndex = 6;
+            this.comboBoxPrinterSticker.SelectedIndexChanged += new System.EventHandler(this.comboBoxPrinterSticker_SelectedIndexChanged);
             // 
             // Settings
             // 
@@ -141,5 +187,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.CheckBox checkBoxFormateSticker;
+        private System.Windows.Forms.ComboBox comboBoxPrinterWord;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBoxPrinterSticker;
+        private System.Windows.Forms.Label label3;
     }
 }
