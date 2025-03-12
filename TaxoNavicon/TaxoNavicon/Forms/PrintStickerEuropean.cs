@@ -143,14 +143,16 @@ namespace TaxoNavicon.Forms
             printDialog.PrinterSettings = new PrinterSettings();
 
             // Устанавливаем выбранный принтер
-            printDialog.PrinterSettings.PrinterName = defualtPrinterSticker;
+            //printDialog.PrinterSettings.PrinterName = defualtPrinterSticker;
 
             // Также есть автоматический вывод на печать
-            printDocument.Print();
-            /* if (printDialog.ShowDialog() == DialogResult.OK)
-             {
 
-             }*/
+            printDocument.DefaultPageSettings.PrinterSettings.PrinterName = defualtPrinterSticker;
+            if (printDialog.ShowDialog() == DialogResult.OK)
+            {
+
+                printDocument.Print();
+            }
         }
     }
 }
