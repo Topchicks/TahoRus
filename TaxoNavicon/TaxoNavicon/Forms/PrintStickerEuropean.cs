@@ -1,13 +1,9 @@
-﻿using Microsoft.Office.Interop.Word;
-using System;
-using System.Diagnostics;
+﻿using System;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
 using System.Windows.Forms;
 using Font = System.Drawing.Font;
-using Word = Microsoft.Office.Interop.Word;
-using System.Runtime.InteropServices;
 using Rectangle = System.Drawing.Rectangle;
 using System.Text.Json;
 
@@ -150,7 +146,6 @@ namespace TaxoNavicon.Forms
             printDocument.DefaultPageSettings.PrinterSettings.PrinterName = defualtPrinterSticker;
             if (printDialog.ShowDialog() == DialogResult.OK)
             {
-
                 printDocument.Print();
             }
         }

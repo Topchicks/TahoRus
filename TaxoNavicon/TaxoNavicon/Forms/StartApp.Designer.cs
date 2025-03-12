@@ -143,6 +143,7 @@
             this.buttonOpenRussianPanel.TabIndex = 1;
             this.buttonOpenRussianPanel.Text = "Российский документ";
             this.buttonOpenRussianPanel.UseVisualStyleBackColor = true;
+            this.buttonOpenRussianPanel.Visible = false;
             this.buttonOpenRussianPanel.Click += new System.EventHandler(this.buttonOpenRussianPanel_Click);
             // 
             // btnOpenSettings

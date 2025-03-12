@@ -1,13 +1,11 @@
 ﻿using Microsoft.Office.Interop.Word;
 using OfficeOpenXml;
 using System;
-using System.Collections.Generic;
 using System.Drawing.Printing;
 using System.IO;
 using System.Text.Json;
 using System.Windows.Forms;
 using TaxoNavicon.Forms;
-using TaxoNaviconRussian;
 using Word = Microsoft.Office.Interop.Word;
 
 namespace TaxoNavicon
