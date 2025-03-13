@@ -1,0 +1,12 @@
+C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Release\TachoPrint.csproj.AssemblyReference.cache
+C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Release\TaxoNavicon.EuropeanTypeForm.resources
+C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Release\TaxoNavicon.LoadEuropeanDocument.resources
+C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Release\TaxoNavicon.LoadRussianDocument.resources
+C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Release\TaxoNavicon.Forms.PrintStickerEuropean.resources
+C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Release\TaxoNavicon.Forms.PrintStickerRussian.resources
+C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Release\TachoPrint.Properties.Resources.resources
+C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Release\TaxoNavicon.RussianTypeForm.resources
+C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Release\TaxoNavicon.Settings.resources
+C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Release\TaxoNavicon.StartApp.resources
+C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Release\TachoPrint.csproj.GenerateResource.cache
+C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Release\TachoPrint.csproj.CoreCompileInputs.cache

@@ -43,6 +43,7 @@
             this.printPreviewControl.Name = "printPreviewControl";
             this.printPreviewControl.Size = new System.Drawing.Size(892, 423);
             this.printPreviewControl.TabIndex = 0;
+            this.printPreviewControl.Visible = false;
             // 
             // toolStrip1
             // 

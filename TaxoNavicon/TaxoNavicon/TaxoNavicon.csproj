@@ -7,7 +7,7 @@
     <ProjectGuid>{4FC76516-7EDC-4101-ACFD-47CB828AFC98}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>TaxoNavicon</RootNamespace>
-    <AssemblyName>TaxoNavicon</AssemblyName>
+    <AssemblyName>TachoPrint</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
