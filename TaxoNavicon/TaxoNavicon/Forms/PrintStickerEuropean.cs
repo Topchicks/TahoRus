@@ -144,10 +144,11 @@ namespace TaxoNavicon.Forms
             // Также есть автоматический вывод на печать
 
             printDocument.DefaultPageSettings.PrinterSettings.PrinterName = defualtPrinterSticker;
-            if (printDialog.ShowDialog() == DialogResult.OK)
+            printDocument.Print();
+            /*if (printDialog.ShowDialog() == DialogResult.OK)
             {
-                printDocument.Print();
-            }
+                
+            }*/
         }
     }
 }

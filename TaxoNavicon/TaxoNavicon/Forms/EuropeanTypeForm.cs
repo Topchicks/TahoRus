@@ -183,9 +183,13 @@ namespace TaxoNavicon
         // Открытие окна для зпгрузки д
         private void ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LoadEuropeanDocument loadEuropeanDocument = new LoadEuropeanDocument(GetDataLoad, filePathCertificate);
-
-            loadEuropeanDocument.Show();
+            LoadEuropeanDocument loadEuropeanDocument = null;
+            if(loadEuropeanDocument == null)
+            {
+                loadEuropeanDocument = new LoadEuropeanDocument(GetDataLoad, filePathCertificate);
+                loadEuropeanDocument.ShowDialog();
+            }
+            
         }
 
         /// <summary>
@@ -344,9 +348,13 @@ namespace TaxoNavicon
         // Открытие окна печати стикера
         private void ToolStripMenuItemPrintSticker_Click(object sender, EventArgs e)
         {
-            PrintStickerEuropean printStickerEuropean = new PrintStickerEuropean(poleDataEuropean);
+            PrintStickerEuropean printStickerEuropean = null;
+            if (printStickerEuropean == null)
+            {
+                printStickerEuropean = new PrintStickerEuropean(poleDataEuropean);
 
-            printStickerEuropean.ShowDialog();
+                printStickerEuropean.ShowDialog();
+            }
         }
 
         private void ToolStripMenuItemPrintCertificate_Click_1(object sender, EventArgs e)
