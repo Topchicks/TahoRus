@@ -43,8 +43,6 @@ namespace TaxoNavicon.Forms
             // Для отображения в предварительном просмотре
             printPreviewControl.Document = printDocument;
             this.poleDataEuropean = poleDataEuropean;
-
-            
         }
         private void LoadSaveJson()
         {
