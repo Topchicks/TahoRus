@@ -35,11 +35,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.checkBoxFormateSticker = new System.Windows.Forms.CheckBox();
-            this.comboBoxPrinterWord = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxPrinterSticker = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBoxPrinterWord = new System.Windows.Forms.ComboBox();
+            this.checkBoxFormateSticker = new System.Windows.Forms.CheckBox();
+            this.linkLabelOpenPanelInfo = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -97,6 +98,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.linkLabelOpenPanelInfo);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.comboBoxPrinterSticker);
             this.panel2.Controls.Add(this.label3);
@@ -110,37 +112,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(896, 457);
             this.panel2.TabIndex = 4;
-            // 
-            // checkBoxFormateSticker
-            // 
-            this.checkBoxFormateSticker.AutoSize = true;
-            this.checkBoxFormateSticker.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBoxFormateSticker.Location = new System.Drawing.Point(10, 86);
-            this.checkBoxFormateSticker.Name = "checkBoxFormateSticker";
-            this.checkBoxFormateSticker.Size = new System.Drawing.Size(220, 22);
-            this.checkBoxFormateSticker.TabIndex = 3;
-            this.checkBoxFormateSticker.Text = "Форматирование наклейки";
-            this.checkBoxFormateSticker.UseVisualStyleBackColor = true;
-            this.checkBoxFormateSticker.CheckedChanged += new System.EventHandler(this.checkBoxFormateSticker_CheckedChanged);
-            // 
-            // comboBoxPrinterWord
-            // 
-            this.comboBoxPrinterWord.FormattingEnabled = true;
-            this.comboBoxPrinterWord.Location = new System.Drawing.Point(10, 141);
-            this.comboBoxPrinterWord.Name = "comboBoxPrinterWord";
-            this.comboBoxPrinterWord.Size = new System.Drawing.Size(185, 21);
-            this.comboBoxPrinterWord.TabIndex = 4;
-            this.comboBoxPrinterWord.SelectedIndexChanged += new System.EventHandler(this.comboBoxPrinterWord_SelectedIndexChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(201, 141);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(249, 18);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Принтер для печати сертификата";
             // 
             // label4
             // 
@@ -160,6 +131,49 @@
             this.comboBoxPrinterSticker.Size = new System.Drawing.Size(185, 21);
             this.comboBoxPrinterSticker.TabIndex = 6;
             this.comboBoxPrinterSticker.SelectedIndexChanged += new System.EventHandler(this.comboBoxPrinterSticker_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(201, 141);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(249, 18);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Принтер для печати сертификата";
+            // 
+            // comboBoxPrinterWord
+            // 
+            this.comboBoxPrinterWord.FormattingEnabled = true;
+            this.comboBoxPrinterWord.Location = new System.Drawing.Point(10, 141);
+            this.comboBoxPrinterWord.Name = "comboBoxPrinterWord";
+            this.comboBoxPrinterWord.Size = new System.Drawing.Size(185, 21);
+            this.comboBoxPrinterWord.TabIndex = 4;
+            this.comboBoxPrinterWord.SelectedIndexChanged += new System.EventHandler(this.comboBoxPrinterWord_SelectedIndexChanged);
+            // 
+            // checkBoxFormateSticker
+            // 
+            this.checkBoxFormateSticker.AutoSize = true;
+            this.checkBoxFormateSticker.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBoxFormateSticker.Location = new System.Drawing.Point(10, 86);
+            this.checkBoxFormateSticker.Name = "checkBoxFormateSticker";
+            this.checkBoxFormateSticker.Size = new System.Drawing.Size(220, 22);
+            this.checkBoxFormateSticker.TabIndex = 3;
+            this.checkBoxFormateSticker.Text = "Форматирование наклейки";
+            this.checkBoxFormateSticker.UseVisualStyleBackColor = true;
+            this.checkBoxFormateSticker.CheckedChanged += new System.EventHandler(this.checkBoxFormateSticker_CheckedChanged);
+            // 
+            // linkLabelOpenPanelInfo
+            // 
+            this.linkLabelOpenPanelInfo.AutoSize = true;
+            this.linkLabelOpenPanelInfo.Font = new System.Drawing.Font("Arial", 10F);
+            this.linkLabelOpenPanelInfo.Location = new System.Drawing.Point(813, 430);
+            this.linkLabelOpenPanelInfo.Name = "linkLabelOpenPanelInfo";
+            this.linkLabelOpenPanelInfo.Size = new System.Drawing.Size(62, 16);
+            this.linkLabelOpenPanelInfo.TabIndex = 8;
+            this.linkLabelOpenPanelInfo.TabStop = true;
+            this.linkLabelOpenPanelInfo.Text = "Справка";
+            this.linkLabelOpenPanelInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelOpenPanelInfo_LinkClicked);
             // 
             // Settings
             // 
@@ -191,5 +205,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBoxPrinterSticker;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.LinkLabel linkLabelOpenPanelInfo;
     }
 }

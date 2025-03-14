@@ -150,3 +150,4 @@ C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Release\Tac
 C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Release\TachoPrint.application
 C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Release\TachoPrint.exe.manifest
 C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Release\TachoPrint.application
+C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Release\TaxoNavicon.Forms.InfoSettings.resources

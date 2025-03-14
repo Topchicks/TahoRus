@@ -3,6 +3,7 @@ using System.Drawing.Printing;
 using System.IO;
 using System.Text.Json;
 using System.Windows.Forms;
+using TaxoNavicon.Forms;
 
 namespace TaxoNavicon
 {
@@ -117,6 +118,13 @@ namespace TaxoNavicon
         {
             defualtPrinterSticker = comboBoxPrinterSticker.Text;
             SaveJsonSettings();
+        }
+
+        private void linkLabelOpenPanelInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            InfoSettings infoSettings = new InfoSettings();
+
+            infoSettings.ShowDialog();
         }
     }
 }

@@ -185,6 +185,12 @@
     <Compile Include="Forms\EuropeanTypeForm.Designer.cs">
       <DependentUpon>EuropeanTypeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\InfoSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InfoSettings.Designer.cs">
+      <DependentUpon>InfoSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LoadEuropeanDocument.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,6 +245,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\EuropeanTypeForm.resx">
       <DependentUpon>EuropeanTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InfoSettings.resx">
+      <DependentUpon>InfoSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoadEuropeanDocument.resx">
       <DependentUpon>LoadEuropeanDocument.cs</DependentUpon>
