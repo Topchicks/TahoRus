@@ -35,12 +35,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.linkLabelOpenPanelInfo = new System.Windows.Forms.LinkLabel();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxPrinterSticker = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxPrinterWord = new System.Windows.Forms.ComboBox();
             this.checkBoxFormateSticker = new System.Windows.Forms.CheckBox();
-            this.linkLabelOpenPanelInfo = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -79,7 +79,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(896, 68);
+            this.panel1.Size = new System.Drawing.Size(728, 68);
             this.panel1.TabIndex = 3;
             // 
             // label2
@@ -91,7 +91,7 @@
             this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(896, 68);
+            this.label2.Size = new System.Drawing.Size(728, 68);
             this.label2.TabIndex = 1;
             this.label2.Text = "Настройки";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -110,8 +110,21 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 68);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(896, 457);
+            this.panel2.Size = new System.Drawing.Size(728, 353);
             this.panel2.TabIndex = 4;
+            // 
+            // linkLabelOpenPanelInfo
+            // 
+            this.linkLabelOpenPanelInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.linkLabelOpenPanelInfo.AutoSize = true;
+            this.linkLabelOpenPanelInfo.Font = new System.Drawing.Font("Arial", 10F);
+            this.linkLabelOpenPanelInfo.Location = new System.Drawing.Point(645, 326);
+            this.linkLabelOpenPanelInfo.Name = "linkLabelOpenPanelInfo";
+            this.linkLabelOpenPanelInfo.Size = new System.Drawing.Size(62, 16);
+            this.linkLabelOpenPanelInfo.TabIndex = 8;
+            this.linkLabelOpenPanelInfo.TabStop = true;
+            this.linkLabelOpenPanelInfo.Text = "Справка";
+            this.linkLabelOpenPanelInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelOpenPanelInfo_LinkClicked);
             // 
             // label4
             // 
@@ -163,26 +176,16 @@
             this.checkBoxFormateSticker.UseVisualStyleBackColor = true;
             this.checkBoxFormateSticker.CheckedChanged += new System.EventHandler(this.checkBoxFormateSticker_CheckedChanged);
             // 
-            // linkLabelOpenPanelInfo
-            // 
-            this.linkLabelOpenPanelInfo.AutoSize = true;
-            this.linkLabelOpenPanelInfo.Font = new System.Drawing.Font("Arial", 10F);
-            this.linkLabelOpenPanelInfo.Location = new System.Drawing.Point(813, 430);
-            this.linkLabelOpenPanelInfo.Name = "linkLabelOpenPanelInfo";
-            this.linkLabelOpenPanelInfo.Size = new System.Drawing.Size(62, 16);
-            this.linkLabelOpenPanelInfo.TabIndex = 8;
-            this.linkLabelOpenPanelInfo.TabStop = true;
-            this.linkLabelOpenPanelInfo.Text = "Справка";
-            this.linkLabelOpenPanelInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelOpenPanelInfo_LinkClicked);
-            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(896, 525);
+            this.ClientSize = new System.Drawing.Size(728, 421);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(744, 460);
             this.Name = "Settings";
             this.Text = "Settings";
             this.panel1.ResumeLayout(false);

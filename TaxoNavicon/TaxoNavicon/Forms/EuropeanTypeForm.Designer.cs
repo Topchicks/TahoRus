@@ -32,7 +32,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.textBoxRegistrationNumberVehicle = new System.Windows.Forms.TextBox();
             this.textBoxYearOfIssueVehiccle = new System.Windows.Forms.TextBox();
@@ -133,7 +132,6 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.80758F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.19242F));
-            this.tableLayoutPanel1.Controls.Add(this.panel8, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel5, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel7, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel6, 0, 0);
@@ -145,15 +143,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.82526F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(977, 854);
             this.tableLayoutPanel1.TabIndex = 6;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.Silver;
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(431, 141);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(543, 710);
-            this.panel8.TabIndex = 6;
             // 
             // panel5
             // 
@@ -801,7 +790,6 @@
         private System.Windows.Forms.ToolStripMenuItem LoadEuropeanDocuments;
         private System.Windows.Forms.DateTimePicker dateTimePickerJob;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSetData;
-        private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemResetData;
         private System.Windows.Forms.TextBox textBoxRegistrationNumberVehicle;
         private System.Windows.Forms.ToolStripMenuItem печатьToolStripMenuItem;
