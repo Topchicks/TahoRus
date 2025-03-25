@@ -34,7 +34,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.adressRus = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.adressEngBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.adressRusBox = new System.Windows.Forms.TextBox();
             this.linkLabelOpenPanelInfo = new System.Windows.Forms.LinkLabel();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxPrinterSticker = new System.Windows.Forms.ComboBox();
@@ -42,7 +48,7 @@
             this.comboBoxPrinterWord = new System.Windows.Forms.ComboBox();
             this.checkBoxFormateSticker = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.adressRus.SuspendLayout();
             this.SuspendLayout();
             // 
             // FileSavePath
@@ -96,22 +102,81 @@
             this.label2.Text = "Настройки";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel2
+            // adressRus
             // 
-            this.panel2.Controls.Add(this.linkLabelOpenPanelInfo);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.comboBoxPrinterSticker);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.comboBoxPrinterWord);
-            this.panel2.Controls.Add(this.checkBoxFormateSticker);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.FileSavePath);
-            this.panel2.Controls.Add(this.textBoxFileSavePath);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 68);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(728, 353);
-            this.panel2.TabIndex = 4;
+            this.adressRus.Controls.Add(this.label7);
+            this.adressRus.Controls.Add(this.textBox1);
+            this.adressRus.Controls.Add(this.label6);
+            this.adressRus.Controls.Add(this.adressEngBox);
+            this.adressRus.Controls.Add(this.label5);
+            this.adressRus.Controls.Add(this.adressRusBox);
+            this.adressRus.Controls.Add(this.linkLabelOpenPanelInfo);
+            this.adressRus.Controls.Add(this.label4);
+            this.adressRus.Controls.Add(this.comboBoxPrinterSticker);
+            this.adressRus.Controls.Add(this.label3);
+            this.adressRus.Controls.Add(this.comboBoxPrinterWord);
+            this.adressRus.Controls.Add(this.checkBoxFormateSticker);
+            this.adressRus.Controls.Add(this.label1);
+            this.adressRus.Controls.Add(this.FileSavePath);
+            this.adressRus.Controls.Add(this.textBoxFileSavePath);
+            this.adressRus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.adressRus.Location = new System.Drawing.Point(0, 68);
+            this.adressRus.Name = "adressRus";
+            this.adressRus.Size = new System.Drawing.Size(728, 353);
+            this.adressRus.TabIndex = 4;
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.Location = new System.Drawing.Point(7, 281);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(257, 23);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Адрес для наклейки:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(270, 281);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(306, 23);
+            this.textBox1.TabIndex = 13;
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(7, 252);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(257, 23);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Адрес мастерской на Английском:";
+            // 
+            // adressEngBox
+            // 
+            this.adressEngBox.Location = new System.Drawing.Point(270, 252);
+            this.adressEngBox.Multiline = true;
+            this.adressEngBox.Name = "adressEngBox";
+            this.adressEngBox.Size = new System.Drawing.Size(306, 23);
+            this.adressEngBox.TabIndex = 11;
+            this.adressEngBox.TextChanged += new System.EventHandler(this.adressRusBox_TextChanged);
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(7, 223);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(233, 23);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Адрес мастерской на Русском:";
+            // 
+            // adressRusBox
+            // 
+            this.adressRusBox.Location = new System.Drawing.Point(270, 223);
+            this.adressRusBox.Multiline = true;
+            this.adressRusBox.Name = "adressRusBox";
+            this.adressRusBox.Size = new System.Drawing.Size(306, 23);
+            this.adressRusBox.TabIndex = 9;
+            this.adressRusBox.TextChanged += new System.EventHandler(this.adressRusBox_TextChanged);
             // 
             // linkLabelOpenPanelInfo
             // 
@@ -130,7 +195,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(201, 180);
+            this.label4.Location = new System.Drawing.Point(7, 180);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(212, 18);
             this.label4.TabIndex = 7;
@@ -139,9 +204,9 @@
             // comboBoxPrinterSticker
             // 
             this.comboBoxPrinterSticker.FormattingEnabled = true;
-            this.comboBoxPrinterSticker.Location = new System.Drawing.Point(10, 180);
+            this.comboBoxPrinterSticker.Location = new System.Drawing.Point(270, 180);
             this.comboBoxPrinterSticker.Name = "comboBoxPrinterSticker";
-            this.comboBoxPrinterSticker.Size = new System.Drawing.Size(185, 21);
+            this.comboBoxPrinterSticker.Size = new System.Drawing.Size(306, 21);
             this.comboBoxPrinterSticker.TabIndex = 6;
             this.comboBoxPrinterSticker.SelectedIndexChanged += new System.EventHandler(this.comboBoxPrinterSticker_SelectedIndexChanged);
             // 
@@ -149,7 +214,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(201, 141);
+            this.label3.Location = new System.Drawing.Point(7, 141);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(249, 18);
             this.label3.TabIndex = 5;
@@ -158,9 +223,9 @@
             // comboBoxPrinterWord
             // 
             this.comboBoxPrinterWord.FormattingEnabled = true;
-            this.comboBoxPrinterWord.Location = new System.Drawing.Point(10, 141);
+            this.comboBoxPrinterWord.Location = new System.Drawing.Point(270, 141);
             this.comboBoxPrinterWord.Name = "comboBoxPrinterWord";
-            this.comboBoxPrinterWord.Size = new System.Drawing.Size(185, 21);
+            this.comboBoxPrinterWord.Size = new System.Drawing.Size(306, 21);
             this.comboBoxPrinterWord.TabIndex = 4;
             this.comboBoxPrinterWord.SelectedIndexChanged += new System.EventHandler(this.comboBoxPrinterWord_SelectedIndexChanged);
             // 
@@ -181,7 +246,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(728, 421);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.adressRus);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
@@ -189,8 +254,8 @@
             this.Name = "Settings";
             this.Text = "Settings";
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.adressRus.ResumeLayout(false);
+            this.adressRus.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -202,12 +267,18 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel adressRus;
         private System.Windows.Forms.CheckBox checkBoxFormateSticker;
         private System.Windows.Forms.ComboBox comboBoxPrinterWord;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBoxPrinterSticker;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.LinkLabel linkLabelOpenPanelInfo;
+        private System.Windows.Forms.TextBox adressRusBox;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox adressEngBox;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

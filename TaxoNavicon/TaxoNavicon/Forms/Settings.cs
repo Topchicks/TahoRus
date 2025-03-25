@@ -15,6 +15,9 @@ namespace TaxoNavicon
 
         public string defualtPrinterWord;
         public string defualtPrinterSticker;
+
+        private string adressMasterRus;
+        private string adressMasterEng;
         public Settings()
         {
             InitializeComponent();
@@ -24,6 +27,10 @@ namespace TaxoNavicon
             checkBoxFormateSticker.Checked = formatingSticker;
             comboBoxPrinterWord.Text = defualtPrinterWord;
             comboBoxPrinterSticker.Text = defualtPrinterSticker;
+            adressRusBox.Text = adressMasterRus;
+            adressEngBox.Text = adressMasterEng;
+
+
             foreach (string printer in PrinterSettings.InstalledPrinters)
             {
                 comboBoxPrinterWord.Items.Add(printer);
@@ -63,7 +70,9 @@ namespace TaxoNavicon
                 FilePath = filePath,
                 FormatingSticker = formatingSticker,
                 DefualtPrinterWord = defualtPrinterWord,
-                DefualtPrinterSticker = defualtPrinterSticker
+                DefualtPrinterSticker = defualtPrinterSticker,
+                AdressMasterRus = adressRusBox.Text,
+                AdressMasterEng = adressEngBox.Text,
             };
 
             var options = new JsonSerializerOptions();
@@ -95,6 +104,8 @@ namespace TaxoNavicon
                 formatingSticker = settingsJS.FormatingSticker;
                 defualtPrinterSticker = settingsJS.DefualtPrinterSticker;
                 defualtPrinterWord = settingsJS.DefualtPrinterWord;
+                adressMasterRus = settingsJS.AdressMasterRus;
+                adressMasterEng = settingsJS.AdressMasterEng;
             }
             catch(Exception ex)
             {
@@ -125,6 +136,11 @@ namespace TaxoNavicon
             InfoSettings infoSettings = new InfoSettings();
 
             infoSettings.ShowDialog();
+        }
+
+        private void adressRusBox_TextChanged(object sender, EventArgs e)
+        {
+            SaveJsonSettings();
         }
     }
 }

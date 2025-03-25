@@ -50,6 +50,9 @@ namespace TaxoNavicon
         private string filePathCertificate;
 
         private string defualtPrinterWord;
+
+        private string adressMasterRus;
+        private string adressMasterEng;
         public EuropeanTypeForm()
         {
             InitializeComponent();
@@ -74,6 +77,7 @@ namespace TaxoNavicon
             poleDataEuropean.nameCustomer = textBoxNameCustomer.Text; // имя русском
             poleDataEuropean.nameCustomerEng = textBoxNameCustomerEng.Text; // имя на английском
             poleDataEuropean.adresCustomer = textBoxAdresCustomer.Text;// адрес заказчика
+            poleDataEuropean.adresCustomerEng = textBoxAdresCustomerEng.Text;// адрес заказчика
 
             //Vehicle
             poleDataEuropean.manufacturerVehicle = textBoxManufacturerTachograph.Text; // марка машины
@@ -113,8 +117,6 @@ namespace TaxoNavicon
         {
             ClouseConnectionWord();
             Console.WriteLine("Окно закрыто");
-
-            
 
             base.OnFormClosing(e);
         }
@@ -209,6 +211,7 @@ namespace TaxoNavicon
             textBoxNameCustomer.Text = poleDataEuropean.nameCustomer; // имя русском
             textBoxNameCustomerEng.Text = poleDataEuropean.nameCustomerEng; // имя английский
             textBoxAdresCustomer.Text = poleDataEuropean.adresCustomer;// адрес заказчика
+            textBoxAdresCustomerEng.Text = poleDataEuropean.adresCustomerEng;// адрес заказчика
 
             //Vehicle - транспорт
             textBoxManufacturerVehicle.Text = poleDataEuropean.manufacturerVehicle; // Производитель машины
@@ -267,6 +270,7 @@ namespace TaxoNavicon
                 worksheet.Cells[row, 4].Value = poleDataEuropean.nameCustomer;
                 worksheet.Cells[row, 5].Value = poleDataEuropean.nameCustomerEng;
                 worksheet.Cells[row, 6].Value = poleDataEuropean.adresCustomer;
+                worksheet.Cells[row, 20].Value = poleDataEuropean.adresCustomerEng;
 
                 worksheet.Cells[row, 7].Value = poleDataEuropean.manufacturerTahograph;
                 worksheet.Cells[row, 8].Value = poleDataEuropean.serialNumberTahograph;
@@ -296,6 +300,8 @@ namespace TaxoNavicon
             SettingsJS settingsJS = JsonSerializer.Deserialize<SettingsJS>(saveJson);
             filePathCertificate = settingsJS.FilePath;
             defualtPrinterWord = settingsJS.DefualtPrinterWord;
+            adressMasterRus = settingsJS.AdressMasterRus;
+            adressMasterEng = settingsJS.AdressMasterEng;
         }
 
         private void ToolStripMenuItemResetData_Click(object sender, EventArgs e)
@@ -325,6 +331,7 @@ namespace TaxoNavicon
                         worksheet.Cells[row, 4].Value = poleDataEuropean.nameCustomer;
                         worksheet.Cells[row, 5].Value = poleDataEuropean.nameCustomerEng;
                         worksheet.Cells[row, 6].Value = poleDataEuropean.adresCustomer;
+                        worksheet.Cells[row, 20].Value = poleDataEuropean.adresCustomerEng;
 
                         worksheet.Cells[row, 7].Value = poleDataEuropean.manufacturerTahograph;
                         worksheet.Cells[row, 8].Value = poleDataEuropean.serialNumberTahograph;
@@ -334,12 +341,13 @@ namespace TaxoNavicon
                         worksheet.Cells[row, 11].Value = poleDataEuropean.vinVehicle;
                         worksheet.Cells[row, 12].Value = poleDataEuropean.tireMarkingsVehicle;
                         worksheet.Cells[row, 13].Value = poleDataEuropean.modelVehicle;
-                        worksheet.Cells[row, 14].Value = poleDataEuropean.registrationNumberVehicle;
-                        worksheet.Cells[row, 15].Value = poleDataEuropean.odometerKmVehicle;
+                        worksheet.Cells[row, 14].Value = poleDataEuropean.yearOfIssueVehiccle;
+                        worksheet.Cells[row, 15].Value = poleDataEuropean.registrationNumberVehicle;
+                        worksheet.Cells[row, 16].Value = poleDataEuropean.odometerKmVehicle;
 
-                        worksheet.Cells[row, 16].Value = poleDataEuropean.w;
-                        worksheet.Cells[row, 17].Value = poleDataEuropean.k;
-                        worksheet.Cells[row, 18].Value = poleDataEuropean.l;
+                        worksheet.Cells[row, 17].Value = poleDataEuropean.w;
+                        worksheet.Cells[row, 18].Value = poleDataEuropean.k;
+                        worksheet.Cells[row, 19].Value = poleDataEuropean.l;
                         excelPackage.Save();
                         return; // Копия найдена
                     }
@@ -361,7 +369,7 @@ namespace TaxoNavicon
         {
             PrintPreviewControl printPreviewControl = new PrintPreviewControl();
             pathSettingsFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "JsonSetting.json");
-            LoadSaveJson();
+            LoadSettingJS();
             printDocument = new PrintDocument();
             printDocument.PrintPage += new PrintPageEventHandler(PrintDocument_PrintPage);
 
@@ -404,6 +412,7 @@ namespace TaxoNavicon
             }
         }
 
+        // Печать наклейки
         private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -422,7 +431,7 @@ namespace TaxoNavicon
             g.DrawString("Tyres: " + poleDataEuropean.tireMarkingsVehicle, font, Brushes.Black, xOffset, yOffset);
 
             yOffset += lineSpacing;
-            g.DrawString("Ø1: " + poleDataEuropean.l, font, Brushes.Black, xOffset, yOffset);
+            g.DrawString("Øl: " + poleDataEuropean.l, font, Brushes.Black, xOffset, yOffset);
 
             yOffset += lineSpacing;
             g.DrawString("s/n Tacho: " + poleDataEuropean.serialNumberTahograph, font, Brushes.Black, xOffset, yOffset);
@@ -449,7 +458,7 @@ namespace TaxoNavicon
             // Ниже можно добавить информацию о компании
             g.DrawString("  NaviCon OOO", font, Brushes.Black, xOffset, yOffset);
             yOffset += lineSpacing;
-            g.DrawString("BulvarStroiteley, 3G, \n       Tambov", font, Brushes.Black, xOffset, yOffset);
+            g.DrawString($"{adressMasterEng}, \n       Tambov", font, Brushes.Black, xOffset, yOffset);
             yOffset += lineSpacing + 12;
             g.DrawString("+7(4752)55-94-00", font, Brushes.Black, xOffset, yOffset);
             yOffset += lineSpacing - 1;
@@ -471,22 +480,6 @@ namespace TaxoNavicon
             Pen pen = new Pen(Color.Black, 2); // Черная обводка шириной 2 пикселя
             Rectangle rect = new Rectangle(472, 9, 20, 50); // Прямоугольник для обводки
             g.DrawRectangle(pen, rect);
-        }
-
-        private void LoadSaveJson()
-        {
-            try
-            {
-                var saveJson = File.ReadAllText(pathSettingsFile);
-                SettingsJS settingsJS = JsonSerializer.Deserialize<SettingsJS>(saveJson);
-                formatingSticker = settingsJS.FormatingSticker;
-                defualtPrinterSticker = settingsJS.DefualtPrinterSticker;
-                Console.WriteLine("Данные успешно подгруженны");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private void ToolStripMenuItemPrintCertificate_Click_1(object sender, EventArgs e)

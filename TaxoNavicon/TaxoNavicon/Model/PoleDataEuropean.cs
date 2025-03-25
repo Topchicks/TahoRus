@@ -12,6 +12,7 @@
         public string nameCustomer; // имя заказчика
         public string nameCustomerEng; // имя заказчика на английском
         public string adresCustomer; // адрес заказчика
+        public string adresCustomerEng; // адрес заказчика
         #endregion
 
         #region vehicle

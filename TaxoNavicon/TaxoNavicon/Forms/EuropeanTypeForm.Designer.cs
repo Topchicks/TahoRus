@@ -89,6 +89,13 @@
             this.LoadEuropeanDocuments = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemSetData = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemResetData = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxAdresCustomerEng = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxTemperature = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxTyreWear = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -122,7 +129,7 @@
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(0, 24);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(977, 1010);
+            this.panel9.Size = new System.Drawing.Size(977, 1009);
             this.panel9.TabIndex = 8;
             // 
             // tableLayoutPanel1
@@ -135,8 +142,9 @@
             this.tableLayoutPanel1.Controls.Add(this.panel5, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel7, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel6, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 156);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 155);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.17473F));
@@ -300,6 +308,10 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.Silver;
+            this.panel7.Controls.Add(this.textBoxTyreWear);
+            this.panel7.Controls.Add(this.label10);
+            this.panel7.Controls.Add(this.textBoxTemperature);
+            this.panel7.Controls.Add(this.label6);
             this.panel7.Controls.Add(this.textBoxL);
             this.panel7.Controls.Add(this.label31);
             this.panel7.Controls.Add(this.textBoxK);
@@ -315,7 +327,7 @@
             // 
             // textBoxL
             // 
-            this.textBoxL.Location = new System.Drawing.Point(368, 26);
+            this.textBoxL.Location = new System.Drawing.Point(343, 92);
             this.textBoxL.Name = "textBoxL";
             this.textBoxL.Size = new System.Drawing.Size(119, 20);
             this.textBoxL.TabIndex = 22;
@@ -324,7 +336,7 @@
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label31.Location = new System.Drawing.Point(341, 27);
+            this.label31.Location = new System.Drawing.Point(316, 93);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(20, 17);
             this.label31.TabIndex = 23;
@@ -332,7 +344,7 @@
             // 
             // textBoxK
             // 
-            this.textBoxK.Location = new System.Drawing.Point(199, 26);
+            this.textBoxK.Location = new System.Drawing.Point(343, 67);
             this.textBoxK.Name = "textBoxK";
             this.textBoxK.Size = new System.Drawing.Size(119, 20);
             this.textBoxK.TabIndex = 20;
@@ -341,7 +353,7 @@
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label30.Location = new System.Drawing.Point(172, 27);
+            this.label30.Location = new System.Drawing.Point(316, 68);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(22, 17);
             this.label30.TabIndex = 21;
@@ -349,7 +361,7 @@
             // 
             // textBoxW
             // 
-            this.textBoxW.Location = new System.Drawing.Point(31, 26);
+            this.textBoxW.Location = new System.Drawing.Point(343, 39);
             this.textBoxW.Name = "textBoxW";
             this.textBoxW.Size = new System.Drawing.Size(119, 20);
             this.textBoxW.TabIndex = 9;
@@ -358,7 +370,7 @@
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label28.Location = new System.Drawing.Point(4, 27);
+            this.label28.Location = new System.Drawing.Point(316, 40);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(27, 17);
             this.label28.TabIndex = 10;
@@ -465,12 +477,14 @@
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(977, 156);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(977, 155);
             this.tableLayoutPanel2.TabIndex = 7;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Silver;
+            this.panel4.Controls.Add(this.textBoxAdresCustomerEng);
+            this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.textBoxNameCustomerEng);
             this.panel4.Controls.Add(this.label34);
             this.panel4.Controls.Add(this.textBoxAdresCustomer);
@@ -481,12 +495,12 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(386, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(588, 150);
+            this.panel4.Size = new System.Drawing.Size(588, 149);
             this.panel4.TabIndex = 2;
             // 
             // textBoxNameCustomerEng
             // 
-            this.textBoxNameCustomerEng.Location = new System.Drawing.Point(70, 52);
+            this.textBoxNameCustomerEng.Location = new System.Drawing.Point(85, 53);
             this.textBoxNameCustomerEng.Name = "textBoxNameCustomerEng";
             this.textBoxNameCustomerEng.Size = new System.Drawing.Size(321, 20);
             this.textBoxNameCustomerEng.TabIndex = 15;
@@ -503,14 +517,14 @@
             // 
             // textBoxAdresCustomer
             // 
-            this.textBoxAdresCustomer.Location = new System.Drawing.Point(70, 76);
+            this.textBoxAdresCustomer.Location = new System.Drawing.Point(85, 80);
             this.textBoxAdresCustomer.Name = "textBoxAdresCustomer";
             this.textBoxAdresCustomer.Size = new System.Drawing.Size(422, 20);
             this.textBoxAdresCustomer.TabIndex = 13;
             // 
             // textBoxNameCustomer
             // 
-            this.textBoxNameCustomer.Location = new System.Drawing.Point(70, 26);
+            this.textBoxNameCustomer.Location = new System.Drawing.Point(85, 28);
             this.textBoxNameCustomer.Name = "textBoxNameCustomer";
             this.textBoxNameCustomer.Size = new System.Drawing.Size(321, 20);
             this.textBoxNameCustomer.TabIndex = 9;
@@ -558,7 +572,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(377, 150);
+            this.panel3.Size = new System.Drawing.Size(377, 149);
             this.panel3.TabIndex = 1;
             // 
             // numericUpDowntextBoxOrderNumber
@@ -700,6 +714,66 @@
             this.ToolStripMenuItemResetData.Text = "Перезаписать";
             this.ToolStripMenuItemResetData.Click += new System.EventHandler(this.ToolStripMenuItemResetData_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(431, 141);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(543, 710);
+            this.panel1.TabIndex = 6;
+            // 
+            // textBoxAdresCustomerEng
+            // 
+            this.textBoxAdresCustomerEng.Location = new System.Drawing.Point(85, 105);
+            this.textBoxAdresCustomerEng.Name = "textBoxAdresCustomerEng";
+            this.textBoxAdresCustomerEng.Size = new System.Drawing.Size(422, 20);
+            this.textBoxAdresCustomerEng.TabIndex = 18;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(4, 103);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 20);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Адрес(Eng):";
+            // 
+            // textBoxTemperature
+            // 
+            this.textBoxTemperature.Location = new System.Drawing.Point(154, 39);
+            this.textBoxTemperature.Name = "textBoxTemperature";
+            this.textBoxTemperature.Size = new System.Drawing.Size(124, 20);
+            this.textBoxTemperature.TabIndex = 24;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(3, 39);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 17);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "Температура:";
+            // 
+            // textBoxTyreWear
+            // 
+            this.textBoxTyreWear.Location = new System.Drawing.Point(154, 65);
+            this.textBoxTyreWear.Name = "textBoxTyreWear";
+            this.textBoxTyreWear.Size = new System.Drawing.Size(124, 20);
+            this.textBoxTyreWear.TabIndex = 26;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.Location = new System.Drawing.Point(3, 65);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(145, 17);
+            this.label10.TabIndex = 27;
+            this.label10.Text = "Высота протектора:";
+            // 
             // EuropeanTypeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -795,6 +869,13 @@
         private System.Windows.Forms.ToolStripMenuItem печатьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemPrintCertificate;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemPrintSticker;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox textBoxAdresCustomerEng;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxTyreWear;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBoxTemperature;
+        private System.Windows.Forms.Label label6;
     }
 }
 

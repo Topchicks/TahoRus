@@ -7,5 +7,8 @@
 
         public string DefualtPrinterWord { get; set; }
         public string DefualtPrinterSticker { get; set; }
+
+        public string AdressMasterRus { get; set; }
+        public string AdressMasterEng { get; set; }
     }
 }
