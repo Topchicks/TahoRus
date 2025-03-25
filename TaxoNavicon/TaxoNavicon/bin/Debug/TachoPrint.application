@@ -7,14 +7,14 @@
     <framework targetVersion="4.8" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="TachoPrint.exe.manifest" size="26615">
+    <dependentAssembly dependencyType="install" codebase="TachoPrint.exe.manifest" size="27285">
       <assemblyIdentity name="TachoPrint.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="amd64" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>o03I2RkFDbySbmSrIu2S5ztxwUwYbc5C8MMOkEV/iN8=</dsig:DigestValue>
+        <dsig:DigestValue>IAVDZNtPc25seSS00/F8SJiU5MOQYryFhnhVr1576Pk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

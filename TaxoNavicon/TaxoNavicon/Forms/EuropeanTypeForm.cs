@@ -15,31 +15,6 @@ namespace TaxoNavicon
 {
     public partial class EuropeanTypeForm : Form
     {
-        /*
-            номерЗаказа
-            мастер
-            датаВыполненияРабот
-        
-            имяЗаказчика
-            имяЗаказчикаАнлийский
-            адресЗаказчика
-
-            производительТранспорта
-            модельТранспорта
-            винНомерТранспорта
-            регНомерТранспорта
-            маркировкаШин
-            одометрКм
-            годВыпуска
-            
-            производительТахографа
-            серийныйНомерТахографапа
-            модельТахографа
-
-            l
-            w
-            k
-        */
         PoleDataEuropean poleDataEuropean;
 
         private Word.Application wordApp;
@@ -53,6 +28,8 @@ namespace TaxoNavicon
 
         private string adressMasterRus;
         private string adressMasterEng;
+
+        private string adressSticker;
         public EuropeanTypeForm()
         {
             InitializeComponent();
@@ -80,7 +57,7 @@ namespace TaxoNavicon
             poleDataEuropean.adresCustomerEng = textBoxAdresCustomerEng.Text;// адрес заказчика
 
             //Vehicle
-            poleDataEuropean.manufacturerVehicle = textBoxManufacturerTachograph.Text; // марка машины
+            poleDataEuropean.manufacturerVehicle = textBoxManufacturerVehicle.Text; // марка машины
             poleDataEuropean.modelVehicle = textBoxModelVehicle.Text; // модель машины
             poleDataEuropean.vinVehicle = textBoxVinNumberVehicle.Text; // вин номер машины
             poleDataEuropean.registrationNumberVehicle = textBoxRegistrationNumberVehicle.Text; // рег. номер машины
@@ -97,7 +74,12 @@ namespace TaxoNavicon
             poleDataEuropean.w = textBoxW.Text;
             poleDataEuropean.k = textBoxK.Text;
 
-            poleDataEuropean.dataJob = dateTimePickerJob.Value.ToShortDateString();//  время выполнения работ
+            poleDataEuropean.dataJob = dataJob.Value.ToString("dd.MM.yyyy"); // Формат: день.месяц.год
+
+            poleDataEuropean.russAdresMaster = adressMasterRus;
+            poleDataEuropean.engAdresMaster = adressMasterEng;
+            poleDataEuropean.temperature = textBoxTemperature.Text;
+            poleDataEuropean.protectore = textBoxTyreWear.Text;
         }
 
         private void FindAndReplace(Word.Document doc, string findText, string replaceText)
@@ -205,7 +187,7 @@ namespace TaxoNavicon
             //Order - заказ
             numericUpDowntextBoxOrderNumber.Value = poleDataEuropean.orderNumber;// номер заказа
             comboBoxMaster.Text = poleDataEuropean.master; // мастер
-            dateTimePickerJob.Value = DateTime.Parse(poleDataEuropean.dataJob); // Установка значения в DateTimePicker
+            dataJob.Value = DateTime.Parse(poleDataEuropean.dataJob); // Установка значения в DateTimePicker
 
             //Customer - заказчик
             textBoxNameCustomer.Text = poleDataEuropean.nameCustomer; // имя русском
@@ -302,6 +284,7 @@ namespace TaxoNavicon
             defualtPrinterWord = settingsJS.DefualtPrinterWord;
             adressMasterRus = settingsJS.AdressMasterRus;
             adressMasterEng = settingsJS.AdressMasterEng;
+            adressSticker = settingsJS.AdressSticker;
         }
 
         private void ToolStripMenuItemResetData_Click(object sender, EventArgs e)
@@ -458,7 +441,7 @@ namespace TaxoNavicon
             // Ниже можно добавить информацию о компании
             g.DrawString("  NaviCon OOO", font, Brushes.Black, xOffset, yOffset);
             yOffset += lineSpacing;
-            g.DrawString($"{adressMasterEng}, \n       Tambov", font, Brushes.Black, xOffset, yOffset);
+            g.DrawString($"{adressSticker}, \n       Tambov", font, Brushes.Black, xOffset, yOffset);
             yOffset += lineSpacing + 12;
             g.DrawString("+7(4752)55-94-00", font, Brushes.Black, xOffset, yOffset);
             yOffset += lineSpacing - 1;
@@ -490,7 +473,7 @@ namespace TaxoNavicon
                 string relativePath = @"EuropeanCertidicate.doc"; // Относительный путь к файлу
                 filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
                 wordApp = new Word.Application();
-                dateTimePickerJob.CustomFormat = "dd/MM/yyyy"; // Устанавливаем только дату
+                dataJob.CustomFormat = "dd/MM/yyyy"; // Устанавливаем только дату
 
                 CheckOpenDock();
                 //wordDoc = wordApp.Documents.Open(filePath);
@@ -519,6 +502,15 @@ namespace TaxoNavicon
                 FindAndReplace(wordDoc, "<L>", poleDataEuropean.l);
                 FindAndReplace(wordDoc, "<W>", poleDataEuropean.w);
                 FindAndReplace(wordDoc, "<K>", poleDataEuropean.k);
+
+
+                FindAndReplace(wordDoc, "<russAdresMaster>", poleDataEuropean.russAdresMaster);
+                FindAndReplace(wordDoc, "<euroAdresMaster>", poleDataEuropean.engAdresMaster);
+                FindAndReplace(wordDoc, "<Tem>", poleDataEuropean.temperature);
+                FindAndReplace(wordDoc, "<Tw>", poleDataEuropean.protectore);
+                FindAndReplace(wordDoc, "<adresCustomerEng>", poleDataEuropean.adresCustomerEng);
+
+
                 #endregion
 
                 PrintDialog printDialog = new PrintDialog();
@@ -539,7 +531,6 @@ namespace TaxoNavicon
                 wordDoc.PrintOut();
 
                 ClouseConnectionWord();
-
             }
             catch(Exception ex)
             {

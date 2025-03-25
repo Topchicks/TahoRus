@@ -31,35 +31,15 @@
         public string modelTachograph; // модель
         #endregion
 
+        public string temperature;
+        public string protectore;
+
+        public string russAdresMaster;
+        public string engAdresMaster;
+
         public string l;
         public string w;
         public string k;
-
-        /*
-            номерЗаказа
-            мастер
-            датаВыполненияРабот
-        
-            имяКлиента
-            имяКлиентаАнлийский
-            адресЗаказчика
-
-            производительТранспорта
-            модельТранспорта
-            винНомерТранспорта
-            регНомерТранспорта
-            маркировкаШин
-            одометрКм
-            годВыпуска
-            
-            производительТахографа
-            серийныйНомерТахографа
-            модельТахографа
-
-            l
-            w
-            k
-        */
 
     }
 }

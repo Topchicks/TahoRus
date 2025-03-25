@@ -4,6 +4,7 @@ using System.IO;
 using System.Text.Json;
 using System.Windows.Forms;
 using TaxoNavicon.Forms;
+using TaxoNavicon.Properties;
 
 namespace TaxoNavicon
 {
@@ -18,42 +19,28 @@ namespace TaxoNavicon
 
         private string adressMasterRus;
         private string adressMasterEng;
+        private string adressSticker;
         public Settings()
         {
             InitializeComponent();
             // Тут получим относительный путь к файлу JSon настроек
             pathSettingsFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "JsonSetting.json");
             LoadSaveJson();
+
+
+
             checkBoxFormateSticker.Checked = formatingSticker;
             comboBoxPrinterWord.Text = defualtPrinterWord;
             comboBoxPrinterSticker.Text = defualtPrinterSticker;
             adressRusBox.Text = adressMasterRus;
             adressEngBox.Text = adressMasterEng;
+            textBoxAdressSticker.Text = adressSticker;
 
 
             foreach (string printer in PrinterSettings.InstalledPrinters)
             {
                 comboBoxPrinterWord.Items.Add(printer);
                 comboBoxPrinterSticker.Items.Add(printer);
-            }
-        }
-
-        private void FileSavePath_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                // Устанавливаем фильтры для файлов
-                openFileDialog.Filter = "Excel files (*.xlsx;*.xls)|*.xlsx;*.xls|All files (*.*)|*.*"; 
-                openFileDialog.Title = "Выберите файл Excel";
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK) // Если пользователь выбрал файл
-                {
-                    filePath = openFileDialog.FileName; // Получаем путь к выбранному файлу
-
-                    // Заполним поле для видимости пути к сохранению
-                    textBoxFileSavePath.Text = filePath;
-                    SaveJsonSettings();
-                }
             }
         }
 
@@ -67,12 +54,13 @@ namespace TaxoNavicon
         {
             SettingsJS settingsJS = new SettingsJS()
             {
-                FilePath = filePath,
-                FormatingSticker = formatingSticker,
+                FilePath = textBoxFileSavePath.Text,
+                FormatingSticker = checkBoxFormateSticker.Checked,
                 DefualtPrinterWord = defualtPrinterWord,
                 DefualtPrinterSticker = defualtPrinterSticker,
                 AdressMasterRus = adressRusBox.Text,
                 AdressMasterEng = adressEngBox.Text,
+                AdressSticker = textBoxAdressSticker.Text,
             };
 
             var options = new JsonSerializerOptions();
@@ -83,13 +71,6 @@ namespace TaxoNavicon
             string jsonString = JsonSerializer.Serialize(settingsJS);
 
             File.WriteAllText(pathSettingsFile, jsonString);
-        }
-
-        // Тут идёт обработка если настройки были приняты в ручную через textBox
-        private void textBoxFileSavePath_TextChanged(object sender, EventArgs e)
-        {
-            filePath = textBoxFileSavePath.Text;
-            SaveJsonSettings();
         }
 
         private void LoadSaveJson()
@@ -106,6 +87,7 @@ namespace TaxoNavicon
                 defualtPrinterWord = settingsJS.DefualtPrinterWord;
                 adressMasterRus = settingsJS.AdressMasterRus;
                 adressMasterEng = settingsJS.AdressMasterEng;
+                adressSticker = settingsJS.AdressSticker;
             }
             catch(Exception ex)
             {
@@ -113,34 +95,40 @@ namespace TaxoNavicon
             }
         }
 
-        private void checkBoxFormateSticker_CheckedChanged(object sender, EventArgs e)
-        {
-            formatingSticker = checkBoxFormateSticker.Checked;
-            SaveJsonSettings();
-        }
-
-        private void comboBoxPrinterWord_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            defualtPrinterWord = comboBoxPrinterWord.Text;
-            SaveJsonSettings();
-        }
-
-        private void comboBoxPrinterSticker_SelectedIndexChanged(object sender, EventArgs e)
+       
+        private void ChangeSettings(object sender, EventArgs e)
         {
             defualtPrinterSticker = comboBoxPrinterSticker.Text;
+            defualtPrinterWord = comboBoxPrinterWord.Text;
+
             SaveJsonSettings();
         }
 
-        private void linkLabelOpenPanelInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        // Для открытия окна справки
+        private void linkLabelOpenPanelInfo_Click(object sender, EventArgs e)
         {
             InfoSettings infoSettings = new InfoSettings();
 
             infoSettings.ShowDialog();
         }
 
-        private void adressRusBox_TextChanged(object sender, EventArgs e)
+        private void FileSavePath_Click_1(object sender, EventArgs e)
         {
-            SaveJsonSettings();
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                // Устанавливаем фильтры для файлов
+                openFileDialog.Filter = "Excel files (*.xlsx;*.xls)|*.xlsx;*.xls|All files (*.*)|*.*";
+                openFileDialog.Title = "Выберите файл Excel";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK) // Если пользователь выбрал файл
+                {
+                    filePath = openFileDialog.FileName; // Получаем путь к выбранному файлу
+
+                    // Заполним поле для видимости пути к сохранению
+                    textBoxFileSavePath.Text = filePath;
+                    SaveJsonSettings();
+                }
+            }
         }
     }
 }

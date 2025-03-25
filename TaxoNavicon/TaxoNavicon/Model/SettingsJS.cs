@@ -10,5 +10,6 @@
 
         public string AdressMasterRus { get; set; }
         public string AdressMasterEng { get; set; }
+        public string AdressSticker { get; set; }
     }
 }

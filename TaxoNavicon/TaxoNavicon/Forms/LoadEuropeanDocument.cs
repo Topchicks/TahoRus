@@ -1,4 +1,5 @@
-﻿using OfficeOpenXml;
+﻿using Guna.UI2.WinForms;
+using OfficeOpenXml;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -107,9 +108,12 @@ namespace TaxoNavicon
         private void CreatPanel(int numberOrderText, string nameCustomerText)
         {
             // Создание панели
-            Panel panel = new Panel
+            Guna2Panel panel = new Guna2Panel
             {
-                BackColor = System.Drawing.Color.Gray, // Цвет фона панели
+                BorderColor = Color.FromArgb(24, 175, 240),
+                BorderRadius = 6,
+                BorderThickness = 1,
+                FillColor = Color.White,
                 Size = new System.Drawing.Size(381, 34)
             };
 
@@ -121,7 +125,8 @@ namespace TaxoNavicon
                 Location = new System.Drawing.Point(-3, 0), // Положение на панели
                 Size = new System.Drawing.Size(100, 34),
                 Font = new Font("Arial", 12f),
-                TextAlign = ContentAlignment.MiddleCenter // Выравнивание текста по центру
+                TextAlign = ContentAlignment.MiddleCenter, // Выравнивание текста по центру
+                BackColor = Color.Transparent,
             };
 
             // Создание второго текстового элемента
@@ -132,7 +137,8 @@ namespace TaxoNavicon
                 Location = new System.Drawing.Point(103, 0), // Положение на панели
                 Size = new System.Drawing.Size(159, 34),
                 Font = new Font("Arial", 12f),
-                TextAlign = ContentAlignment.MiddleCenter // Выравнивание текста по центру
+                TextAlign = ContentAlignment.MiddleCenter, // Выравнивание текста по центру
+                BackColor = Color.Transparent,
             };
 
             buttonLoad = new Button
@@ -145,6 +151,7 @@ namespace TaxoNavicon
                 Size = new System.Drawing.Size(104, 34),
                 BackgroundImageLayout = ImageLayout.Tile,
                 FlatStyle = FlatStyle.Flat,
+                BackColor = Color.Transparent,
 
             };
             buttonLoad.Tag = orderNumber.Text;

@@ -79,6 +79,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Guna.UI2.dll" size="2190720">
+      <assemblyIdentity name="Guna.UI2" version="2.0.4.7" publicKeyToken="8B9D14AA5142E261" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>ITDHSJ9aXiGBLB6rN9xJA7kBhhotVFqmB1Vb4mkJGv0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="InfragisticsWPF.dll" size="2388480">
       <assemblyIdentity name="InfragisticsWPF" version="24.2.20242.53" publicKeyToken="7DD5C3163F2CD0CB" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -415,14 +427,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TachoPrint.exe" size="11456496">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TachoPrint.exe" size="11481584">
       <assemblyIdentity name="TachoPrint" version="1.0.0.0" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>4NtnUQR8pu2E9wzH/ajhDsopbIK6FgvyfUZCQNHc7Bc=</dsig:DigestValue>
+        <dsig:DigestValue>Lsxz2WiHsOgtCHh9aU/VFAxYX4yrNTz5HFL6gH49JoE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

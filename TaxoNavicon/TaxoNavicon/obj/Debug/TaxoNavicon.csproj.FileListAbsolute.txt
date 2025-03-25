@@ -161,3 +161,4 @@ E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TachoPrint.ap
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TachoPrint.exe
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TachoPrint.pdb
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.Forms.InfoSettings.resources
+E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\Guna.UI2.dll
