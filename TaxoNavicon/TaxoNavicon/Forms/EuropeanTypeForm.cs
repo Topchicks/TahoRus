@@ -214,6 +214,10 @@ namespace TaxoNavicon
             textBoxW.Text = poleDataEuropean.w;
             textBoxK.Text = poleDataEuropean.k;
 
+            textBoxTemperature.Text = poleDataEuropean.temperature;
+            textBoxTyreWear.Text = poleDataEuropean.protectore;
+            textBoxAdresCustomerEng.Text = poleDataEuropean.adresCustomerEng;
+
             // Подгружаем наши данные в переменные экземпляра то есть локально
             SetData();
         }
@@ -269,6 +273,10 @@ namespace TaxoNavicon
                 worksheet.Cells[row, 17].Value = poleDataEuropean.w;
                 worksheet.Cells[row, 18].Value = poleDataEuropean.k;
                 worksheet.Cells[row, 19].Value = poleDataEuropean.l;
+
+
+                worksheet.Cells[row, 21].Value = poleDataEuropean.temperature;
+                worksheet.Cells[row, 22].Value = poleDataEuropean.protectore;
 
                 // Сохраняем изменения
                 excelPackage.Save();
@@ -331,6 +339,9 @@ namespace TaxoNavicon
                         worksheet.Cells[row, 17].Value = poleDataEuropean.w;
                         worksheet.Cells[row, 18].Value = poleDataEuropean.k;
                         worksheet.Cells[row, 19].Value = poleDataEuropean.l;
+
+                        worksheet.Cells[row, 21].Value = poleDataEuropean.temperature;
+                        worksheet.Cells[row, 22].Value = poleDataEuropean.protectore;
                         excelPackage.Save();
                         return; // Копия найдена
                     }
@@ -388,11 +399,11 @@ namespace TaxoNavicon
             // Также есть автоматический вывод на печать
 
             printDocument.DefaultPageSettings.PrinterSettings.PrinterName = defualtPrinterSticker;
-
-            if (printDialog.ShowDialog() == DialogResult.OK)
+            printDocument.Print();
+            /*if (printDialog.ShowDialog() == DialogResult.OK)
             {
-                printDocument.Print();
-            }
+                
+            }*/
         }
 
         // Печать наклейки

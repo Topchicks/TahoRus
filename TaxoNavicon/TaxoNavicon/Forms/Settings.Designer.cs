@@ -145,8 +145,7 @@
             this.comboBoxPrinterSticker.Name = "comboBoxPrinterSticker";
             this.comboBoxPrinterSticker.Size = new System.Drawing.Size(289, 36);
             this.comboBoxPrinterSticker.TabIndex = 40;
-            this.comboBoxPrinterSticker.ValueMember = "1";
-            this.comboBoxPrinterSticker.TextChanged += new System.EventHandler(this.ChangeSettings);
+            this.comboBoxPrinterSticker.ValueMember = "0";
             // 
             // comboBoxPrinterWord
             // 
@@ -164,8 +163,7 @@
             this.comboBoxPrinterWord.Name = "comboBoxPrinterWord";
             this.comboBoxPrinterWord.Size = new System.Drawing.Size(289, 36);
             this.comboBoxPrinterWord.TabIndex = 39;
-            this.comboBoxPrinterWord.ValueMember = "1";
-            this.comboBoxPrinterWord.TextChanged += new System.EventHandler(this.ChangeSettings);
+            this.comboBoxPrinterWord.ValueMember = "0";
             // 
             // textBoxAdressSticker
             // 
@@ -185,7 +183,6 @@
             this.textBoxAdressSticker.SelectedText = "";
             this.textBoxAdressSticker.Size = new System.Drawing.Size(289, 28);
             this.textBoxAdressSticker.TabIndex = 38;
-            this.textBoxAdressSticker.TextChanged += new System.EventHandler(this.ChangeSettings);
             // 
             // adressEngBox
             // 
@@ -205,7 +202,6 @@
             this.adressEngBox.SelectedText = "";
             this.adressEngBox.Size = new System.Drawing.Size(289, 28);
             this.adressEngBox.TabIndex = 37;
-            this.adressEngBox.TextChanged += new System.EventHandler(this.ChangeSettings);
             // 
             // adressRusBox
             // 
@@ -225,7 +221,6 @@
             this.adressRusBox.SelectedText = "";
             this.adressRusBox.Size = new System.Drawing.Size(289, 28);
             this.adressRusBox.TabIndex = 36;
-            this.adressRusBox.TextChanged += new System.EventHandler(this.ChangeSettings);
             // 
             // guna2Panel5
             // 
@@ -364,7 +359,6 @@
             this.checkBoxFormateSticker.UncheckedState.BorderRadius = 0;
             this.checkBoxFormateSticker.UncheckedState.BorderThickness = 0;
             this.checkBoxFormateSticker.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.checkBoxFormateSticker.Click += new System.EventHandler(this.ChangeSettings);
             // 
             // FileSavePath
             // 

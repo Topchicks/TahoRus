@@ -33,14 +33,25 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.guna2ShadowPanel4 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.guna2ShadowPanel3 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBoxModelTachograph = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel17 = new Guna.UI2.WinForms.Guna2Panel();
             this.label17 = new System.Windows.Forms.Label();
+            this.textBoxManufacturerTachograph = new Guna.UI2.WinForms.Guna2TextBox();
             this.textBoxL = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label16 = new System.Windows.Forms.Label();
+            this.guna2Panel12 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.guna2Panel18 = new Guna.UI2.WinForms.Guna2Panel();
             this.label20 = new System.Windows.Forms.Label();
+            this.textBoxSerialNumberTahograph = new Guna.UI2.WinForms.Guna2TextBox();
             this.textBoxTemperature = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.textBoxK = new Guna.UI2.WinForms.Guna2TextBox();
             this.textBoxTyreWear = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel19 = new Guna.UI2.WinForms.Guna2Panel();
@@ -51,18 +62,9 @@
             this.guna2Panel20 = new Guna.UI2.WinForms.Guna2Panel();
             this.label23 = new System.Windows.Forms.Label();
             this.guna2Panel14 = new Guna.UI2.WinForms.Guna2Panel();
-            this.textBoxOdometerKmVehicle = new Guna.UI2.WinForms.Guna2TextBox();
-            this.dataJob = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBoxMaster = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2Panel25 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label28 = new System.Windows.Forms.Label();
-            this.numericUpDowntextBoxOrderNumber = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.guna2Panel24 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.guna2Panel26 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label29 = new System.Windows.Forms.Label();
+            this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.label14 = new System.Windows.Forms.Label();
+            this.textBoxOdometerKmVehicle = new Guna.UI2.WinForms.Guna2TextBox();
             this.textBoxRegistrationNumberVehicle = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.label18 = new System.Windows.Forms.Label();
@@ -84,22 +86,24 @@
             this.label32 = new System.Windows.Forms.Label();
             this.textBoxManufacturerVehicle = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel15 = new Guna.UI2.WinForms.Guna2Panel();
-            this.textBoxModelTachograph = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBoxManufacturerTachograph = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Panel12 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.guna2Panel10 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBoxSerialNumberTahograph = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label12 = new System.Windows.Forms.Label();
+            this.guna2ShadowPanel5 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dataJob = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.guna2Panel26 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label29 = new System.Windows.Forms.Label();
+            this.comboBoxMaster = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2Panel24 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.guna2Panel25 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label28 = new System.Windows.Forms.Label();
+            this.numericUpDowntextBoxOrderNumber = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.guna2Panel22 = new Guna.UI2.WinForms.Guna2Panel();
             this.textBoxAdresCustomerEng = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.label2 = new System.Windows.Forms.Label();
             this.textBoxAdresCustomer = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel32 = new Guna.UI2.WinForms.Guna2Panel();
             this.label30 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel31 = new Guna.UI2.WinForms.Guna2Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxNameCustomer = new Guna.UI2.WinForms.Guna2TextBox();
@@ -116,25 +120,22 @@
             this.LoadEuropeanDocuments = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemSetData = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemResetData = new System.Windows.Forms.ToolStripMenuItem();
-            this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.guna2ShadowPanel3 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.guna2ShadowPanel4 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.guna2ShadowPanel5 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
-            this.guna2ShadowPanel1.SuspendLayout();
+            this.guna2ShadowPanel4.SuspendLayout();
+            this.guna2ShadowPanel3.SuspendLayout();
             this.guna2Panel17.SuspendLayout();
+            this.guna2Panel12.SuspendLayout();
+            this.guna2Panel10.SuspendLayout();
             this.guna2Panel18.SuspendLayout();
+            this.guna2Panel11.SuspendLayout();
             this.guna2Panel19.SuspendLayout();
             this.guna2Panel21.SuspendLayout();
             this.guna2Panel20.SuspendLayout();
             this.guna2Panel14.SuspendLayout();
-            this.guna2Panel25.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDowntextBoxOrderNumber)).BeginInit();
-            this.guna2Panel24.SuspendLayout();
-            this.guna2Panel26.SuspendLayout();
+            this.guna2ShadowPanel1.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
@@ -143,19 +144,18 @@
             this.guna2Panel8.SuspendLayout();
             this.guna2Panel9.SuspendLayout();
             this.guna2Panel15.SuspendLayout();
-            this.guna2Panel12.SuspendLayout();
-            this.guna2Panel10.SuspendLayout();
-            this.guna2Panel11.SuspendLayout();
+            this.guna2ShadowPanel5.SuspendLayout();
+            this.guna2Panel26.SuspendLayout();
+            this.guna2Panel24.SuspendLayout();
+            this.guna2Panel25.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDowntextBoxOrderNumber)).BeginInit();
             this.guna2Panel22.SuspendLayout();
+            this.guna2ShadowPanel2.SuspendLayout();
             this.guna2Panel32.SuspendLayout();
             this.guna2Panel31.SuspendLayout();
             this.guna2Panel29.SuspendLayout();
             this.guna2Panel30.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.guna2ShadowPanel2.SuspendLayout();
-            this.guna2ShadowPanel3.SuspendLayout();
-            this.guna2ShadowPanel4.SuspendLayout();
-            this.guna2ShadowPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -230,20 +230,84 @@
             this.guna2Panel2.Size = new System.Drawing.Size(461, 1165);
             this.guna2Panel2.TabIndex = 7;
             // 
-            // guna2ShadowPanel1
+            // guna2ShadowPanel4
             // 
-            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel1.Controls.Add(this.label14);
-            this.guna2ShadowPanel1.EdgeWidth = 10;
-            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(6, 0);
-            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
-            this.guna2ShadowPanel1.Radius = 6;
-            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.ShadowDepth = 50;
-            this.guna2ShadowPanel1.ShadowShift = 1;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(435, 66);
-            this.guna2ShadowPanel1.TabIndex = 34;
+            this.guna2ShadowPanel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel4.Controls.Add(this.label15);
+            this.guna2ShadowPanel4.EdgeWidth = 10;
+            this.guna2ShadowPanel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
+            this.guna2ShadowPanel4.Location = new System.Drawing.Point(9, 3);
+            this.guna2ShadowPanel4.Name = "guna2ShadowPanel4";
+            this.guna2ShadowPanel4.Radius = 6;
+            this.guna2ShadowPanel4.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel4.ShadowDepth = 50;
+            this.guna2ShadowPanel4.ShadowShift = 1;
+            this.guna2ShadowPanel4.Size = new System.Drawing.Size(439, 66);
+            this.guna2ShadowPanel4.TabIndex = 36;
+            // 
+            // label15
+            // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Arial", 18F);
+            this.label15.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label15.Location = new System.Drawing.Point(145, 27);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(118, 27);
+            this.label15.TabIndex = 9;
+            this.label15.Text = "Тахограф";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // guna2ShadowPanel3
+            // 
+            this.guna2ShadowPanel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel3.Controls.Add(this.label16);
+            this.guna2ShadowPanel3.EdgeWidth = 10;
+            this.guna2ShadowPanel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
+            this.guna2ShadowPanel3.Location = new System.Drawing.Point(9, 240);
+            this.guna2ShadowPanel3.Name = "guna2ShadowPanel3";
+            this.guna2ShadowPanel3.Radius = 6;
+            this.guna2ShadowPanel3.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel3.ShadowDepth = 50;
+            this.guna2ShadowPanel3.ShadowShift = 1;
+            this.guna2ShadowPanel3.Size = new System.Drawing.Size(439, 66);
+            this.guna2ShadowPanel3.TabIndex = 36;
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Arial", 18F);
+            this.label16.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label16.Location = new System.Drawing.Point(47, 23);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(341, 27);
+            this.label16.TabIndex = 9;
+            this.label16.Text = "Данные настройки тахографа";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBoxModelTachograph
+            // 
+            this.textBoxModelTachograph.BorderRadius = 6;
+            this.textBoxModelTachograph.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxModelTachograph.DefaultText = "";
+            this.textBoxModelTachograph.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBoxModelTachograph.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBoxModelTachograph.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxModelTachograph.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxModelTachograph.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxModelTachograph.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBoxModelTachograph.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxModelTachograph.Location = new System.Drawing.Point(159, 139);
+            this.textBoxModelTachograph.Name = "textBoxModelTachograph";
+            this.textBoxModelTachograph.PlaceholderText = "";
+            this.textBoxModelTachograph.SelectedText = "";
+            this.textBoxModelTachograph.Size = new System.Drawing.Size(289, 26);
+            this.textBoxModelTachograph.TabIndex = 10;
             // 
             // guna2Panel17
             // 
@@ -269,6 +333,25 @@
             this.label17.TabIndex = 10;
             this.label17.Text = "Температура";
             // 
+            // textBoxManufacturerTachograph
+            // 
+            this.textBoxManufacturerTachograph.BorderRadius = 6;
+            this.textBoxManufacturerTachograph.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxManufacturerTachograph.DefaultText = "";
+            this.textBoxManufacturerTachograph.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBoxManufacturerTachograph.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBoxManufacturerTachograph.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxManufacturerTachograph.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxManufacturerTachograph.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxManufacturerTachograph.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBoxManufacturerTachograph.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxManufacturerTachograph.Location = new System.Drawing.Point(159, 75);
+            this.textBoxManufacturerTachograph.Name = "textBoxManufacturerTachograph";
+            this.textBoxManufacturerTachograph.PlaceholderText = "";
+            this.textBoxManufacturerTachograph.SelectedText = "";
+            this.textBoxManufacturerTachograph.Size = new System.Drawing.Size(289, 26);
+            this.textBoxManufacturerTachograph.TabIndex = 8;
+            // 
             // textBoxL
             // 
             this.textBoxL.BorderRadius = 6;
@@ -286,22 +369,55 @@
             this.textBoxL.PlaceholderText = "";
             this.textBoxL.SelectedText = "";
             this.textBoxL.Size = new System.Drawing.Size(289, 26);
-            this.textBoxL.TabIndex = 33;
+            this.textBoxL.TabIndex = 22;
             // 
-            // label16
+            // guna2Panel12
             // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Arial", 18F);
-            this.label16.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label16.Location = new System.Drawing.Point(47, 23);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(341, 27);
-            this.label16.TabIndex = 9;
-            this.label16.Text = "Данные настройки тахографа";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.guna2Panel12.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel12.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
+            this.guna2Panel12.BorderRadius = 6;
+            this.guna2Panel12.Controls.Add(this.label13);
+            this.guna2Panel12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
+            this.guna2Panel12.Location = new System.Drawing.Point(10, 139);
+            this.guna2Panel12.Name = "guna2Panel12";
+            this.guna2Panel12.Size = new System.Drawing.Size(140, 26);
+            this.guna2Panel12.TabIndex = 16;
+            // 
+            // label13
+            // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(10, 6);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(65, 16);
+            this.label13.TabIndex = 10;
+            this.label13.Text = "Модель";
+            // 
+            // guna2Panel10
+            // 
+            this.guna2Panel10.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
+            this.guna2Panel10.BorderRadius = 6;
+            this.guna2Panel10.Controls.Add(this.label11);
+            this.guna2Panel10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
+            this.guna2Panel10.Location = new System.Drawing.Point(10, 75);
+            this.guna2Panel10.Name = "guna2Panel10";
+            this.guna2Panel10.Size = new System.Drawing.Size(140, 26);
+            this.guna2Panel10.TabIndex = 14;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(10, 6);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(120, 16);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Производитель";
             // 
             // guna2Panel18
             // 
@@ -327,6 +443,26 @@
             this.label20.TabIndex = 10;
             this.label20.Text = "Протектор";
             // 
+            // textBoxSerialNumberTahograph
+            // 
+            this.textBoxSerialNumberTahograph.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.textBoxSerialNumberTahograph.BorderRadius = 6;
+            this.textBoxSerialNumberTahograph.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxSerialNumberTahograph.DefaultText = "";
+            this.textBoxSerialNumberTahograph.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBoxSerialNumberTahograph.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBoxSerialNumberTahograph.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxSerialNumberTahograph.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxSerialNumberTahograph.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxSerialNumberTahograph.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBoxSerialNumberTahograph.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxSerialNumberTahograph.Location = new System.Drawing.Point(159, 107);
+            this.textBoxSerialNumberTahograph.Name = "textBoxSerialNumberTahograph";
+            this.textBoxSerialNumberTahograph.PlaceholderText = "";
+            this.textBoxSerialNumberTahograph.SelectedText = "";
+            this.textBoxSerialNumberTahograph.Size = new System.Drawing.Size(289, 26);
+            this.textBoxSerialNumberTahograph.TabIndex = 9;
+            // 
             // textBoxTemperature
             // 
             this.textBoxTemperature.BorderRadius = 6;
@@ -344,7 +480,31 @@
             this.textBoxTemperature.PlaceholderText = "";
             this.textBoxTemperature.SelectedText = "";
             this.textBoxTemperature.Size = new System.Drawing.Size(289, 26);
-            this.textBoxTemperature.TabIndex = 29;
+            this.textBoxTemperature.TabIndex = 18;
+            // 
+            // guna2Panel11
+            // 
+            this.guna2Panel11.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
+            this.guna2Panel11.BorderRadius = 6;
+            this.guna2Panel11.Controls.Add(this.label12);
+            this.guna2Panel11.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
+            this.guna2Panel11.Location = new System.Drawing.Point(10, 107);
+            this.guna2Panel11.Name = "guna2Panel11";
+            this.guna2Panel11.Size = new System.Drawing.Size(140, 26);
+            this.guna2Panel11.TabIndex = 15;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(10, 6);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(87, 16);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "Сер.Номер";
             // 
             // textBoxK
             // 
@@ -363,7 +523,7 @@
             this.textBoxK.PlaceholderText = "";
             this.textBoxK.SelectedText = "";
             this.textBoxK.Size = new System.Drawing.Size(289, 26);
-            this.textBoxK.TabIndex = 32;
+            this.textBoxK.TabIndex = 21;
             // 
             // textBoxTyreWear
             // 
@@ -382,7 +542,7 @@
             this.textBoxTyreWear.PlaceholderText = "";
             this.textBoxTyreWear.SelectedText = "";
             this.textBoxTyreWear.Size = new System.Drawing.Size(289, 26);
-            this.textBoxTyreWear.TabIndex = 30;
+            this.textBoxTyreWear.TabIndex = 19;
             // 
             // guna2Panel19
             // 
@@ -449,7 +609,7 @@
             this.textBoxW.PlaceholderText = "";
             this.textBoxW.SelectedText = "";
             this.textBoxW.Size = new System.Drawing.Size(289, 26);
-            this.textBoxW.TabIndex = 31;
+            this.textBoxW.TabIndex = 20;
             // 
             // guna2Panel20
             // 
@@ -501,6 +661,36 @@
             this.guna2Panel14.Size = new System.Drawing.Size(606, 1165);
             this.guna2Panel14.TabIndex = 9;
             // 
+            // guna2ShadowPanel1
+            // 
+            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.Controls.Add(this.label14);
+            this.guna2ShadowPanel1.EdgeWidth = 10;
+            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(6, 0);
+            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
+            this.guna2ShadowPanel1.Radius = 6;
+            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel1.ShadowDepth = 50;
+            this.guna2ShadowPanel1.ShadowShift = 1;
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(435, 66);
+            this.guna2ShadowPanel1.TabIndex = 34;
+            // 
+            // label14
+            // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Arial", 18F);
+            this.label14.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label14.Location = new System.Drawing.Point(81, 29);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(274, 27);
+            this.label14.TabIndex = 9;
+            this.label14.Text = "Транспортное средство";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // textBoxOdometerKmVehicle
             // 
             this.textBoxOdometerKmVehicle.BorderRadius = 6;
@@ -518,162 +708,7 @@
             this.textBoxOdometerKmVehicle.PlaceholderText = "";
             this.textBoxOdometerKmVehicle.SelectedText = "";
             this.textBoxOdometerKmVehicle.Size = new System.Drawing.Size(289, 28);
-            this.textBoxOdometerKmVehicle.TabIndex = 25;
-            // 
-            // dataJob
-            // 
-            this.dataJob.BackColor = System.Drawing.Color.Transparent;
-            this.dataJob.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataJob.BorderRadius = 6;
-            this.dataJob.Checked = true;
-            this.dataJob.FillColor = System.Drawing.Color.White;
-            this.dataJob.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dataJob.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dataJob.Location = new System.Drawing.Point(156, 154);
-            this.dataJob.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dataJob.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dataJob.Name = "dataJob";
-            this.dataJob.Size = new System.Drawing.Size(292, 26);
-            this.dataJob.TabIndex = 38;
-            this.dataJob.Value = new System.DateTime(2025, 3, 25, 22, 2, 42, 869);
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 18F);
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(164, 24);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 27);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Заказ";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // comboBoxMaster
-            // 
-            this.comboBoxMaster.BackColor = System.Drawing.Color.Transparent;
-            this.comboBoxMaster.BorderRadius = 6;
-            this.comboBoxMaster.DisplayMember = "1";
-            this.comboBoxMaster.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxMaster.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxMaster.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxMaster.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxMaster.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.comboBoxMaster.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.comboBoxMaster.ItemHeight = 30;
-            this.comboBoxMaster.Items.AddRange(new object[] {
-            "Беляев Сергей Александрович"});
-            this.comboBoxMaster.Location = new System.Drawing.Point(156, 112);
-            this.comboBoxMaster.Name = "comboBoxMaster";
-            this.comboBoxMaster.Size = new System.Drawing.Size(292, 36);
-            this.comboBoxMaster.TabIndex = 37;
-            this.comboBoxMaster.ValueMember = "1";
-            // 
-            // guna2Panel25
-            // 
-            this.guna2Panel25.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel25.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
-            this.guna2Panel25.BorderRadius = 6;
-            this.guna2Panel25.Controls.Add(this.label28);
-            this.guna2Panel25.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
-            this.guna2Panel25.Location = new System.Drawing.Point(10, 80);
-            this.guna2Panel25.Name = "guna2Panel25";
-            this.guna2Panel25.Size = new System.Drawing.Size(140, 26);
-            this.guna2Panel25.TabIndex = 30;
-            // 
-            // label28
-            // 
-            this.label28.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label28.ForeColor = System.Drawing.Color.White;
-            this.label28.Location = new System.Drawing.Point(10, 6);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(72, 16);
-            this.label28.TabIndex = 10;
-            this.label28.Text = "№ заказа";
-            // 
-            // numericUpDowntextBoxOrderNumber
-            // 
-            this.numericUpDowntextBoxOrderNumber.BackColor = System.Drawing.Color.Transparent;
-            this.numericUpDowntextBoxOrderNumber.BorderRadius = 6;
-            this.numericUpDowntextBoxOrderNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.numericUpDowntextBoxOrderNumber.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.numericUpDowntextBoxOrderNumber.Location = new System.Drawing.Point(156, 80);
-            this.numericUpDowntextBoxOrderNumber.Maximum = new decimal(new int[] {
-            -1981284353,
-            -1966660860,
-            0,
-            0});
-            this.numericUpDowntextBoxOrderNumber.Name = "numericUpDowntextBoxOrderNumber";
-            this.numericUpDowntextBoxOrderNumber.Size = new System.Drawing.Size(292, 26);
-            this.numericUpDowntextBoxOrderNumber.TabIndex = 36;
-            // 
-            // guna2Panel24
-            // 
-            this.guna2Panel24.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel24.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
-            this.guna2Panel24.BorderRadius = 6;
-            this.guna2Panel24.Controls.Add(this.label10);
-            this.guna2Panel24.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
-            this.guna2Panel24.Location = new System.Drawing.Point(10, 154);
-            this.guna2Panel24.Name = "guna2Panel24";
-            this.guna2Panel24.Size = new System.Drawing.Size(140, 26);
-            this.guna2Panel24.TabIndex = 32;
-            // 
-            // label10
-            // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(10, 6);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(39, 16);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "Дата";
-            // 
-            // guna2Panel26
-            // 
-            this.guna2Panel26.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel26.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
-            this.guna2Panel26.BorderRadius = 6;
-            this.guna2Panel26.Controls.Add(this.label29);
-            this.guna2Panel26.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
-            this.guna2Panel26.Location = new System.Drawing.Point(10, 112);
-            this.guna2Panel26.Name = "guna2Panel26";
-            this.guna2Panel26.Size = new System.Drawing.Size(140, 36);
-            this.guna2Panel26.TabIndex = 31;
-            // 
-            // label29
-            // 
-            this.label29.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label29.ForeColor = System.Drawing.Color.White;
-            this.label29.Location = new System.Drawing.Point(10, 11);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(60, 16);
-            this.label29.TabIndex = 10;
-            this.label29.Text = "Мастер";
-            // 
-            // label14
-            // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Arial", 18F);
-            this.label14.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label14.Location = new System.Drawing.Point(81, 29);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(274, 27);
-            this.label14.TabIndex = 9;
-            this.label14.Text = "Транспортное средство";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.textBoxOdometerKmVehicle.TabIndex = 17;
             // 
             // textBoxRegistrationNumberVehicle
             // 
@@ -687,12 +722,12 @@
             this.textBoxRegistrationNumberVehicle.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBoxRegistrationNumberVehicle.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textBoxRegistrationNumberVehicle.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxRegistrationNumberVehicle.Location = new System.Drawing.Point(152, 236);
+            this.textBoxRegistrationNumberVehicle.Location = new System.Drawing.Point(152, 240);
             this.textBoxRegistrationNumberVehicle.Name = "textBoxRegistrationNumberVehicle";
             this.textBoxRegistrationNumberVehicle.PlaceholderText = "";
             this.textBoxRegistrationNumberVehicle.SelectedText = "";
             this.textBoxRegistrationNumberVehicle.Size = new System.Drawing.Size(289, 28);
-            this.textBoxRegistrationNumberVehicle.TabIndex = 24;
+            this.textBoxRegistrationNumberVehicle.TabIndex = 16;
             // 
             // guna2Panel3
             // 
@@ -730,12 +765,12 @@
             this.textBoxModelVehicle.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBoxModelVehicle.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.textBoxModelVehicle.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxModelVehicle.Location = new System.Drawing.Point(152, 202);
+            this.textBoxModelVehicle.Location = new System.Drawing.Point(152, 206);
             this.textBoxModelVehicle.Name = "textBoxModelVehicle";
             this.textBoxModelVehicle.PlaceholderText = "";
             this.textBoxModelVehicle.SelectedText = "";
             this.textBoxModelVehicle.Size = new System.Drawing.Size(289, 28);
-            this.textBoxModelVehicle.TabIndex = 23;
+            this.textBoxModelVehicle.TabIndex = 15;
             // 
             // guna2Panel4
             // 
@@ -778,7 +813,7 @@
             this.textBoxYearOfIssueVehiccle.PlaceholderText = "";
             this.textBoxYearOfIssueVehiccle.SelectedText = "";
             this.textBoxYearOfIssueVehiccle.Size = new System.Drawing.Size(289, 28);
-            this.textBoxYearOfIssueVehiccle.TabIndex = 22;
+            this.textBoxYearOfIssueVehiccle.TabIndex = 14;
             // 
             // guna2Panel6
             // 
@@ -821,7 +856,7 @@
             this.textBoxTireMarkingsVehicle.PlaceholderText = "";
             this.textBoxTireMarkingsVehicle.SelectedText = "";
             this.textBoxTireMarkingsVehicle.Size = new System.Drawing.Size(289, 28);
-            this.textBoxTireMarkingsVehicle.TabIndex = 21;
+            this.textBoxTireMarkingsVehicle.TabIndex = 13;
             // 
             // guna2Panel7
             // 
@@ -912,7 +947,7 @@
             this.textBoxVinNumberVehicle.PlaceholderText = "";
             this.textBoxVinNumberVehicle.SelectedText = "";
             this.textBoxVinNumberVehicle.Size = new System.Drawing.Size(289, 28);
-            this.textBoxVinNumberVehicle.TabIndex = 20;
+            this.textBoxVinNumberVehicle.TabIndex = 12;
             // 
             // guna2Panel9
             // 
@@ -955,7 +990,7 @@
             this.textBoxManufacturerVehicle.PlaceholderText = "";
             this.textBoxManufacturerVehicle.SelectedText = "";
             this.textBoxManufacturerVehicle.Size = new System.Drawing.Size(289, 28);
-            this.textBoxManufacturerVehicle.TabIndex = 19;
+            this.textBoxManufacturerVehicle.TabIndex = 11;
             // 
             // guna2Panel15
             // 
@@ -972,153 +1007,163 @@
             this.guna2Panel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel15.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel15.Name = "guna2Panel15";
-            this.guna2Panel15.Size = new System.Drawing.Size(461, 249);
+            this.guna2Panel15.Size = new System.Drawing.Size(461, 250);
             this.guna2Panel15.TabIndex = 10;
             // 
-            // textBoxModelTachograph
+            // guna2ShadowPanel5
             // 
-            this.textBoxModelTachograph.BorderRadius = 6;
-            this.textBoxModelTachograph.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBoxModelTachograph.DefaultText = "";
-            this.textBoxModelTachograph.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.textBoxModelTachograph.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.textBoxModelTachograph.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBoxModelTachograph.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBoxModelTachograph.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxModelTachograph.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.textBoxModelTachograph.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxModelTachograph.Location = new System.Drawing.Point(159, 139);
-            this.textBoxModelTachograph.Name = "textBoxModelTachograph";
-            this.textBoxModelTachograph.PlaceholderText = "";
-            this.textBoxModelTachograph.SelectedText = "";
-            this.textBoxModelTachograph.Size = new System.Drawing.Size(289, 26);
-            this.textBoxModelTachograph.TabIndex = 28;
+            this.guna2ShadowPanel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel5.Controls.Add(this.label6);
+            this.guna2ShadowPanel5.EdgeWidth = 10;
+            this.guna2ShadowPanel5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
+            this.guna2ShadowPanel5.Location = new System.Drawing.Point(9, 8);
+            this.guna2ShadowPanel5.Name = "guna2ShadowPanel5";
+            this.guna2ShadowPanel5.Radius = 6;
+            this.guna2ShadowPanel5.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel5.ShadowDepth = 50;
+            this.guna2ShadowPanel5.ShadowShift = 1;
+            this.guna2ShadowPanel5.Size = new System.Drawing.Size(439, 66);
+            this.guna2ShadowPanel5.TabIndex = 36;
             // 
-            // label15
+            // label6
             // 
-            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Arial", 18F);
-            this.label15.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label15.Location = new System.Drawing.Point(145, 27);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(118, 27);
-            this.label15.TabIndex = 9;
-            this.label15.Text = "Тахограф";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 18F);
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label6.Location = new System.Drawing.Point(164, 24);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 27);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Заказ";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBoxManufacturerTachograph
+            // dataJob
             // 
-            this.textBoxManufacturerTachograph.BorderRadius = 6;
-            this.textBoxManufacturerTachograph.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBoxManufacturerTachograph.DefaultText = "";
-            this.textBoxManufacturerTachograph.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.textBoxManufacturerTachograph.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.textBoxManufacturerTachograph.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBoxManufacturerTachograph.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBoxManufacturerTachograph.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxManufacturerTachograph.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.textBoxManufacturerTachograph.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxManufacturerTachograph.Location = new System.Drawing.Point(159, 75);
-            this.textBoxManufacturerTachograph.Name = "textBoxManufacturerTachograph";
-            this.textBoxManufacturerTachograph.PlaceholderText = "";
-            this.textBoxManufacturerTachograph.SelectedText = "";
-            this.textBoxManufacturerTachograph.Size = new System.Drawing.Size(289, 26);
-            this.textBoxManufacturerTachograph.TabIndex = 26;
+            this.dataJob.BackColor = System.Drawing.Color.Transparent;
+            this.dataJob.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dataJob.BorderRadius = 6;
+            this.dataJob.Checked = true;
+            this.dataJob.FillColor = System.Drawing.Color.White;
+            this.dataJob.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dataJob.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dataJob.Location = new System.Drawing.Point(156, 154);
+            this.dataJob.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dataJob.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dataJob.Name = "dataJob";
+            this.dataJob.Size = new System.Drawing.Size(292, 26);
+            this.dataJob.TabIndex = 3;
+            this.dataJob.Value = new System.DateTime(2025, 3, 25, 22, 2, 42, 869);
             // 
-            // guna2Panel12
+            // guna2Panel26
             // 
-            this.guna2Panel12.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel12.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
-            this.guna2Panel12.BorderRadius = 6;
-            this.guna2Panel12.Controls.Add(this.label13);
-            this.guna2Panel12.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
-            this.guna2Panel12.Location = new System.Drawing.Point(10, 139);
-            this.guna2Panel12.Name = "guna2Panel12";
-            this.guna2Panel12.Size = new System.Drawing.Size(140, 26);
-            this.guna2Panel12.TabIndex = 16;
+            this.guna2Panel26.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel26.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
+            this.guna2Panel26.BorderRadius = 6;
+            this.guna2Panel26.Controls.Add(this.label29);
+            this.guna2Panel26.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
+            this.guna2Panel26.Location = new System.Drawing.Point(10, 112);
+            this.guna2Panel26.Name = "guna2Panel26";
+            this.guna2Panel26.Size = new System.Drawing.Size(140, 36);
+            this.guna2Panel26.TabIndex = 31;
             // 
-            // label13
+            // label29
             // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(10, 6);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(65, 16);
-            this.label13.TabIndex = 10;
-            this.label13.Text = "Модель";
+            this.label29.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.label29.ForeColor = System.Drawing.Color.White;
+            this.label29.Location = new System.Drawing.Point(10, 11);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(60, 16);
+            this.label29.TabIndex = 10;
+            this.label29.Text = "Мастер";
             // 
-            // guna2Panel10
+            // comboBoxMaster
             // 
-            this.guna2Panel10.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
-            this.guna2Panel10.BorderRadius = 6;
-            this.guna2Panel10.Controls.Add(this.label11);
-            this.guna2Panel10.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
-            this.guna2Panel10.Location = new System.Drawing.Point(10, 75);
-            this.guna2Panel10.Name = "guna2Panel10";
-            this.guna2Panel10.Size = new System.Drawing.Size(140, 26);
-            this.guna2Panel10.TabIndex = 14;
+            this.comboBoxMaster.BackColor = System.Drawing.Color.Transparent;
+            this.comboBoxMaster.BorderRadius = 6;
+            this.comboBoxMaster.DisplayMember = "1";
+            this.comboBoxMaster.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxMaster.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMaster.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxMaster.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxMaster.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboBoxMaster.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comboBoxMaster.ItemHeight = 30;
+            this.comboBoxMaster.Items.AddRange(new object[] {
+            "Беляев Сергей Александрович"});
+            this.comboBoxMaster.Location = new System.Drawing.Point(156, 112);
+            this.comboBoxMaster.Name = "comboBoxMaster";
+            this.comboBoxMaster.Size = new System.Drawing.Size(292, 36);
+            this.comboBoxMaster.TabIndex = 2;
+            this.comboBoxMaster.ValueMember = "1";
             // 
-            // label11
+            // guna2Panel24
             // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(10, 6);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(120, 16);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "Производитель";
+            this.guna2Panel24.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel24.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
+            this.guna2Panel24.BorderRadius = 6;
+            this.guna2Panel24.Controls.Add(this.label10);
+            this.guna2Panel24.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
+            this.guna2Panel24.Location = new System.Drawing.Point(10, 154);
+            this.guna2Panel24.Name = "guna2Panel24";
+            this.guna2Panel24.Size = new System.Drawing.Size(140, 26);
+            this.guna2Panel24.TabIndex = 32;
             // 
-            // textBoxSerialNumberTahograph
+            // label10
             // 
-            this.textBoxSerialNumberTahograph.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.textBoxSerialNumberTahograph.BorderRadius = 6;
-            this.textBoxSerialNumberTahograph.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBoxSerialNumberTahograph.DefaultText = "";
-            this.textBoxSerialNumberTahograph.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.textBoxSerialNumberTahograph.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.textBoxSerialNumberTahograph.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBoxSerialNumberTahograph.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBoxSerialNumberTahograph.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxSerialNumberTahograph.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.textBoxSerialNumberTahograph.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxSerialNumberTahograph.Location = new System.Drawing.Point(159, 107);
-            this.textBoxSerialNumberTahograph.Name = "textBoxSerialNumberTahograph";
-            this.textBoxSerialNumberTahograph.PlaceholderText = "";
-            this.textBoxSerialNumberTahograph.SelectedText = "";
-            this.textBoxSerialNumberTahograph.Size = new System.Drawing.Size(289, 26);
-            this.textBoxSerialNumberTahograph.TabIndex = 27;
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(10, 6);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(39, 16);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "Дата";
             // 
-            // guna2Panel11
+            // guna2Panel25
             // 
-            this.guna2Panel11.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Panel11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
-            this.guna2Panel11.BorderRadius = 6;
-            this.guna2Panel11.Controls.Add(this.label12);
-            this.guna2Panel11.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
-            this.guna2Panel11.Location = new System.Drawing.Point(10, 107);
-            this.guna2Panel11.Name = "guna2Panel11";
-            this.guna2Panel11.Size = new System.Drawing.Size(140, 26);
-            this.guna2Panel11.TabIndex = 15;
+            this.guna2Panel25.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Panel25.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
+            this.guna2Panel25.BorderRadius = 6;
+            this.guna2Panel25.Controls.Add(this.label28);
+            this.guna2Panel25.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
+            this.guna2Panel25.Location = new System.Drawing.Point(10, 80);
+            this.guna2Panel25.Name = "guna2Panel25";
+            this.guna2Panel25.Size = new System.Drawing.Size(140, 26);
+            this.guna2Panel25.TabIndex = 30;
             // 
-            // label12
+            // label28
             // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(10, 6);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(87, 16);
-            this.label12.TabIndex = 10;
-            this.label12.Text = "Сер.Номер";
+            this.label28.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.label28.ForeColor = System.Drawing.Color.White;
+            this.label28.Location = new System.Drawing.Point(10, 6);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(72, 16);
+            this.label28.TabIndex = 10;
+            this.label28.Text = "№ заказа";
+            // 
+            // numericUpDowntextBoxOrderNumber
+            // 
+            this.numericUpDowntextBoxOrderNumber.BackColor = System.Drawing.Color.Transparent;
+            this.numericUpDowntextBoxOrderNumber.BorderRadius = 6;
+            this.numericUpDowntextBoxOrderNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.numericUpDowntextBoxOrderNumber.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.numericUpDowntextBoxOrderNumber.Location = new System.Drawing.Point(156, 80);
+            this.numericUpDowntextBoxOrderNumber.Maximum = new decimal(new int[] {
+            -1981284353,
+            -1966660860,
+            0,
+            0});
+            this.numericUpDowntextBoxOrderNumber.Name = "numericUpDowntextBoxOrderNumber";
+            this.numericUpDowntextBoxOrderNumber.Size = new System.Drawing.Size(292, 26);
+            this.numericUpDowntextBoxOrderNumber.TabIndex = 1;
             // 
             // guna2Panel22
             // 
@@ -1157,7 +1202,37 @@
             this.textBoxAdresCustomerEng.PlaceholderText = "";
             this.textBoxAdresCustomerEng.SelectedText = "";
             this.textBoxAdresCustomerEng.Size = new System.Drawing.Size(289, 26);
-            this.textBoxAdresCustomerEng.TabIndex = 37;
+            this.textBoxAdresCustomerEng.TabIndex = 7;
+            // 
+            // guna2ShadowPanel2
+            // 
+            this.guna2ShadowPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel2.Controls.Add(this.label2);
+            this.guna2ShadowPanel2.EdgeWidth = 10;
+            this.guna2ShadowPanel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
+            this.guna2ShadowPanel2.Location = new System.Drawing.Point(17, 8);
+            this.guna2ShadowPanel2.Name = "guna2ShadowPanel2";
+            this.guna2ShadowPanel2.Radius = 6;
+            this.guna2ShadowPanel2.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel2.ShadowDepth = 50;
+            this.guna2ShadowPanel2.ShadowShift = 1;
+            this.guna2ShadowPanel2.Size = new System.Drawing.Size(441, 66);
+            this.guna2ShadowPanel2.TabIndex = 35;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 18F);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(157, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 27);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Заказчик";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBoxAdresCustomer
             // 
@@ -1176,7 +1251,7 @@
             this.textBoxAdresCustomer.PlaceholderText = "";
             this.textBoxAdresCustomer.SelectedText = "";
             this.textBoxAdresCustomer.Size = new System.Drawing.Size(289, 26);
-            this.textBoxAdresCustomer.TabIndex = 35;
+            this.textBoxAdresCustomer.TabIndex = 6;
             // 
             // guna2Panel32
             // 
@@ -1201,21 +1276,6 @@
             this.label30.Size = new System.Drawing.Size(88, 16);
             this.label30.TabIndex = 10;
             this.label30.Text = "Адрес(Eng)";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 18F);
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(157, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 27);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Заказчик";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2Panel31
             // 
@@ -1258,7 +1318,7 @@
             this.textBoxNameCustomer.PlaceholderText = "";
             this.textBoxNameCustomer.SelectedText = "";
             this.textBoxNameCustomer.Size = new System.Drawing.Size(289, 26);
-            this.textBoxNameCustomer.TabIndex = 33;
+            this.textBoxNameCustomer.TabIndex = 4;
             // 
             // textBoxNameCustomerEng
             // 
@@ -1278,7 +1338,7 @@
             this.textBoxNameCustomerEng.PlaceholderText = "";
             this.textBoxNameCustomerEng.SelectedText = "";
             this.textBoxNameCustomerEng.Size = new System.Drawing.Size(289, 26);
-            this.textBoxNameCustomerEng.TabIndex = 34;
+            this.textBoxNameCustomerEng.TabIndex = 5;
             // 
             // guna2Panel29
             // 
@@ -1391,66 +1451,6 @@
             this.ToolStripMenuItemResetData.Text = "Перезаписать";
             this.ToolStripMenuItemResetData.Click += new System.EventHandler(this.ToolStripMenuItemResetData_Click);
             // 
-            // guna2ShadowPanel2
-            // 
-            this.guna2ShadowPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel2.Controls.Add(this.label2);
-            this.guna2ShadowPanel2.EdgeWidth = 10;
-            this.guna2ShadowPanel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
-            this.guna2ShadowPanel2.Location = new System.Drawing.Point(17, 8);
-            this.guna2ShadowPanel2.Name = "guna2ShadowPanel2";
-            this.guna2ShadowPanel2.Radius = 6;
-            this.guna2ShadowPanel2.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel2.ShadowDepth = 50;
-            this.guna2ShadowPanel2.ShadowShift = 1;
-            this.guna2ShadowPanel2.Size = new System.Drawing.Size(441, 66);
-            this.guna2ShadowPanel2.TabIndex = 35;
-            // 
-            // guna2ShadowPanel3
-            // 
-            this.guna2ShadowPanel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel3.Controls.Add(this.label16);
-            this.guna2ShadowPanel3.EdgeWidth = 10;
-            this.guna2ShadowPanel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
-            this.guna2ShadowPanel3.Location = new System.Drawing.Point(9, 240);
-            this.guna2ShadowPanel3.Name = "guna2ShadowPanel3";
-            this.guna2ShadowPanel3.Radius = 6;
-            this.guna2ShadowPanel3.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel3.ShadowDepth = 50;
-            this.guna2ShadowPanel3.ShadowShift = 1;
-            this.guna2ShadowPanel3.Size = new System.Drawing.Size(439, 66);
-            this.guna2ShadowPanel3.TabIndex = 36;
-            // 
-            // guna2ShadowPanel4
-            // 
-            this.guna2ShadowPanel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel4.Controls.Add(this.label15);
-            this.guna2ShadowPanel4.EdgeWidth = 10;
-            this.guna2ShadowPanel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
-            this.guna2ShadowPanel4.Location = new System.Drawing.Point(9, 3);
-            this.guna2ShadowPanel4.Name = "guna2ShadowPanel4";
-            this.guna2ShadowPanel4.Radius = 6;
-            this.guna2ShadowPanel4.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel4.ShadowDepth = 50;
-            this.guna2ShadowPanel4.ShadowShift = 1;
-            this.guna2ShadowPanel4.Size = new System.Drawing.Size(439, 66);
-            this.guna2ShadowPanel4.TabIndex = 36;
-            // 
-            // guna2ShadowPanel5
-            // 
-            this.guna2ShadowPanel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel5.Controls.Add(this.label6);
-            this.guna2ShadowPanel5.EdgeWidth = 10;
-            this.guna2ShadowPanel5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
-            this.guna2ShadowPanel5.Location = new System.Drawing.Point(9, 8);
-            this.guna2ShadowPanel5.Name = "guna2ShadowPanel5";
-            this.guna2ShadowPanel5.Radius = 6;
-            this.guna2ShadowPanel5.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel5.ShadowDepth = 50;
-            this.guna2ShadowPanel5.ShadowShift = 1;
-            this.guna2ShadowPanel5.Size = new System.Drawing.Size(439, 66);
-            this.guna2ShadowPanel5.TabIndex = 36;
-            // 
             // EuropeanTypeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1469,12 +1469,20 @@
             this.panel9.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
-            this.guna2ShadowPanel1.ResumeLayout(false);
-            this.guna2ShadowPanel1.PerformLayout();
+            this.guna2ShadowPanel4.ResumeLayout(false);
+            this.guna2ShadowPanel4.PerformLayout();
+            this.guna2ShadowPanel3.ResumeLayout(false);
+            this.guna2ShadowPanel3.PerformLayout();
             this.guna2Panel17.ResumeLayout(false);
             this.guna2Panel17.PerformLayout();
+            this.guna2Panel12.ResumeLayout(false);
+            this.guna2Panel12.PerformLayout();
+            this.guna2Panel10.ResumeLayout(false);
+            this.guna2Panel10.PerformLayout();
             this.guna2Panel18.ResumeLayout(false);
             this.guna2Panel18.PerformLayout();
+            this.guna2Panel11.ResumeLayout(false);
+            this.guna2Panel11.PerformLayout();
             this.guna2Panel19.ResumeLayout(false);
             this.guna2Panel19.PerformLayout();
             this.guna2Panel21.ResumeLayout(false);
@@ -1482,13 +1490,8 @@
             this.guna2Panel20.ResumeLayout(false);
             this.guna2Panel20.PerformLayout();
             this.guna2Panel14.ResumeLayout(false);
-            this.guna2Panel25.ResumeLayout(false);
-            this.guna2Panel25.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDowntextBoxOrderNumber)).EndInit();
-            this.guna2Panel24.ResumeLayout(false);
-            this.guna2Panel24.PerformLayout();
-            this.guna2Panel26.ResumeLayout(false);
-            this.guna2Panel26.PerformLayout();
+            this.guna2ShadowPanel1.ResumeLayout(false);
+            this.guna2ShadowPanel1.PerformLayout();
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
             this.guna2Panel4.ResumeLayout(false);
@@ -1504,13 +1507,18 @@
             this.guna2Panel9.ResumeLayout(false);
             this.guna2Panel9.PerformLayout();
             this.guna2Panel15.ResumeLayout(false);
-            this.guna2Panel12.ResumeLayout(false);
-            this.guna2Panel12.PerformLayout();
-            this.guna2Panel10.ResumeLayout(false);
-            this.guna2Panel10.PerformLayout();
-            this.guna2Panel11.ResumeLayout(false);
-            this.guna2Panel11.PerformLayout();
+            this.guna2ShadowPanel5.ResumeLayout(false);
+            this.guna2ShadowPanel5.PerformLayout();
+            this.guna2Panel26.ResumeLayout(false);
+            this.guna2Panel26.PerformLayout();
+            this.guna2Panel24.ResumeLayout(false);
+            this.guna2Panel24.PerformLayout();
+            this.guna2Panel25.ResumeLayout(false);
+            this.guna2Panel25.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDowntextBoxOrderNumber)).EndInit();
             this.guna2Panel22.ResumeLayout(false);
+            this.guna2ShadowPanel2.ResumeLayout(false);
+            this.guna2ShadowPanel2.PerformLayout();
             this.guna2Panel32.ResumeLayout(false);
             this.guna2Panel32.PerformLayout();
             this.guna2Panel31.ResumeLayout(false);
@@ -1521,14 +1529,6 @@
             this.guna2Panel30.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.guna2ShadowPanel2.ResumeLayout(false);
-            this.guna2ShadowPanel2.PerformLayout();
-            this.guna2ShadowPanel3.ResumeLayout(false);
-            this.guna2ShadowPanel3.PerformLayout();
-            this.guna2ShadowPanel4.ResumeLayout(false);
-            this.guna2ShadowPanel4.PerformLayout();
-            this.guna2ShadowPanel5.ResumeLayout(false);
-            this.guna2ShadowPanel5.PerformLayout();
             this.ResumeLayout(false);
 
         }

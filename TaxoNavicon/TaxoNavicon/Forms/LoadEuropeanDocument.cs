@@ -241,6 +241,10 @@ namespace TaxoNavicon
                             poleDataEuropean.w = worksheet.Cells[row, 17].Text;
                             poleDataEuropean.k = worksheet.Cells[row, 18].Text;
                             poleDataEuropean.l = worksheet.Cells[row, 19].Text;
+
+                            poleDataEuropean.adresCustomerEng = worksheet.Cells[row, 20].Text;
+                            poleDataEuropean.temperature = worksheet.Cells[row, 21].Text;
+                            poleDataEuropean.protectore = worksheet.Cells[row, 22].Text;
                         }
                     }
                 }

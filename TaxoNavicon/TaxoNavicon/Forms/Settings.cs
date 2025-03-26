@@ -14,8 +14,8 @@ namespace TaxoNavicon
         public string filePath; // Путь к файлу с таблицей Certificate
         public bool formatingSticker;
 
-        public string defualtPrinterWord;
-        public string defualtPrinterSticker;
+        private string defualtPrinterWord;
+        private string defualtPrinterSticker;
 
         private string adressMasterRus;
         private string adressMasterEng;
@@ -28,13 +28,14 @@ namespace TaxoNavicon
             LoadSaveJson();
 
 
-
-            checkBoxFormateSticker.Checked = formatingSticker;
-            comboBoxPrinterWord.Text = defualtPrinterWord;
-            comboBoxPrinterSticker.Text = defualtPrinterSticker;
+            
             adressRusBox.Text = adressMasterRus;
             adressEngBox.Text = adressMasterEng;
             textBoxAdressSticker.Text = adressSticker;
+            checkBoxFormateSticker.Checked = formatingSticker;
+
+            
+
 
 
             foreach (string printer in PrinterSettings.InstalledPrinters)
@@ -42,6 +43,17 @@ namespace TaxoNavicon
                 comboBoxPrinterWord.Items.Add(printer);
                 comboBoxPrinterSticker.Items.Add(printer);
             }
+
+            comboBoxPrinterWord.Text = defualtPrinterWord;
+            comboBoxPrinterSticker.Text = defualtPrinterSticker;
+
+            comboBoxPrinterSticker.SelectedIndexChanged += ChangeSettings;
+            comboBoxPrinterWord.SelectedIndexChanged += ChangeSettings;
+            textBoxAdressSticker.TextChanged += ChangeSettings;
+            adressEngBox.TextChanged += ChangeSettings;
+            adressRusBox.TextChanged += ChangeSettings;
+            textBoxFileSavePath.TextChanged += ChangeSettings;
+            checkBoxFormateSticker.Click += ChangeSettings;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -62,6 +74,8 @@ namespace TaxoNavicon
                 AdressMasterEng = adressEngBox.Text,
                 AdressSticker = textBoxAdressSticker.Text,
             };
+            Console.WriteLine($"DefualtPrinterWord {settingsJS.DefualtPrinterWord}  DefualtPrinterSticker {settingsJS.DefualtPrinterSticker}");
+
 
             var options = new JsonSerializerOptions();
 
@@ -100,7 +114,7 @@ namespace TaxoNavicon
         {
             defualtPrinterSticker = comboBoxPrinterSticker.Text;
             defualtPrinterWord = comboBoxPrinterWord.Text;
-
+            Console.WriteLine($"Word {comboBoxPrinterWord.Text}  Sticker {comboBoxPrinterSticker.Text}");
             SaveJsonSettings();
         }
 
