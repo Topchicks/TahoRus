@@ -10,6 +10,9 @@ using TaxoNavicon.Forms;
 using Font = System.Drawing.Font;
 using Rectangle = System.Drawing.Rectangle;
 using Word = Microsoft.Office.Interop.Word;
+using System.Threading.Tasks;
+using Task = System.Threading.Tasks.Task;
+using Guna.UI2.WinForms;
 
 namespace TaxoNavicon
 {
@@ -550,6 +553,90 @@ namespace TaxoNavicon
             }
 
 
+        }
+
+        private void textBoxOnlyEng_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Приводим sender к типу TextBox
+            Guna2TextBox currentTextBox = sender as Guna2TextBox;
+
+            // Проверяем, является ли введенный символ русским
+            if (IsCyrillic(e.KeyChar))
+            {
+                e.Handled = true; // Запрещаем ввод
+                FlashTextBox(currentTextBox); // Передаем текущий TextBox в метод
+            }
+        }
+        private void textBoxOnlyRuss_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Приводим sender к типу TextBox
+            Guna2TextBox currentTextBox = sender as Guna2TextBox;
+
+            // Проверяем, является ли введенный символ русским
+            if (IsLatin(e.KeyChar))
+            {
+                e.Handled = true; // Запрещаем ввод
+                FlashTextBox(currentTextBox); // Передаем текущий TextBox в метод
+            }
+        }
+
+        // Это для текста VIN номер ТС
+        private void textBoxOnlyEngNo_o_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Приводим sender к типу TextBox
+            Guna2TextBox currentTextBox = sender as Guna2TextBox;
+            // Проверяем, является ли введенный символ русским или английской буквой 'o'
+            if (IsCyrillicOrO(e.KeyChar))
+            {
+                e.Handled = true; // Запрещаем ввод
+                FlashTextBox(currentTextBox); // Вызываем метод для моргания
+            }
+        }
+        // запрет на русский
+        private bool IsCyrillic(char c)
+        {
+            // Проверяем, находится ли символ в диапазоне кириллических символов
+            return (c >= 0x0400 && c <= 0x04FF);
+        }
+
+        // запрет на английский
+        private bool IsLatin(char c)
+        {
+            // Проверяем, находится ли символ в диапазоне английских букв
+            return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z');
+        }
+
+        private bool IsCyrillicOrO(char c)
+        {
+            // Проверяем на кириллицу или букву 'o' (как заглавную, так и строчную)
+            return (c >= 0x0400 && c <= 0x04FF) || c == 'o' || c == 'O';
+        }
+        int deley = 200;
+        private async void FlashTextBox(Guna2TextBox textBox)
+        {
+            // Сохраняем исходный цвет фона
+            var originalColor = Color.White;
+
+            // Устанавливаем красный цвет фона
+            textBox.FillColor = System.Drawing.Color.Red;
+
+            // Ждем 100 миллисекунд
+            await Task.Delay(deley);
+
+            // Возвращаем к оригинальному цвету
+            textBox.FillColor = originalColor;
+
+            // Ждем 100 миллисекунд
+            await Task.Delay(deley);
+
+            // Снова устанавливаем красный цвет фона
+            textBox.FillColor = System.Drawing.Color.Red;
+
+            // Ждем 100 миллисекунд
+            await Task.Delay(deley);
+
+            // Возвращаем к оригинальному цвету
+            textBox.FillColor = originalColor;
         }
     }
 }

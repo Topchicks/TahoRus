@@ -427,14 +427,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TachoPrint.exe" size="11478000">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TachoPrint.exe" size="11480048">
       <assemblyIdentity name="TachoPrint" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>WAm4I5pyhxLd6azmdVJixkV5vVJs/npZ19tOkq3o7YE=</dsig:DigestValue>
+        <dsig:DigestValue>9WZvrZj2b3IKWE4CxJKtN220EJuSAu1IO/dOuFFIcuY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

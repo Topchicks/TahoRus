@@ -23,6 +23,24 @@ namespace TaxoNavicon
                 MessageBox.Show("Приложение уже запущено.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            DateTime apps = new DateTime(2025, 04, 05);
+            DateTime currentDate = DateTime.Now;
+
+            // Вычисляем разницу между датами
+            TimeSpan difference = apps - currentDate;
+
+            // Получаем количество оставшихся дней
+            int daysRemaining = difference.Days;
+            if (apps > currentDate)
+            {
+                MessageBox.Show($"Это пробная версия приложения \n до конца пробной весии осталось {daysRemaining}");
+            }
+            else
+            {
+                MessageBox.Show($"Срок пробной версии истёк приложение будет закрыто");
+                System.Threading.Thread.Sleep(3000); // Задержка на 5 секунд
+                Environment.Exit(0); // Закрыть программу
+            }
 
 
             Application.EnableVisualStyles();
