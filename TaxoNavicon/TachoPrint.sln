@@ -5,6 +5,8 @@ VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxoNavicon", "TaxoNavicon\TaxoNavicon.csproj", "{4FC76516-7EDC-4101-ACFD-47CB828AFC98}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "setup.exe", "setup.exe\setup.exe.vdproj", "{A1623D10-219B-42D8-8D5F-E304DE7D5E4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4FC76516-7EDC-4101-ACFD-47CB828AFC98}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4FC76516-7EDC-4101-ACFD-47CB828AFC98}.Release|x64.ActiveCfg = Release|x64
 		{4FC76516-7EDC-4101-ACFD-47CB828AFC98}.Release|x64.Build.0 = Release|x64
+		{A1623D10-219B-42D8-8D5F-E304DE7D5E4C}.Debug|Any CPU.ActiveCfg = Debug
+		{A1623D10-219B-42D8-8D5F-E304DE7D5E4C}.Debug|x64.ActiveCfg = Debug
+		{A1623D10-219B-42D8-8D5F-E304DE7D5E4C}.Release|Any CPU.ActiveCfg = Release
+		{A1623D10-219B-42D8-8D5F-E304DE7D5E4C}.Release|x64.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
