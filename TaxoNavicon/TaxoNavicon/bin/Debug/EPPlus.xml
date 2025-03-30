@@ -4359,6 +4359,17 @@
             <param name="column">The column</param>
             <param name="pos">Position</param>
         </member>
+        <member name="M:OfficeOpenXml.Core.CellStore.CellStore`1.PrevCellByColumn(System.Int32@,System.Int32@,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Get the current or previous cell 
+            </summary>
+            <param name="row">The row</param>
+            <param name="col">The column</param>
+            <param name="minRow">The minimum row in the span.</param>
+            <param name="maxRow">The maximum row in the span.</param>
+            <param name="maxColPos">The maximum col position.</param>
+            <returns></returns>
+        </member>
         <member name="M:OfficeOpenXml.Core.CellStore.CellStore`1.EnsureColumnsExists(System.Int32,System.Int32)">
             <summary>
             Before enumerating columns where values are set to the cells store, 

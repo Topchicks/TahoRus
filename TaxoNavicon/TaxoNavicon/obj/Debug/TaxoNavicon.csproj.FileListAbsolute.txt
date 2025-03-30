@@ -55,7 +55,6 @@ E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\System.Runtim
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\System.Text.Encodings.Web.xml
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\System.Text.Json.xml
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\System.Threading.Tasks.Extensions.xml
-E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\System.ValueTuple.xml
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\de\InfragisticsWPF.resources.dll
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\es\InfragisticsWPF.resources.dll
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\fr\InfragisticsWPF.resources.dll
@@ -97,14 +96,12 @@ E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Debug\TaxoNavicon.L
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\Microsoft.Bcl.HashCode.dll
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
-E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\Npgsql.dll
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\System.Collections.Immutable.dll
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\System.Diagnostics.DiagnosticSource.dll
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\System.Threading.Channels.dll
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\Microsoft.Bcl.HashCode.xml
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
-E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\Npgsql.xml
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\System.Collections.Immutable.xml
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\System.Diagnostics.DiagnosticSource.xml
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\bin\Debug\System.Threading.Channels.xml
