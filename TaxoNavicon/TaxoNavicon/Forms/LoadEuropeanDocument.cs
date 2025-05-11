@@ -1,12 +1,10 @@
 ﻿using Guna.UI2.WinForms;
 using OfficeOpenXml;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace TaxoNavicon
@@ -38,7 +36,7 @@ namespace TaxoNavicon
     */
     public partial class LoadEuropeanDocument : Form
     {
-        private Dictionary<int, string> data = new Dictionary<int, string>();
+        private List<DataApplication> data = new List<DataApplication>();
         private Button buttonLoad;
         private PoleDataEuropean poleDataEuropean;
         private string filePathCertificate;
@@ -97,10 +95,12 @@ namespace TaxoNavicon
 
                         break; // Выход из цикла, если ячейка пустая
                     }
-                    // Пример загрузки данных в поля (предполагается, что у вас есть соответствующие свойства)
-                    string order = worksheet.Cells[row, 1].Text;
 
-                    data.Add(Convert.ToInt32(order), worksheet.Cells[row, 4].Text);
+                    data.Add(new DataApplication
+                    {
+                        numericApplication = Convert.ToInt32(worksheet.Cells[row, 1].Text),
+                        client = worksheet.Cells[row, 4].Text
+                    });
                 }
             }
             CreatePanelsForLastEntries();
@@ -152,7 +152,6 @@ namespace TaxoNavicon
                 BackgroundImageLayout = ImageLayout.Tile,
                 FlatStyle = FlatStyle.Flat,
                 BackColor = Color.Transparent,
-
             };
             buttonLoad.Tag = orderNumber.Text;
             // Подписка на событие Click
@@ -198,53 +197,55 @@ namespace TaxoNavicon
                     return;
                 }
 
-                // Проверим есть ли такой ключ в дикшенери
-                if (data.ContainsKey(orderNumber))
+                for(int i=0;i<data.Count;i++)
                 {
-                    // То запускаем цикл на поиск данных в нашей таблице
-                    for (int row = 3; row <= worksheet.Dimension.End.Row; row++)
+                    if (data[i].numericApplication == orderNumber)
                     {
-                        // Проверка на пустую ячейку в первом столбце
-                        if (string.IsNullOrWhiteSpace(worksheet.Cells[row, 1].Text))
+                        // То запускаем цикл на поиск данных в нашей таблице
+                        for (int row = 3; row <= worksheet.Dimension.End.Row; row++)
                         {
-                            Console.WriteLine("Пустая строчка выход");
+                            // Проверка на пустую ячейку в первом столбце
+                            if (string.IsNullOrWhiteSpace(worksheet.Cells[row, 1].Text))
+                            {
+                                Console.WriteLine("Пустая строчка выход");
 
-                            break; // Выход из цикла, если ячейка пустая
-                        }
+                                break; // Выход из цикла, если ячейка пустая
+                            }
 
-                        string order = worksheet.Cells[row, 1].Text;
+                            string order = worksheet.Cells[row, 1].Text;
 
-                        // Тут проверка этого столбика и если такие данные есть то запускаем процесс записи данных в poleDataRussian
-                        if (Convert.ToInt32(order) == orderNumber)
-                        {
-                            poleDataEuropean.orderNumber = Convert.ToInt32(order);
-                            poleDataEuropean.master = worksheet.Cells[row, 2].Text;
-                            poleDataEuropean.dataJob = worksheet.Cells[row, 3].Text;
-                            
-                            poleDataEuropean.nameCustomer = worksheet.Cells[row, 4].Text;
-                            poleDataEuropean.nameCustomerEng = worksheet.Cells[row, 5].Text;
-                            poleDataEuropean.adresCustomer = worksheet.Cells[row, 6].Text;
-                            
-                            poleDataEuropean.manufacturerTahograph = worksheet.Cells[row, 7].Text;
-                            poleDataEuropean.serialNumberTahograph = worksheet.Cells[row, 8].Text;
-                            poleDataEuropean.modelTachograph = worksheet.Cells[row, 9].Text;
+                            // Тут проверка этого столбика и если такие данные есть то запускаем процесс записи данных в poleDataRussian
+                            if (Convert.ToInt32(order) == orderNumber)
+                            {
+                                poleDataEuropean.orderNumber = Convert.ToInt32(order);
+                                poleDataEuropean.master = worksheet.Cells[row, 2].Text;
+                                poleDataEuropean.dataJob = worksheet.Cells[row, 3].Text;
 
-                            
-                            poleDataEuropean.manufacturerVehicle = worksheet.Cells[row, 10].Text;
-                            poleDataEuropean.vinVehicle = worksheet.Cells[row, 11].Text;
-                            poleDataEuropean.tireMarkingsVehicle = worksheet.Cells[row, 12].Text;
-                            poleDataEuropean.modelVehicle = worksheet.Cells[row, 13].Text;
-                            poleDataEuropean.yearOfIssueVehiccle = worksheet.Cells[row, 14].Text;
-                            poleDataEuropean.registrationNumberVehicle = worksheet.Cells[row, 15].Text;
-                            poleDataEuropean.odometerKmVehicle = worksheet.Cells[row, 16].Text;
-                            
-                            poleDataEuropean.w = worksheet.Cells[row, 17].Text;
-                            poleDataEuropean.k = worksheet.Cells[row, 18].Text;
-                            poleDataEuropean.l = worksheet.Cells[row, 19].Text;
+                                poleDataEuropean.nameCustomer = worksheet.Cells[row, 4].Text;
+                                poleDataEuropean.nameCustomerEng = worksheet.Cells[row, 5].Text;
+                                poleDataEuropean.adresCustomer = worksheet.Cells[row, 6].Text;
 
-                            poleDataEuropean.adresCustomerEng = worksheet.Cells[row, 20].Text;
-                            poleDataEuropean.temperature = worksheet.Cells[row, 21].Text;
-                            poleDataEuropean.protectore = worksheet.Cells[row, 22].Text;
+                                poleDataEuropean.manufacturerTahograph = worksheet.Cells[row, 7].Text;
+                                poleDataEuropean.serialNumberTahograph = worksheet.Cells[row, 8].Text;
+                                poleDataEuropean.modelTachograph = worksheet.Cells[row, 9].Text;
+
+
+                                poleDataEuropean.manufacturerVehicle = worksheet.Cells[row, 10].Text;
+                                poleDataEuropean.vinVehicle = worksheet.Cells[row, 11].Text;
+                                poleDataEuropean.tireMarkingsVehicle = worksheet.Cells[row, 12].Text;
+                                poleDataEuropean.modelVehicle = worksheet.Cells[row, 13].Text;
+                                poleDataEuropean.yearOfIssueVehiccle = worksheet.Cells[row, 14].Text;
+                                poleDataEuropean.registrationNumberVehicle = worksheet.Cells[row, 15].Text;
+                                poleDataEuropean.odometerKmVehicle = worksheet.Cells[row, 16].Text;
+
+                                poleDataEuropean.w = worksheet.Cells[row, 17].Text;
+                                poleDataEuropean.k = worksheet.Cells[row, 18].Text;
+                                poleDataEuropean.l = worksheet.Cells[row, 19].Text;
+
+                                poleDataEuropean.adresCustomerEng = worksheet.Cells[row, 20].Text;
+                                poleDataEuropean.temperature = worksheet.Cells[row, 21].Text;
+                                poleDataEuropean.protectore = worksheet.Cells[row, 22].Text;
+                            }
                         }
                     }
                 }
@@ -273,17 +274,29 @@ namespace TaxoNavicon
         private void textBoxSearchOrder_TextChanged(object sender, EventArgs e)
         {
             startOrderPanel.Controls.Clear();
-            if(textBoxSearchOrder.Text != "")
-            {
-                int order = Convert.ToInt32(textBoxSearchOrder.Text);
 
+            if (!string.IsNullOrEmpty(textBoxSearchOrder.Text))
+            {
+                string dataSerch = textBoxSearchOrder.Text.ToLower(); // делаем строку в нижнем регистре для нечувствительности к регистру
+  
                 foreach (var idorder in data)
                 {
-                    if (order == idorder.Key)
+                    // Проверка по номеру заявки, если ввод - число
+                    if (int.TryParse(dataSerch, out int result))
                     {
-                        CreatPanel(idorder.Key, idorder.Value);
+                        string numberStr = idorder.numericApplication.ToString();
+
+                        // Проверяем, содержит ли номер заявки введённое число
+                        if (numberStr.Contains(dataSerch))
+                        {
+                            CreatPanel(idorder.numericApplication, idorder.client);
+                        }
                     }
-                    
+                    // Проверка по имени клиента, если ввод - текст
+                    else if (idorder.client != null && idorder.client.ToLower().Contains(dataSerch))
+                    {
+                        CreatPanel(idorder.numericApplication, idorder.client);
+                    }
                 }
             }
             else
@@ -297,12 +310,17 @@ namespace TaxoNavicon
         private  void CreatePanelsForLastEntries()
         {
             // Получаем последние 10 элементов
-            var lastEntries = data.Reverse().Take(50);
 
-            foreach (var kvp in lastEntries)
+            foreach (var kvp in data)
             {
-                CreatPanel(kvp.Key, kvp.Value);
+                CreatPanel(kvp.numericApplication, kvp.client);
             }
         }
+    }
+
+    public class DataApplication
+    {
+        public int numericApplication;
+        public string client;
     }
 }

@@ -4,7 +4,6 @@ using System.IO;
 using System.Text.Json;
 using System.Windows.Forms;
 using TaxoNavicon.Forms;
-using TaxoNavicon.Properties;
 
 namespace TaxoNavicon
 {

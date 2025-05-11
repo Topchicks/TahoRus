@@ -23,7 +23,7 @@ namespace TaxoNavicon
                 MessageBox.Show("Приложение уже запущено.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            DateTime apps = new DateTime(2025, 04, 05);
+            DateTime apps = new DateTime(2025, 05, 25);
             DateTime currentDate = DateTime.Now;
 
             // Вычисляем разницу между датами
