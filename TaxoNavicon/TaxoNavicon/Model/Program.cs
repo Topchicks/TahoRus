@@ -6,46 +6,47 @@ namespace TaxoNavicon
 {
     internal static class Program
     {
+        // Объявляем мьютекс как статическое поле
+        private static Mutex mutex = null;
+
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
         [STAThread]
         static void Main()
         {
-            // Создаем мьютекс с уникальным именем
-            bool createdNew;
-            Mutex mutex = new Mutex(true, "TachoPrint", out createdNew);
+            // Уникальное имя мьютекса
+            const string mutexName = "TachoPrint";
 
-            // Проверяем, был ли создан новый экземпляр
+            // Пытаемся создать мьютекс
+            mutex = new Mutex(true, mutexName, out bool createdNew);
+
+            // Проверяем, был ли создан новый экземпляр мьютекса
             if (!createdNew)
             {
                 // Если это не новый экземпляр, показываем сообщение и выходим
                 MessageBox.Show("Приложение уже запущено.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            DateTime apps = new DateTime(2025, 05, 25);
-            DateTime currentDate = DateTime.Now;
 
-            // Вычисляем разницу между датами
-            TimeSpan difference = apps - currentDate;
+            // Подписываемся на событие закрытия приложения
+            Application.ApplicationExit += Application_ApplicationExit;
 
-            // Получаем количество оставшихся дней
-            int daysRemaining = difference.Days;
-            if (apps > currentDate)
-            {
-                MessageBox.Show($"Это пробная версия приложения \n до конца пробной весии осталось {daysRemaining}");
-            }
-            else
-            {
-                MessageBox.Show($"Срок пробной версии истёк приложение будет закрыто");
-                System.Threading.Thread.Sleep(3000); // Задержка на 5 секунд
-                Environment.Exit(0); // Закрыть программу
-            }
-
-
+            // Запускаем приложение
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new StartApp());
+        }
+
+        // Обработчик события закрытия приложения
+        private static void Application_ApplicationExit(object sender, EventArgs e)
+        {
+            // Освобождаем мьютекс
+            if (mutex != null)
+            {
+                mutex.ReleaseMutex();
+                mutex.Close();
+            }
         }
     }
 }
