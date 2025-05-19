@@ -28,6 +28,7 @@ namespace TaxoNavicon
         private string filePathCertificate;
 
         private string defualtPrinterWord;
+        private string defualtPrinterSticker;
 
         private string adressMasterRus;
         private string adressMasterEng;
@@ -229,61 +230,68 @@ namespace TaxoNavicon
         // Тут происходит сохранение в базу данных и проверка на повторение номера заказа
         private void ToolStripMenuItemSaveData_Click(object sender, EventArgs e)
         {
-            SetData();
-
-            FileInfo existingFile = new FileInfo(filePathCertificate);
-            using (ExcelPackage excelPackage = new ExcelPackage(existingFile))
+            if(textBoxNameCustomer.Text != "")
             {
-                // Получаем существующий лист
-                var worksheet = excelPackage.Workbook.Worksheets["EuropeanCertificate"];
-                int startRow = 3; // Первые 2 строчки это заголовки
-                int row = startRow;
+                SetData();
 
-                // Ищем первую пустую строку
-                while (worksheet.Cells[row, 1].Value != null) // Проверяем первую ячейку в строке
+                FileInfo existingFile = new FileInfo(filePathCertificate);
+                using (ExcelPackage excelPackage = new ExcelPackage(existingFile))
                 {
-                    var cellValue = worksheet.Cells[row, 1].Text;
-                    if (string.Equals(cellValue, poleDataEuropean.orderNumber.ToString(), StringComparison.OrdinalIgnoreCase))
+                    // Получаем существующий лист
+                    var worksheet = excelPackage.Workbook.Worksheets["EuropeanCertificate"];
+                    int startRow = 3; // Первые 2 строчки это заголовки
+                    int row = startRow;
+
+                    // Ищем первую пустую строку
+                    while (worksheet.Cells[row, 1].Value != null) // Проверяем первую ячейку в строке
                     {
-                        MessageBox.Show("Такой номер заказа уже есть!");
+                        var cellValue = worksheet.Cells[row, 1].Text;
+                        if (string.Equals(cellValue, poleDataEuropean.orderNumber.ToString(), StringComparison.OrdinalIgnoreCase))
+                        {
+                            MessageBox.Show("Такой номер заказа уже есть!");
 
-                        return; // Копия найдена
+                            return; // Копия найдена
+                        }
+                        row++;
                     }
-                    row++;
+                    // Заполняем данные из формы
+                    worksheet.Cells[row, 1].Value = poleDataEuropean.orderNumber.ToString();
+                    worksheet.Cells[row, 2].Value = poleDataEuropean.master;
+                    worksheet.Cells[row, 3].Value = poleDataEuropean.dataJob;
+
+                    worksheet.Cells[row, 4].Value = poleDataEuropean.nameCustomer;
+                    worksheet.Cells[row, 5].Value = poleDataEuropean.nameCustomerEng;
+                    worksheet.Cells[row, 6].Value = poleDataEuropean.adresCustomer;
+                    worksheet.Cells[row, 20].Value = poleDataEuropean.adresCustomerEng;
+
+                    worksheet.Cells[row, 7].Value = poleDataEuropean.manufacturerTahograph;
+                    worksheet.Cells[row, 8].Value = poleDataEuropean.serialNumberTahograph;
+                    worksheet.Cells[row, 9].Value = poleDataEuropean.modelTachograph;
+
+                    worksheet.Cells[row, 10].Value = poleDataEuropean.manufacturerVehicle;
+                    worksheet.Cells[row, 11].Value = poleDataEuropean.vinVehicle;
+                    worksheet.Cells[row, 12].Value = poleDataEuropean.tireMarkingsVehicle;
+                    worksheet.Cells[row, 13].Value = poleDataEuropean.modelVehicle;
+                    worksheet.Cells[row, 14].Value = poleDataEuropean.yearOfIssueVehiccle;
+                    worksheet.Cells[row, 15].Value = poleDataEuropean.registrationNumberVehicle;
+                    worksheet.Cells[row, 16].Value = poleDataEuropean.odometerKmVehicle;
+
+                    worksheet.Cells[row, 17].Value = poleDataEuropean.w;
+                    worksheet.Cells[row, 18].Value = poleDataEuropean.k;
+                    worksheet.Cells[row, 19].Value = poleDataEuropean.l;
+
+
+                    worksheet.Cells[row, 21].Value = poleDataEuropean.temperature;
+                    worksheet.Cells[row, 22].Value = poleDataEuropean.protectore;
+
+                    // Сохраняем изменения
+                    excelPackage.Save();
+                    MessageBox.Show("Данные успешно добавлены в Excel!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                // Заполняем данные из формы
-                worksheet.Cells[row, 1].Value = poleDataEuropean.orderNumber.ToString();
-                worksheet.Cells[row, 2].Value = poleDataEuropean.master;
-                worksheet.Cells[row, 3].Value = poleDataEuropean.dataJob;
-
-                worksheet.Cells[row, 4].Value = poleDataEuropean.nameCustomer;
-                worksheet.Cells[row, 5].Value = poleDataEuropean.nameCustomerEng;
-                worksheet.Cells[row, 6].Value = poleDataEuropean.adresCustomer;
-                worksheet.Cells[row, 20].Value = poleDataEuropean.adresCustomerEng;
-
-                worksheet.Cells[row, 7].Value = poleDataEuropean.manufacturerTahograph;
-                worksheet.Cells[row, 8].Value = poleDataEuropean.serialNumberTahograph;
-                worksheet.Cells[row, 9].Value = poleDataEuropean.modelTachograph;
-
-                worksheet.Cells[row, 10].Value = poleDataEuropean.manufacturerVehicle;
-                worksheet.Cells[row, 11].Value = poleDataEuropean.vinVehicle;
-                worksheet.Cells[row, 12].Value = poleDataEuropean.tireMarkingsVehicle;
-                worksheet.Cells[row, 13].Value = poleDataEuropean.modelVehicle;
-                worksheet.Cells[row, 14].Value = poleDataEuropean.yearOfIssueVehiccle;
-                worksheet.Cells[row, 15].Value = poleDataEuropean.registrationNumberVehicle;
-                worksheet.Cells[row, 16].Value = poleDataEuropean.odometerKmVehicle;
-
-                worksheet.Cells[row, 17].Value = poleDataEuropean.w;
-                worksheet.Cells[row, 18].Value = poleDataEuropean.k;
-                worksheet.Cells[row, 19].Value = poleDataEuropean.l;
-
-
-                worksheet.Cells[row, 21].Value = poleDataEuropean.temperature;
-                worksheet.Cells[row, 22].Value = poleDataEuropean.protectore;
-
-                // Сохраняем изменения
-                excelPackage.Save();
-                MessageBox.Show("Данные успешно добавлены в Excel!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Ошибка ячейка имя клиента");
             }
         }
         public void LoadSettingJS()
@@ -293,6 +301,8 @@ namespace TaxoNavicon
             SettingsJS settingsJS = JsonSerializer.Deserialize<SettingsJS>(saveJson);
             filePathCertificate = settingsJS.FilePath;
             defualtPrinterWord = settingsJS.DefualtPrinterWord;
+            defualtPrinterSticker = settingsJS.DefualtPrinterSticker;
+            formatingSticker = settingsJS.FormatingSticker;
             adressMasterRus = settingsJS.AdressMasterRus;
             adressMasterEng = settingsJS.AdressMasterEng;
             adressSticker = settingsJS.AdressSticker;
@@ -360,7 +370,6 @@ namespace TaxoNavicon
         private PrintDocument printDocument;
         private bool formatingSticker;
         private string pathSettingsFile; // Путь к файлу с настройками
-        private string defualtPrinterSticker; // 
 
         private void ToolStripMenuItemPrintSticker_Click(object sender, EventArgs e)
         {
@@ -403,10 +412,6 @@ namespace TaxoNavicon
 
             printDocument.DefaultPageSettings.PrinterSettings.PrinterName = defualtPrinterSticker;
             printDocument.Print();
-            /*if (printDialog.ShowDialog() == DialogResult.OK)
-            {
-                
-            }*/
         }
 
         // Печать наклейки
