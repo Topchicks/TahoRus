@@ -41,6 +41,7 @@
             this.btnOpenSettings = new System.Windows.Forms.Button();
             this.buttonOpenEuropeanTypeForm = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.OpenTranslater = new System.Windows.Forms.Button();
             pictureBox3 = new System.Windows.Forms.PictureBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -119,6 +120,7 @@
             this.panelButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(64)))));
+            this.panelButton.Controls.Add(this.OpenTranslater);
             this.panelButton.Controls.Add(this.buttonOpenRussianPanel);
             this.panelButton.Controls.Add(this.btnOpenSettings);
             this.panelButton.Controls.Add(this.buttonOpenEuropeanTypeForm);
@@ -142,6 +144,7 @@
             this.buttonOpenRussianPanel.Size = new System.Drawing.Size(200, 44);
             this.buttonOpenRussianPanel.TabIndex = 1;
             this.buttonOpenRussianPanel.Text = "Российский документ";
+            this.buttonOpenRussianPanel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonOpenRussianPanel.UseVisualStyleBackColor = true;
             this.buttonOpenRussianPanel.Visible = false;
             this.buttonOpenRussianPanel.Click += new System.EventHandler(this.buttonOpenRussianPanel_Click);
@@ -161,6 +164,7 @@
             this.btnOpenSettings.Size = new System.Drawing.Size(200, 44);
             this.btnOpenSettings.TabIndex = 2;
             this.btnOpenSettings.Text = "Настройки";
+            this.btnOpenSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOpenSettings.UseVisualStyleBackColor = true;
             this.btnOpenSettings.Click += new System.EventHandler(this.btnOpenSettings_Click);
             // 
@@ -179,6 +183,7 @@
             this.buttonOpenEuropeanTypeForm.Size = new System.Drawing.Size(200, 44);
             this.buttonOpenEuropeanTypeForm.TabIndex = 0;
             this.buttonOpenEuropeanTypeForm.Text = "Европейский документ";
+            this.buttonOpenEuropeanTypeForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonOpenEuropeanTypeForm.UseVisualStyleBackColor = true;
             this.buttonOpenEuropeanTypeForm.Click += new System.EventHandler(this.buttonOpenEuropeanTypeForm_Click);
             // 
@@ -196,6 +201,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1032, 567);
             this.panel1.TabIndex = 1;
+            // 
+            // OpenTranslater
+            // 
+            this.OpenTranslater.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.OpenTranslater.Dock = System.Windows.Forms.DockStyle.Top;
+            this.OpenTranslater.FlatAppearance.BorderSize = 0;
+            this.OpenTranslater.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OpenTranslater.Font = new System.Drawing.Font("Arial", 12F);
+            this.OpenTranslater.ForeColor = System.Drawing.Color.White;
+            this.OpenTranslater.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.OpenTranslater.Location = new System.Drawing.Point(0, 88);
+            this.OpenTranslater.Name = "OpenTranslater";
+            this.OpenTranslater.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.OpenTranslater.Size = new System.Drawing.Size(200, 44);
+            this.OpenTranslater.TabIndex = 3;
+            this.OpenTranslater.Text = "Переводы";
+            this.OpenTranslater.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.OpenTranslater.UseVisualStyleBackColor = true;
+            this.OpenTranslater.Click += new System.EventHandler(this.OpenTranslater_Click);
             // 
             // StartApp
             // 
@@ -228,5 +252,6 @@
         private System.Windows.Forms.Button btnOpenSettings;
         private System.Windows.Forms.Button buttonOpenEuropeanTypeForm;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button OpenTranslater;
     }
 }

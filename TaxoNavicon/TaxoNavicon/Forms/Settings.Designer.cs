@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Guna2Button btnTranslate;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Settings));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,6 +54,7 @@
             this.textBoxFileSavePath = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel25 = new Guna.UI2.WinForms.Guna2Panel();
             this.label28 = new System.Windows.Forms.Label();
+            btnTranslate = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.adressRus.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
@@ -88,6 +90,7 @@
             // 
             // adressRus
             // 
+            this.adressRus.Controls.Add(btnTranslate);
             this.adressRus.Controls.Add(this.linkLabelOpenPanelInfo);
             this.adressRus.Controls.Add(this.comboBoxPrinterSticker);
             this.adressRus.Controls.Add(this.comboBoxPrinterWord);
@@ -242,9 +245,9 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(7, 6);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(248, 16);
+            this.label5.Size = new System.Drawing.Size(170, 16);
             this.label5.TabIndex = 10;
-            this.label5.Text = "Адрес мастерской на Английском";
+            this.label5.Text = "Адрес мастерской Eng";
             // 
             // guna2Panel4
             // 
@@ -314,9 +317,9 @@
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(7, 7);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(151, 16);
+            this.label8.Size = new System.Drawing.Size(182, 16);
             this.label8.TabIndex = 10;
-            this.label8.Text = "Адрес для наклейки";
+            this.label8.Text = "Адрес для наклейки Eng";
             // 
             // guna2Panel1
             // 
@@ -421,6 +424,24 @@
             this.label28.Size = new System.Drawing.Size(140, 16);
             this.label28.TabIndex = 10;
             this.label28.Text = "Место сохранения";
+            // 
+            // btnTranslate
+            // 
+            btnTranslate.BorderRadius = 6;
+            btnTranslate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            btnTranslate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            btnTranslate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            btnTranslate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            btnTranslate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
+            btnTranslate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            btnTranslate.ForeColor = System.Drawing.Color.White;
+            btnTranslate.Location = new System.Drawing.Point(10, 288);
+            btnTranslate.Name = "btnTranslate";
+            btnTranslate.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            btnTranslate.Size = new System.Drawing.Size(140, 39);
+            btnTranslate.TabIndex = 39;
+            btnTranslate.Text = "Перевести";
+            btnTranslate.Click += new System.EventHandler(this.btnTranslate_Click);
             // 
             // Settings
             // 

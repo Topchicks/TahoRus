@@ -6,20 +6,19 @@ using System.Drawing.Printing;
 using System.IO;
 using System.Text.Json;
 using System.Windows.Forms;
-using TaxoNavicon.Forms;
 using Font = System.Drawing.Font;
 using Rectangle = System.Drawing.Rectangle;
 using Word = Microsoft.Office.Interop.Word;
-using System.Threading.Tasks;
 using Task = System.Threading.Tasks.Task;
 using Guna.UI2.WinForms;
+using TaxoNavicon.Model;
 
 namespace TaxoNavicon
 {
     public partial class EuropeanTypeForm : Form
     {
         PoleDataEuropean poleDataEuropean;
-
+        Translate translate = new Translate();
         private Word.Application wordApp;
         private Word.Document wordDoc;
         private string filePath;
@@ -40,7 +39,18 @@ namespace TaxoNavicon
             poleDataEuropean = new PoleDataEuropean();
 
 
-            filePathSaveJson = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "JsonSetting.json");
+            // Тут получим относительный путь к файлу JSon настроек
+            //pathSettingsFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "JsonSetting.json");
+            string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string appName = "TachoPrintData"; // Замените на название Вашего приложения
+            string settingsFolder = Path.Combine(documentsPath, appName);
+
+            if (!Directory.Exists(settingsFolder))
+            {
+                Directory.CreateDirectory(settingsFolder);
+            }
+
+            filePathSaveJson = Path.Combine(settingsFolder, "JsonSetting.json");
             LoadSettingJS();
 
 
@@ -433,7 +443,7 @@ namespace TaxoNavicon
             g.DrawString("Tyres: " + poleDataEuropean.tireMarkingsVehicle, font, Brushes.Black, xOffset, yOffset);
 
             yOffset += lineSpacing;
-            g.DrawString("Øl: " + poleDataEuropean.l, font, Brushes.Black, xOffset, yOffset);
+            g.DrawString("Øl: " + poleDataEuropean.l + " mm", font, Brushes.Black, xOffset, yOffset);
 
             yOffset += lineSpacing;
             g.DrawString("s/n Tacho: " + poleDataEuropean.serialNumberTahograph, font, Brushes.Black, xOffset, yOffset);
@@ -447,10 +457,10 @@ namespace TaxoNavicon
             g.DrawString("TNo: " + poleDataEuropean.registrationNumberVehicle, font, Brushes.Black, xOffset, yOffset);
 
             yOffset += lineSpacing;
-            g.DrawString("w: " + poleDataEuropean.w, font, Brushes.Black, xOffset, yOffset);
+            g.DrawString("w: " + poleDataEuropean.w + " imp/km", font, Brushes.Black, xOffset, yOffset);
 
             yOffset += lineSpacing;
-            g.DrawString("k: " + poleDataEuropean.k, font, Brushes.Black, xOffset, yOffset);
+            g.DrawString("k: " + poleDataEuropean.k + " imp/km", font, Brushes.Black, xOffset, yOffset);
 
             xOffset = 305;
             yOffset = 2;
@@ -585,6 +595,12 @@ namespace TaxoNavicon
             }
         }
 
+        private void Translater()
+        {
+            textBoxNameCustomerEng.Text = translate.Transliterate(textBoxNameCustomer.Text);
+            textBoxAdresCustomerEng.Text = translate.Transliterate(textBoxAdresCustomer.Text);
+
+        }
         // Это для текста VIN номер ТС
         private void textBoxOnlyEngNo_o_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -642,6 +658,11 @@ namespace TaxoNavicon
 
             // Возвращаем к оригинальному цвету
             textBox.FillColor = originalColor;
+        }
+
+        private void btnTranslate_Click(object sender, EventArgs e)
+        {
+            Translater();
         }
     }
 }

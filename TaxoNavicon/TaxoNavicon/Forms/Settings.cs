@@ -4,6 +4,7 @@ using System.IO;
 using System.Text.Json;
 using System.Windows.Forms;
 using TaxoNavicon.Forms;
+using TaxoNavicon.Model;
 
 namespace TaxoNavicon
 {
@@ -23,7 +24,18 @@ namespace TaxoNavicon
         {
             InitializeComponent();
             // Тут получим относительный путь к файлу JSon настроек
-            pathSettingsFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "JsonSetting.json");
+            //pathSettingsFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "JsonSetting.json");
+            string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string appName = "TachoPrintData"; // Замените на название Вашего приложения
+            string settingsFolder = Path.Combine(documentsPath, appName);
+
+            if (!Directory.Exists(settingsFolder))
+            {
+                Directory.CreateDirectory(settingsFolder);
+            }
+
+            pathSettingsFile = Path.Combine(settingsFolder, "JsonSetting.json");
+
             LoadSaveJson();
 
 
@@ -142,6 +154,13 @@ namespace TaxoNavicon
                     SaveJsonSettings();
                 }
             }
+        }
+
+        Translate translate = new Translate();
+        private void btnTranslate_Click(object sender, EventArgs e)
+        {
+            adressEngBox.Text = translate.Transliterate(adressRusBox.Text);
+            SaveJsonSettings();
         }
     }
 }

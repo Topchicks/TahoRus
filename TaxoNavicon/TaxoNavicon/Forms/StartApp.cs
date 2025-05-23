@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using TaxoNavicon.Forms;
 
 namespace TaxoNavicon
 {
@@ -9,9 +10,14 @@ namespace TaxoNavicon
         public StartApp()
         {
             InitializeComponent();
+            Closing += MainWindow_Closing;
             #region
             // Создаем контекстное меню
             ContextMenuStrip contextMenu = new ContextMenuStrip();
+
+            ToolStripMenuItem translatedItem = new ToolStripMenuItem("Переводы");
+            translatedItem.Click += (s, e) => OpenTranslatedItemPanel(); // Закрытие приложения
+            contextMenu.Items.Add(translatedItem);
 
             // Создаем элементы меню
             ToolStripMenuItem openItem = new ToolStripMenuItem("Открыть");
@@ -22,6 +28,9 @@ namespace TaxoNavicon
             exitItem.Click += (s, e) => Application.Exit(); // Закрытие приложения
             contextMenu.Items.Add(exitItem);
 
+
+            
+
             // Привязываем контекстное меню к NotifyIcon
             notifyIcon1.ContextMenuStrip = contextMenu;
 
@@ -30,15 +39,25 @@ namespace TaxoNavicon
             #endregion
 
         }
+        private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            e.Cancel = true; // Отменяем закрытие окна
+            Hide();           // Скрываем окно
+        }
         private void buttonOpenEuropeanTypeForm_Click(object sender, EventArgs e)
         {
             this.Hide();
             EuropeanTypeForm europeanTypeForm = new EuropeanTypeForm();
 
             europeanTypeForm.ShowDialog();
-
         }
 
+        private void OpenTranslatedItemPanel()
+        {
+            Translated translated = new Translated();
+
+            translated.Show();
+        }
         private void buttonOpenRussianPanel_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -55,6 +74,11 @@ namespace TaxoNavicon
             settings.FormClosed += (s, args) => this.Show();
 
             settings.Show();
+        }
+
+        private void OpenTranslater_Click(object sender, EventArgs e)
+        {
+            OpenTranslatedItemPanel();
         }
     }
 }

@@ -40,6 +40,5 @@
         public string l;
         public string w;
         public string k;
-
     }
 }

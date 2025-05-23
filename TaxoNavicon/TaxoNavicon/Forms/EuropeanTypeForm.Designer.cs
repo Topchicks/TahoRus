@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Guna2Button btnTranslate;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EuropeanTypeForm));
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -120,6 +121,7 @@
             this.LoadEuropeanDocuments = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemSetData = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemResetData = new System.Windows.Forms.ToolStripMenuItem();
+            btnTranslate = new Guna.UI2.WinForms.Guna2Button();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -1187,6 +1189,7 @@
             this.guna2Panel22.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.guna2Panel22.BorderRadius = 2;
             this.guna2Panel22.BorderThickness = 2;
+            this.guna2Panel22.Controls.Add(btnTranslate);
             this.guna2Panel22.Controls.Add(this.textBoxAdresCustomerEng);
             this.guna2Panel22.Controls.Add(this.guna2ShadowPanel2);
             this.guna2Panel22.Controls.Add(this.textBoxAdresCustomer);
@@ -1471,6 +1474,24 @@
             this.ToolStripMenuItemResetData.Size = new System.Drawing.Size(95, 20);
             this.ToolStripMenuItemResetData.Text = "Перезаписать";
             this.ToolStripMenuItemResetData.Click += new System.EventHandler(this.ToolStripMenuItemResetData_Click);
+            // 
+            // btnTranslate
+            // 
+            btnTranslate.BorderRadius = 6;
+            btnTranslate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            btnTranslate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            btnTranslate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            btnTranslate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            btnTranslate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
+            btnTranslate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            btnTranslate.ForeColor = System.Drawing.Color.White;
+            btnTranslate.Location = new System.Drawing.Point(9, 208);
+            btnTranslate.Name = "btnTranslate";
+            btnTranslate.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            btnTranslate.Size = new System.Drawing.Size(140, 39);
+            btnTranslate.TabIndex = 38;
+            btnTranslate.Text = "Перевести";
+            btnTranslate.Click += new System.EventHandler(this.btnTranslate_Click);
             // 
             // EuropeanTypeForm
             // 
