@@ -37,11 +37,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelButton = new System.Windows.Forms.Panel();
+            this.OpenTranslater = new System.Windows.Forms.Button();
             this.buttonOpenRussianPanel = new System.Windows.Forms.Button();
             this.btnOpenSettings = new System.Windows.Forms.Button();
             this.buttonOpenEuropeanTypeForm = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.OpenTranslater = new System.Windows.Forms.Button();
             pictureBox3 = new System.Windows.Forms.PictureBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -129,6 +129,25 @@
             this.panelButton.Size = new System.Drawing.Size(200, 497);
             this.panelButton.TabIndex = 4;
             // 
+            // OpenTranslater
+            // 
+            this.OpenTranslater.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.OpenTranslater.Dock = System.Windows.Forms.DockStyle.Top;
+            this.OpenTranslater.FlatAppearance.BorderSize = 0;
+            this.OpenTranslater.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OpenTranslater.Font = new System.Drawing.Font("Arial", 12F);
+            this.OpenTranslater.ForeColor = System.Drawing.Color.White;
+            this.OpenTranslater.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.OpenTranslater.Location = new System.Drawing.Point(0, 88);
+            this.OpenTranslater.Name = "OpenTranslater";
+            this.OpenTranslater.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.OpenTranslater.Size = new System.Drawing.Size(200, 44);
+            this.OpenTranslater.TabIndex = 3;
+            this.OpenTranslater.Text = "Переводы";
+            this.OpenTranslater.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.OpenTranslater.UseVisualStyleBackColor = true;
+            this.OpenTranslater.Click += new System.EventHandler(this.OpenTranslater_Click);
+            // 
             // buttonOpenRussianPanel
             // 
             this.buttonOpenRussianPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -146,7 +165,6 @@
             this.buttonOpenRussianPanel.Text = "Российский документ";
             this.buttonOpenRussianPanel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonOpenRussianPanel.UseVisualStyleBackColor = true;
-            this.buttonOpenRussianPanel.Visible = false;
             this.buttonOpenRussianPanel.Click += new System.EventHandler(this.buttonOpenRussianPanel_Click);
             // 
             // btnOpenSettings
@@ -201,25 +219,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1032, 567);
             this.panel1.TabIndex = 1;
-            // 
-            // OpenTranslater
-            // 
-            this.OpenTranslater.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.OpenTranslater.Dock = System.Windows.Forms.DockStyle.Top;
-            this.OpenTranslater.FlatAppearance.BorderSize = 0;
-            this.OpenTranslater.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.OpenTranslater.Font = new System.Drawing.Font("Arial", 12F);
-            this.OpenTranslater.ForeColor = System.Drawing.Color.White;
-            this.OpenTranslater.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.OpenTranslater.Location = new System.Drawing.Point(0, 88);
-            this.OpenTranslater.Name = "OpenTranslater";
-            this.OpenTranslater.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.OpenTranslater.Size = new System.Drawing.Size(200, 44);
-            this.OpenTranslater.TabIndex = 3;
-            this.OpenTranslater.Text = "Переводы";
-            this.OpenTranslater.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.OpenTranslater.UseVisualStyleBackColor = true;
-            this.OpenTranslater.Click += new System.EventHandler(this.OpenTranslater_Click);
             // 
             // StartApp
             // 

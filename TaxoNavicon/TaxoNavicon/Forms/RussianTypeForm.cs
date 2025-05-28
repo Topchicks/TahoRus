@@ -1,4 +1,5 @@
-﻿using Microsoft.Office.Interop.Word;
+﻿using Guna.UI2.WinForms;
+using Microsoft.Office.Interop.Word;
 using OfficeOpenXml;
 using System;
 using System.Drawing.Printing;
@@ -60,7 +61,16 @@ namespace TaxoNavicon
         {
             InitializeComponent();
 
-            filePathSaveJson = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "JsonSetting.json");
+            string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string appName = "TachoPrintData"; // Замените на название Вашего приложения
+            string settingsFolder = Path.Combine(documentsPath, appName);
+
+            if (!Directory.Exists(settingsFolder))
+            {
+                Directory.CreateDirectory(settingsFolder);
+            }
+
+            filePathSaveJson = Path.Combine(settingsFolder, "JsonSetting.json");
             LoadSettingJS();
 
 
@@ -79,7 +89,7 @@ namespace TaxoNavicon
         private void SetData()
         {
             //Order - заказ
-            poleDataRussian.orderNumber = (int)numericUpDowntextBoxOrderNumber.Value;// номер заказа
+            poleDataRussian.orderNumber = (int)guna2NumericUpDown1.Value;// номер заказа
             poleDataRussian.master = comboBoxMaster.Text; // мастер
 
 
@@ -88,7 +98,7 @@ namespace TaxoNavicon
             poleDataRussian.adresCustomer = textBoxAdresCustomer.Text;// адрес заказчика
 
             //Vehicle - транспорт
-            poleDataRussian.markaVehicle = textBoxMarkaVehicle.Text; // марка машины
+            poleDataRussian.markaVehicle = MarkaVehical.Text; // марка машины
             poleDataRussian.modelVehicle = textBoxModelVehicle.Text; // модель машины
             poleDataRussian.vinVehicle = textBoxVinNumberVehicle.Text; // вин номер машины
             poleDataRussian.registrationNumberVehicle = textBoxRegistrationNumberVehicle.Text; // рег. номер машины
@@ -105,68 +115,15 @@ namespace TaxoNavicon
             poleDataRussian.w = textBoxW.Text;
             poleDataRussian.k = textBoxK.Text;
 
-            poleDataRussian.dataJob = dateTimePickerJob.Value.ToShortDateString();//  время выполнения работ
+            poleDataRussian.dataJob = dataJob.Value.ToShortDateString();//  время выполнения работ
 
             // Тут обработаем новую дату выполнения работ
-            poleDataRussian.newDataJob = dateTimePickerJob.Value.AddYears(3).ToShortDateString();//  время выполнения работ
+            poleDataRussian.newDataJob = dataJob.Value.AddYears(3).ToShortDateString();//  время выполнения работ
 
-            poleDataRussian.locationInstallationTable = textBoxLocationInstallationTable.Text;
-            poleDataRussian.inspectionResult = comboBoxInspectionResult.Text;
-            poleDataRussian.signsManipulation = comboBoxSignsManipulation.Text;
-            poleDataRussian.specialMarks = textBoxSpecialMarks.Text;
-        }
-        #endregion
-
-        #region PrintDock
-        private void ToolStripMenuItemPrintCertificate_Click_1(object sender, EventArgs e)
-        {
-            SetData();
-            string relativePath = @"RussianCertificate.docx"; // Относительный путь к файлу
-            filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
-            wordApp = new Word.Application();
-            dateTimePickerJob.CustomFormat = "dd/MM/yyyy"; // Устанавливаем только дату
-
-            CheckOpenDock();
-            //wordDoc = wordApp.Documents.Open(filePath);
-
-            #region money
-            FindAndReplace(wordDoc, "<orderNumber>", poleDataRussian.orderNumber.ToString());
-            FindAndReplace(wordDoc, "<master>", poleDataRussian.master);
-            FindAndReplace(wordDoc, "<dataJob>", poleDataRussian.dataJob);
-            FindAndReplace(wordDoc, "<newData>", poleDataRussian.newDataJob);
-
-            FindAndReplace(wordDoc, "<nameCustomer>", poleDataRussian.nameCustomer);
-            FindAndReplace(wordDoc, "<adresCustomer>", poleDataRussian.adresCustomer);
-
-            FindAndReplace(wordDoc, "<markaVehicle>", poleDataRussian.markaVehicle);
-            FindAndReplace(wordDoc, "<modelVehicle>", poleDataRussian.modelVehicle);
-            FindAndReplace(wordDoc, "<vinVehicle>", poleDataRussian.vinVehicle);
-            FindAndReplace(wordDoc, "<registrationNumberVehicle>", poleDataRussian.registrationNumberVehicle);
-            FindAndReplace(wordDoc, "<tireMarkingsVehicle>", poleDataRussian.tireMarkingsVehicle);
-            FindAndReplace(wordDoc, "<odometrKmVehicle>", poleDataRussian.odometerKmVehicle);
-
-            FindAndReplace(wordDoc, "<manufacturerTahograph>", poleDataRussian.manufacturerTahograph);
-            FindAndReplace(wordDoc, "<serialNumberTahograph>", poleDataRussian.serialNumberTahograph);
-            FindAndReplace(wordDoc, "<modelTahograph>", poleDataRussian.modelTachograph);
-            FindAndReplace(wordDoc, "<productionTahograph>", poleDataRussian.producedTachograph);
-
-
-            FindAndReplace(wordDoc, "<locationInstallationTable>", poleDataRussian.locationInstallationTable);
-            FindAndReplace(wordDoc, "<inspectionResult>", poleDataRussian.inspectionResult);
-            FindAndReplace(wordDoc, "<signsManipulation>", poleDataRussian.signsManipulation);
-            FindAndReplace(wordDoc, "<specialMarks>", poleDataRussian.specialMarks);
-
-            FindAndReplace(wordDoc, "<L>", poleDataRussian.l);
-            FindAndReplace(wordDoc, "<W>", poleDataRussian.w);
-            FindAndReplace(wordDoc, "<K>", poleDataRussian.k);
-            #endregion
-
-            PrintDialog printDialog = new PrintDialog();
-            if (printDialog.ShowDialog() == DialogResult.OK)
-            {
-                wordDoc.PrintOut();
-            }
-            ClouseConnectionWord();
+            poleDataRussian.locationInstallationTable = guna2TextBox4.Text; 
+            poleDataRussian.inspectionResult = guna2TextBox1.Text;
+            poleDataRussian.signsManipulation = guna2TextBox2.Text;
+            poleDataRussian.specialMarks = guna2TextBox3.Text;
         }
         #endregion
 
@@ -329,16 +286,16 @@ namespace TaxoNavicon
         public void GetDataLoad(PoleDataRussian poleDataRussian)
         {
             //Order - заказ
-            numericUpDowntextBoxOrderNumber.Value = poleDataRussian.orderNumber;// номер заказа
+            guna2NumericUpDown1.Value = poleDataRussian.orderNumber;// номер заказа
             comboBoxMaster.Text = poleDataRussian.master; // мастер
-            dateTimePickerJob.Value = DateTime.Parse(poleDataRussian.dataJob); // Установка значения в DateTimePicker
+            dataJob.Value = DateTime.Parse(poleDataRussian.dataJob); // Установка значения в DateTimePicker
 
             //Customer - заказчик
             textBoxNameCustomer.Text = poleDataRussian.nameCustomer; // имя русском
             textBoxAdresCustomer.Text = poleDataRussian.adresCustomer;// адрес заказчика
 
             //Vehicle - транспорт
-            textBoxMarkaVehicle.Text = poleDataRussian.markaVehicle; // марка машины
+            textBoxManufacturerVehicle.Text = poleDataRussian.markaVehicle; // марка машины
             textBoxModelVehicle.Text = poleDataRussian.modelVehicle; // модель машины
             textBoxVinNumberVehicle.Text = poleDataRussian.vinVehicle; // вин номер машины
             textBoxRegistrationNumberVehicle.Text = poleDataRussian.registrationNumberVehicle; // рег. номер машины
@@ -351,12 +308,12 @@ namespace TaxoNavicon
             textBoxProducedTachograph.Text = poleDataRussian.producedTachograph; // год производства
             textBoxSerialNumberTahograph.Text = poleDataRussian.serialNumberTahograph; // год производства
 
-            
 
-            textBoxLocationInstallationTable.Text = poleDataRussian.locationInstallationTable;
-            comboBoxInspectionResult.Text = poleDataRussian.inspectionResult;
-            comboBoxSignsManipulation.Text = poleDataRussian.signsManipulation;
-            textBoxSpecialMarks.Text = poleDataRussian.specialMarks;
+            
+            guna2TextBox4.Text = poleDataRussian.locationInstallationTable;
+            guna2TextBox1.Text = poleDataRussian.inspectionResult;
+            guna2TextBox2.Text = poleDataRussian.signsManipulation;
+            guna2TextBox3.Text = poleDataRussian.specialMarks;
 
             textBoxL.Text = poleDataRussian.l;
             textBoxW.Text = poleDataRussian.w;
@@ -446,6 +403,57 @@ namespace TaxoNavicon
             PrintStickerRussian printStickerRussian = new PrintStickerRussian(poleDataRussian);
 
             printStickerRussian.ShowDialog();
+        }
+
+        private void ToolStripMenuItemPrintCertificate_Click(object sender, EventArgs e)
+        {
+            SetData();
+            string relativePath = @"RussianCertificate.docx"; // Относительный путь к файлу
+            filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
+            wordApp = new Word.Application();
+            dataJob.CustomFormat = "dd/MM/yyyy"; // Устанавливаем только дату
+
+            CheckOpenDock();
+            //wordDoc = wordApp.Documents.Open(filePath);
+
+            #region money
+            FindAndReplace(wordDoc, "<orderNumber>", poleDataRussian.orderNumber.ToString());
+            FindAndReplace(wordDoc, "<master>", poleDataRussian.master);
+            FindAndReplace(wordDoc, "<dataJob>", poleDataRussian.dataJob);
+            FindAndReplace(wordDoc, "<newData>", poleDataRussian.newDataJob);
+
+            FindAndReplace(wordDoc, "<nameCustomer>", poleDataRussian.nameCustomer);
+            FindAndReplace(wordDoc, "<adresCustomer>", poleDataRussian.adresCustomer);
+
+            FindAndReplace(wordDoc, "<markaVehicle>", poleDataRussian.markaVehicle);
+            FindAndReplace(wordDoc, "<modelVehicle>", poleDataRussian.modelVehicle);
+            FindAndReplace(wordDoc, "<vinVehicle>", poleDataRussian.vinVehicle);
+            FindAndReplace(wordDoc, "<registrationNumberVehicle>", poleDataRussian.registrationNumberVehicle);
+            FindAndReplace(wordDoc, "<tireMarkingsVehicle>", poleDataRussian.tireMarkingsVehicle);
+            FindAndReplace(wordDoc, "<odometrKmVehicle>", poleDataRussian.odometerKmVehicle);
+
+            FindAndReplace(wordDoc, "<manufacturerTahograph>", poleDataRussian.manufacturerTahograph);
+            FindAndReplace(wordDoc, "<serialNumberTahograph>", poleDataRussian.serialNumberTahograph);
+            FindAndReplace(wordDoc, "<modelTahograph>", poleDataRussian.modelTachograph);
+            FindAndReplace(wordDoc, "<productionTahograph>", poleDataRussian.producedTachograph);
+
+
+            FindAndReplace(wordDoc, "<locationInstallationTable>", poleDataRussian.locationInstallationTable);
+            FindAndReplace(wordDoc, "<inspectionResult>", poleDataRussian.inspectionResult);
+            FindAndReplace(wordDoc, "<signsManipulation>", poleDataRussian.signsManipulation);
+            FindAndReplace(wordDoc, "<specialMarks>", poleDataRussian.specialMarks);
+
+            FindAndReplace(wordDoc, "<L>", poleDataRussian.l);
+            FindAndReplace(wordDoc, "<W>", poleDataRussian.w);
+            FindAndReplace(wordDoc, "<K>", poleDataRussian.k);
+            #endregion
+
+            PrintDialog printDialog = new PrintDialog();
+            if (printDialog.ShowDialog() == DialogResult.OK)
+            {
+                wordDoc.PrintOut();
+            }
+            ClouseConnectionWord();
         }
     }
 }
