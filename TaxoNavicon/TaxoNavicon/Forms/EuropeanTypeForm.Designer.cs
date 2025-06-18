@@ -30,8 +30,7 @@
         {
             Guna.UI2.WinForms.Guna2Button btnTranslate;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EuropeanTypeForm));
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
+            this.miniToolStrip = new System.Windows.Forms.MenuStrip();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.textBoxL = new Guna.UI2.WinForms.Guna2NumericUpDown();
@@ -122,8 +121,6 @@
             this.ToolStripMenuItemSetData = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemResetData = new System.Windows.Forms.ToolStripMenuItem();
             btnTranslate = new Guna.UI2.WinForms.Guna2Button();
-            this.panel2.SuspendLayout();
-            this.panel9.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxL)).BeginInit();
@@ -167,27 +164,33 @@
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel2
+            // btnTranslate
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(64)))));
-            this.panel2.Controls.Add(this.panel9);
-            this.panel2.Controls.Add(this.menuStrip1);
-            this.panel2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(940, 705);
-            this.panel2.TabIndex = 1;
+            btnTranslate.BorderRadius = 6;
+            btnTranslate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            btnTranslate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            btnTranslate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            btnTranslate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            btnTranslate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
+            btnTranslate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            btnTranslate.ForeColor = System.Drawing.Color.White;
+            btnTranslate.Location = new System.Drawing.Point(9, 208);
+            btnTranslate.Name = "btnTranslate";
+            btnTranslate.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            btnTranslate.Size = new System.Drawing.Size(140, 39);
+            btnTranslate.TabIndex = 38;
+            btnTranslate.Text = "Перевести";
             // 
-            // panel9
+            // miniToolStrip
             // 
-            this.panel9.AutoSize = true;
-            this.panel9.Controls.Add(this.tableLayoutPanel1);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(0, 24);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(940, 1427);
-            this.panel9.TabIndex = 8;
+            this.miniToolStrip.AccessibleName = "Выбор нового элемента";
+            this.miniToolStrip.AccessibleRole = System.Windows.Forms.AccessibleRole.ComboBox;
+            this.miniToolStrip.AutoSize = false;
+            this.miniToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.miniToolStrip.Location = new System.Drawing.Point(322, 2);
+            this.miniToolStrip.Name = "miniToolStrip";
+            this.miniToolStrip.Size = new System.Drawing.Size(324, 24);
+            this.miniToolStrip.TabIndex = 9;
             // 
             // tableLayoutPanel1
             // 
@@ -201,13 +204,13 @@
             this.tableLayoutPanel1.Controls.Add(this.guna2Panel15, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.guna2Panel22, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.94693F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 82.05307F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(940, 1427);
-            this.tableLayoutPanel1.TabIndex = 6123;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.17915F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 61.82085F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(940, 681);
+            this.tableLayoutPanel1.TabIndex = 6124;
             // 
             // guna2Panel2
             // 
@@ -234,9 +237,9 @@
             this.guna2Panel2.Controls.Add(this.guna2Panel21);
             this.guna2Panel2.Controls.Add(this.guna2Panel20);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel2.Location = new System.Drawing.Point(3, 259);
+            this.guna2Panel2.Location = new System.Drawing.Point(3, 263);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(464, 1165);
+            this.guna2Panel2.Size = new System.Drawing.Size(464, 415);
             this.guna2Panel2.TabIndex = 7;
             // 
             // textBoxL
@@ -557,7 +560,6 @@
             this.textBoxSerialNumberTahograph.SelectedText = "";
             this.textBoxSerialNumberTahograph.Size = new System.Drawing.Size(289, 26);
             this.textBoxSerialNumberTahograph.TabIndex = 9;
-            this.textBoxSerialNumberTahograph.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxOnlyEng_KeyPress);
             // 
             // guna2Panel11
             // 
@@ -677,9 +679,9 @@
             this.guna2Panel14.Controls.Add(this.guna2Panel9);
             this.guna2Panel14.Controls.Add(this.textBoxManufacturerVehicle);
             this.guna2Panel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel14.Location = new System.Drawing.Point(473, 259);
+            this.guna2Panel14.Location = new System.Drawing.Point(473, 263);
             this.guna2Panel14.Name = "guna2Panel14";
-            this.guna2Panel14.Size = new System.Drawing.Size(464, 1165);
+            this.guna2Panel14.Size = new System.Drawing.Size(464, 415);
             this.guna2Panel14.TabIndex = 9;
             // 
             // textBoxYearOfIssueVehiccle
@@ -963,7 +965,7 @@
             this.textBoxVinNumberVehicle.SelectedText = "";
             this.textBoxVinNumberVehicle.Size = new System.Drawing.Size(289, 28);
             this.textBoxVinNumberVehicle.TabIndex = 12;
-            this.textBoxVinNumberVehicle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxOnlyEngNo_o_KeyPress);
+            this.textBoxVinNumberVehicle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyEngNo_o);
             // 
             // guna2Panel9
             // 
@@ -1024,7 +1026,7 @@
             this.guna2Panel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel15.Location = new System.Drawing.Point(3, 3);
             this.guna2Panel15.Name = "guna2Panel15";
-            this.guna2Panel15.Size = new System.Drawing.Size(464, 250);
+            this.guna2Panel15.Size = new System.Drawing.Size(464, 254);
             this.guna2Panel15.TabIndex = 10;
             // 
             // guna2ShadowPanel5
@@ -1202,7 +1204,7 @@
             this.guna2Panel22.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel22.Location = new System.Drawing.Point(473, 3);
             this.guna2Panel22.Name = "guna2Panel22";
-            this.guna2Panel22.Size = new System.Drawing.Size(464, 250);
+            this.guna2Panel22.Size = new System.Drawing.Size(464, 254);
             this.guna2Panel22.TabIndex = 11;
             // 
             // textBoxAdresCustomerEng
@@ -1223,7 +1225,7 @@
             this.textBoxAdresCustomerEng.SelectedText = "";
             this.textBoxAdresCustomerEng.Size = new System.Drawing.Size(289, 26);
             this.textBoxAdresCustomerEng.TabIndex = 7;
-            this.textBoxAdresCustomerEng.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxOnlyEng_KeyPress);
+            this.textBoxAdresCustomerEng.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyEng);
             // 
             // guna2ShadowPanel2
             // 
@@ -1273,7 +1275,7 @@
             this.textBoxAdresCustomer.SelectedText = "";
             this.textBoxAdresCustomer.Size = new System.Drawing.Size(289, 26);
             this.textBoxAdresCustomer.TabIndex = 6;
-            this.textBoxAdresCustomer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxOnlyRuss_KeyPress);
+            this.textBoxAdresCustomer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyRuss);
             // 
             // guna2Panel32
             // 
@@ -1341,7 +1343,7 @@
             this.textBoxNameCustomer.SelectedText = "";
             this.textBoxNameCustomer.Size = new System.Drawing.Size(289, 26);
             this.textBoxNameCustomer.TabIndex = 4;
-            this.textBoxNameCustomer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxOnlyRuss_KeyPress);
+            this.textBoxNameCustomer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyRuss);
             // 
             // textBoxNameCustomerEng
             // 
@@ -1362,7 +1364,7 @@
             this.textBoxNameCustomerEng.SelectedText = "";
             this.textBoxNameCustomerEng.Size = new System.Drawing.Size(289, 26);
             this.textBoxNameCustomerEng.TabIndex = 5;
-            this.textBoxNameCustomerEng.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxOnlyEng_KeyPress);
+            this.textBoxNameCustomerEng.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyEng);
             // 
             // guna2Panel29
             // 
@@ -1440,28 +1442,28 @@
             this.ToolStripMenuItemPrintCertificate.Name = "ToolStripMenuItemPrintCertificate";
             this.ToolStripMenuItemPrintCertificate.Size = new System.Drawing.Size(186, 22);
             this.ToolStripMenuItemPrintCertificate.Text = "Печать сертификата";
-            this.ToolStripMenuItemPrintCertificate.Click += new System.EventHandler(this.ToolStripMenuItemPrintCertificate_Click_1);
+            this.ToolStripMenuItemPrintCertificate.Click += new System.EventHandler(this.ToolStripMenuItemPrintCertificate_Click);
             // 
             // ToolStripMenuItemPrintSticker
             // 
             this.ToolStripMenuItemPrintSticker.Name = "ToolStripMenuItemPrintSticker";
             this.ToolStripMenuItemPrintSticker.Size = new System.Drawing.Size(186, 22);
             this.ToolStripMenuItemPrintSticker.Text = "Печать наклейки";
-            this.ToolStripMenuItemPrintSticker.Click += new System.EventHandler(this.ToolStripMenuItemPrintSticker_Click);
+            this.ToolStripMenuItemPrintSticker.Click += new System.EventHandler(this.ToolStripMenuItemPrintSticker_Click_1);
             // 
             // ToolStripMenuItemSaveData
             // 
             this.ToolStripMenuItemSaveData.Name = "ToolStripMenuItemSaveData";
             this.ToolStripMenuItemSaveData.Size = new System.Drawing.Size(78, 20);
             this.ToolStripMenuItemSaveData.Text = "Сохранить";
-            this.ToolStripMenuItemSaveData.Click += new System.EventHandler(this.ToolStripMenuItemSaveData_Click);
+            this.ToolStripMenuItemSaveData.Click += new System.EventHandler(this.ToolStripMenuItemSaveData_Click_1);
             // 
             // LoadEuropeanDocuments
             // 
             this.LoadEuropeanDocuments.Name = "LoadEuropeanDocuments";
             this.LoadEuropeanDocuments.Size = new System.Drawing.Size(73, 20);
             this.LoadEuropeanDocuments.Text = "Загрузить";
-            this.LoadEuropeanDocuments.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
+            this.LoadEuropeanDocuments.Click += new System.EventHandler(this.LoadEuropeanDocuments_Click);
             // 
             // ToolStripMenuItemSetData
             // 
@@ -1473,25 +1475,7 @@
             this.ToolStripMenuItemResetData.Name = "ToolStripMenuItemResetData";
             this.ToolStripMenuItemResetData.Size = new System.Drawing.Size(95, 20);
             this.ToolStripMenuItemResetData.Text = "Перезаписать";
-            this.ToolStripMenuItemResetData.Click += new System.EventHandler(this.ToolStripMenuItemResetData_Click);
-            // 
-            // btnTranslate
-            // 
-            btnTranslate.BorderRadius = 6;
-            btnTranslate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            btnTranslate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            btnTranslate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            btnTranslate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            btnTranslate.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(175)))), ((int)(((byte)(240)))));
-            btnTranslate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            btnTranslate.ForeColor = System.Drawing.Color.White;
-            btnTranslate.Location = new System.Drawing.Point(9, 208);
-            btnTranslate.Name = "btnTranslate";
-            btnTranslate.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            btnTranslate.Size = new System.Drawing.Size(140, 39);
-            btnTranslate.TabIndex = 38;
-            btnTranslate.Text = "Перевести";
-            btnTranslate.Click += new System.EventHandler(this.btnTranslate_Click);
+            this.ToolStripMenuItemResetData.Click += new System.EventHandler(this.ToolStripMenuItemResetData_Click_1);
             // 
             // EuropeanTypeForm
             // 
@@ -1499,16 +1483,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(940, 705);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(956, 744);
             this.Name = "EuropeanTypeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Европейский документ";
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.textBoxL)).EndInit();
@@ -1579,78 +1560,94 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSaveData;
-        private System.Windows.Forms.ToolStripMenuItem LoadEuropeanDocuments;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSetData;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemResetData;
-        private System.Windows.Forms.ToolStripMenuItem печатьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemPrintCertificate;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemPrintSticker;
+
+        private System.Windows.Forms.MenuStrip miniToolStrip;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2NumericUpDown textBoxL;
+        private Guna.UI2.WinForms.Guna2NumericUpDown textBoxK;
+        private Guna.UI2.WinForms.Guna2NumericUpDown textBoxW;
+        private Guna.UI2.WinForms.Guna2NumericUpDown textBoxTyreWear;
+        private Guna.UI2.WinForms.Guna2NumericUpDown textBoxTemperature;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel4;
+        private System.Windows.Forms.Label label15;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel3;
+        private System.Windows.Forms.Label label16;
         private Guna.UI2.WinForms.Guna2TextBox textBoxModelTachograph;
-        private Guna.UI2.WinForms.Guna2TextBox textBoxSerialNumberTahograph;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel17;
+        private System.Windows.Forms.Label label17;
         private Guna.UI2.WinForms.Guna2TextBox textBoxManufacturerTachograph;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel12;
         private System.Windows.Forms.Label label13;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel11;
-        private System.Windows.Forms.Label label12;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel10;
         private System.Windows.Forms.Label label11;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private System.Windows.Forms.Label label14;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private System.Windows.Forms.Label label18;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
-        private System.Windows.Forms.Label label19;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
-        private System.Windows.Forms.Label label25;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
-        private System.Windows.Forms.Label label26;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
-        private System.Windows.Forms.Label label27;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
-        private System.Windows.Forms.Label label32;
-        private Guna.UI2.WinForms.Guna2TextBox textBoxManufacturerVehicle;
-        private Guna.UI2.WinForms.Guna2TextBox textBoxVinNumberVehicle;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
-        private System.Windows.Forms.Label label21;
-        private Guna.UI2.WinForms.Guna2TextBox textBoxTireMarkingsVehicle;
-        private Guna.UI2.WinForms.Guna2TextBox textBoxModelVehicle;
-        private Guna.UI2.WinForms.Guna2TextBox textBoxRegistrationNumberVehicle;
-        private System.Windows.Forms.Label label15;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel14;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel15;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel17;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel18;
         private System.Windows.Forms.Label label20;
+        private Guna.UI2.WinForms.Guna2TextBox textBoxSerialNumberTahograph;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel11;
+        private System.Windows.Forms.Label label12;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel19;
         private System.Windows.Forms.Label label22;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel21;
         private System.Windows.Forms.Label label24;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel20;
         private System.Windows.Forms.Label label23;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel22;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel14;
+        private Guna.UI2.WinForms.Guna2NumericUpDown textBoxYearOfIssueVehiccle;
+        private Guna.UI2.WinForms.Guna2NumericUpDown textBoxOdometerKmVehicle;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
+        private System.Windows.Forms.Label label14;
+        private Guna.UI2.WinForms.Guna2TextBox textBoxRegistrationNumberVehicle;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private System.Windows.Forms.Label label18;
+        private Guna.UI2.WinForms.Guna2TextBox textBoxModelVehicle;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
+        private System.Windows.Forms.Label label19;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
+        private System.Windows.Forms.Label label25;
+        private Guna.UI2.WinForms.Guna2TextBox textBoxTireMarkingsVehicle;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
+        private System.Windows.Forms.Label label26;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
+        private System.Windows.Forms.Label label21;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
+        private System.Windows.Forms.Label label27;
+        private Guna.UI2.WinForms.Guna2TextBox textBoxVinNumberVehicle;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel9;
+        private System.Windows.Forms.Label label32;
+        private Guna.UI2.WinForms.Guna2TextBox textBoxManufacturerVehicle;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel15;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem печатьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemPrintCertificate;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemPrintSticker;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSaveData;
+        private System.Windows.Forms.ToolStripMenuItem LoadEuropeanDocuments;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSetData;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemResetData;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dataJob;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel26;
         private System.Windows.Forms.Label label29;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBoxMaster;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel24;
         private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel25;
         private System.Windows.Forms.Label label28;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dataJob;
-        private Guna.UI2.WinForms.Guna2ComboBox comboBoxMaster;
         private Guna.UI2.WinForms.Guna2NumericUpDown numericUpDowntextBoxOrderNumber;
-        private Guna.UI2.WinForms.Guna2TextBox textBoxAdresCustomer;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel22;
+        private Guna.UI2.WinForms.Guna2TextBox textBoxAdresCustomerEng;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel2;
         private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2TextBox textBoxAdresCustomer;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel32;
+        private System.Windows.Forms.Label label30;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel31;
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2TextBox textBoxNameCustomer;
@@ -1659,21 +1656,6 @@
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel30;
         private System.Windows.Forms.Label label4;
-        private Guna.UI2.WinForms.Guna2TextBox textBoxAdresCustomerEng;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel32;
-        private System.Windows.Forms.Label label30;
-        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
-        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel4;
-        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel3;
-        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel5;
-        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel2;
-        private Guna.UI2.WinForms.Guna2NumericUpDown textBoxTyreWear;
-        private Guna.UI2.WinForms.Guna2NumericUpDown textBoxTemperature;
-        private Guna.UI2.WinForms.Guna2NumericUpDown textBoxL;
-        private Guna.UI2.WinForms.Guna2NumericUpDown textBoxK;
-        private Guna.UI2.WinForms.Guna2NumericUpDown textBoxW;
-        private Guna.UI2.WinForms.Guna2NumericUpDown textBoxOdometerKmVehicle;
-        private Guna.UI2.WinForms.Guna2NumericUpDown textBoxYearOfIssueVehiccle;
     }
 }
 

@@ -180,19 +180,6 @@ namespace TaxoNavicon
                 }
             }
         }
-
-        // Открытие окна для зпгрузки д
-        private void ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LoadEuropeanDocument loadEuropeanDocument = null;
-            if(loadEuropeanDocument == null)
-            {
-                loadEuropeanDocument = new LoadEuropeanDocument(GetDataLoad, filePathCertificate);
-                loadEuropeanDocument.ShowDialog();
-            }
-            
-        }
-
         /// <summary>
         /// Метод который будет принимать параметры из окна загрузок
         /// </summary>
@@ -238,7 +225,7 @@ namespace TaxoNavicon
 
 
         // Тут происходит сохранение в базу данных и проверка на повторение номера заказа
-        private void ToolStripMenuItemSaveData_Click(object sender, EventArgs e)
+        private void SaveButton()
         {
             if(textBoxNameCustomer.Text != "")
             {
@@ -304,6 +291,7 @@ namespace TaxoNavicon
                 MessageBox.Show("Ошибка ячейка имя клиента");
             }
         }
+        #region Json
         public void LoadSettingJS()
         {
             var saveJson = File.ReadAllText(filePathSaveJson);
@@ -318,6 +306,9 @@ namespace TaxoNavicon
             adressSticker = settingsJS.AdressSticker;
         }
 
+        #endregion
+
+        // Логика перезаписи данных
         private void ToolStripMenuItemResetData_Click(object sender, EventArgs e)
         {
             SetData();
@@ -381,6 +372,7 @@ namespace TaxoNavicon
         private bool formatingSticker;
         private string pathSettingsFile; // Путь к файлу с настройками
 
+        // Это использовать для печати наклейки
         private void ToolStripMenuItemPrintSticker_Click(object sender, EventArgs e)
         {
             PrintPreviewControl printPreviewControl = new PrintPreviewControl();
@@ -406,7 +398,8 @@ namespace TaxoNavicon
             // Для отображения в предварительном просмотре
             printPreviewControl.Document = printDocument;
 
-            /*PrintStickerEuropean printStickerEuropean = null;
+            /* Вернуть блок если нужно чтобы было окно песчати
+            PrintStickerEuropean printStickerEuropean = null;
             if (printStickerEuropean == null)
             {
                 printStickerEuropean = new PrintStickerEuropean(poleDataEuropean);
@@ -424,7 +417,7 @@ namespace TaxoNavicon
             printDocument.Print();
         }
 
-        // Печать наклейки
+        // Основная логика печати наклейки
         private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
             Graphics g = e.Graphics;
@@ -494,6 +487,7 @@ namespace TaxoNavicon
             g.DrawRectangle(pen, rect);
         }
 
+        // Печать сертификата
         private void ToolStripMenuItemPrintCertificate_Click_1(object sender, EventArgs e)
         {
             try
@@ -505,7 +499,6 @@ namespace TaxoNavicon
                 dataJob.CustomFormat = "dd/MM/yyyy"; // Устанавливаем только дату
 
                 CheckOpenDock();
-                //wordDoc = wordApp.Documents.Open(filePath);
 
                 #region money
                 FindAndReplace(wordDoc, "<orderNumber>", poleDataEuropean.orderNumber.ToString());
@@ -548,14 +541,6 @@ namespace TaxoNavicon
                 // Устанавливаем выбранный принтер
                 wordApp.ActivePrinter = defualtPrinterWord;
 
-                // Это тестовый вариант при выборе принтера в настройках достаточно
-                // будет нажать кнопку печать и всё само напечатается
-                /* if (printDialog.ShowDialog() == DialogResult.OK)
-                 {
-                    // Печатаем документ
-                    wordDoc.PrintOut();
-                 }*/
-
                 // Печатаем документ
                 wordDoc.PrintOut();
 
@@ -570,7 +555,8 @@ namespace TaxoNavicon
 
         }
 
-        private void textBoxOnlyEng_KeyPress(object sender, KeyPressEventArgs e)
+        // Проерка введёного текста что он на английском
+        private void OnlyEng(object sender, KeyPressEventArgs e)
         {
             // Приводим sender к типу TextBox
             Guna2TextBox currentTextBox = sender as Guna2TextBox;
@@ -582,7 +568,9 @@ namespace TaxoNavicon
                 FlashTextBox(currentTextBox); // Передаем текущий TextBox в метод
             }
         }
-        private void textBoxOnlyRuss_KeyPress(object sender, KeyPressEventArgs e)
+
+        // Проерка введёного текста что он на русском
+        private void OnlyRuss(object sender, KeyPressEventArgs e)
         {
             // Приводим sender к типу TextBox
             Guna2TextBox currentTextBox = sender as Guna2TextBox;
@@ -601,8 +589,9 @@ namespace TaxoNavicon
             textBoxAdresCustomerEng.Text = translate.Transliterate(textBoxAdresCustomer.Text);
 
         }
+
         // Это для текста VIN номер ТС
-        private void textBoxOnlyEngNo_o_KeyPress(object sender, KeyPressEventArgs e)
+        private void OnlyEngNo_o(object sender, KeyPressEventArgs e)
         {
             // Приводим sender к типу TextBox
             Guna2TextBox currentTextBox = sender as Guna2TextBox;
@@ -660,9 +649,54 @@ namespace TaxoNavicon
             textBox.FillColor = originalColor;
         }
 
+
+
+        #region Button
+        LoadEuropeanDocument loadEuropeanDocument = null;
+        //Кнопка открытия списка документов
+        private void LoadEuropeanDocuments_Click(object sender, EventArgs e)
+        {
+            if (loadEuropeanDocument == null)
+            {
+                loadEuropeanDocument = new LoadEuropeanDocument(GetDataLoad, filePathCertificate);
+                loadEuropeanDocument.ShowDialog();
+            }
+            else
+            {
+                loadEuropeanDocument.ShowDialog();
+            }
+        }
+
+        // Кнопка перевода
         private void btnTranslate_Click(object sender, EventArgs e)
         {
             Translater();
         }
+
+        // Кнопка печати наклейки
+        private void ToolStripMenuItemPrintSticker_Click_1(object sender, EventArgs e)
+        {
+            ToolStripMenuItemPrintSticker_Click(sender, e);
+        }
+
+        // Кнопка печати сертификата
+        private void ToolStripMenuItemPrintCertificate_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItemPrintCertificate_Click_1(sender, e);
+        }
+
+        // Кнопка перезаписи данных
+        private void ToolStripMenuItemResetData_Click_1(object sender, EventArgs e)
+        {
+            ToolStripMenuItemResetData_Click(sender, e);
+        }
+
+        // Кнопка сохранения        
+        private void ToolStripMenuItemSaveData_Click_1(object sender, EventArgs e)
+        {
+            SaveButton();
+        }
+
+        #endregion
     }
 }

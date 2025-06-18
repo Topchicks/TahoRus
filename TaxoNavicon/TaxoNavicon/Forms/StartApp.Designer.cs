@@ -165,6 +165,7 @@
             this.buttonOpenRussianPanel.Text = "Российский документ";
             this.buttonOpenRussianPanel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonOpenRussianPanel.UseVisualStyleBackColor = true;
+            this.buttonOpenRussianPanel.Visible = false;
             this.buttonOpenRussianPanel.Click += new System.EventHandler(this.buttonOpenRussianPanel_Click);
             // 
             // btnOpenSettings

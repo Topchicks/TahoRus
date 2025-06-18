@@ -15,6 +15,14 @@ namespace TaxoNavicon
             // Создаем контекстное меню
             ContextMenuStrip contextMenu = new ContextMenuStrip();
 
+            /*ToolStripMenuItem OpenRussPanel = new ToolStripMenuItem("Российский документ");
+            OpenRussPanel.Click += (s, e) => buttonOpenRussianPanel_Click(s, e); // Закрытие приложения
+            contextMenu.Items.Add(OpenRussPanel);*/
+
+            ToolStripMenuItem OpenEuroPanel = new ToolStripMenuItem("Европейский документ");
+            OpenEuroPanel.Click += (s, e) => buttonOpenEuropeanTypeForm_Click(s, e); // Закрытие приложения
+            contextMenu.Items.Add(OpenEuroPanel);
+
             ToolStripMenuItem translatedItem = new ToolStripMenuItem("Переводы");
             translatedItem.Click += (s, e) => OpenTranslatedItemPanel(); // Закрытие приложения
             contextMenu.Items.Add(translatedItem);

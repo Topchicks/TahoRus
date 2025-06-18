@@ -114,7 +114,7 @@ namespace TaxoNavicon
                 BorderRadius = 6,
                 BorderThickness = 1,
                 FillColor = Color.White,
-                Size = new System.Drawing.Size(381, 34)
+                Size = new System.Drawing.Size(515, 34)
             };
 
             // Создание первого текстового элемента
@@ -134,8 +134,8 @@ namespace TaxoNavicon
             {
                 Text = nameCustomerText,
                 AutoSize = false,
-                Location = new System.Drawing.Point(103, 0), // Положение на панели
-                Size = new System.Drawing.Size(159, 34),
+                Location = new System.Drawing.Point(100, 0), // Положение на панели
+                Size = new System.Drawing.Size(300, 34),
                 Font = new Font("Arial", 12f),
                 TextAlign = ContentAlignment.MiddleCenter, // Выравнивание текста по центру
                 BackColor = Color.Transparent,
@@ -147,12 +147,14 @@ namespace TaxoNavicon
                 AutoSize = false,
                 TextAlign = ContentAlignment.MiddleCenter, // Выравнивание текста по центру
                 Font = new Font("Arial", 12f),
-                Location = new System.Drawing.Point(277, 0), // Положение на панели
+                Location = new System.Drawing.Point(418, 0), // Положение на панели
                 Size = new System.Drawing.Size(104, 34),
                 BackgroundImageLayout = ImageLayout.Tile,
                 FlatStyle = FlatStyle.Flat,
+                
                 BackColor = Color.Transparent,
             };
+            buttonLoad.FlatAppearance.BorderSize = 0;
             buttonLoad.Tag = orderNumber.Text;
             // Подписка на событие Click
             buttonLoad.Click += Button_Click;
@@ -161,7 +163,10 @@ namespace TaxoNavicon
             panel.Controls.Add(buttonLoad);
             panel.Controls.Add(orderNumber);
             panel.Controls.Add(nameCustomer);
-
+            panel.Dock = DockStyle.Top;
+            buttonLoad.Dock = DockStyle.Right;
+            orderNumber.Dock = DockStyle.Left;
+            nameCustomer.Dock = DockStyle.Fill;
             // Добавление панели на форму
             startOrderPanel.Controls.Add(panel);
         }
