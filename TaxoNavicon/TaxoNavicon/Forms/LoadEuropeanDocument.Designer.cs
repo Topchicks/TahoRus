@@ -106,6 +106,7 @@
             // 
             // startOrderPanel
             // 
+            this.startOrderPanel.AutoScroll = true;
             this.startOrderPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.startOrderPanel.Location = new System.Drawing.Point(0, 61);
             this.startOrderPanel.Name = "startOrderPanel";

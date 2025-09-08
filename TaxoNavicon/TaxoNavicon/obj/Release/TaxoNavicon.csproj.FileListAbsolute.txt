@@ -153,3 +153,4 @@ E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Release\TachoPrint.
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Release\TachoPrint.exe
 E:\fails\iT\Isxodnik\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Release\TachoPrint.pdb
 C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Release\TaxoNavicon.Forms.Translated.resources
+C:\Users\TGS_Navicon\Desktop\Git\TahoRus\TaxoNavicon\TaxoNavicon\obj\Release\TachoPrint.exe.config

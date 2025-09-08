@@ -1,5 +1,4 @@
-﻿using Microsoft.Office.Interop.Word;
-using OfficeOpenXml;
+﻿using OfficeOpenXml;
 using System;
 using System.Drawing;
 using System.Drawing.Printing;
@@ -139,7 +138,7 @@ namespace TaxoNavicon
         private void CheckOpenDock()
         {
             bool isOpen = false;
-            Document openDoc = null;
+            Word.Document openDoc = null;
 
             foreach (Word.Document doc in wordApp.Documents)
             {
@@ -158,7 +157,7 @@ namespace TaxoNavicon
                 DialogResult result = MessageBox.Show("Документ уже открыт. Закрыть его?", "Закрытие документа", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
-                    openDoc.Close(WdSaveOptions.wdSaveChanges); // Сохранить изменения
+                    openDoc.Close(Word.WdSaveOptions.wdSaveChanges); // Сохранить изменения
                     MessageBox.Show("Документ закрыт.");
                 }
                 else
@@ -490,69 +489,73 @@ namespace TaxoNavicon
         // Печать сертификата
         private void ToolStripMenuItemPrintCertificate_Click_1(object sender, EventArgs e)
         {
-            try
-            {
-                SetData();
-                string relativePath = @"EuropeanCertidicate.doc"; // Относительный путь к файлу
-                filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
-                wordApp = new Word.Application();
-                dataJob.CustomFormat = "dd/MM/yyyy"; // Устанавливаем только дату
+       /*     PrintDialog printDialog = new PrintDialog();
+            PrintDocument printDocument = new PrintDocument();
 
-                CheckOpenDock();
+            printDocument.DocumentName = filePathCertificate;
+            printDialog.ShowDialog();
+            printDocument.Print();*/
+              try
+              {
+                  SetData();
+                  string relativePath = @"EuropeanCertidicate.doc"; // Относительный путь к файлу
+                  filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativePath);
+                  wordApp = new Word.Application();
+                  dataJob.CustomFormat = "dd/MM/yyyy"; // Устанавливаем только дату
 
-                #region money
-                FindAndReplace(wordDoc, "<orderNumber>", poleDataEuropean.orderNumber.ToString());
-                FindAndReplace(wordDoc, "<master>", poleDataEuropean.master);
-                FindAndReplace(wordDoc, "<dataJob>", poleDataEuropean.dataJob);
+                  CheckOpenDock();
 
-                FindAndReplace(wordDoc, "<nameCustomer>", poleDataEuropean.nameCustomer);
-                FindAndReplace(wordDoc, "<nameCustomerEng>", poleDataEuropean.nameCustomerEng);
-                FindAndReplace(wordDoc, "<adresCustomer>", poleDataEuropean.adresCustomer);
+                  #region money
+                  FindAndReplace(wordDoc, "<orderNumber>", poleDataEuropean.orderNumber.ToString());
+                  FindAndReplace(wordDoc, "<master>", poleDataEuropean.master);
+                  FindAndReplace(wordDoc, "<dataJob>", poleDataEuropean.dataJob);
 
-                FindAndReplace(wordDoc, "<manufacturerVehicle>", poleDataEuropean.manufacturerVehicle);
-                FindAndReplace(wordDoc, "<modelVehicle>", poleDataEuropean.modelVehicle);
-                FindAndReplace(wordDoc, "<yearOfIssueVehicle>", poleDataEuropean.yearOfIssueVehiccle);
-                FindAndReplace(wordDoc, "<vinVehicle>", poleDataEuropean.vinVehicle);
-                FindAndReplace(wordDoc, "<registrationNumberVehicle>", poleDataEuropean.registrationNumberVehicle);
-                FindAndReplace(wordDoc, "<tireMarkingsVehicle>", poleDataEuropean.tireMarkingsVehicle);
-                FindAndReplace(wordDoc, "<odometrKmVehicle>", poleDataEuropean.odometerKmVehicle);
+                  FindAndReplace(wordDoc, "<nameCustomer>", poleDataEuropean.nameCustomer);
+                  FindAndReplace(wordDoc, "<nameCustomerEng>", poleDataEuropean.nameCustomerEng);
+                  FindAndReplace(wordDoc, "<adresCustomer>", poleDataEuropean.adresCustomer);
 
-                FindAndReplace(wordDoc, "<manufacturerTahograph>", poleDataEuropean.manufacturerTahograph);
-                FindAndReplace(wordDoc, "<serialNumberTahograph>", poleDataEuropean.serialNumberTahograph);
-                FindAndReplace(wordDoc, "<modelTahograph>", poleDataEuropean.modelTachograph);
+                  FindAndReplace(wordDoc, "<manufacturerVehicle>", poleDataEuropean.manufacturerVehicle);
+                  FindAndReplace(wordDoc, "<modelVehicle>", poleDataEuropean.modelVehicle);
+                  FindAndReplace(wordDoc, "<yearOfIssueVehicle>", poleDataEuropean.yearOfIssueVehiccle);
+                  FindAndReplace(wordDoc, "<vinVehicle>", poleDataEuropean.vinVehicle);
+                  FindAndReplace(wordDoc, "<registrationNumberVehicle>", poleDataEuropean.registrationNumberVehicle);
+                  FindAndReplace(wordDoc, "<tireMarkingsVehicle>", poleDataEuropean.tireMarkingsVehicle);
+                  FindAndReplace(wordDoc, "<odometrKmVehicle>", poleDataEuropean.odometerKmVehicle);
 
-                FindAndReplace(wordDoc, "<L>", poleDataEuropean.l);
-                FindAndReplace(wordDoc, "<W>", poleDataEuropean.w);
-                FindAndReplace(wordDoc, "<K>", poleDataEuropean.k);
+                  FindAndReplace(wordDoc, "<manufacturerTahograph>", poleDataEuropean.manufacturerTahograph);
+                  FindAndReplace(wordDoc, "<serialNumberTahograph>", poleDataEuropean.serialNumberTahograph);
+                  FindAndReplace(wordDoc, "<modelTahograph>", poleDataEuropean.modelTachograph);
 
-
-                FindAndReplace(wordDoc, "<russAdresMaster>", poleDataEuropean.russAdresMaster);
-                FindAndReplace(wordDoc, "<euroAdresMaster>", poleDataEuropean.engAdresMaster);
-                FindAndReplace(wordDoc, "<Tem>", poleDataEuropean.temperature);
-                FindAndReplace(wordDoc, "<Tw>", poleDataEuropean.protectore);
-                FindAndReplace(wordDoc, "<adresCustomerEng>", poleDataEuropean.adresCustomerEng);
-
-
-                #endregion
-
-                PrintDialog printDialog = new PrintDialog();
-                printDialog.PrinterSettings = new PrinterSettings();
-
-                // Устанавливаем выбранный принтер
-                wordApp.ActivePrinter = defualtPrinterWord;
-
-                // Печатаем документ
-                wordDoc.PrintOut();
-
-                ClouseConnectionWord();
-            }
-            catch(Exception ex)
-            {
-                ClouseConnectionWord();
-                MessageBox.Show("Ошибка: " + ex);
-            }
+                  FindAndReplace(wordDoc, "<L>", poleDataEuropean.l);
+                  FindAndReplace(wordDoc, "<W>", poleDataEuropean.w);
+                  FindAndReplace(wordDoc, "<K>", poleDataEuropean.k);
 
 
+                  FindAndReplace(wordDoc, "<russAdresMaster>", poleDataEuropean.russAdresMaster);
+                  FindAndReplace(wordDoc, "<euroAdresMaster>", poleDataEuropean.engAdresMaster);
+                  FindAndReplace(wordDoc, "<Tem>", poleDataEuropean.temperature);
+                  FindAndReplace(wordDoc, "<Tw>", poleDataEuropean.protectore);
+                  FindAndReplace(wordDoc, "<adresCustomerEng>", poleDataEuropean.adresCustomerEng);
+
+
+                  #endregion
+
+                  PrintDialog printDialog = new PrintDialog();
+                  printDialog.PrinterSettings = new PrinterSettings();
+
+                  // Устанавливаем выбранный принтер
+                  wordApp.ActivePrinter = defualtPrinterWord;
+
+                  // Печатаем документ
+                  wordDoc.PrintOut();
+
+                  ClouseConnectionWord();
+              }
+              catch(Exception ex)
+              {
+                  ClouseConnectionWord();
+                  MessageBox.Show("Ошибка: " + ex);
+              }
         }
 
         // Проерка введёного текста что он на английском

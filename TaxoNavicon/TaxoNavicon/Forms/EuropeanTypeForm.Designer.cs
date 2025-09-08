@@ -118,7 +118,6 @@
             this.ToolStripMenuItemPrintSticker = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemSaveData = new System.Windows.Forms.ToolStripMenuItem();
             this.LoadEuropeanDocuments = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItemSetData = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemResetData = new System.Windows.Forms.ToolStripMenuItem();
             btnTranslate = new Guna.UI2.WinForms.Guna2Button();
             this.tableLayoutPanel1.SuspendLayout();
@@ -1420,7 +1419,6 @@
             this.печатьToolStripMenuItem,
             this.ToolStripMenuItemSaveData,
             this.LoadEuropeanDocuments,
-            this.ToolStripMenuItemSetData,
             this.ToolStripMenuItemResetData});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -1464,11 +1462,6 @@
             this.LoadEuropeanDocuments.Size = new System.Drawing.Size(73, 20);
             this.LoadEuropeanDocuments.Text = "Загрузить";
             this.LoadEuropeanDocuments.Click += new System.EventHandler(this.LoadEuropeanDocuments_Click);
-            // 
-            // ToolStripMenuItemSetData
-            // 
-            this.ToolStripMenuItemSetData.Name = "ToolStripMenuItemSetData";
-            this.ToolStripMenuItemSetData.Size = new System.Drawing.Size(12, 20);
             // 
             // ToolStripMenuItemResetData
             // 
@@ -1630,7 +1623,6 @@
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemPrintSticker;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSaveData;
         private System.Windows.Forms.ToolStripMenuItem LoadEuropeanDocuments;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemSetData;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemResetData;
         private Guna.UI2.WinForms.Guna2DateTimePicker dataJob;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel26;
